@@ -90,7 +90,12 @@ namespace Models {
                 );
         }
 
-		public Ticket GetTicketFor(char row, int nr) {
+        public Ticket GetTicket(int index)
+        {
+            return tickets[index];
+        }
+
+		public Ticket GetTicket(char row, int nr) {
             return tickets.Find(
                     delegate(Ticket t)
                     {
@@ -115,12 +120,7 @@ namespace Models {
 
         public void ReserveTicket(char row, int nr)
         {
-            tickets.Find(
-                    delegate(Ticket t)
-                    {
-                        return ((t.Seat.GetRow() == row) && (t.Seat.GetNr() == nr));
-                    }
-                ).Reserved = true;
+            GetTicket(row, nr).Reserved = true;
             NotifyObservers();
         }
 
@@ -132,17 +132,17 @@ namespace Models {
 
         public void SellTicket(char row, int nr)
         {
-            tickets.Find(
-                    delegate(Ticket t)
-                    {
-                        return ((t.Seat.GetRow() == row) && (t.Seat.GetNr() == nr));
-                    }
-                ).Sold = true;
+            GetTicket(row, nr).Sold = true;
             NotifyObservers();
         }
 
 		public void ReturnTicket(Ticket ticket) {
+            if (!tickets.Contains(ticket))
+            {
+                throw new ArgumentException("The ticket " + ticket.ToString() + " is not contained in this Show!");
+            }
             ticket.Sold = false;
+            ticket.Reserved = false;
             NotifyObservers();
 		}
 	}

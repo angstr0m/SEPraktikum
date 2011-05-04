@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Models;
-using SEPraktikum.Views.HauptmenuViewSub.BesucherViewSub.BesucherKinokartenOnlineReservierenViewSub;
+using SEPraktikum.Views.HauptmenuViewSub.BesucherViewSub;
 
 namespace SEPraktikum.Views.HauptmenuViewSub.BesucherViewSub
 {
@@ -80,7 +80,7 @@ namespace SEPraktikum.Views.HauptmenuViewSub.BesucherViewSub
             }
 
             this.Hide();
-            sitzplatzAuswahl.Show();
+            sitzplatzAuswahl.ShowDialog(this);
         }
     }
 }

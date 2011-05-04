@@ -7,8 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Models;
+using SEPraktikum.Views.HauptmenuViewSub.BesucherViewSub;
 
-namespace SEPraktikum.Views.HauptmenuViewSub.BesucherViewSub.BesucherKinokartenOnlineReservierenViewSub
+namespace SEPraktikum.Views.HauptmenuViewSub.BesucherViewSub
 {
     public partial class Sitzplatzauswahl : Form, Interfaces.Observer
     {
@@ -79,13 +80,21 @@ namespace SEPraktikum.Views.HauptmenuViewSub.BesucherViewSub.BesucherKinokartenO
 
         private void list_sitzplatz_SelectedIndexChanged(object sender, EventArgs e)
         {
+            selectedTicket = selectedShow.GetTicket(this.list_sitzplatz.SelectedIndex);
             CheckPermission();
         }
 
         private void button_Weiter_Click(object sender, EventArgs e)
         {
-            new ReservierungsUebersicht().ShowDialog(this);
+            if (selectedTicket.Reserved || selectedTicket.Sold)
+            {
+                // Nur zur Sicherheit!
+                return;
+            }
+            selectedTicket.Discount = discount;
+            selectedTicket.Reserved = true;
             this.Hide();
+            new ReservierungsUebersicht(selectedTicket).ShowDialog(this);
         }
 
         private void CheckPermission()
