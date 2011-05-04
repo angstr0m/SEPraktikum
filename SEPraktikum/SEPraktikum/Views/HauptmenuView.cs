@@ -55,5 +55,12 @@ namespace SEPraktikum.Views.HauptmenuViewSub
 
             mitarbeiterView.Show();
         }
+
+        private void button_besucher_Click(object sender, EventArgs e)
+        {
+            BesucherView besucherView = new BesucherView();
+
+            besucherView.Show();
+        }
     }
 }

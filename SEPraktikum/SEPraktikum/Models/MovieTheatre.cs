@@ -40,6 +40,28 @@ namespace Models {
             NotifyObservers();
         }
 
+        public MovieTheatre(String _name, int seats_per_rank, int ranks)
+        {
+            this.name = _name;
+
+            char[] alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
+            List<Seat> seats = new List<Seat>();
+
+            // Generate the needed number of seats.
+            for (int i = 0; i < ranks; i++)
+            {
+                char rank = alphabet[i];
+                for (int j = 0; j < seats_per_rank; j++)
+                {
+                    Seat temp_seat = new Seat(rank, j);
+                    seats.Add(temp_seat);
+                }
+            }
+
+            this.seats = seats;
+            UpdateSeatCount();
+        }
+
         public MovieTheatre(String _name, List<Seat> _seats)
         {
             this.name = _name;

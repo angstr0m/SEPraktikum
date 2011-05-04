@@ -82,7 +82,7 @@
     <Compile Include="Models\Database.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Controller\EmployeeController.cs" />
-    <Compile Include="Models\Filmprogram.cs" />
+    <Compile Include="Models\MovieProgram.cs" />
     <Compile Include="Controller\FilmprogramController.cs" />
     <Compile Include="Models\Iterable.cs" />
     <Compile Include="Controller\ManagementController.cs" />
@@ -132,6 +132,24 @@
     </Compile>
     <Compile Include="Views\HauptmenuViewSub\AdministratorViewSub\KinosaalEditierenView.Designer.cs">
       <DependentUpon>KinosaalEditierenView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HauptmenuViewSub\BesucherView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\HauptmenuViewSub\BesucherView.Designer.cs">
+      <DependentUpon>BesucherView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HauptmenuViewSub\BesucherViewSub\BesucherKinokartenOnlineReservieren.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\HauptmenuViewSub\BesucherViewSub\BesucherKinokartenOnlineReservieren.Designer.cs">
+      <DependentUpon>BesucherKinokartenOnlineReservieren.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HauptmenuViewSub\BesucherViewSub\BesucherUebersichtVorstellungen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\HauptmenuViewSub\BesucherViewSub\BesucherUebersichtVorstellungen.Designer.cs">
+      <DependentUpon>BesucherUebersichtVorstellungen.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\HauptmenuViewSub\KundeView.cs">
       <SubType>Form</SubType>
@@ -189,6 +207,15 @@
     <EmbeddedResource Include="Views\HauptmenuViewSub\AdministratorViewSub\KinosaalEditierenView.resx">
       <DependentUpon>KinosaalEditierenView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\HauptmenuViewSub\BesucherView.resx">
+      <DependentUpon>BesucherView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\HauptmenuViewSub\BesucherViewSub\BesucherKinokartenOnlineReservieren.resx">
+      <DependentUpon>BesucherKinokartenOnlineReservieren.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\HauptmenuViewSub\BesucherViewSub\BesucherUebersichtVorstellungen.resx">
+      <DependentUpon>BesucherUebersichtVorstellungen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\HauptmenuViewSub\KundeView.resx">
       <DependentUpon>KundeView.cs</DependentUpon>
     </EmbeddedResource>
@@ -200,6 +227,7 @@
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="ClassDiagram2.cd" />
+    <None Include="ClassDiagram3.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

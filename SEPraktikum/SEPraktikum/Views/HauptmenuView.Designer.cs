@@ -32,6 +32,7 @@
             this.button_Administrator = new System.Windows.Forms.Button();
             this.button_Kunde = new System.Windows.Forms.Button();
             this.button_Mitarbeiter = new System.Windows.Forms.Button();
+            this.button_besucher = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button_Administrator
@@ -64,11 +65,22 @@
             this.button_Mitarbeiter.UseVisualStyleBackColor = true;
             this.button_Mitarbeiter.Click += new System.EventHandler(this.button_Mitarbeiter_Click);
             // 
+            // button_besucher
+            // 
+            this.button_besucher.Location = new System.Drawing.Point(12, 100);
+            this.button_besucher.Name = "button_besucher";
+            this.button_besucher.Size = new System.Drawing.Size(177, 23);
+            this.button_besucher.TabIndex = 3;
+            this.button_besucher.Text = "Besucher";
+            this.button_besucher.UseVisualStyleBackColor = true;
+            this.button_besucher.Click += new System.EventHandler(this.button_besucher_Click);
+            // 
             // SEPraktikum
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(195, 108);
+            this.ClientSize = new System.Drawing.Size(195, 137);
+            this.Controls.Add(this.button_besucher);
             this.Controls.Add(this.button_Mitarbeiter);
             this.Controls.Add(this.button_Kunde);
             this.Controls.Add(this.button_Administrator);
@@ -86,6 +98,7 @@
         private System.Windows.Forms.Button button_Administrator;
         private System.Windows.Forms.Button button_Kunde;
         private System.Windows.Forms.Button button_Mitarbeiter;
+        private System.Windows.Forms.Button button_besucher;
     }
 }
 
