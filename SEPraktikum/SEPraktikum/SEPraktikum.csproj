@@ -139,17 +139,29 @@
     <Compile Include="Views\HauptmenuViewSub\BesucherView.Designer.cs">
       <DependentUpon>BesucherView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\HauptmenuViewSub\BesucherViewSub\BesucherKinokartenOnlineReservieren.cs">
+    <Compile Include="Views\HauptmenuViewSub\BesucherViewSub\BesucherKinokartenOnlineReservierenView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\HauptmenuViewSub\BesucherViewSub\BesucherKinokartenOnlineReservieren.Designer.cs">
-      <DependentUpon>BesucherKinokartenOnlineReservieren.cs</DependentUpon>
+    <Compile Include="Views\HauptmenuViewSub\BesucherViewSub\BesucherKinokartenOnlineReservierenView.Designer.cs">
+      <DependentUpon>BesucherKinokartenOnlineReservierenView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\HauptmenuViewSub\BesucherViewSub\BesucherUebersichtVorstellungen.cs">
+    <Compile Include="Views\HauptmenuViewSub\BesucherViewSub\BesucherKinokartenOnlineReservierenViewSub\ReservierungsUebersicht.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\HauptmenuViewSub\BesucherViewSub\BesucherUebersichtVorstellungen.Designer.cs">
-      <DependentUpon>BesucherUebersichtVorstellungen.cs</DependentUpon>
+    <Compile Include="Views\HauptmenuViewSub\BesucherViewSub\BesucherKinokartenOnlineReservierenViewSub\ReservierungsUebersicht.Designer.cs">
+      <DependentUpon>ReservierungsUebersicht.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HauptmenuViewSub\BesucherViewSub\BesucherKinokartenOnlineReservierenViewSub\Sitzplatzauswahl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\HauptmenuViewSub\BesucherViewSub\BesucherKinokartenOnlineReservierenViewSub\Sitzplatzauswahl.Designer.cs">
+      <DependentUpon>Sitzplatzauswahl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HauptmenuViewSub\BesucherViewSub\BesucherUebersichtVorstellungenView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\HauptmenuViewSub\BesucherViewSub\BesucherUebersichtVorstellungenView.Designer.cs">
+      <DependentUpon>BesucherUebersichtVorstellungenView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\HauptmenuViewSub\KundeView.cs">
       <SubType>Form</SubType>
@@ -210,11 +222,17 @@
     <EmbeddedResource Include="Views\HauptmenuViewSub\BesucherView.resx">
       <DependentUpon>BesucherView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\HauptmenuViewSub\BesucherViewSub\BesucherKinokartenOnlineReservieren.resx">
-      <DependentUpon>BesucherKinokartenOnlineReservieren.cs</DependentUpon>
+    <EmbeddedResource Include="Views\HauptmenuViewSub\BesucherViewSub\BesucherKinokartenOnlineReservierenView.resx">
+      <DependentUpon>BesucherKinokartenOnlineReservierenView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\HauptmenuViewSub\BesucherViewSub\BesucherUebersichtVorstellungen.resx">
-      <DependentUpon>BesucherUebersichtVorstellungen.cs</DependentUpon>
+    <EmbeddedResource Include="Views\HauptmenuViewSub\BesucherViewSub\BesucherKinokartenOnlineReservierenViewSub\ReservierungsUebersicht.resx">
+      <DependentUpon>ReservierungsUebersicht.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\HauptmenuViewSub\BesucherViewSub\BesucherKinokartenOnlineReservierenViewSub\Sitzplatzauswahl.resx">
+      <DependentUpon>Sitzplatzauswahl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\HauptmenuViewSub\BesucherViewSub\BesucherUebersichtVorstellungenView.resx">
+      <DependentUpon>BesucherUebersichtVorstellungenView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\HauptmenuViewSub\KundeView.resx">
       <DependentUpon>KundeView.cs</DependentUpon>

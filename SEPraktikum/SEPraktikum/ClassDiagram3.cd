@@ -185,7 +185,7 @@
   <Class Name="Models.Database" Collapsed="true">
     <Position X="26.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAABBAAAAAAAAAAAAAAAAAARAAIAAQAAAAAAAAAA=</HashCode>
+      <HashCode>gAAAAAABAAAAAAAAAQIAAAAAAARAAIAASAAAAAAAAAA=</HashCode>
       <FileName>Models\Database.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -207,7 +207,7 @@
   <Class Name="Models.Movie" Collapsed="true">
     <Position X="8.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>CECAQAIgABQQAAEAAABAAEgCgAYAABAA0AEABAAQAAA=</HashCode>
+      <HashCode>AEAABBIAAAQSEAAAAAIAAAQCEAAEQBAAgAAAAIAQAAA=</HashCode>
       <FileName>Models\Movie.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -249,7 +249,7 @@
   <Class Name="Models.Show" Collapsed="true">
     <Position X="4.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAIEAAAAACAAABAoAAAAAAAAAAAAAADAAAAAIAQ=</HashCode>
+      <HashCode>ACAAAAIEAAACACAAABAoAAQAIgAAAAAAAABAAAAAIAU=</HashCode>
       <FileName>Models\Show.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -263,7 +263,7 @@
   <Class Name="Models.Ticket" Collapsed="true">
     <Position X="11" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAABAAAAAAAAAABAAAAAAAAAAAAAAAAABAAAAAAAAAA=</HashCode>
+      <HashCode>AAABAAAAAQAAAABAAAAAQBAAAAAUAAAABAAAAAAAAAA=</HashCode>
       <FileName>Models\Ticket.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -298,7 +298,7 @@
   <Class Name="SEPraktikum.Views.HauptmenuViewSub.BesucherView" Collapsed="true">
     <Position X="43" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ABAAAAAAACAAAAAAAgCAAABCAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>ABAAAAAAACAAAAAAAgCAAABCAAAAAAAAAEAAAAAAAAA=</HashCode>
       <FileName>Views\HauptmenuViewSub\BesucherView.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -358,18 +358,19 @@
       <FileName>Views\HauptmenuViewSub\AdministratorViewSub\KinosaalEditierenViewSub\KinositzAnlegenView.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SEPraktikum.Views.HauptmenuViewSub.Views.HauptmenuViewSub.BesucherViewSub.BesucherKinokartenOnlineReservieren" Collapsed="true">
+  <Class Name="SEPraktikum.Views.HauptmenuViewSub.BesucherViewSub.BesucherKinokartenOnlineReservieren" Collapsed="true">
     <Position X="39.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAACAAAAAAAACAAAACAAAIAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Views\HauptmenuViewSub\BesucherViewSub\BesucherKinokartenOnlineReservieren.cs</FileName>
+      <HashCode>ACABAAAAACAAEAAACACAAACCAAQIAgoAEAAEAAQAEAA=</HashCode>
+      <FileName>Views\HauptmenuViewSub\BesucherViewSub\BesucherKinokartenOnlineReservierenView.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
-  <Class Name="SEPraktikum.Views.HauptmenuViewSub.Views.HauptmenuViewSub.BesucherViewSub.BesucherUebersichtVorstellungen" Collapsed="true">
+  <Class Name="SEPraktikum.Views.HauptmenuViewSub.Views.HauptmenuViewSub.BesucherViewSub.BesucherUebersichtVorstellungenView" Collapsed="true">
     <Position X="41.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAEAACAAAAAAEACAAAACAAAAAQAAAAAAAAAAAAA=</HashCode>
-      <FileName>Views\HauptmenuViewSub\BesucherViewSub\BesucherUebersichtVorstellungen.cs</FileName>
+      <FileName>Views\HauptmenuViewSub\BesucherViewSub\BesucherUebersichtVorstellungenView.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SEPraktikum.Views.SplashScreen" Collapsed="true">

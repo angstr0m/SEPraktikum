@@ -2,17 +2,19 @@ using System;
 namespace Models {
     public class Movie : Interfaces.Subject
     {
+        private String name;
         private String genre;
         private int duration;
         private String originCountry;
         private DateTime startDateTime;
         private int week;
-        private String movieRating;
+        private int movieRating;
         private String movieCast;
         private String director;
 
-        public Movie(String genre, int duration, string originCountry, DateTime startDateTime, string movieRating, string movieCast, string director)
+        public Movie(String name ,String genre, int duration, string originCountry, DateTime startDateTime, int movieRating, string movieCast, string director)
         {
+            this.name = name;
             this.genre = genre;
             this.duration = duration;
             this.originCountry = originCountry;
@@ -20,6 +22,12 @@ namespace Models {
             this.movieRating = movieRating;
             this.movieCast = movieCast;
             this.director = director;
+        }
+
+        public String Name
+        {
+            get { return name; }
+            set { name = value; }
         }
 
         public string Genre
@@ -52,7 +60,7 @@ namespace Models {
             set { week = value; }
         }
 
-        public string MovieRating
+        public int MovieRating
         {
             get { return movieRating; }
             set { movieRating = value; }

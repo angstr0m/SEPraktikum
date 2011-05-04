@@ -1,6 +1,6 @@
 ﻿namespace SEPraktikum.Views.HauptmenuViewSub.Views.HauptmenuViewSub.BesucherViewSub
 {
-    partial class BesucherUebersichtVorstellungen
+    partial class BesucherUebersichtVorstellungenView
     {
         /// <summary>
         /// Required designer variable.
@@ -58,8 +58,9 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(259, 381);
             this.listBox1.TabIndex = 3;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
-            // BesucherUebersichtVorstellungen
+            // BesucherUebersichtVorstellungenView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -67,7 +68,7 @@
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button_VorstellungWaehlen);
             this.Controls.Add(this.button_zurueck);
-            this.Name = "BesucherUebersichtVorstellungen";
+            this.Name = "BesucherUebersichtVorstellungenView";
             this.Text = "BesucherUebersichtVorstellungen";
             this.ResumeLayout(false);
 

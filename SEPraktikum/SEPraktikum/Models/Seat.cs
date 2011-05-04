@@ -26,5 +26,10 @@ namespace Models {
 		public int GetNr() {
 			return seatNr;
 		}
+
+        public override string ToString()
+        {
+            return identifier;
+        }
 	}
 }
