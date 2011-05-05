@@ -1,7 +1,10 @@
 using System;
 using System.Collections.Generic;
-namespace Models {
-    public class Show : Interfaces.Subject
+using Base.AbstractClasses;
+using Cinema.Models;
+
+namespace TicketOperations.Models {
+    public class Show : Subject
     {
         private DateTime startTime;
 		private Movie movie;

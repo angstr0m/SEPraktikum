@@ -1,4 +1,4 @@
-﻿namespace SEPraktikum.Views.HauptmenuViewSub.AdministratorViewSub
+﻿namespace Cinema.Views.Administrator
 {
     partial class KinosaalEditierenView
     {

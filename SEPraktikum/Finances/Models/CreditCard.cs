@@ -1,5 +1,6 @@
 using System;
-namespace Models {
+
+namespace Finances.Models {
 	public class CreditCard : PaymentInfo  {
 		private String cardNr;
 		private String securityCode;

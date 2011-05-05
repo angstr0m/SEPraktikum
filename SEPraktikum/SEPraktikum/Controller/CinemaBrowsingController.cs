@@ -1,3 +1,5 @@
-using System;
-public class CinemaBrowsingController {
+namespace SEPraktikum.Views.HauptmenuViewSub.Controller
+{
+    public class CinemaBrowsingController {
+    }
 }

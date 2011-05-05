@@ -1,6 +1,8 @@
 using System;
-namespace Models {
-    public class Movie : Interfaces.Subject
+using Base.AbstractClasses;
+
+namespace Cinema.Models {
+    public class Movie : Subject
     {
         private String name;
         private String genre;

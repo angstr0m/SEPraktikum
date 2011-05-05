@@ -1,6 +1,8 @@
 using System;
-namespace Models {
-    public class Adress : Interfaces.Subject
+using Base.AbstractClasses;
+
+namespace Users.Models {
+    public class Adress : Subject
     {
 		private int id;
 		private String street;

@@ -1,15 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using SEPraktikum.Views.HauptmenuViewSub.AdministratorViewSub;
-using Models;
+using Cinema.Models;
 
-namespace SEPraktikum.Views.HauptmenuViewSub.AdministratorViewSub.KinosaalEditierenViewSub
+namespace Cinema.Views.Administrator
 {
     public partial class KinositzAnlegenView : Form
     {

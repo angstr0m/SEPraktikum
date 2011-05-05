@@ -1,5 +1,6 @@
 using System;
-namespace Models {
+
+namespace Finances.Models {
 	public class AutoDebit : PaymentInfo  {
 		private String accountNumber;
 		private String bankCode;

@@ -1,4 +1,4 @@
-﻿namespace SEPraktikum.Views.HauptmenuViewSub.AdministratorViewSub.KinosaalEditierenViewSub
+﻿namespace Cinema.Views.Administrator
 {
     partial class KinositzAnlegenView
     {

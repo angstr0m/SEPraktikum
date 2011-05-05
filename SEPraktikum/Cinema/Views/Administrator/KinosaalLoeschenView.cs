@@ -1,22 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using SEPraktikum.Controller;
-using Interfaces;
-using Models;
+using Base.AbstractClasses;
+using Base.Interfaces;
+using Cinema.Models;
+using Database.Models;
 
-namespace SEPraktikum.Views.HauptmenuViewSub.AdministratorViewSub
+namespace Cinema.Views.Administrator
 {
-    public partial class KinosaalLoeschen : Form, Observer, Interfaces.View
+    public partial class KinosaalLoeschen : Form, Observer
     {
-        private KinosaalVerwaltungController controller;
-        private Database model;
-        private Interfaces.View view;
+        private EntityManager<MovieTheatre> database;
         private bool initialized = false;
         private MovieTheatre selectedTheatre;
 
@@ -31,22 +24,17 @@ namespace SEPraktikum.Views.HauptmenuViewSub.AdministratorViewSub
             if (!initialized)
             {
                 initialized = true;
-                setModel(Database.Instance);
-                model.AddObserver(this);
-                this.list_kinosaal.DataSource = model.getMovieTheatres();
+                database = new EntityManager<MovieTheatre>();
+                database.AddObserver(this);
+                this.list_kinosaal.DataSource = database.GetElements();
                 this.list_kinosaal.DisplayMember = "Name";
                 System.Console.WriteLine(list_kinosaal.SelectedIndex);
-                if (list_kinosaal.SelectedIndex >= 0 && list_kinosaal.SelectedIndex < model.getMovieTheatres().Count)
+                if (list_kinosaal.SelectedIndex >= 0 && list_kinosaal.SelectedIndex < database.GetElements().Count)
                 {
-                    selectedTheatre = model.getMovieTheatres()[list_kinosaal.SelectedIndex];
+                    selectedTheatre = database.GetElements()[list_kinosaal.SelectedIndex];
                     
                 }
             }
-        }
-
-        public void setModel(Database _model)
-        {
-            this.model = _model;
         }
 
         private void KinosaalverwaltungView_Load(object sender, EventArgs e)
@@ -62,7 +50,7 @@ namespace SEPraktikum.Views.HauptmenuViewSub.AdministratorViewSub
 
         public void UpdateObserver<T>(T subject) where T : Subject
         {
-            this.list_kinosaal.DataSource = model.getMovieTheatres();
+            this.list_kinosaal.DataSource = database.getMovieTheatres();
             this.list_kinosaal.DisplayMember = "Name";
             ((CurrencyManager)this.list_kinosaal.BindingContext[this.list_kinosaal.DataSource]).Refresh();
 
@@ -77,9 +65,9 @@ namespace SEPraktikum.Views.HauptmenuViewSub.AdministratorViewSub
         private void UpdateSelectedTheatre()
         {
             System.Console.WriteLine("Selected Index: " + list_kinosaal.SelectedIndex);
-            if (list_kinosaal.SelectedIndex >= 0 && list_kinosaal.SelectedIndex < model.getMovieTheatres().Count)
+            if (list_kinosaal.SelectedIndex >= 0 && list_kinosaal.SelectedIndex < database.getMovieTheatres().Count)
             {
-                selectedTheatre = model.getMovieTheatres()[list_kinosaal.SelectedIndex];
+                selectedTheatre = database.getMovieTheatres()[list_kinosaal.SelectedIndex];
             }
         }
 
@@ -92,7 +80,7 @@ namespace SEPraktikum.Views.HauptmenuViewSub.AdministratorViewSub
 
             if (MessageBox.Show("Kinosaal wirklich löschen?", "Löschen Bestätigen", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                model.removeMovieTheatre(model.getMovieTheatres()[list_kinosaal.SelectedIndex]);
+                database.removeMovieTheatre(database.getMovieTheatres()[list_kinosaal.SelectedIndex]);
             }
         }
     }

@@ -1,4 +1,4 @@
-﻿namespace SEPraktikum.Views.HauptmenuViewSub
+﻿namespace SEPraktikum.Views.HauptmenuViewSub.Views.HauptmenuViewSub
 {
     partial class AdministratorView
     {

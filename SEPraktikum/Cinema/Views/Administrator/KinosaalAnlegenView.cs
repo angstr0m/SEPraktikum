@@ -1,20 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using SEPraktikum.Controller;
-using System.Windows.Forms.VisualStyles;
-using Models;
+using Cinema.Models;
+using Database.Models;
 
-namespace SEPraktikum.Views.HauptmenuViewSub.AdministratorViewSub
+namespace Cinema.Views.Administrator
 {
     public partial class KinosaalAnlegenView : Form
     {
-        private KinosaalVerwaltungController controller;
+        private EntityManager<MovieTheatre> database; 
         // Data needed for the creation of a new MovieTheatre.
         private string movieTheatreName;
         private int number_of_seats;
@@ -28,8 +22,8 @@ namespace SEPraktikum.Views.HauptmenuViewSub.AdministratorViewSub
             ValidateThis();
         }
 
-        public void SetController(KinosaalVerwaltungController controller) {
-            this.controller = controller;
+        public void SetController() {
+            
         }
 
         private void button_abbrechen_Click(object sender, EventArgs e)
@@ -58,7 +52,7 @@ namespace SEPraktikum.Views.HauptmenuViewSub.AdministratorViewSub
 
             MovieTheatre movieTheatre = new MovieTheatre(movieTheatreName,seats);
 
-            Database.Instance.addMovieTheatre(movieTheatre); // Add the movie theatre to the database.
+            database.AddElement(movieTheatre); // Add the movie theatre to the database.
 
             this.Close();
         }
@@ -125,7 +119,7 @@ namespace SEPraktikum.Views.HauptmenuViewSub.AdministratorViewSub
                     }
                     else
                     {
-                        foreach (MovieTheatre theatre in Database.Instance.getMovieTheatres())
+                        foreach (MovieTheatre theatre in database.GetElements())
                         {
                             if (theatre.Name == movieTheatreName)
                             {

@@ -1,17 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using Models;
-using SEPraktikum.Views.HauptmenuViewSub.BesucherViewSub;
+using TicketOperations.Models;
+using TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservierenViewSub;
 
-namespace SEPraktikum.Views.HauptmenuViewSub.BesucherViewSub
+namespace TicketOperations.Views.Besucher
 {
-    public partial class BesucherKinokartenOnlineReservieren : Form, Interfaces.Observer
+    public partial class BesucherKinokartenOnlineReservieren : Form, Base.Interfaces.Observer
     {
         Show selectedShow;
         Sitzplatzauswahl sitzplatzAuswahl;

@@ -1,0 +1,11 @@
+C:\Users\N3trunner.MITTELERDE\Desktop\Dropbox\HAW\Semester3\SE\Praktika\SEPraktikumVisualStudio\SEPraktikum\TicketOperations\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\N3trunner.MITTELERDE\Desktop\Dropbox\HAW\Semester3\SE\Praktika\SEPraktikumVisualStudio\SEPraktikum\TicketOperations\obj\x86\Debug\SEPraktikum.Views.HauptmenuViewSub.BesucherViewSub.BesucherKinokartenOnlineReservieren.resources
+C:\Users\N3trunner.MITTELERDE\Desktop\Dropbox\HAW\Semester3\SE\Praktika\SEPraktikumVisualStudio\SEPraktikum\TicketOperations\obj\x86\Debug\SEPraktikum.Views.HauptmenuViewSub.BesucherViewSub.ReservierungsUebersicht.resources
+C:\Users\N3trunner.MITTELERDE\Desktop\Dropbox\HAW\Semester3\SE\Praktika\SEPraktikumVisualStudio\SEPraktikum\TicketOperations\obj\x86\Debug\SEPraktikum.Views.HauptmenuViewSub.BesucherViewSub.Sitzplatzauswahl.resources
+C:\Users\N3trunner.MITTELERDE\Desktop\Dropbox\HAW\Semester3\SE\Praktika\SEPraktikumVisualStudio\SEPraktikum\TicketOperations\obj\x86\Debug\SEPraktikum.Views.HauptmenuViewSub.Views.HauptmenuViewSub.BesucherViewSub.BesucherUebersichtVorstellungenView.resources
+C:\Users\N3trunner.MITTELERDE\Desktop\Dropbox\HAW\Semester3\SE\Praktika\SEPraktikumVisualStudio\SEPraktikum\TicketOperations\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\N3trunner.MITTELERDE\Desktop\Dropbox\HAW\Semester3\SE\Praktika\SEPraktikumVisualStudio\SEPraktikum\TicketOperations\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\N3trunner.MITTELERDE\Desktop\Dropbox\HAW\Semester3\SE\Praktika\SEPraktikumVisualStudio\SEPraktikum\TicketOperations\obj\x86\Debug\TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservieren.resources
+C:\Users\N3trunner.MITTELERDE\Desktop\Dropbox\HAW\Semester3\SE\Praktika\SEPraktikumVisualStudio\SEPraktikum\TicketOperations\obj\x86\Debug\TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservierenViewSub.ReservierungsUebersicht.resources
+C:\Users\N3trunner.MITTELERDE\Desktop\Dropbox\HAW\Semester3\SE\Praktika\SEPraktikumVisualStudio\SEPraktikum\TicketOperations\obj\x86\Debug\TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservierenViewSub.Sitzplatzauswahl.resources
+C:\Users\N3trunner.MITTELERDE\Desktop\Dropbox\HAW\Semester3\SE\Praktika\SEPraktikumVisualStudio\SEPraktikum\TicketOperations\obj\x86\Debug\TicketOperations.Views.Besucher.BesucherUebersichtVorstellungenView.resources

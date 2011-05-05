@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
-namespace Models {
+using Finances.Models;
+
+namespace Users.Models {
 	public class Customer : User  {
 		private int customerID;
 		private List<Adress> adress;

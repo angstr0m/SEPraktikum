@@ -1,7 +1,8 @@
 using System;
 using System.Collections.Generic;
-namespace Models {
-    public class MovieTheatre : Interfaces.Subject
+
+namespace Cinema.Models {
+    public class MovieTheatre : Base.AbstractClasses.Subject
     {
         private String name;
         private int seatCount;

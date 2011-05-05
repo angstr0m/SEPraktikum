@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
+using Base.Interfaces;
 
-namespace Base
+namespace Base.AbstractClasses
 {
     /// <summary>
     /// Observer pattern Observable implementation.
@@ -15,7 +13,7 @@ namespace Base
         private List<Observer> observers_workingCopy;
         private List<Observer> observers = new List<Observer>();
         
-        public void AddObserver(Observer observer)
+        public virtual void AddObserver(Observer observer)
         {
             // Make sure the observer-list is not altered while it's beeing iterated.
             if (!flag_iterating)
@@ -29,7 +27,7 @@ namespace Base
             }
         }
         
-        public void RemoveObserver(Observer observer)
+        public virtual void RemoveObserver(Observer observer)
         {
             // Make sure the observer-list is not altered while it's beeing iterated.
             if (!flag_iterating)
@@ -43,7 +41,7 @@ namespace Base
             }
         }
         
-        public void NotifyObservers()
+        public virtual void NotifyObservers()
         {
             // Iterate over all signed in observers and notify them that they should update themselves.
             flag_iterating = true; // Lock the observer list.

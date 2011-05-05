@@ -1,23 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using SEPraktikum.Controller;
-using Interfaces;
-using Models;
-using SEPraktikum.Views.HauptmenuViewSub.AdministratorViewSub.KinosaalEditierenViewSub;
+using Base.AbstractClasses;
+using Base.Interfaces;
+using Cinema.Models;
+using Database.Models;
 
-namespace SEPraktikum.Views.HauptmenuViewSub.AdministratorViewSub
+namespace Cinema.Views.Administrator
 {
-    public partial class KinosaalEditierenView : Form, Observer, Interfaces.View
+    public partial class KinosaalEditierenView : Form, Observer, Base.Interfaces.View
     {
-        private KinosaalVerwaltungController controller;
-        private Database model;
-        private Interfaces.View view;
+        private EntityManager<MovieTheatre> database;
+        private Base.Interfaces.View view;
         private bool initialized = false;
         private MovieTheatre selectedTheatre;
 
@@ -37,22 +30,17 @@ namespace SEPraktikum.Views.HauptmenuViewSub.AdministratorViewSub
             if (!initialized)
             {
                 initialized = true;
-                setModel(Database.Instance);
-                model.AddObserver(this);
-                this.list_kinosaal.DataSource = model.getMovieTheatres();
+                database = new EntityManager<MovieTheatre>();
+                database.AddObserver(this);
+                this.list_kinosaal.DataSource = database.GetElements();
                 this.list_kinosaal.DisplayMember = "Name";
                 System.Console.WriteLine(list_seats.SelectedIndex);
-                if (list_seats.SelectedIndex >= 0 && list_seats.SelectedIndex < model.getMovieTheatres().Count)
+                if (list_seats.SelectedIndex >= 0 && list_seats.SelectedIndex < database.GetElements().Count)
                 {
-                    selectedTheatre = model.getMovieTheatres()[list_seats.SelectedIndex];
+                    selectedTheatre = database.GetElements()[list_seats.SelectedIndex];
                     UpdateSeatsList();
                 }
             }
-        }
-
-        public void setModel(Database _model)
-        {
-            this.model = _model;
         }
 
         private void KinosaalverwaltungView_Load(object sender, EventArgs e)
@@ -81,7 +69,7 @@ namespace SEPraktikum.Views.HauptmenuViewSub.AdministratorViewSub
 
         public void UpdateObserver<T>(T subject) where T : Subject
         {
-            this.list_kinosaal.DataSource = model.getMovieTheatres();
+            this.list_kinosaal.DataSource = database.GetElements();
             this.list_kinosaal.DisplayMember = "Name";
             ((CurrencyManager)this.list_kinosaal.BindingContext[this.list_kinosaal.DataSource]).Refresh();
 
@@ -114,7 +102,7 @@ namespace SEPraktikum.Views.HauptmenuViewSub.AdministratorViewSub
                 selectedTheatre.RemoveObserver(this);
             }
 
-            selectedTheatre = model.getMovieTheatres()[list_kinosaal.SelectedIndex];
+            selectedTheatre = database.GetElements()[list_kinosaal.SelectedIndex];
             selectedTheatre.AddObserver(this);
 
             this.textBox_name.Text = selectedTheatre.Name;

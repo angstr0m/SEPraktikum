@@ -1,5 +1,6 @@
 using System;
-namespace Models {
+
+namespace TicketOperations.Models {
 	public class Booking : Reservation  {
 		private String isPayed;
 

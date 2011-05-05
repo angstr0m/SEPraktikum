@@ -1,17 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using Models;
-using SEPraktikum.Views.HauptmenuViewSub.BesucherViewSub;
+using Base.Interfaces;
+using TicketOperations.Models;
 
-namespace SEPraktikum.Views.HauptmenuViewSub.BesucherViewSub
+namespace TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservierenViewSub
 {
-    public partial class Sitzplatzauswahl : Form, Interfaces.Observer
+    public partial class Sitzplatzauswahl : Form, Observer
     {
         Show selectedShow;
         Ticket selectedTicket;
@@ -143,15 +140,15 @@ namespace SEPraktikum.Views.HauptmenuViewSub.BesucherViewSub
             CheckPermission();
         }
     }
-}
 
-struct Reservation
-{
+    struct Reservation
+    {
 
-}
+    }
 
-struct ErrorHelper
-{
-    public bool valid;
-    public string errorMessage;
+    struct ErrorHelper
+    {
+        public bool valid;
+        public string errorMessage;
+    }
 }

@@ -1,5 +1,6 @@
 using System;
-namespace Controller {
+
+namespace SEPraktikum.Views.HauptmenuViewSub.Controller {
 	public abstract class UserController   {
 		public String GetPassword() {
 			throw new System.Exception("Not implemented");

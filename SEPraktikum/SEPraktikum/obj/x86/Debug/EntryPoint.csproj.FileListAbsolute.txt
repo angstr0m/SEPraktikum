@@ -1,0 +1,12 @@
+C:\Users\N3trunner.MITTELERDE\Desktop\Dropbox\HAW\Semester3\SE\Praktika\SEPraktikumVisualStudio\SEPraktikum\SEPraktikum\obj\x86\Debug\SEPraktikum.exe
+C:\Users\N3trunner.MITTELERDE\Desktop\Dropbox\HAW\Semester3\SE\Praktika\SEPraktikumVisualStudio\SEPraktikum\SEPraktikum\obj\x86\Debug\SEPraktikum.pdb
+C:\Users\N3trunner.MITTELERDE\Desktop\Dropbox\HAW\Semester3\SE\Praktika\SEPraktikumVisualStudio\SEPraktikum\SEPraktikum\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\N3trunner.MITTELERDE\Desktop\Dropbox\HAW\Semester3\SE\Praktika\SEPraktikumVisualStudio\SEPraktikum\SEPraktikum\obj\x86\Debug\SEPraktikum.Views.HauptmenuViewSub.Views.HauptmenuViewSub.AdministratorView.resources
+C:\Users\N3trunner.MITTELERDE\Desktop\Dropbox\HAW\Semester3\SE\Praktika\SEPraktikumVisualStudio\SEPraktikum\SEPraktikum\obj\x86\Debug\SEPraktikum.Views.HauptmenuViewSub.Views.SEPraktikum.resources
+C:\Users\N3trunner.MITTELERDE\Desktop\Dropbox\HAW\Semester3\SE\Praktika\SEPraktikumVisualStudio\SEPraktikum\SEPraktikum\obj\x86\Debug\SEPraktikum.Views.HauptmenuViewSub.Properties.Resources.resources
+C:\Users\N3trunner.MITTELERDE\Desktop\Dropbox\HAW\Semester3\SE\Praktika\SEPraktikumVisualStudio\SEPraktikum\SEPraktikum\obj\x86\Debug\SEPraktikum.Views.HauptmenuViewSub.Views.HauptmenuViewSub.BesucherView.resources
+C:\Users\N3trunner.MITTELERDE\Desktop\Dropbox\HAW\Semester3\SE\Praktika\SEPraktikumVisualStudio\SEPraktikum\SEPraktikum\obj\x86\Debug\SEPraktikum.Views.HauptmenuViewSub.Views.HauptmenuViewSub.KundeView.resources
+C:\Users\N3trunner.MITTELERDE\Desktop\Dropbox\HAW\Semester3\SE\Praktika\SEPraktikumVisualStudio\SEPraktikum\SEPraktikum\obj\x86\Debug\SEPraktikum.Views.HauptmenuViewSub.Views.HauptmenuViewSub.MitarbeiterView.resources
+C:\Users\N3trunner.MITTELERDE\Desktop\Dropbox\HAW\Semester3\SE\Praktika\SEPraktikumVisualStudio\SEPraktikum\SEPraktikum\obj\x86\Debug\SEPraktikum.Views.HauptmenuViewSub.Views.SplashScreen.resources
+C:\Users\N3trunner.MITTELERDE\Desktop\Dropbox\HAW\Semester3\SE\Praktika\SEPraktikumVisualStudio\SEPraktikum\SEPraktikum\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\N3trunner.MITTELERDE\Desktop\Dropbox\HAW\Semester3\SE\Praktika\SEPraktikumVisualStudio\SEPraktikum\SEPraktikum\obj\x86\Debug\GenerateResource.write.1.tlog

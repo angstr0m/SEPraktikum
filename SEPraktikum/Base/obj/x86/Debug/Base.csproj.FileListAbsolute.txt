@@ -1,1 +1,5 @@
 C:\Users\N3trunner.MITTELERDE\Desktop\Dropbox\HAW\Semester3\SE\Praktika\SEPraktikumVisualStudio\SEPraktikum\Base\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\N3trunner.MITTELERDE\Desktop\Dropbox\HAW\Semester3\SE\Praktika\SEPraktikumVisualStudio\SEPraktikum\Base\bin\Debug\Base.dll
+C:\Users\N3trunner.MITTELERDE\Desktop\Dropbox\HAW\Semester3\SE\Praktika\SEPraktikumVisualStudio\SEPraktikum\Base\bin\Debug\Base.pdb
+C:\Users\N3trunner.MITTELERDE\Desktop\Dropbox\HAW\Semester3\SE\Praktika\SEPraktikumVisualStudio\SEPraktikum\Base\obj\x86\Debug\Base.dll
+C:\Users\N3trunner.MITTELERDE\Desktop\Dropbox\HAW\Semester3\SE\Praktika\SEPraktikumVisualStudio\SEPraktikum\Base\obj\x86\Debug\Base.pdb

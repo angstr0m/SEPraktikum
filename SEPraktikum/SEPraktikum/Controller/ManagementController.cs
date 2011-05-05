@@ -1,3 +1,5 @@
-using System;
-public class ManagementController {
+namespace SEPraktikum.Views.HauptmenuViewSub.Controller
+{
+    public class ManagementController {
+    }
 }

@@ -1,7 +1,9 @@
-using System;
 using System.Collections.Generic;
-namespace Models {
-    public class Reservation : Interfaces.Subject
+using Base.AbstractClasses;
+using Users.Models;
+
+namespace TicketOperations.Models {
+    public class Reservation : Subject
     {
 		private int number;
 		private Show show;

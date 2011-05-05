@@ -1,4 +1,4 @@
-﻿namespace SEPraktikum.Views.HauptmenuViewSub.Views.HauptmenuViewSub.BesucherViewSub
+﻿namespace TicketOperations.Views.Besucher
 {
     partial class BesucherUebersichtVorstellungenView
     {

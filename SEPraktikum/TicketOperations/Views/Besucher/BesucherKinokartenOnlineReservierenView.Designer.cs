@@ -1,4 +1,4 @@
-﻿namespace SEPraktikum.Views.HauptmenuViewSub.BesucherViewSub
+﻿namespace TicketOperations.Views.Besucher
 {
     partial class BesucherKinokartenOnlineReservieren
     {
@@ -123,7 +123,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(497, 386);
+            this.ClientSize = new System.Drawing.Size(503, 384);
             this.Controls.Add(this.button_back);
             this.Controls.Add(this.label_numberOfAvailableTickets);
             this.Controls.Add(this.textBox_numberOfAvalableTickets);

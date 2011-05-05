@@ -1,14 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using SEPraktikum.Views.HauptmenuViewSub.BesucherViewSub;
 
-namespace SEPraktikum.Views.HauptmenuViewSub
+namespace SEPraktikum.Views.HauptmenuViewSub.Views.HauptmenuViewSub
 {
     public partial class BesucherView : Form
     {

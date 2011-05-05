@@ -1,6 +1,8 @@
 using System;
-namespace Models {
-    public abstract class User : Interfaces.Subject
+using Base.AbstractClasses;
+
+namespace Users.Models {
+    public abstract class User : Subject
     {
 		private String name;
 		private String eMail;

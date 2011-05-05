@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
-namespace Models {
-	public class MovieProgram : Interfaces.Subject  {
+using Base.AbstractClasses;
+
+namespace TicketOperations.Models {
+	public class MovieProgram : Subject  {
         private DateTime startDateTime;
         private List<Show> shows;
         private bool published;

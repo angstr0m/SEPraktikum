@@ -1,4 +1,4 @@
-﻿namespace SEPraktikum.Views
+﻿namespace SEPraktikum.Views.HauptmenuViewSub.Views
 {
     partial class SplashScreen
     {

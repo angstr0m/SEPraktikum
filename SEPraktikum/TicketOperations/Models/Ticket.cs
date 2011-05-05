@@ -1,6 +1,8 @@
-using System;
-namespace Models {
-    public class Ticket : Interfaces.Subject
+using Base.AbstractClasses;
+using Cinema.Models;
+
+namespace TicketOperations.Models {
+    public class Ticket : Subject
     {
         private bool sold;
         private bool reserved;
@@ -58,7 +60,7 @@ namespace Models {
             }
         }
 
-        public Models.Seat Seat
+        public Seat Seat
         {
             get { return seat; }
         }

@@ -1,4 +1,4 @@
-﻿namespace SEPraktikum.Views.HauptmenuViewSub.BesucherViewSub
+﻿namespace TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservierenViewSub
 {
     partial class Sitzplatzauswahl
     {

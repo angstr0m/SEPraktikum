@@ -1,5 +1,4 @@
-using System;
-namespace Models {
+namespace Users.Models {
 	public class Administrator : Employee   {
 	}
 

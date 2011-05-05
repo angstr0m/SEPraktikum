@@ -1,7 +1,8 @@
-using System;
 using System.Collections.Generic;
-namespace Models {
-	public class Account : Interfaces.Subject {
+using Base.AbstractClasses;
+
+namespace Finances.Models {
+	public class Account : Subject {
 		private float balance;
 		private List<PaymentInfo> paymentInfo;
 

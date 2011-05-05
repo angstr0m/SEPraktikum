@@ -1,6 +1,7 @@
 using System;
-namespace Models {
-    public class Seat : Interfaces.Subject
+
+namespace Cinema.Models {
+    public class Seat : Base.AbstractClasses.Subject
     {
         private string identifier;
 		private Char seatRow;

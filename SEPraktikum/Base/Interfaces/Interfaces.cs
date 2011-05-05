@@ -1,16 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using Base.AbstractClasses;
 
-namespace Base
+namespace Base.Interfaces
 {
-    //public interface Model : Subject
-    //{
-    //    void AddObserver(Interfaces.View view);
-    //    void RemoveObserver(Interfaces.View view);
-    //    void NotifyObservers();
-    //}
 
     public interface Model
     {
