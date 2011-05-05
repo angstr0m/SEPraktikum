@@ -65,43 +65,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\HauptmenuController.cs" />
-    <Compile Include="AbstractClasses\Subject.cs" />
     <Compile Include="Controller\KinosaalVerwaltungController.cs" />
-    <Compile Include="Models\Account.cs" />
-    <Compile Include="Models\Administrator.cs" />
     <Compile Include="Controller\AdministratorController.cs" />
-    <Compile Include="Models\Adress.cs" />
     <Compile Include="Controller\AdressController.cs" />
-    <Compile Include="Models\AutoDebit.cs" />
-    <Compile Include="Models\Booking.cs" />
     <Compile Include="Controller\BookingController.cs" />
     <Compile Include="Controller\CinemaBrowsingController.cs" />
-    <Compile Include="Models\CreditCard.cs" />
-    <Compile Include="Models\Customer.cs" />
     <Compile Include="Controller\CustomerController.cs" />
-    <Compile Include="Models\Database.cs" />
-    <Compile Include="Models\Employee.cs" />
     <Compile Include="Controller\EmployeeController.cs" />
-    <Compile Include="Models\MovieProgram.cs" />
     <Compile Include="Controller\FilmprogramController.cs" />
-    <Compile Include="Models\Iterable.cs" />
     <Compile Include="Controller\ManagementController.cs" />
-    <Compile Include="Models\Movie.cs" />
     <Compile Include="Controller\MovieController.cs" />
-    <Compile Include="Models\MovieTheatre.cs" />
     <Compile Include="Controller\MovieTheatreController.cs" />
-    <Compile Include="Models\PaymentInfo.cs" />
-    <Compile Include="Models\PayPal.cs" />
     <Compile Include="Controller\ProductController.cs" />
-    <Compile Include="Models\Reservation.cs" />
     <Compile Include="Controller\ReservationController.cs" />
-    <Compile Include="Models\Seat.cs" />
     <Compile Include="Controller\SeatController.cs" />
-    <Compile Include="Models\Show.cs" />
     <Compile Include="Controller\ShowController.cs" />
-    <Compile Include="Models\Ticket.cs" />
     <Compile Include="Controller\TicketController.cs" />
-    <Compile Include="Models\User.cs" />
     <Compile Include="Controller\UserController.cs" />
     <Compile Include="Views\HauptmenuViewSub\AdministratorView.Designer.cs">
       <DependentUpon>AdministratorView.cs</DependentUpon>
@@ -109,59 +88,11 @@
     <Compile Include="Views\HauptmenuViewSub\AdministratorView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\HauptmenuViewSub\AdministratorViewSub\KinosaalEditierenViewSub\KinositzAnlegenView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\HauptmenuViewSub\AdministratorViewSub\KinosaalEditierenViewSub\KinositzAnlegenView.Designer.cs">
-      <DependentUpon>KinositzAnlegenView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\HauptmenuViewSub\AdministratorViewSub\KinosaalLoeschenView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\HauptmenuViewSub\AdministratorViewSub\KinosaalLoeschenView.Designer.cs">
-      <DependentUpon>KinosaalLoeschenView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\HauptmenuViewSub\AdministratorViewSub\KinosaalAnlegenView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\HauptmenuViewSub\AdministratorViewSub\KinosaalAnlegenView.Designer.cs">
-      <DependentUpon>KinosaalAnlegenView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\HauptmenuViewSub\AdministratorViewSub\KinosaalEditierenView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\HauptmenuViewSub\AdministratorViewSub\KinosaalEditierenView.Designer.cs">
-      <DependentUpon>KinosaalEditierenView.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\HauptmenuViewSub\BesucherView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\HauptmenuViewSub\BesucherView.Designer.cs">
       <DependentUpon>BesucherView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\HauptmenuViewSub\BesucherViewSub\BesucherKinokartenOnlineReservierenView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\HauptmenuViewSub\BesucherViewSub\BesucherKinokartenOnlineReservierenView.Designer.cs">
-      <DependentUpon>BesucherKinokartenOnlineReservierenView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\HauptmenuViewSub\BesucherViewSub\BesucherKinokartenOnlineReservierenViewSub\ReservierungsUebersicht.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\HauptmenuViewSub\BesucherViewSub\BesucherKinokartenOnlineReservierenViewSub\ReservierungsUebersicht.Designer.cs">
-      <DependentUpon>ReservierungsUebersicht.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\HauptmenuViewSub\BesucherViewSub\BesucherKinokartenOnlineReservierenViewSub\Sitzplatzauswahl.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\HauptmenuViewSub\BesucherViewSub\BesucherKinokartenOnlineReservierenViewSub\Sitzplatzauswahl.Designer.cs">
-      <DependentUpon>Sitzplatzauswahl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\HauptmenuViewSub\BesucherViewSub\BesucherUebersichtVorstellungenView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\HauptmenuViewSub\BesucherViewSub\BesucherUebersichtVorstellungenView.Designer.cs">
-      <DependentUpon>BesucherUebersichtVorstellungenView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\HauptmenuViewSub\KundeView.cs">
       <SubType>Form</SubType>
@@ -175,8 +106,6 @@
     <Compile Include="Views\HauptmenuView.Designer.cs">
       <DependentUpon>HauptmenuView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\Interfaces.cs" />
-    <Compile Include="Models\testClass.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\HauptmenuViewSub\MitarbeiterView.cs">
@@ -207,32 +136,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Views\HauptmenuViewSub\AdministratorViewSub\KinosaalEditierenViewSub\KinositzAnlegenView.resx">
-      <DependentUpon>KinositzAnlegenView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\HauptmenuViewSub\AdministratorViewSub\KinosaalLoeschenView.resx">
-      <DependentUpon>KinosaalLoeschenView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\HauptmenuViewSub\AdministratorViewSub\KinosaalAnlegenView.resx">
-      <DependentUpon>KinosaalAnlegenView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\HauptmenuViewSub\AdministratorViewSub\KinosaalEditierenView.resx">
-      <DependentUpon>KinosaalEditierenView.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\HauptmenuViewSub\BesucherView.resx">
       <DependentUpon>BesucherView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\HauptmenuViewSub\BesucherViewSub\BesucherKinokartenOnlineReservierenView.resx">
-      <DependentUpon>BesucherKinokartenOnlineReservierenView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\HauptmenuViewSub\BesucherViewSub\BesucherKinokartenOnlineReservierenViewSub\ReservierungsUebersicht.resx">
-      <DependentUpon>ReservierungsUebersicht.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\HauptmenuViewSub\BesucherViewSub\BesucherKinokartenOnlineReservierenViewSub\Sitzplatzauswahl.resx">
-      <DependentUpon>Sitzplatzauswahl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\HauptmenuViewSub\BesucherViewSub\BesucherUebersichtVorstellungenView.resx">
-      <DependentUpon>BesucherUebersichtVorstellungenView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\HauptmenuViewSub\KundeView.resx">
       <DependentUpon>KundeView.cs</DependentUpon>
@@ -287,7 +192,9 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

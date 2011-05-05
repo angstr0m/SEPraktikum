@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FFDCF527-C890-4B77-A201-292D5E0CE18F}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Cinema</RootNamespace>
+    <AssemblyName>Cinema</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Models\Movie.cs" />
+    <Compile Include="Models\MovieTheatre.cs" />
+    <Compile Include="Models\Seat.cs" />
+    <Compile Include="Views\Administrator\KinosaalAnlegenView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Administrator\KinosaalAnlegenView.Designer.cs">
+      <DependentUpon>KinosaalAnlegenView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Administrator\KinosaalEditierenView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Administrator\KinosaalEditierenView.Designer.cs">
+      <DependentUpon>KinosaalEditierenView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Administrator\KinosaalLoeschenView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Administrator\KinosaalLoeschenView.Designer.cs">
+      <DependentUpon>KinosaalLoeschenView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Administrator\KinositzAnlegenView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Administrator\KinositzAnlegenView.Designer.cs">
+      <DependentUpon>KinositzAnlegenView.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Administrator\KinosaalAnlegenView.resx">
+      <DependentUpon>KinosaalAnlegenView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Administrator\KinosaalEditierenView.resx">
+      <DependentUpon>KinosaalEditierenView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Administrator\KinosaalLoeschenView.resx">
+      <DependentUpon>KinosaalLoeschenView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Administrator\KinositzAnlegenView.resx">
+      <DependentUpon>KinositzAnlegenView.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
