@@ -6,7 +6,7 @@
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{693E8C0C-D47E-4483-8755-3722DCB841D5}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TicketOperations</RootNamespace>
     <AssemblyName>TicketOperations</AssemblyName>
@@ -32,6 +32,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
   </PropertyGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\Besucher\BesucherKinokartenOnlineReservierenView.resx">
@@ -91,6 +94,10 @@
     <ProjectReference Include="..\Cinema\Cinema.csproj">
       <Project>{FFDCF527-C890-4B77-A201-292D5E0CE18F}</Project>
       <Name>Cinema</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Database\Database.csproj">
+      <Project>{D54D34FF-8ABC-4AEE-9190-7D0E48D49FED}</Project>
+      <Name>Database</Name>
     </ProjectReference>
     <ProjectReference Include="..\Users\Users.csproj">
       <Project>{16617112-8305-4A0C-911A-3EFF4573B7E1}</Project>

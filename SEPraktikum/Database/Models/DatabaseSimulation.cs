@@ -35,6 +35,8 @@ namespace Database.Models
             }
 
             entityDict[typeof(T)].Add(value);
+
+            NotifyObservers();
         }
 
         public bool RemoveValueFromDatabase<T>(T value)
@@ -44,12 +46,23 @@ namespace Database.Models
                 return false;
             }
 
-            return entityDict[typeof(T)].Remove(value);
+            bool rv = entityDict[typeof(T)].Remove(value);
+
+            NotifyObservers();
+
+            return rv;
         }
 
         public dynamic GetValuesFromDatabaseForType(Type type)
         {
-            return entityDict[type];
+            if (entityDict.ContainsKey(type))
+            {
+                return entityDict[type];
+            }
+            else
+            {
+                return null;
+            }
         }
     }
 }

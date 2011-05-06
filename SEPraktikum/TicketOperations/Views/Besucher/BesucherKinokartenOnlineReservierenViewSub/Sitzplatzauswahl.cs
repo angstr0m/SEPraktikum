@@ -28,6 +28,8 @@ namespace TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservierenVie
             this.dateTimePicker_birthDate.MaxDate = DateTime.Today;
 
             errorProvider.BlinkRate = 0;
+
+            CheckPermission();
         }
 
         private void Sitzplatzauswahl_Load(object sender, EventArgs e)
@@ -131,7 +133,7 @@ namespace TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservierenVie
             return helper;
         }
 
-        public void UpdateObserver<T>(T subject) where T : Interfaces.Subject
+        public void UpdateObserver<T>(T subject) where T : Base.AbstractClasses.Subject
         {
             this.list_sitzplatz.DataSource = selectedShow.GetAvailableTickets();
             this.list_sitzplatz.DisplayMember = "Seat";

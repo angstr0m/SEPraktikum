@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using Database.Models;
 using TicketOperations.Models;
 using TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservierenViewSub;
 
@@ -8,13 +9,33 @@ namespace TicketOperations.Views.Besucher
     public partial class BesucherKinokartenOnlineReservieren : Form, Base.Interfaces.Observer
     {
         Show selectedShow;
+        private EntityManager<MovieProgram> database;
+
         Sitzplatzauswahl sitzplatzAuswahl;
 
         public BesucherKinokartenOnlineReservieren()
         {
             InitializeComponent();
-            this.listBox_Shows.DataSource = Database.Instance.getMovieProgramForThisWeek().Shows;
+            database = new EntityManager<MovieProgram>();
+            
+            this.listBox_Shows.DataSource = database.GetElements()[0].Shows;
             this.listBox_Shows.DisplayMember = "Name";
+
+            ValidateInput();
+        }
+
+        private bool ValidateInput()
+        {
+            bool valid = false;
+
+            if (listBox_Shows.SelectedIndex != -1)
+            {
+                valid = true;
+            }
+
+            this.button_chooseSelectedShow.Enabled = valid;
+
+            return valid;
         }
 
         private void BesucherKinokartenOnlineReservieren_Load(object sender, EventArgs e)
@@ -25,6 +46,7 @@ namespace TicketOperations.Views.Besucher
         private void listBox_Shows_SelectedIndexChanged(object sender, EventArgs e)
         {
             UpdateShowInformations();
+            ValidateInput();
         }
 
         void UpdateShowInformations()
@@ -46,7 +68,7 @@ namespace TicketOperations.Views.Besucher
                 selectedShow.RemoveObserver(this);
             }
 
-            selectedShow = Database.Instance.getMovieProgramForThisWeek().Shows[listBox_Shows.SelectedIndex];
+            selectedShow = database.GetElements()[0].Shows[listBox_Shows.SelectedIndex];
             selectedShow.AddObserver(this);
 
             this.textBox_numberOfAvalableTickets.Text = selectedShow.GetNumberOfFreeSeats() + "";
@@ -54,7 +76,7 @@ namespace TicketOperations.Views.Besucher
             this.textBox_ShowStart.Text = selectedShow.StartTime.ToString();
         }
 
-        public void UpdateObserver<T>(T subject) where T : Interfaces.Subject
+        public void UpdateObserver<T>(T subject) where T : Base.AbstractClasses.Subject
         {
             this.textBox_numberOfAvalableTickets.Text = selectedShow.GetNumberOfFreeSeats() + "";
             this.textBox_ShowDuration.Text = selectedShow.Duration + "";

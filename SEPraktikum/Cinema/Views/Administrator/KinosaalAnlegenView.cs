@@ -19,6 +19,7 @@ namespace Cinema.Views.Administrator
         {
             InitializeComponent();
             errorProvider1.BlinkRate = 0;
+            database = new EntityManager<MovieTheatre>();
             ValidateThis();
         }
 

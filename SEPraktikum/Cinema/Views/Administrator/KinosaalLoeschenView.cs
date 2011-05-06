@@ -50,7 +50,7 @@ namespace Cinema.Views.Administrator
 
         public void UpdateObserver<T>(T subject) where T : Subject
         {
-            this.list_kinosaal.DataSource = database.getMovieTheatres();
+            this.list_kinosaal.DataSource = database.GetElements();
             this.list_kinosaal.DisplayMember = "Name";
             ((CurrencyManager)this.list_kinosaal.BindingContext[this.list_kinosaal.DataSource]).Refresh();
 
@@ -65,9 +65,9 @@ namespace Cinema.Views.Administrator
         private void UpdateSelectedTheatre()
         {
             System.Console.WriteLine("Selected Index: " + list_kinosaal.SelectedIndex);
-            if (list_kinosaal.SelectedIndex >= 0 && list_kinosaal.SelectedIndex < database.getMovieTheatres().Count)
+            if (list_kinosaal.SelectedIndex >= 0 && list_kinosaal.SelectedIndex < database.GetElements().Count)
             {
-                selectedTheatre = database.getMovieTheatres()[list_kinosaal.SelectedIndex];
+                selectedTheatre = database.GetElements()[list_kinosaal.SelectedIndex];
             }
         }
 
@@ -80,7 +80,7 @@ namespace Cinema.Views.Administrator
 
             if (MessageBox.Show("Kinosaal wirklich löschen?", "Löschen Bestätigen", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                database.removeMovieTheatre(database.getMovieTheatres()[list_kinosaal.SelectedIndex]);
+                database.RemoveElement(database.GetElements()[list_kinosaal.SelectedIndex]);
             }
         }
     }
