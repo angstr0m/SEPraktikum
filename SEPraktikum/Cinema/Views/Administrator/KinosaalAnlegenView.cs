@@ -6,15 +6,38 @@ using Database.Models;
 
 namespace Cinema.Views.Administrator
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <remarks></remarks>
     public partial class KinosaalAnlegenView : Form
     {
+        /// <summary>
+        /// 
+        /// </summary>
         private EntityManager<MovieTheatre> database; 
         // Data needed for the creation of a new MovieTheatre.
+        /// <summary>
+        /// 
+        /// </summary>
         private string movieTheatreName;
+        /// <summary>
+        /// 
+        /// </summary>
         private int number_of_seats;
+        /// <summary>
+        /// 
+        /// </summary>
         private int seats_per_rank;
+        /// <summary>
+        /// 
+        /// </summary>
         private int ranks;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="T:System.Windows.Forms.Form"/> class.
+        /// </summary>
+        /// <remarks></remarks>
         public KinosaalAnlegenView()
         {
             InitializeComponent();
@@ -23,10 +46,20 @@ namespace Cinema.Views.Administrator
             ValidateThis();
         }
 
+        /// <summary>
+        /// Sets the controller.
+        /// </summary>
+        /// <remarks></remarks>
         public void SetController() {
             
         }
 
+        /// <summary>
+        /// Handles the Click event of the button_abbrechen control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
+        /// <remarks></remarks>
         private void button_abbrechen_Click(object sender, EventArgs e)
         {
             this.Owner.Show();
@@ -34,6 +67,12 @@ namespace Cinema.Views.Administrator
         }
 
         // If the input provided by the user is valid, generate a new MovieTheatre and add it to the database.
+        /// <summary>
+        /// Handles the Click event of the button_ok control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
+        /// <remarks></remarks>
         private void button_ok_Click(object sender, EventArgs e)
         {
             number_of_seats = ranks * seats_per_rank;
@@ -58,27 +97,55 @@ namespace Cinema.Views.Administrator
             this.Close();
         }
 
+        /// <summary>
+        /// Handles the TextChanged event of the textBox_name control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
+        /// <remarks></remarks>
         private void textBox_name_TextChanged(object sender, EventArgs e)
         {
             ValidateThis(); // Validate the Input as soon as the user inputs new data.
         }
 
+        /// <summary>
+        /// Handles the Load event of the KinosaalAnlegen control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
+        /// <remarks></remarks>
         private void KinosaalAnlegen_Load(object sender, EventArgs e)
         {
             ValidateThis(); // Validate the Input as soon as the user inputs new data.
         }
 
+        /// <summary>
+        /// Handles the TextChanged event of the textBox_ranks control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
+        /// <remarks></remarks>
         private void textBox_ranks_TextChanged(object sender, EventArgs e)
         {
             ValidateThis(); // Validate the Input as soon as the user inputs new data.
         }
 
+        /// <summary>
+        /// Handles the TextChanged event of the textBox_seatsPerRank control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
+        /// <remarks></remarks>
         private void textBox_seatsPerRank_TextChanged(object sender, EventArgs e)
         {
             ValidateThis(); // Validate the Input as soon as the user inputs new data.
         }
 
         // Validate the form
+        /// <summary>
+        /// Validates the this.
+        /// </summary>
+        /// <remarks></remarks>
         private void ValidateThis()
         {
             bool valid = true;
@@ -90,6 +157,11 @@ namespace Cinema.Views.Administrator
         }
 
         // Validate the input of the user
+        /// <summary>
+        /// Validates the input.
+        /// </summary>
+        /// <returns></returns>
+        /// <remarks></remarks>
         private bool ValidateInput()
         {
             bool valid = true; // Will be set false if any of the validations fail. Is returned at the end of this method.

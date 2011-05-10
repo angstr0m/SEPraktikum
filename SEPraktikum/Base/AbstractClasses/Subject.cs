@@ -6,13 +6,31 @@ namespace Base.AbstractClasses
     /// <summary>
     /// Observer pattern Observable implementation.
     /// </summary>
+    /// <remarks></remarks>
     public abstract class Subject
     {
+        /// <summary>
+        /// Used to prevent the altering of the observer list while iterating over it.
+        /// </summary>
         private bool flag_iterating = false;
+        /// <summary>
+        /// Set when, while an iteration was done, a new observer signed up.
+        /// </summary>
         private bool flag_update_list = false;
+        /// <summary>
+        /// Temporary copy of the observer-list.
+        /// </summary>
         private List<Observer> observers_workingCopy;
+        /// <summary>
+        /// The list of the observers.
+        /// </summary>
         private List<Observer> observers = new List<Observer>();
-        
+
+        /// <summary>
+        /// Adds the observer to the observer list.
+        /// </summary>
+        /// <param name="observer">The observer.</param>
+        /// <remarks></remarks>
         public virtual void AddObserver(Observer observer)
         {
             // Make sure the observer-list is not altered while it's beeing iterated.
@@ -26,7 +44,12 @@ namespace Base.AbstractClasses
                 flag_update_list = true;
             }
         }
-        
+
+        /// <summary>
+        /// Removes the observer from the observer list.
+        /// </summary>
+        /// <param name="observer">The observer.</param>
+        /// <remarks></remarks>
         public virtual void RemoveObserver(Observer observer)
         {
             // Make sure the observer-list is not altered while it's beeing iterated.
@@ -40,7 +63,11 @@ namespace Base.AbstractClasses
                 flag_update_list = true;
             }
         }
-        
+
+        /// <summary>
+        /// Notifies the observers.
+        /// </summary>
+        /// <remarks></remarks>
         public virtual void NotifyObservers()
         {
             // Iterate over all signed in observers and notify them that they should update themselves.

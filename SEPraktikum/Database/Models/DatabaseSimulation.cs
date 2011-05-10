@@ -6,15 +6,33 @@ using Base.Interfaces;
 
 namespace Database.Models
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <remarks></remarks>
     class DatabaseSimulation : Subject, Model
     {
+        /// <summary>
+        /// 
+        /// </summary>
         private static DatabaseSimulation instance;
+        /// <summary>
+        /// 
+        /// </summary>
         private Dictionary<Type, dynamic> entityDict;
 
+        /// <summary>
+        /// Prevents a default instance of the <see cref="DatabaseSimulation"/> class from being created.
+        /// </summary>
+        /// <remarks></remarks>
         private DatabaseSimulation() {
             entityDict = new Dictionary<Type, dynamic>();
         }
 
+        /// <summary>
+        /// Gets the instance.
+        /// </summary>
+        /// <remarks></remarks>
         public static DatabaseSimulation Instance
         {
             get
@@ -27,6 +45,12 @@ namespace Database.Models
             }
         }
 
+        /// <summary>
+        /// Adds the value to database.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="value">The value.</param>
+        /// <remarks></remarks>
         public void AddValueToDatabase<T>(T value)
         {
             if (!entityDict.ContainsKey(typeof(T)))
@@ -39,6 +63,13 @@ namespace Database.Models
             NotifyObservers();
         }
 
+        /// <summary>
+        /// Removes the value from database.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="value">The value.</param>
+        /// <returns></returns>
+        /// <remarks></remarks>
         public bool RemoveValueFromDatabase<T>(T value)
         {
             if (!entityDict.ContainsKey(typeof(T)))
@@ -53,6 +84,12 @@ namespace Database.Models
             return rv;
         }
 
+        /// <summary>
+        /// Gets the type of the values from database for.
+        /// </summary>
+        /// <param name="type">The type.</param>
+        /// <returns></returns>
+        /// <remarks></remarks>
         public dynamic GetValuesFromDatabaseForType(Type type)
         {
             if (entityDict.ContainsKey(type))

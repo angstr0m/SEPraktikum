@@ -46,9 +46,6 @@
     <EmbeddedResource Include="Views\Besucher\BesucherKinokartenOnlineReservierenViewSub\Sitzplatzauswahl.resx">
       <DependentUpon>Sitzplatzauswahl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Besucher\BesucherUebersichtVorstellungenView.resx">
-      <DependentUpon>BesucherUebersichtVorstellungenView.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Booking.cs" />
@@ -73,12 +70,6 @@
     </Compile>
     <Compile Include="Views\Besucher\BesucherKinokartenOnlineReservierenViewSub\Sitzplatzauswahl.Designer.cs">
       <DependentUpon>Sitzplatzauswahl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Besucher\BesucherUebersichtVorstellungenView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\Besucher\BesucherUebersichtVorstellungenView.Designer.cs">
-      <DependentUpon>BesucherUebersichtVorstellungenView.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

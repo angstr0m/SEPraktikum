@@ -7,24 +7,52 @@ using Database.Models;
 
 namespace Cinema.Views.Administrator
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <remarks></remarks>
     public partial class KinosaalEditierenView : Form, Observer, Base.Interfaces.View
     {
+        /// <summary>
+        /// 
+        /// </summary>
         private EntityManager<MovieTheatre> database;
+        /// <summary>
+        /// 
+        /// </summary>
         private Base.Interfaces.View view;
+        /// <summary>
+        /// 
+        /// </summary>
         private bool initialized = false;
+        /// <summary>
+        /// 
+        /// </summary>
         private MovieTheatre selectedTheatre;
 
+        /// <summary>
+        /// Gets the selected theatre.
+        /// </summary>
+        /// <remarks></remarks>
         public MovieTheatre SelectedTheatre
         {
             get { return selectedTheatre; }
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="T:System.Windows.Forms.Form"/> class.
+        /// </summary>
+        /// <remarks></remarks>
         public KinosaalEditierenView()
         {
             InitializeComponent();
             Initialize();
         }
 
+        /// <summary>
+        /// Initializes this instance.
+        /// </summary>
+        /// <remarks></remarks>
         public void Initialize()
         {
             if (!initialized)
@@ -43,6 +71,12 @@ namespace Cinema.Views.Administrator
             }
         }
 
+        /// <summary>
+        /// Handles the Load event of the KinosaalverwaltungView control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
+        /// <remarks></remarks>
         private void KinosaalverwaltungView_Load(object sender, EventArgs e)
         {
             Initialize();
@@ -61,12 +95,24 @@ namespace Cinema.Views.Administrator
             }
         }
 
+        /// <summary>
+        /// Handles the Click event of the button_zurueck control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
+        /// <remarks></remarks>
         private void button_zurueck_Click(object sender, EventArgs e)
         {
             this.Hide();
             this.Owner.Show();
         }
 
+        /// <summary>
+        /// Updates the observer.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="subject">The subject.</param>
+        /// <remarks></remarks>
         public void UpdateObserver<T>(T subject) where T : Subject
         {
             this.list_kinosaal.DataSource = database.GetElements();
@@ -77,6 +123,12 @@ namespace Cinema.Views.Administrator
             UpdateSeatsList();
         }
 
+        /// <summary>
+        /// Handles the SelectedIndexChanged event of the list_kinosaal control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
+        /// <remarks></remarks>
         private void list_kinosaal_SelectedIndexChanged(object sender, EventArgs e)
         {
             
@@ -84,6 +136,10 @@ namespace Cinema.Views.Administrator
             UpdateSeatsList();    
         }
 
+        /// <summary>
+        /// Updates the selected theatre.
+        /// </summary>
+        /// <remarks></remarks>
         private void UpdateSelectedTheatre()
         {
             if (list_kinosaal.SelectedIndex == -1)
@@ -110,6 +166,10 @@ namespace Cinema.Views.Administrator
             
         }
 
+        /// <summary>
+        /// Updates the seats list.
+        /// </summary>
+        /// <remarks></remarks>
         private void UpdateSeatsList()
         {
             if (selectedTheatre == null || list_kinosaal.SelectedIndex == -1)
@@ -123,11 +183,23 @@ namespace Cinema.Views.Administrator
             ((CurrencyManager)this.list_seats.BindingContext[this.list_seats.DataSource]).Refresh();
         }
 
+        /// <summary>
+        /// Handles the SelectedIndexChanged event of the list_seats control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
+        /// <remarks></remarks>
         private void list_seats_SelectedIndexChanged(object sender, EventArgs e)
         {
             
         }
 
+        /// <summary>
+        /// Handles the Click event of the button_addSeat control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
+        /// <remarks></remarks>
         private void button_addSeat_Click(object sender, EventArgs e)
         {
             KinositzAnlegenView kinositzAnlegenView = new KinositzAnlegenView();
@@ -135,6 +207,12 @@ namespace Cinema.Views.Administrator
             kinositzAnlegenView.ShowDialog(this);
         }
 
+        /// <summary>
+        /// Handles the Click event of the button_removeSeat control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
+        /// <remarks></remarks>
         private void button_removeSeat_Click(object sender, EventArgs e)
         {
             if (list_seats.SelectedIndex != -1)

@@ -9,9 +9,6 @@
   </SettingsComponent>
   <RecentFiles>
     <RecentFiles>
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Views/d:Besucher/f:BesucherKinokartenOnlineReservierenView.Designer.cs" caret="537" fromTop="14" />
-      <File id="16617112-8305-4A0C-911A-3EFF4573B7E1/d:Models/f:User.cs" caret="105" fromTop="0" />
-      <File id="16617112-8305-4A0C-911A-3EFF4573B7E1/d:Models/f:Employee.cs" caret="0" fromTop="0" />
       <File id="16617112-8305-4A0C-911A-3EFF4573B7E1/d:Models/f:Customer.cs" caret="1057" fromTop="32" />
       <File id="16617112-8305-4A0C-911A-3EFF4573B7E1/d:Models/f:Administrator.cs" caret="0" fromTop="0" />
       <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Ticket.cs" caret="1542" fromTop="62" />
@@ -24,37 +21,26 @@
       <File id="16617112-8305-4A0C-911A-3EFF4573B7E1/d:Models/f:Adress.cs" caret="98" fromTop="4" />
       <File id="22E855AA-DE16-4254-ABC3-A413790289E9/d:Models/f:PayPal.cs" caret="0" fromTop="0" />
       <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Show.cs" caret="227" fromTop="0" />
-      <File id="76A4DFAD-72A0-461F-BDA4-E4C497587DD3/f:Program.cs" caret="1365" fromTop="34" />
       <File id="4FCA7BC2-B5FD-4192-81BD-A86B18F78339/d:AbstractClasses/f:Subject.cs" caret="477" fromTop="9" />
-      <File id="D54D34FF-8ABC-4AEE-9190-7D0E48D49FED/d:Models/f:EntityManager.cs" caret="1289" fromTop="48" />
-      <File id="FFDCF527-C890-4B77-A201-292D5E0CE18F/d:Models/f:Movie.cs" caret="98" fromTop="4" />
       <File id="FFDCF527-C890-4B77-A201-292D5E0CE18F/d:Models/f:MovieTheatre.cs" caret="131" fromTop="4" />
       <File id="FFDCF527-C890-4B77-A201-292D5E0CE18F/d:Models/f:Seat.cs" caret="88" fromTop="3" />
-      <File id="FFDCF527-C890-4B77-A201-292D5E0CE18F/d:Views/d:Administrator/f:KinosaalAnlegenView.cs" caret="4184" fromTop="79" />
       <File id="FFDCF527-C890-4B77-A201-292D5E0CE18F/d:Views/d:Administrator/f:KinosaalEditierenView.cs" caret="3323" fromTop="5" />
-      <File id="FFDCF527-C890-4B77-A201-292D5E0CE18F/d:Views/d:Administrator/f:KinosaalLoeschenView.cs" caret="2852" fromTop="49" />
-      <File id="FFDCF527-C890-4B77-A201-292D5E0CE18F/d:Views/d:Administrator/f:KinositzAnlegenView.cs" caret="3266" fromTop="65" />
-      <File id="D54D34FF-8ABC-4AEE-9190-7D0E48D49FED/d:Models/f:DatabaseSimulation.cs" caret="1455" fromTop="57" />
       <File id="76A4DFAD-72A0-461F-BDA4-E4C497587DD3/d:Views/f:HauptmenuView.cs" caret="529" fromTop="19" />
       <File id="22E855AA-DE16-4254-ABC3-A413790289E9/d:Models/f:PaymentInfo.cs" caret="207" fromTop="12" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Views/d:Besucher/d:BesucherKinokartenOnlineReservierenViewSub/f:Sitzplatzauswahl.cs" caret="4090" fromTop="30" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Views/d:Besucher/f:BesucherKinokartenOnlineReservierenView.cs" caret="808" fromTop="25" />
+      <File id="76A4DFAD-72A0-461F-BDA4-E4C497587DD3/d:Views/d:HauptmenuViewSub/f:BesucherView.cs" caret="254" fromTop="8" />
+      <File id="76A4DFAD-72A0-461F-BDA4-E4C497587DD3/f:Program.cs" caret="636" fromTop="14" />
+      <File id="FFDCF527-C890-4B77-A201-292D5E0CE18F/d:Models/f:Movie.cs" caret="98" fromTop="4" />
+      <File id="D54D34FF-8ABC-4AEE-9190-7D0E48D49FED/d:Models/f:EntityManager.cs" caret="1289" fromTop="48" />
+      <File id="D54D34FF-8ABC-4AEE-9190-7D0E48D49FED/d:Models/f:DatabaseSimulation.cs" caret="1599" fromTop="63" />
+      <File id="FFDCF527-C890-4B77-A201-292D5E0CE18F/d:Views/d:Administrator/f:KinositzAnlegenView.cs" caret="3266" fromTop="101" />
+      <File id="FFDCF527-C890-4B77-A201-292D5E0CE18F/d:Views/d:Administrator/f:KinosaalAnlegenView.cs" caret="1766" fromTop="55" />
+      <File id="FFDCF527-C890-4B77-A201-292D5E0CE18F/d:Views/d:Administrator/f:KinosaalLoeschenView.cs" caret="1361" fromTop="8" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Views/d:Besucher/f:BesucherUebersichtVorstellungenView.cs" caret="490" fromTop="19" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Views/d:Besucher/f:BesucherKinokartenOnlineReservierenView.cs" caret="1221" fromTop="0" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Views/d:Besucher/d:BesucherKinokartenOnlineReservierenViewSub/f:ReservierungsUebersicht.cs" caret="1141" fromTop="35" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Views/d:Besucher/d:BesucherKinokartenOnlineReservierenViewSub/f:Sitzplatzauswahl.cs" caret="655" fromTop="6" />
     </RecentFiles>
     <RecentEdits>
-      <File id="D54D34FF-8ABC-4AEE-9190-7D0E48D49FED/d:Models/f:EntityManager.cs" caret="194" fromTop="7" />
-      <File id="D54D34FF-8ABC-4AEE-9190-7D0E48D49FED/d:Models/f:EntityManager.cs" caret="255" fromTop="12" />
-      <File id="4FCA7BC2-B5FD-4192-81BD-A86B18F78339/d:AbstractClasses/f:Subject.cs" caret="1344" fromTop="37" />
-      <File id="4FCA7BC2-B5FD-4192-81BD-A86B18F78339/d:AbstractClasses/f:Subject.cs" caret="906" fromTop="23" />
-      <File id="4FCA7BC2-B5FD-4192-81BD-A86B18F78339/d:AbstractClasses/f:Subject.cs" caret="477" fromTop="9" />
-      <File id="D54D34FF-8ABC-4AEE-9190-7D0E48D49FED/d:Models/f:EntityManager.cs" caret="1026" fromTop="38" />
-      <File id="D54D34FF-8ABC-4AEE-9190-7D0E48D49FED/d:Models/f:EntityManager.cs" caret="1289" fromTop="48" />
-      <File id="FFDCF527-C890-4B77-A201-292D5E0CE18F/d:Views/d:Administrator/f:KinosaalAnlegenView.cs" caret="699" fromTop="19" />
-      <File id="FFDCF527-C890-4B77-A201-292D5E0CE18F/d:Views/d:Administrator/f:KinosaalAnlegenView.cs" caret="281" fromTop="7" />
-      <File id="FFDCF527-C890-4B77-A201-292D5E0CE18F/d:Views/d:Administrator/f:KinosaalAnlegenView.cs" caret="1689" fromTop="51" />
-      <File id="FFDCF527-C890-4B77-A201-292D5E0CE18F/d:Views/d:Administrator/f:KinosaalAnlegenView.cs" caret="4184" fromTop="49" />
-      <File id="FFDCF527-C890-4B77-A201-292D5E0CE18F/d:Views/d:Administrator/f:KinosaalEditierenView.cs" caret="324" fromTop="11" />
-      <File id="FFDCF527-C890-4B77-A201-292D5E0CE18F/d:Views/d:Administrator/f:KinosaalEditierenView.cs" caret="1452" fromTop="43" />
-      <File id="FFDCF527-C890-4B77-A201-292D5E0CE18F/d:Views/d:Administrator/f:KinosaalEditierenView.cs" caret="1340" fromTop="39" />
       <File id="FFDCF527-C890-4B77-A201-292D5E0CE18F/d:Views/d:Administrator/f:KinosaalEditierenView.cs" caret="2285" fromTop="41" />
       <File id="FFDCF527-C890-4B77-A201-292D5E0CE18F/d:Views/d:Administrator/f:KinosaalEditierenView.cs" caret="3323" fromTop="47" />
       <File id="FFDCF527-C890-4B77-A201-292D5E0CE18F/d:Views/d:Administrator/f:KinosaalLoeschenView.cs" caret="1258" fromTop="37" />
@@ -67,10 +53,24 @@
       <File id="D54D34FF-8ABC-4AEE-9190-7D0E48D49FED/d:Models/f:DatabaseSimulation.cs" caret="1319" fromTop="44" />
       <File id="D54D34FF-8ABC-4AEE-9190-7D0E48D49FED/d:Models/f:DatabaseSimulation.cs" caret="1329" fromTop="46" />
       <File id="22E855AA-DE16-4254-ABC3-A413790289E9/d:Models/f:PaymentInfo.cs" caret="165" fromTop="7" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Views/d:Besucher/d:BesucherKinokartenOnlineReservierenViewSub/f:Sitzplatzauswahl.cs" caret="4100" fromTop="31" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Views/d:Besucher/f:BesucherKinokartenOnlineReservierenView.cs" caret="2050" fromTop="30" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Views/d:Besucher/d:BesucherKinokartenOnlineReservierenViewSub/f:Sitzplatzauswahl.cs" caret="4333" fromTop="31" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Views/d:Besucher/f:BesucherKinokartenOnlineReservierenView.cs" caret="2483" fromTop="30" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Views/d:Besucher/f:BesucherKinokartenOnlineReservierenView.cs" caret="1878" fromTop="6" />
+      <File id="76A4DFAD-72A0-461F-BDA4-E4C497587DD3/d:Views/d:HauptmenuViewSub/f:BesucherView.cs" caret="254" fromTop="8" />
+      <File id="D54D34FF-8ABC-4AEE-9190-7D0E48D49FED/d:Models/f:DatabaseSimulation.cs" caret="1599" fromTop="12" />
+      <File id="FFDCF527-C890-4B77-A201-292D5E0CE18F/d:Views/d:Administrator/f:KinosaalAnlegenView.cs" caret="680" fromTop="20" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Views/d:Besucher/d:BesucherKinokartenOnlineReservierenViewSub/f:Sitzplatzauswahl.cs" caret="1162" fromTop="27" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Views/d:Besucher/f:BesucherKinokartenOnlineReservierenView.cs" caret="897" fromTop="11" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Views/d:Besucher/f:BesucherKinokartenOnlineReservierenView.cs" caret="1075" fromTop="10" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Views/d:Besucher/f:BesucherKinokartenOnlineReservierenView.cs" caret="802" fromTop="15" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Views/d:Besucher/f:BesucherKinokartenOnlineReservierenView.cs" caret="1399" fromTop="18" />
+      <File id="76A4DFAD-72A0-461F-BDA4-E4C497587DD3/f:Program.cs" caret="568" fromTop="8" />
+      <File id="76A4DFAD-72A0-461F-BDA4-E4C497587DD3/f:Program.cs" caret="568" fromTop="8" />
+      <File id="76A4DFAD-72A0-461F-BDA4-E4C497587DD3/f:Program.cs" caret="744" fromTop="14" />
       <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Views/d:Besucher/f:BesucherKinokartenOnlineReservierenView.cs" caret="403" fromTop="11" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Views/d:Besucher/f:BesucherKinokartenOnlineReservierenView.cs" caret="623" fromTop="18" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Views/d:Besucher/f:BesucherKinokartenOnlineReservierenView.cs" caret="713" fromTop="14" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Views/d:Besucher/f:BesucherKinokartenOnlineReservierenView.cs" caret="2061" fromTop="25" />
+      <File id="FFDCF527-C890-4B77-A201-292D5E0CE18F/d:Views/d:Administrator/f:KinosaalLoeschenView.cs" caret="2921" fromTop="8" />
     </RecentEdits>
   </RecentFiles>
   <NAntValidationSettings>
@@ -101,13 +101,13 @@
       <Item value="public" priority="10" />
       <Item value="Entity`0" priority="11" />
       <Item value="int" priority="8" />
-      <Item value="this" priority="0" />
+      <Item value="this" priority="1" />
       <Item value="id" priority="2" />
       <Item value="entityList" priority="5" />
-      <Item value="new" priority="10" />
+      <Item value="new" priority="12" />
       <Item value="List&lt;Entity&gt;" priority="0" />
-      <Item value="void" priority="2" />
-      <Item value="return" priority="11" />
+      <Item value="void" priority="3" />
+      <Item value="return" priority="13" />
       <Item value="InvalidTimeZoneException`0" priority="0" />
       <Item value="Predicate&lt;Entity&gt;" priority="0" />
       <Item value="Delegate`0" priority="0" />
@@ -117,7 +117,7 @@
       <Item value="foreach" priority="0" />
       <Item value="i" priority="0" />
       <Item value="IDictionary" priority="3" />
-      <Item value="private" priority="3" />
+      <Item value="private" priority="4" />
       <Item value="Type`0" priority="7" />
       <Item value="type" priority="1" />
       <Item value="for" priority="0" />
@@ -127,17 +127,17 @@
       <Item value="List&lt;T&gt;" priority="1" />
       <Item value="Dictionary" priority="0" />
       <Item value="Entity" priority="0" />
-      <Item value="entityDict" priority="8" />
+      <Item value="entityDict" priority="9" />
       <Item value="Dictionary&lt;Type,Entity&gt;" priority="0" />
       <Item value="typeof" priority="3" />
       <Item value="object" priority="1" />
       <Item value="ArrayList`0" priority="1" />
-      <Item value="if" priority="2" />
-      <Item value="else" priority="1" />
+      <Item value="if" priority="5" />
+      <Item value="else" priority="2" />
       <Item value="ArrayList" priority="0" />
       <Item value="IList" priority="1" />
       <Item value="dynamic" priority="3" />
-      <Item value="false" priority="1" />
+      <Item value="false" priority="2" />
       <Item value="throw" priority="0" />
       <Item value="ArgumentException" priority="0" />
       <Item value="returnList" priority="1" />
@@ -147,17 +147,26 @@
       <Item value="RuntimeMethodHandle`0" priority="0" />
       <Item value="em" priority="0" />
       <Item value="testMovieTheatre" priority="0" />
-      <Item value="MovieProgram`0" priority="0" />
+      <Item value="MovieProgram`0" priority="2" />
       <Item value="EntityManager&lt;MovieProgram&gt;" priority="0" />
       <Item value="emp" priority="0" />
       <Item value="testMovieProgram" priority="0" />
       <Item value="override" priority="2" />
       <Item value="observer" priority="0" />
-      <Item value="database" priority="4" />
-      <Item value="EntityManager&lt;MovieTheatre&gt;" priority="1" />
+      <Item value="database" priority="8" />
+      <Item value="EntityManager&lt;MovieTheatre&gt;" priority="2" />
       <Item value="NotifyObservers`0" priority="1" />
-      <Item value="bool" priority="0" />
+      <Item value="bool" priority="1" />
       <Item value="rv" priority="0" />
+      <Item value="EntityManager&lt;Show&gt;" priority="0" />
+      <Item value="CheckPermission`0" priority="0" />
+      <Item value="listBox_Shows" priority="0" />
+      <Item value="valid" priority="2" />
+      <Item value="true" priority="0" />
+      <Item value="ValidateInput`0" priority="1" />
+      <Item value="FillWithTestData`0" priority="0" />
+      <Item value="System" priority="1" />
+      <Item value="Console`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:Database.Models.Entity">
       <Item value="id" priority="0" />
@@ -185,7 +194,7 @@
       <Item value="Add`0" priority="0" />
       <Item value="Remove`0" priority="0" />
       <Item value="TryGetValue`0" priority="0" />
-      <Item value="ContainsKey`0" priority="1" />
+      <Item value="ContainsKey`0" priority="2" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Collections.ArrayList">
       <Item value="Add`0" priority="0" />
@@ -195,8 +204,23 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:Database.Models.EntityManager`1">
       <Item value="AddElement`0" priority="2" />
-      <Item value="GetElements`0" priority="12" />
+      <Item value="GetElements`0" priority="14" />
       <Item value="RemoveElement`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.ListBox">
+      <Item value="SelectedIndex" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservieren">
+      <Item value="button_chooseSelectedShow" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.Button">
+      <Item value="Enabled" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Console">
+      <Item value="WriteLine`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:TicketOperations.Models.MovieProgram">
+      <Item value="Shows" priority="1" />
     </ItemStatistics>
   </CompletionStatisticsManager>
 </Configuration>

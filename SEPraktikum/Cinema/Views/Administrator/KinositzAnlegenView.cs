@@ -5,29 +5,63 @@ using Cinema.Models;
 
 namespace Cinema.Views.Administrator
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <remarks></remarks>
     public partial class KinositzAnlegenView : Form
     {
+        /// <summary>
+        /// 
+        /// </summary>
         char row;
+        /// <summary>
+        /// 
+        /// </summary>
         int number;
+        /// <summary>
+        /// 
+        /// </summary>
         char[] alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="T:System.Windows.Forms.Form"/> class.
+        /// </summary>
+        /// <remarks></remarks>
         public KinositzAnlegenView()
         {
             InitializeComponent();
             errorProvider1.BlinkRate = 0;
         }
 
+        /// <summary>
+        /// Handles the Click event of the button1 control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
+        /// <remarks></remarks>
         private void button1_Click(object sender, EventArgs e)
         {
             ((KinosaalEditierenView)this.Owner).SelectedTheatre.AddSeat(new Seat(row, number));
             ValidateInput();
         }
 
+        /// <summary>
+        /// Handles the TextChanged event of the textBox_number control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
+        /// <remarks></remarks>
         private void textBox_number_TextChanged(object sender, EventArgs e)
         {
             ValidateInput();
         }
 
+        /// <summary>
+        /// Validates the input.
+        /// </summary>
+        /// <returns></returns>
+        /// <remarks></remarks>
         private bool ValidateInput()
         {
             bool valid = true;
@@ -97,17 +131,35 @@ namespace Cinema.Views.Administrator
             return valid;
         }
 
+        /// <summary>
+        /// Handles the Load event of the KinositzAnlegenView control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
+        /// <remarks></remarks>
         private void KinositzAnlegenView_Load(object sender, EventArgs e)
         {
             ValidateInput();
         }
 
+        /// <summary>
+        /// Handles the Click event of the button_Cancel control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
+        /// <remarks></remarks>
         private void button_Cancel_Click(object sender, EventArgs e)
         {
             this.Owner.Show();
             this.Close();
         }
 
+        /// <summary>
+        /// Handles the TextChanged event of the textBox_rank control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
+        /// <remarks></remarks>
         private void textBox_rank_TextChanged(object sender, EventArgs e)
         {
             ValidateInput();
