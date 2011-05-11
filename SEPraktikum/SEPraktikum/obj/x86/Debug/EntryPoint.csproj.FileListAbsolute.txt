@@ -26,3 +26,6 @@ C:\Users\N3trunner.MITTELERDE\Desktop\Dropbox\HAW\Semester3\SE\Praktika\SEPrakti
 C:\Users\N3trunner.MITTELERDE\Desktop\Dropbox\HAW\Semester3\SE\Praktika\SEPraktikumVisualStudio\SEPraktikum\SEPraktikum\bin\Debug\TicketOperations.pdb
 C:\Users\N3trunner.MITTELERDE\Desktop\Dropbox\HAW\Semester3\SE\Praktika\SEPraktikumVisualStudio\SEPraktikum\SEPraktikum\bin\Debug\Users.pdb
 C:\Users\N3trunner.MITTELERDE\Desktop\Dropbox\HAW\Semester3\SE\Praktika\SEPraktikumVisualStudio\SEPraktikum\SEPraktikum\bin\Debug\Finances.pdb
+C:\Users\N3trunner.MITTELERDE\Desktop\Dropbox\HAW\Semester3\SE\Praktika\SEPraktikumVisualStudio\SEPraktikum\SEPraktikum\bin\Debug\SEPraktikum.XML
+C:\Users\N3trunner.MITTELERDE\Desktop\Dropbox\HAW\Semester3\SE\Praktika\SEPraktikumVisualStudio\SEPraktikum\SEPraktikum\bin\Debug\TicketOperations.xml
+C:\Users\N3trunner.MITTELERDE\Desktop\Dropbox\HAW\Semester3\SE\Praktika\SEPraktikumVisualStudio\SEPraktikum\SEPraktikum\bin\Debug\Finances.xml

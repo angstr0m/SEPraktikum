@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Base.AbstractClasses;
+using Database.Interfaces;
 
 namespace Database.Models
 {
@@ -11,7 +12,7 @@ namespace Database.Models
     /// </summary>
     /// <typeparam name="T"></typeparam>
     /// <remarks></remarks>
-    public class EntityManager<T> : Subject
+    public class EntityManager<T> : Subject where T : IDatabaseObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="EntityManager&lt;T&gt;"/> class.
@@ -19,6 +20,37 @@ namespace Database.Models
         /// <remarks></remarks>
         public EntityManager()
         {
+        }
+        
+        /// <summary>
+        /// Searches for a free identifier and returns it.
+        /// </summary>
+        /// <returns></returns>
+        /// <remarks></remarks>
+        private int GetFreeIdentifier()
+        {
+            int id = 0;
+            bool isFree = false;
+
+            while(!isFree)
+            {
+                isFree = true;
+                foreach (T elem in GetElements())
+                {
+                    if (elem.GetIdentifier() == id)
+                    {
+                        isFree = false;
+                        break;
+                    }    
+                }
+
+                if (isFree)
+                {
+                    break;
+                }
+            }
+
+            return id;
         }
 
         /// <summary>
@@ -28,6 +60,7 @@ namespace Database.Models
         /// <remarks></remarks>
         public void AddElement(T elem)
         {
+            elem.SetIdentifier(GetFreeIdentifier());
             DatabaseSimulation.Instance.AddValueToDatabase(elem);
         }
 
@@ -40,6 +73,13 @@ namespace Database.Models
         public bool RemoveElement(T elem)
         {
             return DatabaseSimulation.Instance.RemoveValueFromDatabase(elem);
+        }
+
+        public T GetElementWithId(int id)
+        {
+            List<T> searchList = DatabaseSimulation.Instance.GetValuesFromDatabaseForType(typeof(T));
+
+            return searchList.Find(delegate(T t) { return t.GetIdentifier() == id; });
         }
 
         /// <summary>

@@ -1,0 +1,812 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TicketOperations</name>
+    </assembly>
+    <members>
+        <member name="T:TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservierenViewSub.ReservierungsUebersicht">
+            <summary>
+            This form provides a overview of the reservation for the user.
+            The user can then confirm or decline the reservation. However he has only 90 seconds to do so.
+            In these 90 seconds the ticket will be reserved for the user.
+            If he doesn't make a choice within these 90 seconds the form will close and the selected ticket will become unreserved again.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="F:TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservierenViewSub.ReservierungsUebersicht.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservierenViewSub.ReservierungsUebersicht.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservierenViewSub.ReservierungsUebersicht.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservierenViewSub.ReservierungsUebersicht.selectedTicket">
+            <summary>
+            The ticket the user has selected.
+            </summary>
+        </member>
+        <member name="F:TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservierenViewSub.ReservierungsUebersicht.time">
+            <summary>
+            Passed time counter used internally.
+            </summary>
+        </member>
+        <member name="M:TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservierenViewSub.ReservierungsUebersicht.#ctor(TicketOperations.Models.Ticket)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservierenViewSub.ReservierungsUebersicht"/> class.
+            </summary>
+            <param name="selectedTicket">The selected ticket.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservierenViewSub.ReservierungsUebersicht.timer1_Tick(System.Object,System.EventArgs)">
+            <summary>
+            Counts down from 90 seconds to zero. In this time the user has time to reserve the ticket.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservierenViewSub.ReservierungsUebersicht.ReservierungsUebersicht_Load(System.Object,System.EventArgs)">
+            <summary>
+            Handles the Load event of the ReservierungsUebersicht control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservierenViewSub.ReservierungsUebersicht.button_Weiter_Click(System.Object,System.EventArgs)">
+            <summary>
+            The user confirms his reservation.
+            The ticket is reserved.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservierenViewSub.ReservierungsUebersicht.button_Zurueck_Click(System.Object,System.EventArgs)">
+            <summary>
+            The user discards his reservation.
+            The ticket is unlocked.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservierenViewSub.ReservierungsUebersicht.ReservierungsUebersicht_FormClosing(System.Object,System.Windows.Forms.FormClosingEventArgs)">
+            <summary>
+            Makes sure the ticket is unblocked when the form closes.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.Forms.FormClosingEventArgs"/> instance containing the event data.</param>
+            <remarks></remarks>
+        </member>
+        <member name="T:TicketOperations.Models.Reservation">
+            <summary>
+            
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="F:TicketOperations.Models.Reservation.number">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:TicketOperations.Models.Reservation.show">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:TicketOperations.Models.Reservation.tickets">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:TicketOperations.Models.Reservation.customer">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:TicketOperations.Models.Reservation.Customer">
+            <summary>
+            Customers this instance.
+            </summary>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:TicketOperations.Models.Reservation.Customer(Users.Models.Customer)">
+            <summary>
+            Customers the specified customer.
+            </summary>
+            <param name="customer">The customer.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:TicketOperations.Models.Reservation.Number">
+            <summary>
+            Numbers this instance.
+            </summary>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:TicketOperations.Models.Reservation.Show">
+            <summary>
+            Shows this instance.
+            </summary>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:TicketOperations.Models.Reservation.Show(TicketOperations.Models.Show)">
+            <summary>
+            Shows the specified show.
+            </summary>
+            <param name="show">The show.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:TicketOperations.Models.Reservation.AddTicket(TicketOperations.Models.Ticket)">
+            <summary>
+            Adds the ticket.
+            </summary>
+            <param name="ticket">The ticket.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:TicketOperations.Models.Reservation.RemoveTicket(TicketOperations.Models.Ticket)">
+            <summary>
+            Removes the ticket.
+            </summary>
+            <param name="ticket">The ticket.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:TicketOperations.Models.Reservation.Price">
+            <summary>
+            Prices this instance.
+            </summary>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:TicketOperations.Models.Reservation.Each">
+            <summary>
+            Eaches this instance.
+            </summary>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:TicketOperations.Models.Reservation.ToBooking">
+            <summary>
+            Toes the booking.
+            </summary>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:TicketOperations.Models.Reservation.CancelReservation">
+            <summary>
+            Cancels the reservation.
+            </summary>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="T:TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservierenViewSub.Sitzplatzauswahl">
+            <summary>
+            Provides a interface for the user to select a ticket for a specific seat from a specific show.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="F:TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservierenViewSub.Sitzplatzauswahl.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservierenViewSub.Sitzplatzauswahl.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservierenViewSub.Sitzplatzauswahl.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservierenViewSub.Sitzplatzauswahl.selectedShow">
+            <summary>
+            The show that was selected in a previous form.
+            </summary>
+        </member>
+        <member name="F:TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservierenViewSub.Sitzplatzauswahl.selectedTicket">
+            <summary>
+            The ticket the user has currently selected.
+            </summary>
+        </member>
+        <member name="F:TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservierenViewSub.Sitzplatzauswahl.birthDate">
+            <summary>
+            The birthdate of the customer.
+            </summary>
+        </member>
+        <member name="F:TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservierenViewSub.Sitzplatzauswahl.discount">
+            <summary>
+            True if the user should get a 10% discount on the ticket price.
+            </summary>
+        </member>
+        <member name="M:TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservierenViewSub.Sitzplatzauswahl.#ctor(TicketOperations.Models.Show)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservierenViewSub.Sitzplatzauswahl"/> class.
+            </summary>
+            <param name="selectedShow">The selected show.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservierenViewSub.Sitzplatzauswahl.Sitzplatzauswahl_Load(System.Object,System.EventArgs)">
+            <summary>
+            Handles the Load event of the Sitzplatzauswahl control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservierenViewSub.Sitzplatzauswahl.checkBox_rentner_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            If the user checks/unchecks this checkbox, his discount will be updated to reflect this change.
+            The user will activate this checkbox if he is a pensioneer.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservierenViewSub.Sitzplatzauswahl.checkBox_Student_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            If the user checks/unchecks this checkbox, his discount will be updated to reflect this change.
+            The user will activate this checkbox if he is a student.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservierenViewSub.Sitzplatzauswahl.checkBox_Schueler_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            If the user checks/unchecks this checkbox, his discount will be updated to reflect this change.
+            The user will activate this checkbox if he is a pupil.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservierenViewSub.Sitzplatzauswahl.CheckDiscount">
+            <summary>
+            Analyzes if the current user is viable for a discount.
+            If he is a pupil, student and/or pensioneer he is viable.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="M:TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservierenViewSub.Sitzplatzauswahl.dateTimePicker_birthDate_ValueChanged(System.Object,System.EventArgs)">
+            <summary>
+            This method is called, when the user changes his birthdate. It is then checked if the user is actually old enough to see this movie.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservierenViewSub.Sitzplatzauswahl.button_Zurueck_Click(System.Object,System.EventArgs)">
+            <summary>
+            Closes the form and shows the form from which this form was created.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservierenViewSub.Sitzplatzauswahl.list_sitzplatz_SelectedIndexChanged(System.Object,System.EventArgs)">
+            <summary>
+            This method is called, when the user changes his wanted ticket.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservierenViewSub.Sitzplatzauswahl.button_Weiter_Click(System.Object,System.EventArgs)">
+            <summary>
+            The selected ticket is reserved.
+            This option is only available if the user is old enough to actually watch the movie.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservierenViewSub.Sitzplatzauswahl.CheckPermission">
+            <summary>
+            Checks the input of the user.
+            Checks if the user is actually old enough to watch the the selected movie, based on his birthdate.
+            If the user isn't old enough to watch the selected movie, or he has made a non valid input, a error message is shown using the error provider from this form.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="M:TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservierenViewSub.Sitzplatzauswahl.ValidateInput">
+            <summary>
+            Validates the input the user made, and checks if the user is actually old enough to watch the movie.
+            </summary>
+            <returns>ErrorHelper - Struct that contains information about the error that occured.</returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservierenViewSub.Sitzplatzauswahl.UpdateObserver``1(``0)">
+            <summary>
+            Updates the observer, when the tickets of the currently selected show change.
+            This happens, for example, when another user buys or reservs a ticket contained in the currently selected show.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="subject">The subject.</param>
+            <remarks></remarks>
+        </member>
+        <member name="T:TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservieren">
+            <summary>
+            Provides an interface for a customer to select a show out of the current movie program, that he wishes to reserve tickets for.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="F:TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservieren.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservieren.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservieren.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservieren.selectedShow">
+            <summary>
+            The show the user has selected out of the list of available shows.
+            </summary>
+        </member>
+        <member name="F:TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservieren.database">
+            <summary>
+            A link to the database which provides access to all MoviePrograms.
+            </summary>
+        </member>
+        <member name="F:TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservieren.sitzplatzAuswahl">
+            <summary>
+            Instance of a dialog which allows to choose a specific ticket to reserve for the selected show.
+            </summary>
+        </member>
+        <member name="M:TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservieren.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Windows.Forms.Form"/> class.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="M:TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservieren.ValidateInput">
+            <summary>
+            Validates the user input.
+            </summary>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservieren.BesucherKinokartenOnlineReservieren_Load(System.Object,System.EventArgs)">
+            <summary>
+            Handles the Load event of the BesucherKinokartenOnlineReservieren control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservieren.listBox_Shows_SelectedIndexChanged(System.Object,System.EventArgs)">
+            <summary>
+            When the user changes his selection in the listbox field containing the shows:
+            - the informations about the current show are updated in this form.
+            - the input of the user is validated.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservieren.UpdateShowInformations">
+            <summary>
+            Updates the form with the informations about the currently selected show.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="M:TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservieren.UpdateObserver``1(``0)">
+            <summary>
+            Updates this view, when the selected show changes. For example, when another customer reserves or buys a ticket.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="subject">The subject.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservieren.button_back_Click(System.Object,System.EventArgs)">
+            <summary>
+            Closes this dialog.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservieren.button_chooseSelectedShow_Click(System.Object,System.EventArgs)">
+            <summary>
+            Shows the dialog for choosing a specific ticket for the selected show.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+            <remarks></remarks>
+        </member>
+        <member name="T:TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservierenViewSub.Reservation">
+            <summary>
+            
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservierenViewSub.ErrorHelper">
+            <summary>
+            Struct for providing information about an error.
+            Meant for internal use only.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="F:TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservierenViewSub.ErrorHelper.valid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservierenViewSub.ErrorHelper.errorMessage">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:TicketOperations.Models.Booking">
+            <summary>
+            
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="F:TicketOperations.Models.Booking.isPayed">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:TicketOperations.Models.Booking.GetIsPayed">
+            <summary>
+            Gets the is payed.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="M:TicketOperations.Models.Booking.SetIsPayed(System.Object)">
+            <summary>
+            Sets the is payed.
+            </summary>
+            <param name="isPayed">The is payed.</param>
+            <remarks></remarks>
+        </member>
+        <member name="T:TicketOperations.Models.MovieProgram">
+            <summary>
+            Represents the movie program of a specific week.
+            The movie program contains all shows that will be shown in the specific week.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="F:TicketOperations.Models.MovieProgram.startDateTime">
+            <summary>
+            The starting date of the movie program.
+            From this date the movie program contains all shows that will be shown for the duration of 7 days.
+            </summary>
+        </member>
+        <member name="F:TicketOperations.Models.MovieProgram.shows">
+            <summary>
+            The shows that are shown in the week the movie program represents.
+            </summary>
+        </member>
+        <member name="F:TicketOperations.Models.MovieProgram.published">
+            <summary>
+            Movie programs must be published by the admin before beeing visible to customers.
+            </summary>
+        </member>
+        <member name="M:TicketOperations.Models.MovieProgram.#ctor(System.DateTime,System.Collections.Generic.List{TicketOperations.Models.Show})">
+            <summary>
+            Initializes a new instance of the <see cref="T:TicketOperations.Models.MovieProgram"/> class.
+            </summary>
+            <param name="startTime">The start time.</param>
+            <param name="shows">The shows.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:TicketOperations.Models.MovieProgram.Publish">
+            <summary>
+            Publishes this movie program. It can now be seen by the customers.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:TicketOperations.Models.MovieProgram.Shows">
+            <summary>
+            Gets or sets the list of shows that represent the shows that are shown in the week the movie program is responsible for.
+            </summary>
+            <value>The shows.</value>
+            <remarks></remarks>
+        </member>
+        <member name="T:TicketOperations.Models.Ticket">
+            <summary>
+            Represents a ticket for a Movie show.
+            A ticket can be reserved and or bought. 
+            However, tickets that aren't bought, half an hour before the show starts, are set to non reserved and can only be bought until the show starts. 
+            A ticket is connected to one single Show.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="F:TicketOperations.Models.Ticket.sold">
+            <summary>
+            Indicates if the ticket has been bought by a customer.
+            </summary>
+        </member>
+        <member name="F:TicketOperations.Models.Ticket.reserved">
+            <summary>
+            Indicates if the ticket has been reserved by a customer.
+            </summary>
+        </member>
+        <member name="F:TicketOperations.Models.Ticket.discount">
+            <summary>
+            Indicates if the ticket should have a discount.
+            This will be set to true if a student/pupil or pensioneer has bought it.
+            </summary>
+        </member>
+        <member name="F:TicketOperations.Models.Ticket.price">
+            <summary>
+            The price of the ticket.
+            </summary>
+        </member>
+        <member name="F:TicketOperations.Models.Ticket.seat">
+            <summary>
+            The seat the ticket belongs to.
+            </summary>
+        </member>
+        <member name="F:TicketOperations.Models.Ticket.show">
+            <summary>
+            The show the ticket belongs to.
+            </summary>
+        </member>
+        <member name="F:TicketOperations.Models.Ticket.reservationNumber">
+            <summary>
+            The reservation number of the ticket.
+            It is used by the customer to buy the ticket, if he reserved it previously.
+            </summary>
+        </member>
+        <member name="M:TicketOperations.Models.Ticket.#ctor(System.Single,Cinema.Models.Seat,TicketOperations.Models.Show)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TicketOperations.Models.Ticket"/> class.
+            </summary>
+            <param name="price">The price.</param>
+            <param name="seat">The seat.</param>
+            <param name="show">The show.</param>
+            <remarks></remarks>
+        </member>
+        <member name="P:TicketOperations.Models.Ticket.ReservationNumber">
+            <summary>
+            Gets the reservation number.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:TicketOperations.Models.Ticket.Reserved">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:TicketOperations.Models.Ticket"/> is reserved.
+            </summary>
+            <value><c>true</c> if reserved; otherwise, <c>false</c>.</value>
+            <remarks></remarks>
+        </member>
+        <member name="P:TicketOperations.Models.Ticket.Discount">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:TicketOperations.Models.Ticket"/> is discounted.
+            This is true when it was bought buy a student/pupil and or pensioneer.
+            The discount is always 10%.
+            </summary>
+            <value><c>true</c> if the ticketprice is discounted; otherwise, <c>false</c>.</value>
+            <remarks></remarks>
+        </member>
+        <member name="P:TicketOperations.Models.Ticket.Sold">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:TicketOperations.Models.Ticket"/> is sold.
+            </summary>
+            <value><c>true</c> if sold; otherwise, <c>false</c>.</value>
+            <remarks></remarks>
+        </member>
+        <member name="P:TicketOperations.Models.Ticket.Price">
+            <summary>
+            Gets the price of the ticket, taking into account any discount.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:TicketOperations.Models.Ticket.Seat">
+            <summary>
+            Gets the seat that belongs to this ticket.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:TicketOperations.Models.Ticket.Show">
+            <summary>
+            Gets the show this ticket is for.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:TicketOperations.Models.Show">
+            <summary>
+            A show represents a single viewing of a movie in a specific Movietheatre.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="F:TicketOperations.Models.Show.startTime">
+            <summary>
+            The time, when the movie showing starts.
+            </summary>
+        </member>
+        <member name="F:TicketOperations.Models.Show.movie">
+            <summary>
+            The movie that is shown.
+            </summary>
+        </member>
+        <member name="F:TicketOperations.Models.Show.hall">
+            <summary>
+            The Movietheatre in which the movie is shown.
+            </summary>
+        </member>
+        <member name="F:TicketOperations.Models.Show.duration">
+            <summary>
+            The duration of the movie shown.
+            </summary>
+        </member>
+        <member name="F:TicketOperations.Models.Show.pause">
+            <summary>
+            Indicates if the movie has a pause through the showing.
+            </summary>
+        </member>
+        <member name="F:TicketOperations.Models.Show.tickets">
+            <summary>
+            The tickets associated with this Show.
+            </summary>
+        </member>
+        <member name="M:TicketOperations.Models.Show.#ctor(System.DateTime,Cinema.Models.Movie,Cinema.Models.MovieTheatre,System.Boolean,System.Single)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TicketOperations.Models.Show"/> class.
+            </summary>
+            <param name="startTime">The start time.</param>
+            <param name="movie">The movie.</param>
+            <param name="hall">The hall.</param>
+            <param name="pause">if set to <c>true</c> [pause].</param>
+            <param name="ticketPrice">The ticket price.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:TicketOperations.Models.Show.GetNumberOfFreeSeats">
+            <summary>
+            Gets the number of free tickets.
+            </summary>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:TicketOperations.Models.Show.GetNumberOfBlockedSeats">
+            <summary>
+            Gets the number of tickets that has been sold or reserved.
+            </summary>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:TicketOperations.Models.Show.GetAvailableTickets">
+            <summary>
+            Gets the available tickets.
+            </summary>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:TicketOperations.Models.Show.GetReservedTickets">
+            <summary>
+            Gets the reserved tickets.
+            </summary>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:TicketOperations.Models.Show.GetSoldTickets">
+            <summary>
+            Gets the sold tickets.
+            </summary>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:TicketOperations.Models.Show.GetTicket(System.Int32)">
+            <summary>
+            Gets the ticket at index.
+            </summary>
+            <param name="index">The index of the wanted ticket.</param>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:TicketOperations.Models.Show.GetTicket(System.Char,System.Int32)">
+            <summary>
+            Gets the ticket for a specific seat, identified by row and number of the seat.
+            </summary>
+            <param name="row">The row of the seat (A-Z).</param>
+            <param name="nr">The number of the seat.</param>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:TicketOperations.Models.Show.ReserveTicket(TicketOperations.Models.Ticket)">
+            <summary>
+            Reserves the specific ticket.
+            </summary>
+            <param name="ticket">The ticket that should be reserved.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:TicketOperations.Models.Show.ReserveTicket(System.Char,System.Int32)">
+            <summary>
+            Reserves the ticket for a specific seat identified by row and number.
+            </summary>
+            <param name="row">The row of the seat.</param>
+            <param name="nr">The number of the seat.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:TicketOperations.Models.Show.SellTicket(TicketOperations.Models.Ticket)">
+            <summary>
+            Sells the specific ticket.
+            </summary>
+            <param name="ticket">The ticket.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:TicketOperations.Models.Show.SellTicket(System.Char,System.Int32)">
+            <summary>
+            Sells the ticket for a specific seat identified by row and number.
+            </summary>
+            <param name="row">The row of the wanted seat.</param>
+            <param name="nr">The number of the wanted seat.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:TicketOperations.Models.Show.ReturnTicket(TicketOperations.Models.Ticket)">
+            <summary>
+            Get a specific ticket from this show.
+            </summary>
+            <param name="ticket">The ticket to get.</param>
+            <remarks></remarks>
+        </member>
+        <member name="P:TicketOperations.Models.Show.StartTime">
+            <summary>
+            Gets or sets the start time.
+            </summary>
+            <value>The start time.</value>
+            <remarks></remarks>
+        </member>
+        <member name="P:TicketOperations.Models.Show.Duration">
+            <summary>
+            Gets the duration of the movie shown.
+            </summary>
+            <value>The duration.</value>
+            <remarks></remarks>
+        </member>
+        <member name="P:TicketOperations.Models.Show.MovieRating">
+            <summary>
+            Gets the movie rating (parental advisory) of the movie shown.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:TicketOperations.Models.Show.Name">
+            <summary>
+            Gets the name of the movie that is shown.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:TicketOperations.Controller.TicketOperationsController">
+            <summary>
+            
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:TicketOperations.Decorators.PublicShow">
+            <summary>
+            Decorator for the Show object.
+            This class is meant for giving show objects to the outside, while hiding members and methods on the show-object which should not be seen.
+            </summary>
+            <remarks></remarks>
+        </member>
+    </members>
+</doc>

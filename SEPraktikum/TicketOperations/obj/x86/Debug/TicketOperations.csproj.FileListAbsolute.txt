@@ -4,7 +4,6 @@ C:\Users\N3trunner.MITTELERDE\Desktop\Dropbox\HAW\Semester3\SE\Praktika\SEPrakti
 C:\Users\N3trunner.MITTELERDE\Desktop\Dropbox\HAW\Semester3\SE\Praktika\SEPraktikumVisualStudio\SEPraktikum\TicketOperations\obj\x86\Debug\TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservieren.resources
 C:\Users\N3trunner.MITTELERDE\Desktop\Dropbox\HAW\Semester3\SE\Praktika\SEPraktikumVisualStudio\SEPraktikum\TicketOperations\obj\x86\Debug\TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservierenViewSub.ReservierungsUebersicht.resources
 C:\Users\N3trunner.MITTELERDE\Desktop\Dropbox\HAW\Semester3\SE\Praktika\SEPraktikumVisualStudio\SEPraktikum\TicketOperations\obj\x86\Debug\TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservierenViewSub.Sitzplatzauswahl.resources
-C:\Users\N3trunner.MITTELERDE\Desktop\Dropbox\HAW\Semester3\SE\Praktika\SEPraktikumVisualStudio\SEPraktikum\TicketOperations\obj\x86\Debug\TicketOperations.Views.Besucher.BesucherUebersichtVorstellungenView.resources
 C:\Users\N3trunner.MITTELERDE\Desktop\Dropbox\HAW\Semester3\SE\Praktika\SEPraktikumVisualStudio\SEPraktikum\TicketOperations\bin\Debug\TicketOperations.dll
 C:\Users\N3trunner.MITTELERDE\Desktop\Dropbox\HAW\Semester3\SE\Praktika\SEPraktikumVisualStudio\SEPraktikum\TicketOperations\bin\Debug\TicketOperations.pdb
 C:\Users\N3trunner.MITTELERDE\Desktop\Dropbox\HAW\Semester3\SE\Praktika\SEPraktikumVisualStudio\SEPraktikum\TicketOperations\bin\Debug\Base.dll
@@ -19,3 +18,5 @@ C:\Users\N3trunner.MITTELERDE\Desktop\Dropbox\HAW\Semester3\SE\Praktika\SEPrakti
 C:\Users\N3trunner.MITTELERDE\Desktop\Dropbox\HAW\Semester3\SE\Praktika\SEPraktikumVisualStudio\SEPraktikum\TicketOperations\bin\Debug\Finances.pdb
 C:\Users\N3trunner.MITTELERDE\Desktop\Dropbox\HAW\Semester3\SE\Praktika\SEPraktikumVisualStudio\SEPraktikum\TicketOperations\obj\x86\Debug\TicketOperations.dll
 C:\Users\N3trunner.MITTELERDE\Desktop\Dropbox\HAW\Semester3\SE\Praktika\SEPraktikumVisualStudio\SEPraktikum\TicketOperations\obj\x86\Debug\TicketOperations.pdb
+C:\Users\N3trunner.MITTELERDE\Desktop\Dropbox\HAW\Semester3\SE\Praktika\SEPraktikumVisualStudio\SEPraktikum\TicketOperations\bin\Debug\TicketOperations.XML
+C:\Users\N3trunner.MITTELERDE\Desktop\Dropbox\HAW\Semester3\SE\Praktika\SEPraktikumVisualStudio\SEPraktikum\TicketOperations\bin\Debug\Finances.xml

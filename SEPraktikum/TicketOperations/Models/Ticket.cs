@@ -1,7 +1,9 @@
 using Base.AbstractClasses;
 using Cinema.Models;
+using Database.Interfaces;
 
 namespace TicketOperations.Models {
+    
     /// <summary>
     /// Represents a ticket for a Movie show.
     /// A ticket can be reserved and or bought. 
@@ -9,8 +11,9 @@ namespace TicketOperations.Models {
     /// A ticket is connected to one single Show.
     /// </summary>
     /// <remarks></remarks>
-    public class Ticket : Subject
+    public class Ticket : Subject, IDatabaseObject
     {
+        private int id;
         /// <summary>
         /// Indicates if the ticket has been bought by a customer.
         /// </summary>
@@ -19,6 +22,8 @@ namespace TicketOperations.Models {
         /// Indicates if the ticket has been reserved by a customer.
         /// </summary>
         private bool reserved;
+
+        private bool blocked;
         /// <summary>
         /// Indicates if the ticket should have a discount.
         /// This will be set to true if a student/pupil or pensioneer has bought it.
@@ -138,6 +143,22 @@ namespace TicketOperations.Models {
         public Models.Show Show
         {
             get { return show; }
+        }
+
+        public bool Blocked
+        {
+            get { return blocked; }
+            set { blocked = value; }
+        }
+
+        public void SetIdentifier(int id)
+        {
+            this.id = id;
+        }
+
+        public int GetIdentifier()
+        {
+            return id;
         }
     }
 

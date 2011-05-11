@@ -2,14 +2,18 @@ using System;
 using System.Collections.Generic;
 using Base.AbstractClasses;
 using Cinema.Models;
+using Database.Interfaces;
 
 namespace TicketOperations.Models {
+    
     /// <summary>
     /// A show represents a single viewing of a movie in a specific Movietheatre.
     /// </summary>
     /// <remarks></remarks>
-    public class Show : Subject
+    public class Show : Subject, IDatabaseObject
     {
+
+        private int id;
         /// <summary>
         /// The time, when the movie showing starts.
         /// </summary>
@@ -17,11 +21,11 @@ namespace TicketOperations.Models {
         /// <summary>
         /// The movie that is shown.
         /// </summary>
-		private Movie movie;
+        private Movie movie;
         /// <summary>
         /// The Movietheatre in which the movie is shown.
         /// </summary>
-		private MovieTheatre hall;
+        private MovieTheatre hall;
         /// <summary>
         /// The duration of the movie shown.
         /// </summary>
@@ -29,11 +33,11 @@ namespace TicketOperations.Models {
         /// <summary>
         /// Indicates if the movie has a pause through the showing.
         /// </summary>
-		private bool pause;
+        private bool pause;
         /// <summary>
         /// The tickets associated with this Show.
         /// </summary>
-		private List<Ticket> tickets;
+        private List<Ticket> tickets;
 
         /// <summary>
         /// Gets or sets the start time.
@@ -54,6 +58,7 @@ namespace TicketOperations.Models {
         public int Duration
         {
             get { return duration; }
+            set { duration = value; }
         }
 
         /// <summary>
@@ -85,7 +90,7 @@ namespace TicketOperations.Models {
 
             foreach (Seat s in hall.GetSeats())
             {
-                tickets.Add(new Ticket(ticketPrice, s, this)); 
+                tickets.Add(new Ticket(ticketPrice, s, this));
             }
         }
 
@@ -94,28 +99,30 @@ namespace TicketOperations.Models {
         /// </summary>
         /// <returns></returns>
         /// <remarks></remarks>
-		public int GetNumberOfFreeSeats() {
+        public int GetNumberOfFreeSeats()
+        {
             return tickets.FindAll(
                     delegate(Ticket t)
                     {
                         return (!t.Sold && !t.Reserved);
                     }
                 ).Count;
-		}
+        }
 
         /// <summary>
         /// Gets the number of tickets that has been sold or reserved.
         /// </summary>
         /// <returns></returns>
         /// <remarks></remarks>
-		public int GetNumberOfBlockedSeats() {
+        public int GetNumberOfBlockedSeats()
+        {
             return tickets.FindAll(
                     delegate(Ticket t)
                     {
                         return (t.Sold || t.Reserved);
                     }
                 ).Count;
-		}
+        }
 
         /// <summary>
         /// Gets the available tickets.
@@ -180,14 +187,15 @@ namespace TicketOperations.Models {
         /// <param name="nr">The number of the seat.</param>
         /// <returns></returns>
         /// <remarks></remarks>
-		public Ticket GetTicket(char row, int nr) {
+        public Ticket GetTicket(char row, int nr)
+        {
             return tickets.Find(
                     delegate(Ticket t)
                     {
                         return ((t.Seat.GetRow() == row) && (t.Seat.GetNr() == nr));
                     }
                 );
-		}
+        }
 
         /// <summary>
         /// Gets the name of the movie that is shown.
@@ -252,7 +260,8 @@ namespace TicketOperations.Models {
         /// </summary>
         /// <param name="ticket">The ticket to get.</param>
         /// <remarks></remarks>
-		public void ReturnTicket(Ticket ticket) {
+        public void ReturnTicket(Ticket ticket)
+        {
             if (!tickets.Contains(ticket))
             {
                 throw new ArgumentException("The ticket " + ticket.ToString() + " is not contained in this Show!");
@@ -260,7 +269,17 @@ namespace TicketOperations.Models {
             ticket.Sold = false;
             ticket.Reserved = false;
             NotifyObservers();
-		}
-	}
+        }
+
+        public void SetIdentifier(int id)
+        {
+            this.id = id;
+        }
+
+        public int GetIdentifier()
+        {
+            return id;
+        }
+    }
 
 }

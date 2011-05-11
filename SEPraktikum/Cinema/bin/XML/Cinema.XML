@@ -1,0 +1,708 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Cinema</name>
+    </assembly>
+    <members>
+        <member name="T:Cinema.Views.Administrator.KinositzAnlegenView">
+            <summary>
+            
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="F:Cinema.Views.Administrator.KinositzAnlegenView.row">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Cinema.Views.Administrator.KinositzAnlegenView.number">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Cinema.Views.Administrator.KinositzAnlegenView.alphabet">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Cinema.Views.Administrator.KinositzAnlegenView.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Windows.Forms.Form"/> class.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="M:Cinema.Views.Administrator.KinositzAnlegenView.button1_Click(System.Object,System.EventArgs)">
+            <summary>
+            Handles the Click event of the button1 control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:Cinema.Views.Administrator.KinositzAnlegenView.textBox_number_TextChanged(System.Object,System.EventArgs)">
+            <summary>
+            Handles the TextChanged event of the textBox_number control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:Cinema.Views.Administrator.KinositzAnlegenView.ValidateInput">
+            <summary>
+            Validates the input.
+            </summary>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:Cinema.Views.Administrator.KinositzAnlegenView.KinositzAnlegenView_Load(System.Object,System.EventArgs)">
+            <summary>
+            Handles the Load event of the KinositzAnlegenView control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:Cinema.Views.Administrator.KinositzAnlegenView.button_Cancel_Click(System.Object,System.EventArgs)">
+            <summary>
+            Handles the Click event of the button_Cancel control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:Cinema.Views.Administrator.KinositzAnlegenView.textBox_rank_TextChanged(System.Object,System.EventArgs)">
+            <summary>
+            Handles the TextChanged event of the textBox_rank control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+            <remarks></remarks>
+        </member>
+        <member name="F:Cinema.Views.Administrator.KinositzAnlegenView.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Cinema.Views.Administrator.KinositzAnlegenView.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Cinema.Views.Administrator.KinositzAnlegenView.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Cinema.Views.Administrator.KinosaalEditierenView">
+            <summary>
+            
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="F:Cinema.Views.Administrator.KinosaalEditierenView.database">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Cinema.Views.Administrator.KinosaalEditierenView.view">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Cinema.Views.Administrator.KinosaalEditierenView.initialized">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Cinema.Views.Administrator.KinosaalEditierenView.selectedTheatre">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Cinema.Views.Administrator.KinosaalEditierenView.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Windows.Forms.Form"/> class.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="M:Cinema.Views.Administrator.KinosaalEditierenView.Initialize">
+            <summary>
+            Initializes this instance.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="M:Cinema.Views.Administrator.KinosaalEditierenView.KinosaalverwaltungView_Load(System.Object,System.EventArgs)">
+            <summary>
+            Handles the Load event of the KinosaalverwaltungView control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:Cinema.Views.Administrator.KinosaalEditierenView.button_zurueck_Click(System.Object,System.EventArgs)">
+            <summary>
+            Handles the Click event of the button_zurueck control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:Cinema.Views.Administrator.KinosaalEditierenView.UpdateObserver``1(``0)">
+            <summary>
+            Updates the observer.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="subject">The subject.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:Cinema.Views.Administrator.KinosaalEditierenView.list_kinosaal_SelectedIndexChanged(System.Object,System.EventArgs)">
+            <summary>
+            Handles the SelectedIndexChanged event of the list_kinosaal control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:Cinema.Views.Administrator.KinosaalEditierenView.UpdateSelectedTheatre">
+            <summary>
+            Updates the selected theatre.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="M:Cinema.Views.Administrator.KinosaalEditierenView.UpdateSeatsList">
+            <summary>
+            Updates the seats list.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="M:Cinema.Views.Administrator.KinosaalEditierenView.list_seats_SelectedIndexChanged(System.Object,System.EventArgs)">
+            <summary>
+            Handles the SelectedIndexChanged event of the list_seats control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:Cinema.Views.Administrator.KinosaalEditierenView.button_addSeat_Click(System.Object,System.EventArgs)">
+            <summary>
+            Handles the Click event of the button_addSeat control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:Cinema.Views.Administrator.KinosaalEditierenView.button_removeSeat_Click(System.Object,System.EventArgs)">
+            <summary>
+            Handles the Click event of the button_removeSeat control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+            <remarks></remarks>
+        </member>
+        <member name="F:Cinema.Views.Administrator.KinosaalEditierenView.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Cinema.Views.Administrator.KinosaalEditierenView.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Cinema.Views.Administrator.KinosaalEditierenView.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:Cinema.Views.Administrator.KinosaalEditierenView.SelectedTheatre">
+            <summary>
+            Gets the selected theatre.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:Cinema.Views.Administrator.KinosaalLoeschen">
+            <summary>
+            
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="F:Cinema.Views.Administrator.KinosaalLoeschen.database">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Cinema.Views.Administrator.KinosaalLoeschen.initialized">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Cinema.Views.Administrator.KinosaalLoeschen.selectedTheatre">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Cinema.Views.Administrator.KinosaalLoeschen.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Windows.Forms.Form"/> class.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="M:Cinema.Views.Administrator.KinosaalLoeschen.Initialize">
+            <summary>
+            Initializes this instance.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="M:Cinema.Views.Administrator.KinosaalLoeschen.KinosaalverwaltungView_Load(System.Object,System.EventArgs)">
+            <summary>
+            Handles the Load event of the KinosaalverwaltungView control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:Cinema.Views.Administrator.KinosaalLoeschen.button_zurueck_Click(System.Object,System.EventArgs)">
+            <summary>
+            Handles the Click event of the button_zurueck control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:Cinema.Views.Administrator.KinosaalLoeschen.UpdateObserver``1(``0)">
+            <summary>
+            Updates the observer.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="subject">The subject.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:Cinema.Views.Administrator.KinosaalLoeschen.list_kinosaal_SelectedIndexChanged(System.Object,System.EventArgs)">
+            <summary>
+            Handles the SelectedIndexChanged event of the list_kinosaal control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:Cinema.Views.Administrator.KinosaalLoeschen.UpdateSelectedTheatre">
+            <summary>
+            Updates the selected theatre.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="M:Cinema.Views.Administrator.KinosaalLoeschen.button_kinosaalLoeschen_Click(System.Object,System.EventArgs)">
+            <summary>
+            Handles the Click event of the button_kinosaalLoeschen control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+            <remarks></remarks>
+        </member>
+        <member name="F:Cinema.Views.Administrator.KinosaalLoeschen.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Cinema.Views.Administrator.KinosaalLoeschen.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Cinema.Views.Administrator.KinosaalLoeschen.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Cinema.Views.Administrator.KinosaalAnlegenView">
+            <summary>
+            
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="F:Cinema.Views.Administrator.KinosaalAnlegenView.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Cinema.Views.Administrator.KinosaalAnlegenView.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Cinema.Views.Administrator.KinosaalAnlegenView.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Cinema.Views.Administrator.KinosaalAnlegenView.database">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Cinema.Views.Administrator.KinosaalAnlegenView.movieTheatreName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Cinema.Views.Administrator.KinosaalAnlegenView.number_of_seats">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Cinema.Views.Administrator.KinosaalAnlegenView.seats_per_rank">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Cinema.Views.Administrator.KinosaalAnlegenView.ranks">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Cinema.Views.Administrator.KinosaalAnlegenView.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Windows.Forms.Form"/> class.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="M:Cinema.Views.Administrator.KinosaalAnlegenView.SetController">
+            <summary>
+            Sets the controller.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="M:Cinema.Views.Administrator.KinosaalAnlegenView.button_abbrechen_Click(System.Object,System.EventArgs)">
+            <summary>
+            Handles the Click event of the button_abbrechen control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:Cinema.Views.Administrator.KinosaalAnlegenView.button_ok_Click(System.Object,System.EventArgs)">
+            <summary>
+            Handles the Click event of the button_ok control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:Cinema.Views.Administrator.KinosaalAnlegenView.textBox_name_TextChanged(System.Object,System.EventArgs)">
+            <summary>
+            Handles the TextChanged event of the textBox_name control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:Cinema.Views.Administrator.KinosaalAnlegenView.KinosaalAnlegen_Load(System.Object,System.EventArgs)">
+            <summary>
+            Handles the Load event of the KinosaalAnlegen control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:Cinema.Views.Administrator.KinosaalAnlegenView.textBox_ranks_TextChanged(System.Object,System.EventArgs)">
+            <summary>
+            Handles the TextChanged event of the textBox_ranks control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:Cinema.Views.Administrator.KinosaalAnlegenView.textBox_seatsPerRank_TextChanged(System.Object,System.EventArgs)">
+            <summary>
+            Handles the TextChanged event of the textBox_seatsPerRank control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:Cinema.Views.Administrator.KinosaalAnlegenView.ValidateThis">
+            <summary>
+            Validates the this.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="M:Cinema.Views.Administrator.KinosaalAnlegenView.ValidateInput">
+            <summary>
+            Validates the input.
+            </summary>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="T:Cinema.Models.Movie">
+            <summary>
+            Representing a single movie. Movies are organized in MoviePrograms.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="F:Cinema.Models.Movie.name">
+            <summary>
+            Name of the movie.
+            </summary>
+        </member>
+        <member name="F:Cinema.Models.Movie.genre">
+            <summary>
+            genre of the movie
+            </summary>
+        </member>
+        <member name="F:Cinema.Models.Movie.duration">
+            <summary>
+            duration in minutes
+            </summary>
+        </member>
+        <member name="F:Cinema.Models.Movie.originCountry">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Cinema.Models.Movie.startDateTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Cinema.Models.Movie.week">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Cinema.Models.Movie.movieRating">
+            <summary>
+            FSK-rating of the movie.
+            </summary>
+        </member>
+        <member name="F:Cinema.Models.Movie.movieCast">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Cinema.Models.Movie.director">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Cinema.Models.Movie.#ctor(System.String,System.String,System.Int32,System.String,System.DateTime,System.Int32,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cinema.Models.Movie"/> class.
+            </summary>
+            <param name="name">The name.</param>
+            <param name="genre">The genre.</param>
+            <param name="duration">The duration.</param>
+            <param name="originCountry">The origin country.</param>
+            <param name="startDateTime">The start date time.</param>
+            <param name="movieRating">The movie rating.</param>
+            <param name="movieCast">The movie cast.</param>
+            <param name="director">The director.</param>
+            <remarks></remarks>
+        </member>
+        <member name="P:Cinema.Models.Movie.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>The name.</value>
+            <remarks></remarks>
+        </member>
+        <member name="P:Cinema.Models.Movie.Genre">
+            <summary>
+            Gets or sets the genre.
+            </summary>
+            <value>The genre.</value>
+            <remarks></remarks>
+        </member>
+        <member name="P:Cinema.Models.Movie.Duration">
+            <summary>
+            Gets or sets the duration.
+            </summary>
+            <value>The duration.</value>
+            <remarks></remarks>
+        </member>
+        <member name="P:Cinema.Models.Movie.OriginCountry">
+            <summary>
+            Gets or sets the origin country.
+            </summary>
+            <value>The origin country.</value>
+            <remarks></remarks>
+        </member>
+        <member name="P:Cinema.Models.Movie.StartDateTime">
+            <summary>
+            Gets or sets the start date time.
+            </summary>
+            <value>The start date time.</value>
+            <remarks></remarks>
+        </member>
+        <member name="P:Cinema.Models.Movie.Week">
+            <summary>
+            Gets or sets the week.
+            </summary>
+            <value>The week.</value>
+            <remarks></remarks>
+        </member>
+        <member name="P:Cinema.Models.Movie.MovieRating">
+            <summary>
+            Gets or sets the movie rating.
+            </summary>
+            <value>The movie rating.</value>
+            <remarks></remarks>
+        </member>
+        <member name="P:Cinema.Models.Movie.MovieCast">
+            <summary>
+            Gets or sets the movie cast.
+            </summary>
+            <value>The movie cast.</value>
+            <remarks></remarks>
+        </member>
+        <member name="P:Cinema.Models.Movie.Director">
+            <summary>
+            Gets or sets the director.
+            </summary>
+            <value>The director.</value>
+            <remarks></remarks>
+        </member>
+        <member name="T:Cinema.Models.Seat">
+            <summary>
+            Representing a single seat in a specific MovieTheatre
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="F:Cinema.Models.Seat.identifier">
+            <summary>
+            string for representation of the seat in the GUI.
+            </summary>
+        </member>
+        <member name="F:Cinema.Models.Seat.seatRow">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Cinema.Models.Seat.seatNr">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Cinema.Models.Seat.#ctor(System.Char,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cinema.Models.Seat"/> class.
+            </summary>
+            <param name="seatRow">The seat row.</param>
+            <param name="seatNr">The seat nr.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:Cinema.Models.Seat.GetRow">
+            <summary>
+            Gets the row.
+            </summary>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:Cinema.Models.Seat.GetNr">
+            <summary>
+            Gets the nr.
+            </summary>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:Cinema.Models.Seat.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents this instance.
+            </summary>
+            <returns>A <see cref="T:System.String"/> that represents this instance.</returns>
+            <remarks></remarks>
+        </member>
+        <member name="P:Cinema.Models.Seat.Identifier">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>The identifier.</value>
+            <remarks></remarks>
+        </member>
+        <member name="T:Cinema.Models.MovieTheatre">
+            <summary>
+            Representing a phyisical room in the Cinema.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="F:Cinema.Models.MovieTheatre.name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Cinema.Models.MovieTheatre.seatCount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Cinema.Models.MovieTheatre.seats">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Cinema.Models.MovieTheatre.GetSeats">
+            <summary>
+            Gets the seats.
+            </summary>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:Cinema.Models.MovieTheatre.AddSeat(Cinema.Models.Seat)">
+            <summary>
+            Adds the seat.
+            </summary>
+            <param name="seat">The seat.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:Cinema.Models.MovieTheatre.RemoveSeat(Cinema.Models.Seat)">
+            <summary>
+            Removes the seat.
+            </summary>
+            <param name="seat">The seat.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:Cinema.Models.MovieTheatre.UpdateSeatCount">
+            <summary>
+            Updates the seat count.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="M:Cinema.Models.MovieTheatre.#ctor(System.String,System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cinema.Models.MovieTheatre"/> class.
+            </summary>
+            <param name="_name">The _name.</param>
+            <param name="seats_per_rank">The seats_per_rank.</param>
+            <param name="ranks">The ranks.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:Cinema.Models.MovieTheatre.#ctor(System.String,System.Collections.Generic.List{Cinema.Models.Seat})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cinema.Models.MovieTheatre"/> class.
+            </summary>
+            <param name="_name">The _name.</param>
+            <param name="_seats">The _seats.</param>
+            <remarks></remarks>
+        </member>
+        <member name="P:Cinema.Models.MovieTheatre.SeatCount">
+            <summary>
+            Gets the seat count.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:Cinema.Models.MovieTheatre.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>The name.</value>
+            <remarks></remarks>
+        </member>
+    </members>
+</doc>

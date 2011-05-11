@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Base.AbstractClasses;
+using Database.Interfaces;
 
 namespace TicketOperations.Models {
     /// <summary>
@@ -8,7 +9,9 @@ namespace TicketOperations.Models {
     /// The movie program contains all shows that will be shown in the specific week.
     /// </summary>
     /// <remarks></remarks>
-	public class MovieProgram : Subject  {
+	public class MovieProgram : Subject, IDatabaseObject
+    {
+        private int id;
         /// <summary>
         /// The starting date of the movie program.
         /// From this date the movie program contains all shows that will be shown for the duration of 7 days.
@@ -55,6 +58,21 @@ namespace TicketOperations.Models {
             get { return shows; }
             set { shows = value; }
         }
-	}
+
+        public DateTime StartDateTime
+        {
+            get { return startDateTime; }
+        }
+
+        public void SetIdentifier(int id)
+        {
+            this.id = id;
+        }
+
+        public int GetIdentifier()
+        {
+            return id;
+        }
+    }
 
 }

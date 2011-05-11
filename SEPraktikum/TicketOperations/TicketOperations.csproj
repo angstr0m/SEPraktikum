@@ -23,6 +23,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\XML\TicketOperations.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -48,8 +49,17 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InterfaceMembers\PublicMovieProgram.cs" />
+    <Compile Include="InterfaceMembers\PublicTicket.cs" />
+    <Compile Include="InterfaceMembers\TicketOperations.cs" />
+    <Compile Include="InterfaceMembers\PublicShow.cs" />
     <Compile Include="Models\Booking.cs" />
+    <Compile Include="InterfaceMembers\Interfaces for public members\IPublicTicket.cs" />
+    <Compile Include="InterfaceMembers\Interfaces for public members\IPublicShow.cs" />
+    <Compile Include="InterfaceMembers\Interfaces for public members\IPublicMovieProgram.cs" />
     <Compile Include="Models\MovieProgram.cs" />
+    <Compile Include="Models\NeededMovieProgramMembers.cs" />
+    <Compile Include="Models\NeededShowMembers.cs" />
     <Compile Include="Models\Reservation.cs" />
     <Compile Include="Models\Show.cs" />
     <Compile Include="Models\Ticket.cs" />
@@ -94,6 +104,9 @@
       <Project>{16617112-8305-4A0C-911A-3EFF4573B7E1}</Project>
       <Name>Users</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controller\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
