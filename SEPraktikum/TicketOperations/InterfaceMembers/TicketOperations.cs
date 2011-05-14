@@ -13,126 +13,82 @@ namespace TicketOperations.InterfaceMembers
     /// 
     /// </summary>
     /// <remarks></remarks>
-    class TicketOperations
+    class TicketOperations : ITicketOperations
     {
-        /// <summary>
-        /// A link to the database which provides access to all MoviePrograms.
-        /// </summary>
-        private static int _usedReservationNumbers = 0;
-        private static EntityManager<Show> _databaseShows;
-        private static EntityManager<Ticket> _databaseTickets;
-        private static EntityManager<MovieProgram> _databaseMoviePrograms;
+        private EntityManager<Show> _databaseShows;
+        private EntityManager<Ticket> _databaseTickets;
+        private EntityManager<MovieProgram> _databaseMoviePrograms;
 
-        private static void InitializeDatabase()
-        {
-            if (_databaseShows == null)
-            {
-                _databaseShows = new EntityManager<Show>();
-            }
-
-            if (_databaseTickets == null)
-            {
-                _databaseTickets = new EntityManager<Ticket>();
-            }
-        }
-
-        /// <summary>
-        /// Reserves the ticket identified by seat row and number.
-        /// </summary>
-        /// <param name="show">The show.</param>
-        /// <param name="row">The row.</param>
-        /// <param name="number">The number.</param>
-        /// <remarks></remarks>
-        public static void ReserveTicket(IPublicShow show, char row, int number, bool discount, Customer customer)
+        public TicketOperations()
         {
             InitializeDatabase();
-
-            Ticket wantedTicket = _databaseShows.GetElementWithId(show.GetIdentifier()).GetTicket(row, number);
-
-            _usedReservationNumbers += 1;
-
-            new Reservation(wantedTicket, customer, _usedReservationNumbers, discount);
         }
 
-        /// <summary>
-        /// Reserves the ticket.
-        /// </summary>
-        /// <param name="show">The show.</param>
-        /// <param name="ticket">The ticket.</param>
-        /// <remarks></remarks>
-        public static void ReserveTicket(IPublicTicket ticket, bool discount, Customer customer)
+        private void InitializeDatabase()
         {
-            InitializeDatabase();
+            _databaseShows = new EntityManager<Show>();
+            _databaseTickets = new EntityManager<Ticket>();
+            _databaseMoviePrograms = new EntityManager<MovieProgram>();
 
+        }
+
+        public int ReserveTicket(IPublicShow show, ISeatIdentifier seat, bool discount, Customer customer, ITicketBlockAccessKey key)
+        {
+            Ticket wantedTicket = _databaseShows.GetElementWithId(show.GetIdentifier()).GetTicket(seat);
+
+            Reservation r = new Reservation(wantedTicket, customer, discount, key);
+
+            return r.ReservationNumber;
+        }
+
+        public int ReserveTicket(IPublicTicket ticket, bool discount, Customer customer, ITicketBlockAccessKey key)
+        {
             Ticket wantedTicket = _databaseTickets.GetElementWithId(ticket.GetIdentifier());
 
-            _usedReservationNumbers += 1;
+            Reservation r = new Reservation(wantedTicket, customer, discount, key);
 
-            new Reservation(wantedTicket, customer, _usedReservationNumbers, discount);
+            return r.ReservationNumber;
         }
 
-        /// <summary>
-        /// Blocks the ticket identified by seat row and number.
-        /// </summary>
-        /// <param name="show">The show.</param>
-        /// <param name="row">The row.</param>
-        /// <param name="number">The number.</param>
-        /// <remarks></remarks>
-        public static void BlockTicket(IPublicShow show, char row, int number)
+        public ITicketBlockAccessKey BlockTicket(IPublicShow show, ISeatIdentifier seat)
         {
-            InitializeDatabase();
 
             Show wantedShow = _databaseShows.GetElementWithId(show.GetIdentifier());
 
-            wantedShow.GetTicket(row, number).Blocked = true;
+            ITicketBlockAccessKey key = wantedShow.GetTicket(seat).Block();
 
-            // Unblocking the ticket must be done in the GUI!
+            return key;
         }
 
-        /// <summary>
-        /// Blocks the ticket.
-        /// </summary>
-        /// <param name="show">The show.</param>
-        /// <param name="ticket">The ticket.</param>
-        /// <remarks></remarks>
-        public static void BlockTicket(IPublicTicket ticket)
+        public ITicketBlockAccessKey BlockTicket(IPublicTicket ticket)
         {
-            InitializeDatabase();
+            ITicketBlockAccessKey key = _databaseTickets.GetElementWithId(ticket.GetIdentifier()).Block();
 
-            _databaseTickets.GetElementWithId(ticket.GetIdentifier()).Blocked = true;
+            return key;
         }
 
-        /// <summary>
-        /// Resets the ticket.
-        /// </summary>
-        /// <param name="movieProgram">The movie program.</param>
-        /// <param name="show">The show.</param>
-        /// <param name="row">The row.</param>
-        /// <param name="nr">The nr.</param>
-        /// <remarks></remarks>
-        public static void ResetTicket(IPublicShow show, char row, int nr)
+        public void UnBlockTicket(IPublicShow show, ISeatIdentifier seat, ITicketBlockAccessKey key)
         {
-            InitializeDatabase();
 
-            Ticket wantedTicket = _databaseShows.GetElementWithId(show.GetIdentifier()).GetTicket(row, nr);
+            Show wantedShow = _databaseShows.GetElementWithId(show.GetIdentifier());
 
-            wantedTicket.Reserved = false;
-            wantedTicket.Discount = false;
+            wantedShow.GetTicket(seat).UnBlock(key);
         }
 
-        /// <summary>
-        /// Returns the Ticket.
-        /// </summary>
-        /// <param name="ticket">The ticket to get.</param>
-        /// <remarks></remarks>
-        public static void ResetTicket(IPublicTicket ticket)
+        public void UnBlockTicket(IPublicTicket ticket, ITicketBlockAccessKey key)
         {
-            InitializeDatabase();
+            _databaseTickets.GetElementWithId(ticket.GetIdentifier()).UnBlock(key);
+        }
 
-            Ticket wantedTicket = _databaseTickets.GetElementWithId(ticket.GetIdentifier());
+        public void UnReserveTicket(IPublicShow show, ISeatIdentifier seat)
+        {
+            _databaseShows.GetElementWithId(show.GetIdentifier()).GetTicket(seat).UnReserve();
 
-            wantedTicket.Reserved = false;
-            wantedTicket.Discount = false;
+        }
+
+        public void UnReserveTicket(IPublicTicket ticket)
+        {
+            _databaseTickets.GetElementWithId(ticket.GetIdentifier()).UnReserve();
         }
 
         /// <summary>
@@ -142,7 +98,11 @@ namespace TicketOperations.InterfaceMembers
         /// <remarks></remarks>
         public IPublicMovieProgram GetMovieProgramForThisWeek()
         {
-            
+            return (IPublicMovieProgram)_databaseMoviePrograms.GetElements().Find(delegate(MovieProgram m)
+                                                          {
+                                                              return (m.StartDateTime <= DateTime.Today &&
+                                                                      m.StartDateTime.AddDays(7) >= DateTime.Today);
+                                                          });
         }
     }
 }

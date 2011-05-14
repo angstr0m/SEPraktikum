@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using Finances.Models;
 
 namespace Users.Models {
-	public class Customer : User  {
+	public class Customer : User, ICustomer
+	{
 		private int customerID;
 		private List<Adress> adress;
 		private DateTime birthDateTime;

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Base.AbstractClasses;
 using Cinema.Models;
 using Database.Interfaces;
+using TicketOperations.InterfaceMembers;
 
 namespace TicketOperations.Models {
     
@@ -178,6 +179,18 @@ namespace TicketOperations.Models {
         public Ticket GetTicket(int index)
         {
             return tickets[index];
+        }
+
+        /// <summary>
+        /// Gets the ticket for a specific seat, identified by row and number of the seat.
+        /// </summary>
+        /// <param name="row">The row of the seat (A-Z).</param>
+        /// <param name="nr">The number of the seat.</param>
+        /// <returns></returns>
+        /// <remarks></remarks>
+        public Ticket GetTicket(ISeatIdentifier seat)
+        {
+            return GetTicket(seat.row(), seat.number());
         }
 
         /// <summary>

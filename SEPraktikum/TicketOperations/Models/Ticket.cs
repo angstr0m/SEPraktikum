@@ -1,6 +1,9 @@
+using System;
 using Base.AbstractClasses;
 using Cinema.Models;
 using Database.Interfaces;
+using Database.Models;
+using TicketOperations.InterfaceMembers;
 
 namespace TicketOperations.Models {
     
@@ -14,6 +17,7 @@ namespace TicketOperations.Models {
     public class Ticket : Subject, IDatabaseObject
     {
         private int id;
+        private ITicketBlockAccessKey key;
         /// <summary>
         /// Indicates if the ticket has been bought by a customer.
         /// </summary>
@@ -46,6 +50,7 @@ namespace TicketOperations.Models {
         /// It is used by the customer to buy the ticket, if he reserved it previously.
         /// </summary>
         private string reservationNumber;
+        private EntityManager<Reservation> _databaseReservation;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Ticket"/> class.
@@ -148,7 +153,52 @@ namespace TicketOperations.Models {
         public bool Blocked
         {
             get { return blocked; }
-            set { blocked = value; }
+        }
+
+        public ITicketBlockAccessKey Block()
+        {
+            if (key != null && Blocked)
+            {
+                throw new TicketBlockedException();
+            }
+
+            this.blocked = true;
+            key = new TicketBlockAccessKey();
+            return key;
+        }
+
+        public void UnBlock(ITicketBlockAccessKey key)
+        {
+            if (this.key != key)
+            {
+                throw new WrongAccessKeyException();
+            }
+
+            if (!this.Blocked)
+            {
+                throw new TicketNotBlockedException();
+            }
+
+            this.blocked = false;
+        }
+
+        public void UnReserve()
+        {
+            if (Blocked)
+            {
+                throw new TicketBlockedException();
+            }
+
+            if (!Reserved)
+            {
+                throw new TicketNotReservedException();
+            }
+
+            reserved = false;
+            discount = false;
+
+            Reservation reservation = _databaseReservation.GetElements().Find(delegate(Reservation r) { return r.Tickets.Contains(this); });
+            reservation.RemoveTicket(this);
         }
 
         public void SetIdentifier(int id)
@@ -162,4 +212,24 @@ namespace TicketOperations.Models {
         }
     }
 
+}
+
+public class TicketBlockedException : Exception
+{
+    
+}
+
+public class TicketNotBlockedException : Exception
+{
+
+}
+
+public class WrongAccessKeyException : Exception
+{
+    
+}
+
+public class TicketNotReservedException : Exception
+{
+    
 }

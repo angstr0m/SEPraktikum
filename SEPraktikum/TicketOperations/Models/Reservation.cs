@@ -4,6 +4,7 @@ using Base.AbstractClasses;
 using Users.Models;
 using Database.Models;
 using Database.Interfaces;
+using TicketOperations.InterfaceMembers;
 
 namespace TicketOperations.Models {
     /// <summary>
@@ -33,16 +34,19 @@ namespace TicketOperations.Models {
 
         private EntityManager<Reservation> _database;
 
-        public Reservation(Ticket ticket, Customer customer, int reservationNumber, bool discount)
+        public Reservation(Ticket ticket, Customer customer, bool discount, ITicketBlockAccessKey key)
         {
             if (ticket.Reserved || ticket.Sold)
             {
                 throw new System.Exception("Ticket already bought or reserved!");
             }
+
+            ticket.UnBlock(key);
+
             _show = ticket.Show;
             _tickets = new List<Ticket>();
             this.AddTicket(ticket);
-            _reservationNumber = reservationNumber;
+            _reservationNumber = _tickets.Count;
             _customer = customer;
             _discount = discount;
 
@@ -75,6 +79,11 @@ namespace TicketOperations.Models {
         {
             ticket.Reserved = false;
             _tickets.Remove(ticket);
+
+            if (_tickets.Count == 0)
+            {
+                _database.RemoveElement(this);
+            }
         }
         /// <summary>
         /// Prices this instance.

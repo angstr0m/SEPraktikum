@@ -9,6 +9,7 @@ namespace TicketOperations.InterfaceMembers
         /// </summary>
         /// <value>The shows.</value>
         /// <remarks></remarks>
+        /// <pre></pre>
         List<IPublicShow> Shows { get; }
 
         int GetIdentifier();

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Base.AbstractClasses;
+using Base.Interfaces;
 using Database.Interfaces;
 
 namespace Database.Models
@@ -12,7 +13,7 @@ namespace Database.Models
     /// </summary>
     /// <typeparam name="T"></typeparam>
     /// <remarks></remarks>
-    public class EntityManager<T> : Subject where T : IDatabaseObject
+    public class EntityManager<T> : Subject, Observer where T : IDatabaseObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="EntityManager&lt;T&gt;"/> class.
@@ -20,6 +21,7 @@ namespace Database.Models
         /// <remarks></remarks>
         public EntityManager()
         {
+            DatabaseSimulation.Instance.AddObserver(this);
         }
         
         /// <summary>
@@ -99,33 +101,9 @@ namespace Database.Models
             }
         }
 
-        /// <summary>
-        /// Adds the observer.
-        /// </summary>
-        /// <param name="observer">The observer.</param>
-        /// <remarks></remarks>
-        public override void AddObserver(Base.Interfaces.Observer observer)
+        public void UpdateObserver<T>(T subject) where T : Subject
         {
-            DatabaseSimulation.Instance.AddObserver(observer);
-        }
-
-        /// <summary>
-        /// Notifies the observers.
-        /// </summary>
-        /// <remarks></remarks>
-        public override void NotifyObservers()
-        {
-            base.NotifyObservers();
-        }
-
-        /// <summary>
-        /// Removes the observer.
-        /// </summary>
-        /// <param name="observer">The observer.</param>
-        /// <remarks></remarks>
-        public override void RemoveObserver(Base.Interfaces.Observer observer)
-        {
-            DatabaseSimulation.Instance.RemoveObserver(observer);
+            NotifyObservers();
         }
     }
 }

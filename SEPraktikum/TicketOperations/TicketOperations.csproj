@@ -49,6 +49,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InterfaceMembers\Interfaces for public members\ISeatIdentifier.cs" />
+    <Compile Include="InterfaceMembers\Interfaces for public members\ITicketBlockAccessKey.cs" />
+    <Compile Include="InterfaceMembers\Interfaces for public members\ITicketOperations.cs" />
     <Compile Include="InterfaceMembers\PublicMovieProgram.cs" />
     <Compile Include="InterfaceMembers\PublicTicket.cs" />
     <Compile Include="InterfaceMembers\TicketOperations.cs" />
@@ -61,8 +64,10 @@
     <Compile Include="Models\NeededMovieProgramMembers.cs" />
     <Compile Include="Models\NeededShowMembers.cs" />
     <Compile Include="Models\Reservation.cs" />
+    <Compile Include="Models\SeatIdentifier.cs" />
     <Compile Include="Models\Show.cs" />
     <Compile Include="Models\Ticket.cs" />
+    <Compile Include="InterfaceMembers\TicketBlockAccessKey.cs" />
     <Compile Include="Views\Besucher\BesucherKinokartenOnlineReservierenView.cs">
       <SubType>Form</SubType>
     </Compile>
