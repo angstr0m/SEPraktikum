@@ -36,16 +36,9 @@ namespace TicketOperations.Models {
 
         public Reservation(Ticket ticket, Customer customer, bool discount, ITicketBlockAccessKey key)
         {
-            if (ticket.Reserved || ticket.Sold)
-            {
-                throw new System.Exception("Ticket already bought or reserved!");
-            }
-
-            ticket.UnBlock(key);
-
             _show = ticket.Show;
             _tickets = new List<Ticket>();
-            this.AddTicket(ticket);
+            this.AddTicket(ticket, key);
             _reservationNumber = _tickets.Count;
             _customer = customer;
             _discount = discount;
@@ -59,12 +52,19 @@ namespace TicketOperations.Models {
         /// </summary>
         /// <param name="ticket">The ticket.</param>
         /// <remarks></remarks>
-        public void AddTicket(Ticket ticket)
+        public void AddTicket(Ticket ticket, ITicketBlockAccessKey key)
         {
-            if (ticket.Show != _show)
+            if (_show != null && ticket.Show != _show)
             {
                 throw new System.Exception("Tickets in a reservation must all belong to the same show!");
             }
+
+            if (ticket.Reserved || ticket.Sold)
+            {
+                throw new System.Exception("Ticket already bought or reserved!");
+            }
+
+            ticket.UnBlock(key);
 
             ticket.Discount = _discount;
             ticket.Reserved = true;

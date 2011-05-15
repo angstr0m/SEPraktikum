@@ -9,9 +9,6 @@
   </SettingsComponent>
   <RecentFiles>
     <RecentFiles>
-      <File id="FFDCF527-C890-4B77-A201-292D5E0CE18F/d:Views/d:Administrator/f:KinosaalEditierenView.cs" caret="2625" fromTop="16" />
-      <File id="FFDCF527-C890-4B77-A201-292D5E0CE18F/d:Views/d:Administrator/f:KinosaalLoeschenView.cs" caret="2248" fromTop="16" />
-      <File id="FFDCF527-C890-4B77-A201-292D5E0CE18F/d:Views/d:Administrator/f:KinositzAnlegenView.cs" caret="4822" fromTop="16" />
       <File id="4FCA7BC2-B5FD-4192-81BD-A86B18F78339/d:AbstractClasses/f:Subject.cs" caret="3084" fromTop="32" />
       <File id="4FCA7BC2-B5FD-4192-81BD-A86B18F78339/d:Interfaces/f:Interfaces.cs" caret="963" fromTop="22" />
       <File id="FFDCF527-C890-4B77-A201-292D5E0CE18F/d:Models/f:Movie.cs" caret="167" fromTop="5" />
@@ -23,54 +20,57 @@
       <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Views/d:Besucher/f:BesucherKinokartenOnlineReservierenView.cs" caret="872" fromTop="21" />
       <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InterfaceMembers/f:PublicTicket.cs" caret="0" fromTop="0" />
       <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InterfaceMembers/d:Interfaces for public members/f:IPublicTicket.cs" caret="1838" fromTop="54" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Show.cs" caret="0" fromTop="0" />
       <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Booking.cs" caret="0" fromTop="0" />
       <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:MovieProgram.cs" caret="2006" fromTop="33" />
       <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InterfaceMembers/f:PublicShow.cs" caret="0" fromTop="0" />
       <File id="D54D34FF-8ABC-4AEE-9190-7D0E48D49FED/d:Models/f:DatabaseSimulation.cs" caret="2121" fromTop="71" />
       <File id="D54D34FF-8ABC-4AEE-9190-7D0E48D49FED/d:Models/f:EntityManager.cs" caret="1827" fromTop="24" />
       <File id="D54D34FF-8ABC-4AEE-9190-7D0E48D49FED/d:Interfaces/f:IDatabaseObject.cs" caret="0" fromTop="0" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Reservation.cs" caret="1208" fromTop="43" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InterfaceMembers/d:Interfaces for public members/f:ITicketTransactionKey.cs" caret="58" fromTop="2" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InterfaceMembers/f:TicketTransactionKey.cs" caret="220" fromTop="11" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InterfaceMembers/d:Interfaces for public members/f:ITicketBlockAccessKey.cs" caret="58" fromTop="2" />
       <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InterfaceMembers/f:PublicMovieProgram.cs" caret="438" fromTop="11" />
       <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InterfaceMembers/d:Interfaces for public members/f:IPublicShow.cs" caret="2642" fromTop="41" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Ticket.cs" caret="4944" fromTop="16" />
       <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InterfaceMembers/d:Interfaces for public members/f:IPublicMovieProgram.cs" caret="494" fromTop="16" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InterfaceMembers/f:TicketOperations.cs" caret="776" fromTop="0" />
       <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:SeatIdentifier.cs" caret="154" fromTop="7" />
+      <File id="16617112-8305-4A0C-911A-3EFF4573B7E1/d:Models/f:Customer.cs" caret="351" fromTop="14" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InterfaceMembers/f:TicketBlockAccessKey.cs" caret="220" fromTop="11" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InterfaceMembers/d:Interfaces for public members/f:ISeatIdentifier.cs" caret="249" fromTop="14" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Show.cs" caret="5927" fromTop="35" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InterfaceMembers/d:Interfaces for public members/f:ITicketOperations.cs" caret="1567" fromTop="23" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Ticket.cs" caret="6249" fromTop="37" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Reservation.cs" caret="2477" fromTop="27" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InterfaceMembers/f:TicketOperations.cs" caret="3268" fromTop="42" />
     </RecentFiles>
     <RecentEdits>
-      <File id="D54D34FF-8ABC-4AEE-9190-7D0E48D49FED/d:Models/f:EntityManager.cs" caret="2915" fromTop="32" />
-      <File id="D54D34FF-8ABC-4AEE-9190-7D0E48D49FED/d:Models/f:EntityManager.cs" caret="3028" fromTop="36" />
-      <File id="D54D34FF-8ABC-4AEE-9190-7D0E48D49FED/d:Models/f:EntityManager.cs" caret="681" fromTop="16" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InterfaceMembers/f:TicketOperations.cs" caret="5784" fromTop="30" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InterfaceMembers/f:TicketOperations.cs" caret="5784" fromTop="52" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InterfaceMembers/f:TicketOperations.cs" caret="5784" fromTop="37" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Reservation.cs" caret="2023" fromTop="63" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InterfaceMembers/f:TicketTransactionKey.cs" caret="301" fromTop="7" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InterfaceMembers/f:TicketOperations.cs" caret="5784" fromTop="30" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InterfaceMembers/f:TicketOperations.cs" caret="5784" fromTop="39" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InterfaceMembers/f:TicketOperations.cs" caret="5784" fromTop="46" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InterfaceMembers/f:TicketOperations.cs" caret="5784" fromTop="30" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InterfaceMembers/f:TicketOperations.cs" caret="5784" fromTop="34" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InterfaceMembers/f:TicketOperations.cs" caret="5784" fromTop="30" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Reservation.cs" caret="192" fromTop="6" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Reservation.cs" caret="1008" fromTop="36" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Reservation.cs" caret="1208" fromTop="43" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InterfaceMembers/d:Interfaces for public members/f:ITicketTransactionKey.cs" caret="58" fromTop="2" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InterfaceMembers/f:TicketTransactionKey.cs" caret="150" fromTop="7" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InterfaceMembers/f:TicketOperations.cs" caret="5799" fromTop="44" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InterfaceMembers/f:TicketOperations.cs" caret="5784" fromTop="29" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InterfaceMembers/f:TicketOperations.cs" caret="5784" fromTop="44" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InterfaceMembers/f:TicketOperations.cs" caret="5784" fromTop="47" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InterfaceMembers/d:Interfaces for public members/f:IPublicMovieProgram.cs" caret="399" fromTop="11" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InterfaceMembers/f:TicketOperations.cs" caret="6307" fromTop="170" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InterfaceMembers/f:TicketOperations.cs" caret="336" fromTop="15" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InterfaceMembers/f:TicketOperations.cs" caret="237" fromTop="7" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InterfaceMembers/f:TicketOperations.cs" caret="3484" fromTop="12" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Ticket.cs" caret="4944" fromTop="16" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:SeatIdentifier.cs" caret="232" fromTop="11" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Reservation.cs" caret="1361" fromTop="41" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InterfaceMembers/f:TicketOperations.cs" caret="3747" fromTop="47" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InterfaceMembers/f:TicketOperations.cs" caret="3747" fromTop="39" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InterfaceMembers/f:TicketOperations.cs" caret="3747" fromTop="33" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InterfaceMembers/f:TicketOperations.cs" caret="3747" fromTop="26" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InterfaceMembers/f:TicketOperations.cs" caret="3747" fromTop="41" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InterfaceMembers/f:TicketOperations.cs" caret="3747" fromTop="46" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InterfaceMembers/f:TicketOperations.cs" caret="3747" fromTop="46" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Ticket.cs" caret="6551" fromTop="35" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Ticket.cs" caret="5298" fromTop="14" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InterfaceMembers/f:TicketOperations.cs" caret="3747" fromTop="28" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InterfaceMembers/f:TicketOperations.cs" caret="348" fromTop="15" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InterfaceMembers/f:TicketOperations.cs" caret="3747" fromTop="30" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InterfaceMembers/f:TicketOperations.cs" caret="3747" fromTop="20" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InterfaceMembers/f:TicketOperations.cs" caret="3747" fromTop="18" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InterfaceMembers/f:TicketOperations.cs" caret="3747" fromTop="16" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InterfaceMembers/f:TicketOperations.cs" caret="3747" fromTop="14" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InterfaceMembers/f:TicketOperations.cs" caret="3747" fromTop="13" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Ticket.cs" caret="6715" fromTop="39" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Ticket.cs" caret="5920" fromTop="35" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Ticket.cs" caret="1860" fromTop="36" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Ticket.cs" caret="6259" fromTop="37" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Reservation.cs" caret="2477" fromTop="27" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InterfaceMembers/f:TicketOperations.cs" caret="3747" fromTop="22" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InterfaceMembers/f:TicketOperations.cs" caret="3747" fromTop="30" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InterfaceMembers/f:TicketOperations.cs" caret="3747" fromTop="13" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InterfaceMembers/f:TicketOperations.cs" caret="3747" fromTop="14" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InterfaceMembers/f:TicketOperations.cs" caret="902" fromTop="27" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InterfaceMembers/f:TicketOperations.cs" caret="699" fromTop="18" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InterfaceMembers/f:TicketOperations.cs" caret="3320" fromTop="33" />
     </RecentEdits>
   </RecentFiles>
   <NAntValidationSettings>
@@ -92,32 +92,32 @@
       <Item value="AbstractClasses" priority="3" />
       <Item value="Base" priority="5" />
       <Item value="Base64FormattingOptions`0" priority="2" />
-      <Item value="using" priority="12" />
+      <Item value="using" priority="13" />
       <Item value="EntityManager`0" priority="0" />
       <Item value="ThreadStaticAttribute`0" priority="1" />
-      <Item value="EntityManager" priority="5" />
+      <Item value="EntityManager" priority="6" />
       <Item value="T`0" priority="8" />
       <Item value="List" priority="8" />
-      <Item value="public" priority="25" />
+      <Item value="public" priority="30" />
       <Item value="Entity`0" priority="11" />
-      <Item value="int" priority="21" />
-      <Item value="this" priority="7" />
+      <Item value="int" priority="23" />
+      <Item value="this" priority="10" />
       <Item value="id" priority="14" />
       <Item value="entityList" priority="5" />
-      <Item value="new" priority="29" />
+      <Item value="new" priority="36" />
       <Item value="List&lt;Entity&gt;" priority="0" />
-      <Item value="void" priority="11" />
-      <Item value="return" priority="49" />
+      <Item value="void" priority="13" />
+      <Item value="return" priority="54" />
       <Item value="InvalidTimeZoneException`0" priority="0" />
       <Item value="Predicate&lt;Entity&gt;" priority="0" />
       <Item value="Delegate`0" priority="0" />
-      <Item value="delegate" priority="1" />
+      <Item value="delegate" priority="3" />
       <Item value="e" priority="5" />
       <Item value="DatabaseSimulation`0" priority="6" />
       <Item value="foreach" priority="5" />
       <Item value="i" priority="0" />
       <Item value="IDictionary" priority="3" />
-      <Item value="private" priority="21" />
+      <Item value="private" priority="23" />
       <Item value="Type`0" priority="7" />
       <Item value="type" priority="1" />
       <Item value="for" priority="0" />
@@ -132,13 +132,13 @@
       <Item value="typeof" priority="3" />
       <Item value="object" priority="1" />
       <Item value="ArrayList`0" priority="1" />
-      <Item value="if" priority="10" />
+      <Item value="if" priority="16" />
       <Item value="else" priority="2" />
       <Item value="ArrayList" priority="0" />
       <Item value="IList" priority="1" />
       <Item value="dynamic" priority="3" />
-      <Item value="false" priority="8" />
-      <Item value="throw" priority="1" />
+      <Item value="false" priority="11" />
+      <Item value="throw" priority="6" />
       <Item value="ArgumentException" priority="0" />
       <Item value="returnList" priority="1" />
       <Item value="Database" priority="8" />
@@ -147,8 +147,8 @@
       <Item value="RuntimeMethodHandle`0" priority="0" />
       <Item value="em" priority="0" />
       <Item value="testMovieTheatre" priority="0" />
-      <Item value="MovieProgram`0" priority="5" />
-      <Item value="EntityManager&lt;MovieProgram&gt;" priority="1" />
+      <Item value="MovieProgram`0" priority="6" />
+      <Item value="EntityManager&lt;MovieProgram&gt;" priority="2" />
       <Item value="emp" priority="0" />
       <Item value="testMovieProgram" priority="0" />
       <Item value="override" priority="2" />
@@ -162,20 +162,20 @@
       <Item value="CheckPermission`0" priority="0" />
       <Item value="listBox_Shows" priority="0" />
       <Item value="valid" priority="2" />
-      <Item value="true" priority="3" />
+      <Item value="true" priority="4" />
       <Item value="ValidateInput`0" priority="1" />
       <Item value="FillWithTestData`0" priority="0" />
       <Item value="System" priority="3" />
       <Item value="Console`0" priority="0" />
-      <Item value="PublicShow`0" priority="4" />
+      <Item value="PublicShow`0" priority="5" />
       <Item value="TicketOperations" priority="2" />
       <Item value="Show`0" priority="5" />
-      <Item value="show" priority="7" />
+      <Item value="show" priority="9" />
       <Item value="duration" priority="0" />
       <Item value="base" priority="0" />
       <Item value="InterfaceMembers" priority="5" />
       <Item value="IPublicShow`0" priority="5" />
-      <Item value="IPublicTicket`0" priority="2" />
+      <Item value="IPublicTicket`0" priority="3" />
       <Item value="IDatabaseObject`0" priority="3" />
       <Item value="where" priority="0" />
       <Item value="elem" priority="1" />
@@ -186,9 +186,9 @@
       <Item value="GetFreeIdentifier`0" priority="0" />
       <Item value="_show" priority="10" />
       <Item value="PublicTicket`0" priority="1" />
-      <Item value="Ticket`0" priority="5" />
+      <Item value="Ticket`0" priority="6" />
       <Item value="_ticket" priority="9" />
-      <Item value="ticket" priority="16" />
+      <Item value="ticket" priority="18" />
       <Item value="List&lt;PublicTicket&gt;" priority="0" />
       <Item value="tickets" priority="0" />
       <Item value="publictickets" priority="0" />
@@ -196,7 +196,7 @@
       <Item value="index" priority="0" />
       <Item value="row" priority="3" />
       <Item value="char" priority="2" />
-      <Item value="IPublicMovieProgram`0" priority="3" />
+      <Item value="IPublicMovieProgram`0" priority="4" />
       <Item value="PublicShow" priority="1" />
       <Item value="movieprograms" priority="0" />
       <Item value="PublicMovieProgram`0" priority="0" />
@@ -210,29 +210,29 @@
       <Item value="t" priority="0" />
       <Item value="static" priority="5" />
       <Item value="AppDomainInitializer`0" priority="0" />
-      <Item value="_database" priority="3" />
-      <Item value="InitializeDatabase`0" priority="4" />
-      <Item value="Reservation`0" priority="2" />
+      <Item value="_database" priority="4" />
+      <Item value="InitializeDatabase`0" priority="5" />
+      <Item value="Reservation`0" priority="8" />
       <Item value="Customer`0" priority="4" />
       <Item value="_reservationNumber" priority="0" />
       <Item value="reservationNumber" priority="0" />
       <Item value="_customer" priority="0" />
-      <Item value="customer" priority="2" />
-      <Item value="_tickets" priority="2" />
+      <Item value="customer" priority="3" />
+      <Item value="_tickets" priority="4" />
       <Item value="List&lt;Ticket&gt;" priority="0" />
       <Item value="float" priority="0" />
       <Item value="price" priority="1" />
       <Item value="SystemException" priority="0" />
-      <Item value="Exception`0" priority="0" />
+      <Item value="Exception`0" priority="2" />
       <Item value="EntityManager&lt;Reservation&gt;" priority="0" />
-      <Item value="_databaseShows" priority="1" />
-      <Item value="wantedTicket" priority="4" />
+      <Item value="_databaseShows" priority="3" />
+      <Item value="wantedTicket" priority="5" />
       <Item value="Customer" priority="0" />
-      <Item value="DateTime`0" priority="1" />
+      <Item value="DateTime`0" priority="3" />
       <Item value="usedReservationNumbers" priority="2" />
-      <Item value="_databaseTickets" priority="3" />
+      <Item value="_databaseTickets" priority="5" />
       <Item value="_discount" priority="2" />
-      <Item value="discount" priority="2" />
+      <Item value="discount" priority="4" />
       <Item value="startDateTime" priority="0" />
       <Item value="wantedShow" priority="0" />
       <Item value="number" priority="0" />
@@ -251,10 +251,29 @@
       <Item value="ITicketTransaction`0" priority="1" />
       <Item value="TicketTransactionKey`0" priority="0" />
       <Item value="TicketTransactionKey" priority="0" />
-      <Item value="key" priority="1" />
+      <Item value="key" priority="5" />
       <Item value="ITicketTransactionKey`0" priority="1" />
       <Item value="transactionkey" priority="0" />
       <Item value="SeatIdentifier`0" priority="0" />
+      <Item value="ISeatIdentifier`0" priority="3" />
+      <Item value="TicketBlockAccessKey" priority="0" />
+      <Item value="ITicketBlockAccessKey`0" priority="5" />
+      <Item value="class" priority="2" />
+      <Item value="Blocked" priority="1" />
+      <Item value="GetTicket`0" priority="0" />
+      <Item value="seat" priority="2" />
+      <Item value="r" priority="1" />
+      <Item value="ReserveTicket`0" priority="0" />
+      <Item value="TicketNotBlockedException" priority="0" />
+      <Item value="TicketBlockedException" priority="0" />
+      <Item value="reserved" priority="1" />
+      <Item value="TicketNotReservedException" priority="0" />
+      <Item value="Reserved" priority="0" />
+      <Item value="_databaseReservation" priority="0" />
+      <Item value="reservation" priority="0" />
+      <Item value="TicketOperations`0" priority="0" />
+      <Item value="_databaseMoviePrograms" priority="1" />
+      <Item value="m" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:Database.Models.Entity">
       <Item value="id" priority="0" />
@@ -264,8 +283,9 @@
     <ItemStatistics item="Qualified:System.Collections.Generic.List`1">
       <Item value="Add`0" priority="3" />
       <Item value="Remove`0" priority="1" />
-      <Item value="Find`0" priority="1" />
-      <Item value="Count" priority="1" />
+      <Item value="Find`0" priority="3" />
+      <Item value="Count" priority="3" />
+      <Item value="Contains`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@Database.Models.DatabaseSimulation">
       <Item value="Instance" priority="6" />
@@ -292,9 +312,9 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:Database.Models.EntityManager`1">
       <Item value="AddElement`0" priority="3" />
-      <Item value="GetElements`0" priority="15" />
-      <Item value="RemoveElement`0" priority="0" />
-      <Item value="GetElementWithId`0" priority="6" />
+      <Item value="GetElements`0" priority="17" />
+      <Item value="RemoveElement`0" priority="1" />
+      <Item value="GetElementWithId`0" priority="10" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Windows.Forms.ListBox">
       <Item value="SelectedIndex" priority="0" />
@@ -312,6 +332,7 @@
       <Item value="Shows" priority="2" />
       <Item value="id" priority="0" />
       <Item value="GetIdentifier`0" priority="0" />
+      <Item value="StartDateTime" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:TicketOperations.Decorators.PublicShow">
       <Item value="show" priority="0" />
@@ -325,7 +346,7 @@
       <Item value="GetNumberOfFreeSeats`0" priority="0" />
       <Item value="GetNumberOfBlockedSeats`0" priority="0" />
       <Item value="GetAvailableTickets`0" priority="0" />
-      <Item value="GetTicket`0" priority="3" />
+      <Item value="GetTicket`0" priority="5" />
       <Item value="GetIdentifier`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:TicketOperations.Models.Ticket">
@@ -338,7 +359,10 @@
       <Item value="Price" priority="1" />
       <Item value="Seat" priority="0" />
       <Item value="Show" priority="1" />
-      <Item value="Blocked" priority="2" />
+      <Item value="Blocked" priority="3" />
+      <Item value="blocked" priority="1" />
+      <Item value="UnBlock`0" priority="1" />
+      <Item value="UnReserve`0" priority="3" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:T">
       <Item value="SetIdentifier`0" priority="0" />
@@ -348,17 +372,21 @@
       <Item value="GetIdentifier`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:TicketOperations.InterfaceMembers.IPublicShow">
-      <Item value="GetIdentifier`0" priority="3" />
+      <Item value="GetIdentifier`0" priority="5" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:TicketOperations.Models.Reservation">
       <Item value="AddTicket`0" priority="0" />
       <Item value="id" priority="0" />
+      <Item value="ReservationNumber" priority="0" />
+      <Item value="RemoveTicket`0" priority="1" />
+      <Item value="Tickets" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.DateTime">
       <Item value="Now" priority="0" />
+      <Item value="Today" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:TicketOperations.InterfaceMembers.IPublicTicket">
-      <Item value="GetIdentifier`0" priority="2" />
+      <Item value="GetIdentifier`0" priority="4" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Timers.Timer">
       <Item value="Interval" priority="0" />
@@ -366,6 +394,13 @@
       <Item value="Tick" priority="0" />
       <Item value="Elapsed" priority="0" />
       <Item value="Enabled" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:TicketOperations.InterfaceMembers.ISeatIdentifier">
+      <Item value="row`0" priority="0" />
+      <Item value="number`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.DateTime">
+      <Item value="AddDays`0" priority="0" />
     </ItemStatistics>
   </CompletionStatisticsManager>
 </Configuration>

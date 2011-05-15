@@ -18,6 +18,7 @@ namespace TicketOperations.InterfaceMembers
         private EntityManager<Show> _databaseShows;
         private EntityManager<Ticket> _databaseTickets;
         private EntityManager<MovieProgram> _databaseMoviePrograms;
+        private EntityManager<Reservation> _databaseReservations;
 
         public TicketOperations()
         {
@@ -29,7 +30,7 @@ namespace TicketOperations.InterfaceMembers
             _databaseShows = new EntityManager<Show>();
             _databaseTickets = new EntityManager<Ticket>();
             _databaseMoviePrograms = new EntityManager<MovieProgram>();
-
+            _databaseReservations = new EntityManager<Reservation>();
         }
 
         public int ReserveTicket(IPublicShow show, ISeatIdentifier seat, bool discount, Customer customer, ITicketBlockAccessKey key)
@@ -44,10 +45,45 @@ namespace TicketOperations.InterfaceMembers
         public int ReserveTicket(IPublicTicket ticket, bool discount, Customer customer, ITicketBlockAccessKey key)
         {
             Ticket wantedTicket = _databaseTickets.GetElementWithId(ticket.GetIdentifier());
+            Reservation r = _databaseReservations.GetElements().Find(delegate(Reservation re)
+                                                                         {
+                                                                             return (re.Customer == customer) &&
+                                                                                    (re.Show == (Show) ticket.Show);
+                                                                         });
 
-            Reservation r = new Reservation(wantedTicket, customer, discount, key);
-
+            if (r == null)
+            {
+                r = new Reservation(wantedTicket, customer, discount, key);
+            } else
+            {
+                r.AddTicket(wantedTicket, key);
+            }
+            
             return r.ReservationNumber;
+        }
+
+        public void UnReserveTicket(IPublicShow show, ISeatIdentifier seat)
+        {
+            Ticket wantedTicket = _databaseTickets.GetElements().Find(delegate(Ticket t)
+                                                                          {
+                                                                              return t.Show == show && t.Seat == seat;
+                                                                          });
+
+            _databaseReservations.GetElements().Find(delegate (Reservation r)
+                                                         {
+                                                             return r.Tickets.Contains(wantedTicket);
+                                                         }).RemoveTicket(wantedTicket);
+
+        }
+
+        public void UnReserveTicket(IPublicTicket ticket)
+        {
+            Ticket wantedTicket = (Ticket) ticket;
+
+            _databaseReservations.GetElements().Find(delegate(Reservation r)
+            {
+                return r.Tickets.Contains(wantedTicket);
+            }).RemoveTicket(wantedTicket);
         }
 
         public ITicketBlockAccessKey BlockTicket(IPublicShow show, ISeatIdentifier seat)
@@ -78,17 +114,6 @@ namespace TicketOperations.InterfaceMembers
         public void UnBlockTicket(IPublicTicket ticket, ITicketBlockAccessKey key)
         {
             _databaseTickets.GetElementWithId(ticket.GetIdentifier()).UnBlock(key);
-        }
-
-        public void UnReserveTicket(IPublicShow show, ISeatIdentifier seat)
-        {
-            _databaseShows.GetElementWithId(show.GetIdentifier()).GetTicket(seat).UnReserve();
-
-        }
-
-        public void UnReserveTicket(IPublicTicket ticket)
-        {
-            _databaseTickets.GetElementWithId(ticket.GetIdentifier()).UnReserve();
         }
 
         /// <summary>
