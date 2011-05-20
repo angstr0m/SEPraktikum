@@ -49,9 +49,9 @@ namespace TicketOperations.InterfaceMembers
         Seat Seat { get; }
 
         /// <summary>
-        /// Gets the show this ticket is for.
+        /// Gets the vorstellung this ticket is for.
         /// </summary>
         /// <remarks></remarks>
-        IPublicShow Show { get; }
+        IPublicVorstellung Vorstellung { get; }
     }
 }

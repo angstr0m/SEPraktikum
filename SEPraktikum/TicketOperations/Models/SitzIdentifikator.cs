@@ -5,9 +5,9 @@ using System.Text;
 
 namespace TicketOperations.Models
 {
-    class SeatIdentifier
+    class SitzIdentifikator
     {
-        SeatIdentifier(char row, int number)
+        SitzIdentifikator(char row, int number)
         {
             
         }

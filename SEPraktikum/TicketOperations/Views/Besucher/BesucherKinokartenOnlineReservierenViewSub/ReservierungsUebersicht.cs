@@ -50,7 +50,7 @@ namespace TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservierenVie
             if (time == 0)
             {
                 timer1.Stop();
-                selectedTicket.Show.ReturnTicket(selectedTicket);
+                selectedTicket.Vorstellung.ReturnTicket(selectedTicket);
                 this.Close();
             }
         }
@@ -63,7 +63,7 @@ namespace TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservierenVie
         /// <remarks></remarks>
         private void ReservierungsUebersicht_Load(object sender, EventArgs e)
         {
-            this.textBox_Uebersicht.Text = "Name des Films: " + selectedTicket.Show.Name + "\r\n" + "Sitzplatz: " + selectedTicket.Seat.ToString() + "\r\n" + "Startzeit: " + selectedTicket.Show.StartTime.ToString() + "\r\n" + "Preis: " + selectedTicket.Price;
+            this.textBox_Uebersicht.Text = "Name des Films: " + selectedTicket.Vorstellung.Name + "\r\n" + "Sitzplatz: " + selectedTicket.Seat.ToString() + "\r\n" + "Startzeit: " + selectedTicket.Vorstellung.StartTime.ToString() + "\r\n" + "Preis: " + selectedTicket.Price;
         }
 
         /// <summary>
@@ -87,7 +87,7 @@ namespace TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservierenVie
         /// <remarks></remarks>
         private void button_Zurueck_Click(object sender, EventArgs e)
         {
-            selectedTicket.Show.ReturnTicket(selectedTicket);
+            selectedTicket.Vorstellung.ReturnTicket(selectedTicket);
             this.Close();
         }
 
@@ -99,7 +99,7 @@ namespace TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservierenVie
         /// <remarks></remarks>
         private void ReservierungsUebersicht_FormClosing(object sender, FormClosingEventArgs e)
         {
-            selectedTicket.Show.ReturnTicket(selectedTicket);
+            selectedTicket.Vorstellung.ReturnTicket(selectedTicket);
         }
     }
 }

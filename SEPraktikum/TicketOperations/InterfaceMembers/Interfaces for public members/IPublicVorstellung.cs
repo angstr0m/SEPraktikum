@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace TicketOperations.InterfaceMembers
 {
-    public interface IPublicShow
+    public interface IPublicVorstellung
     {
         int GetIdentifier();
 

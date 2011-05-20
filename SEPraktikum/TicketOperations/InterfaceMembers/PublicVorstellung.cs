@@ -9,53 +9,53 @@ using TicketOperations.Models;
 namespace TicketOperations.InterfaceMembers
 {
     /// <summary>
-    /// Decorator for the Show object.
-    /// This class is meant for giving show objects to the outside, while hiding members and methods on the show-object which should not be seen.
+    /// Decorator for the vorstellung object.
+    /// This class is meant for giving vorstellung objects to the outside, while hiding members and methods on the vorstellung-object which should not be seen.
     /// </summary>
     /// <remarks></remarks>
-    class PublicShow : IPublicShow
+    class PublicVorstellung : IPublicVorstellung
     {
-        private Show _show;
+        private Vorstellung _vorstellung;
 
-        public PublicShow(Show show)
+        public PublicVorstellung(Vorstellung vorstellung)
         {
-            _show = show;
+            _vorstellung = vorstellung;
         }
 
         public DateTime StartTime
         {
-            get { return _show.StartTime; }
+            get { return _vorstellung.StartTime; }
         }
 
         public int Duration
         {
-            get { return _show.Duration; }
+            get { return _vorstellung.Duration; }
         }
 
         public int MovieRating
         {
-            get { return _show.MovieRating; }
+            get { return _vorstellung.MovieRating; }
         }
 
         public string Name
         {
-            get { return _show.Name; }
+            get { return _vorstellung.Name; }
         }
 
         public int GetNumberOfFreeSeats()
         {
-            return _show.GetNumberOfFreeSeats();
+            return _vorstellung.GetNumberOfFreeSeats();
         }
 
         public int GetNumberOfBlockedSeats()
         {
-            return _show.GetNumberOfBlockedSeats();
+            return _vorstellung.GetNumberOfBlockedSeats();
         }
 
         public List<IPublicTicket> GetAvailableTickets()
         {
             List<IPublicTicket> publictickets = new List<IPublicTicket>();
-            List<Ticket> tickets = _show.GetAvailableTickets();
+            List<Ticket> tickets = _vorstellung.GetAvailableTickets();
 
             foreach (var ticket in tickets)
             {
@@ -68,7 +68,7 @@ namespace TicketOperations.InterfaceMembers
         public List<IPublicTicket> GetReservedTickets()
         {
             List<IPublicTicket> publictickets = new List<IPublicTicket>();
-            List<Ticket> tickets = _show.GetReservedTickets();
+            List<Ticket> tickets = _vorstellung.GetReservedTickets();
 
             foreach (var ticket in tickets)
             {
@@ -81,7 +81,7 @@ namespace TicketOperations.InterfaceMembers
         public List<IPublicTicket> GetSoldTickets()
         {
             List<IPublicTicket> publictickets = new List<IPublicTicket>();
-            List<Ticket> tickets = _show.GetSoldTickets();
+            List<Ticket> tickets = _vorstellung.GetSoldTickets();
 
             foreach (var ticket in tickets)
             {
@@ -93,17 +93,17 @@ namespace TicketOperations.InterfaceMembers
 
         public IPublicTicket GetTicket(int index)
         {
-            return new PublicTicket(_show.GetTicket(index));
+            return new PublicTicket(_vorstellung.GetTicket(index));
         }
 
         public IPublicTicket GetTicket(char row, int nr)
         {
-            return new PublicTicket(_show.GetTicket(row, nr));
+            return new PublicTicket(_vorstellung.GetTicket(row, nr));
         }
 
         public int GetIdentifier()
         {
-            return _show.GetIdentifier();
+            return _vorstellung.GetIdentifier();
         }
     }
 }

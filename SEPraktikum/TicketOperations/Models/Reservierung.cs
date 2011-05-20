@@ -11,7 +11,7 @@ namespace TicketOperations.Models {
     /// 
     /// </summary>
     /// <remarks></remarks>
-    public class Reservation : Subject, IDatabaseObject
+    public class Reservierung : Subject, IDatabaseObject
     {
         private int _id;
         private bool _discount;
@@ -22,7 +22,7 @@ namespace TicketOperations.Models {
         /// <summary>
         /// 
         /// </summary>
-        private Show _show;
+        private Vorstellung _vorstellung;
         /// <summary>
         /// 
         /// </summary>
@@ -32,18 +32,18 @@ namespace TicketOperations.Models {
         /// </summary>
         private Customer _customer;
 
-        private EntityManager<Reservation> _database;
+        private EntityManager<Reservierung> _database;
 
-        public Reservation(Ticket ticket, Customer customer, bool discount, ITicketBlockAccessKey key)
+        public Reservierung(Ticket ticket, Customer customer, bool discount, ITicketBlockierungZugangsSchlüssel key)
         {
-            _show = ticket.Show;
+            _vorstellung = ticket.Vorstellung;
             _tickets = new List<Ticket>();
             this.AddTicket(ticket, key);
             _reservationNumber = _tickets.Count;
             _customer = customer;
             _discount = discount;
 
-            _database = new EntityManager<Reservation>();
+            _database = new EntityManager<Reservierung>();
             _database.AddElement(this);
         }
 
@@ -52,11 +52,11 @@ namespace TicketOperations.Models {
         /// </summary>
         /// <param name="ticket">The ticket.</param>
         /// <remarks></remarks>
-        public void AddTicket(Ticket ticket, ITicketBlockAccessKey key)
+        public void AddTicket(Ticket ticket, ITicketBlockierungZugangsSchlüssel key)
         {
-            if (_show != null && ticket.Show != _show)
+            if (_vorstellung != null && ticket.Vorstellung != _vorstellung)
             {
-                throw new System.Exception("Tickets in a reservation must all belong to the same show!");
+                throw new System.Exception("Tickets in a reservation must all belong to the same vorstellung!");
             }
 
             if (ticket.Reserved || ticket.Sold)
@@ -123,9 +123,9 @@ namespace TicketOperations.Models {
             get { return _reservationNumber; }
         }
 
-        public TicketOperations.Models.Show Show
+        public TicketOperations.Models.Vorstellung Vorstellung
         {
-            get { return _show; }
+            get { return _vorstellung; }
         }
 
         public System.Collections.Generic.List<TicketOperations.Models.Ticket> Tickets

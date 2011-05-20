@@ -34,7 +34,7 @@ namespace SEPraktikum.Views.HauptmenuViewSub.Views.HauptmenuViewSub
             }
 
             //this.Hide();
-            //kinosaalEditieren.Show();
+            //kinosaalEditieren.vorstellung();
             kinosaalEditieren.ShowDialog(this);
         }
 
@@ -46,7 +46,7 @@ namespace SEPraktikum.Views.HauptmenuViewSub.Views.HauptmenuViewSub
             }
 
             //this.Hide();
-            //kinosaalEditieren.Show();
+            //kinosaalEditieren.vorstellung();
             kinosaalAnlegen.ShowDialog(this);
         }
 
@@ -58,7 +58,7 @@ namespace SEPraktikum.Views.HauptmenuViewSub.Views.HauptmenuViewSub
             }
 
             //this.Hide();
-            //kinosaalEditieren.Show();
+            //kinosaalEditieren.vorstellung();
             kinosaalLoeschen.ShowDialog(this);
         }
     }

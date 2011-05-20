@@ -9,7 +9,7 @@ namespace TicketOperations.Models {
     /// The movie program contains all shows that will be shown in the specific week.
     /// </summary>
     /// <remarks></remarks>
-	public class MovieProgram : Subject, IDatabaseObject
+	public class Filmprogramm : Subject, IDatabaseObject
     {
         private int id;
         /// <summary>
@@ -20,19 +20,19 @@ namespace TicketOperations.Models {
         /// <summary>
         /// The shows that are shown in the week the movie program represents.
         /// </summary>
-        private List<Show> shows;
+        private List<Vorstellung> shows;
         /// <summary>
         /// Movie programs must be published by the admin before beeing visible to customers.
         /// </summary>
         private bool published;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="MovieProgram"/> class.
+        /// Initializes a new instance of the <see cref="Filmprogramm"/> class.
         /// </summary>
         /// <param name="startTime">The start time.</param>
         /// <param name="shows">The shows.</param>
         /// <remarks></remarks>
-        public MovieProgram(DateTime startTime, List<Show> shows)
+        public Filmprogramm(DateTime startTime, List<Vorstellung> shows)
         {
             startDateTime = startTime;
             this.shows = shows;
@@ -53,7 +53,7 @@ namespace TicketOperations.Models {
         /// </summary>
         /// <value>The shows.</value>
         /// <remarks></remarks>
-        public List<Show> Shows
+        public List<Vorstellung> Shows
         {
             get { return shows; }
             set { shows = value; }

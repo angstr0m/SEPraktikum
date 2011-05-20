@@ -7,22 +7,22 @@ using TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservierenViewSub
 namespace TicketOperations.Views.Besucher
 {
     /// <summary>
-    /// Provides an interface for a customer to select a show out of the current movie program, that he wishes to reserve tickets for.
+    /// Provides an interface for a customer to select a vorstellung out of the current movie program, that he wishes to reserve tickets for.
     /// </summary>
     /// <remarks></remarks>
     public partial class BesucherKinokartenOnlineReservieren : Form, Base.Interfaces.Observer
     {
         /// <summary>
-        /// The show the user has selected out of the list of available shows.
+        /// The vorstellung the user has selected out of the list of available shows.
         /// </summary>
-        Show selectedShow;
+        Vorstellung _selectedVorstellung;
         /// <summary>
         /// A link to the database which provides access to all MoviePrograms.
         /// </summary>
-        private EntityManager<MovieProgram> database;
+        private EntityManager<Filmprogramm> database;
 
         /// <summary>
-        /// Instance of a dialog which allows to choose a specific ticket to reserve for the selected show.
+        /// Instance of a dialog which allows to choose a specific ticket to reserve for the selected vorstellung.
         /// </summary>
         Sitzplatzauswahl sitzplatzAuswahl;
 
@@ -33,7 +33,7 @@ namespace TicketOperations.Views.Besucher
         public BesucherKinokartenOnlineReservieren()
         {
             InitializeComponent();
-            database = new EntityManager<MovieProgram>();
+            database = new EntityManager<Filmprogramm>();
             
             this.listBox_Shows.DataSource = database.GetElements()[0].Shows;
             this.listBox_Shows.DisplayMember = "Name";
@@ -73,7 +73,7 @@ namespace TicketOperations.Views.Besucher
 
         /// <summary>
         /// When the user changes his selection in the listbox field containing the shows:
-        /// - the informations about the current show are updated in this form.
+        /// - the informations about the current vorstellung are updated in this form.
         /// - the input of the user is validated.
         /// </summary>
         /// <param name="sender">The source of the event.</param>
@@ -86,16 +86,16 @@ namespace TicketOperations.Views.Besucher
         }
 
         /// <summary>
-        /// Updates the form with the informations about the currently selected show.
+        /// Updates the form with the informations about the currently selected vorstellung.
         /// </summary>
         /// <remarks></remarks>
         void UpdateShowInformations()
         {
             if (listBox_Shows.SelectedIndex == -1)
             {
-                if (selectedShow != null)
+                if (_selectedVorstellung != null)
                 {
-                    selectedShow.RemoveObserver(this);
+                    _selectedVorstellung.RemoveObserver(this);
                 }
                 this.textBox_numberOfAvalableTickets.Text = "";
                 this.textBox_ShowDuration.Text = "";
@@ -103,30 +103,30 @@ namespace TicketOperations.Views.Besucher
                 return;
             }
 
-            if (selectedShow != null)
+            if (_selectedVorstellung != null)
             {
-                selectedShow.RemoveObserver(this);
+                _selectedVorstellung.RemoveObserver(this);
             }
 
-            selectedShow = database.GetElements()[0].Shows[listBox_Shows.SelectedIndex];
-            selectedShow.AddObserver(this);
+            _selectedVorstellung = database.GetElements()[0].Shows[listBox_Shows.SelectedIndex];
+            _selectedVorstellung.AddObserver(this);
 
-            this.textBox_numberOfAvalableTickets.Text = selectedShow.GetNumberOfFreeSeats() + "";
-            this.textBox_ShowDuration.Text = selectedShow.Duration + "";
-            this.textBox_ShowStart.Text = selectedShow.StartTime.ToString();
+            this.textBox_numberOfAvalableTickets.Text = _selectedVorstellung.GetNumberOfFreeSeats() + "";
+            this.textBox_ShowDuration.Text = _selectedVorstellung.Duration + "";
+            this.textBox_ShowStart.Text = _selectedVorstellung.StartTime.ToString();
         }
 
         /// <summary>
-        /// Updates this view, when the selected show changes. For example, when another customer reserves or buys a ticket.
+        /// Updates this view, when the selected vorstellung changes. For example, when another customer reserves or buys a ticket.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="subject">The subject.</param>
         /// <remarks></remarks>
         public void UpdateObserver<T>(T subject) where T : Base.AbstractClasses.Subject
         {
-            this.textBox_numberOfAvalableTickets.Text = selectedShow.GetNumberOfFreeSeats() + "";
-            this.textBox_ShowDuration.Text = selectedShow.Duration + "";
-            this.textBox_ShowStart.Text = selectedShow.StartTime.ToString();
+            this.textBox_numberOfAvalableTickets.Text = _selectedVorstellung.GetNumberOfFreeSeats() + "";
+            this.textBox_ShowDuration.Text = _selectedVorstellung.Duration + "";
+            this.textBox_ShowStart.Text = _selectedVorstellung.StartTime.ToString();
         }
 
         /// <summary>
@@ -141,7 +141,7 @@ namespace TicketOperations.Views.Besucher
         }
 
         /// <summary>
-        /// Shows the dialog for choosing a specific ticket for the selected show.
+        /// Shows the dialog for choosing a specific ticket for the selected vorstellung.
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
@@ -150,7 +150,7 @@ namespace TicketOperations.Views.Besucher
         {
             if (sitzplatzAuswahl == null)
             {
-                sitzplatzAuswahl = new Sitzplatzauswahl(selectedShow);
+                sitzplatzAuswahl = new Sitzplatzauswahl(_selectedVorstellung);
             }
 
             this.Hide();

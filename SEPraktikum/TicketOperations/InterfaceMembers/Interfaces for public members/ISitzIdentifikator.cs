@@ -5,7 +5,10 @@ using System.Text;
 
 namespace TicketOperations.InterfaceMembers
 {
-    public class TicketBlockAccessKey : ITicketBlockAccessKey
+    public interface ISitzIdentifikator
     {
+        int number();
+        
+        char row();
     }
 }

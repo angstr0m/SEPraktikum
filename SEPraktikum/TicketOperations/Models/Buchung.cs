@@ -5,7 +5,7 @@ namespace TicketOperations.Models {
     /// 
     /// </summary>
     /// <remarks></remarks>
-	public class Booking : Reservation  {
+	public class Buchung : Reservierung  {
         /// <summary>
         /// 
         /// </summary>

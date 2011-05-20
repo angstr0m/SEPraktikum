@@ -50,9 +50,9 @@ namespace TicketOperations.InterfaceMembers
             get { return _ticket.Seat; }
         }
 
-        public IPublicShow Show
+        public IPublicVorstellung Vorstellung
         {
-            get { return new PublicShow(_ticket.Show); }
+            get { return new PublicVorstellung(_ticket.Vorstellung); }
         }
     }
 }

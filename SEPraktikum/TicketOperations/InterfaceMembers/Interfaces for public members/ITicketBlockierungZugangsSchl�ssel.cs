@@ -1,6 +1,6 @@
 namespace TicketOperations.InterfaceMembers
 {
-    public interface ITicketBlockAccessKey
+    public interface ITicketBlockierungZugangsSchlüssel
     {
     }
 }

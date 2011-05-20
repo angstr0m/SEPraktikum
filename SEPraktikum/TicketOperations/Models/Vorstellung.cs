@@ -8,10 +8,10 @@ using TicketOperations.InterfaceMembers;
 namespace TicketOperations.Models {
     
     /// <summary>
-    /// A show represents a single viewing of a movie in a specific Movietheatre.
+    /// A vorstellung represents a single viewing of a movie in a specific Movietheatre.
     /// </summary>
     /// <remarks></remarks>
-    public class Show : Subject, IDatabaseObject
+    public class Vorstellung : Subject, IDatabaseObject
     {
 
         private int id;
@@ -36,7 +36,7 @@ namespace TicketOperations.Models {
         /// </summary>
         private bool pause;
         /// <summary>
-        /// The tickets associated with this Show.
+        /// The tickets associated with this vorstellung.
         /// </summary>
         private List<Ticket> tickets;
 
@@ -72,7 +72,7 @@ namespace TicketOperations.Models {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Show"/> class.
+        /// Initializes a new instance of the <see cref="Vorstellung"/> class.
         /// </summary>
         /// <param name="startTime">The start time.</param>
         /// <param name="movie">The movie.</param>
@@ -80,7 +80,7 @@ namespace TicketOperations.Models {
         /// <param name="pause">if set to <c>true</c> [pause].</param>
         /// <param name="ticketPrice">The ticket price.</param>
         /// <remarks></remarks>
-        public Show(DateTime startTime, Movie movie, MovieTheatre hall, bool pause, float ticketPrice)
+        public Vorstellung(DateTime startTime, Movie movie, MovieTheatre hall, bool pause, float ticketPrice)
         {
             this.startTime = startTime;
             this.movie = movie;
@@ -188,7 +188,7 @@ namespace TicketOperations.Models {
         /// <param name="nr">The number of the seat.</param>
         /// <returns></returns>
         /// <remarks></remarks>
-        public Ticket GetTicket(ISeatIdentifier seat)
+        public Ticket GetTicket(ISitzIdentifikator seat)
         {
             return GetTicket(seat.row(), seat.number());
         }
@@ -269,7 +269,7 @@ namespace TicketOperations.Models {
         }
 
         /// <summary>
-        /// Get a specific ticket from this show.
+        /// Get a specific ticket from this vorstellung.
         /// </summary>
         /// <param name="ticket">The ticket to get.</param>
         /// <remarks></remarks>
@@ -277,7 +277,7 @@ namespace TicketOperations.Models {
         {
             if (!tickets.Contains(ticket))
             {
-                throw new ArgumentException("The ticket " + ticket.ToString() + " is not contained in this Show!");
+                throw new ArgumentException("The ticket " + ticket.ToString() + " is not contained in this vorstellung!");
             }
             ticket.Sold = false;
             ticket.Reserved = false;

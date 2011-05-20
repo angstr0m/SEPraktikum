@@ -8,16 +8,16 @@ using TicketOperations.InterfaceMembers;
 namespace TicketOperations.Models {
     
     /// <summary>
-    /// Represents a ticket for a Movie show.
+    /// Represents a ticket for a Movie vorstellung.
     /// A ticket can be reserved and or bought. 
-    /// However, tickets that aren't bought, half an hour before the show starts, are set to non reserved and can only be bought until the show starts. 
-    /// A ticket is connected to one single Show.
+    /// However, tickets that aren't bought, half an hour before the vorstellung starts, are set to non reserved and can only be bought until the vorstellung starts. 
+    /// A ticket is connected to one single vorstellung.
     /// </summary>
     /// <remarks></remarks>
     public class Ticket : Subject, IDatabaseObject
     {
         private int id;
-        private ITicketBlockAccessKey key;
+        private ITicketBlockierungZugangsSchlüssel key;
         /// <summary>
         /// Indicates if the ticket has been bought by a customer.
         /// </summary>
@@ -42,32 +42,32 @@ namespace TicketOperations.Models {
         /// </summary>
         private Seat seat;
         /// <summary>
-        /// The show the ticket belongs to.
+        /// The vorstellung the ticket belongs to.
         /// </summary>
-        private Show show;
+        private Vorstellung vorstellung;
         /// <summary>
         /// The reservation number of the ticket.
         /// It is used by the customer to buy the ticket, if he reserved it previously.
         /// </summary>
         private string reservationNumber;
-        private EntityManager<Reservation> _databaseReservation;
+        private EntityManager<Reservierung> _databaseReservation;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Ticket"/> class.
         /// </summary>
         /// <param name="price">The price.</param>
         /// <param name="seat">The seat.</param>
-        /// <param name="show">The show.</param>
+        /// <param name="vorstellung">The vorstellung.</param>
         /// <remarks></remarks>
-        public Ticket(float price, Seat seat, Show show)
+        public Ticket(float price, Seat seat, Vorstellung vorstellung)
         {
             this.price = price;
             this.seat = seat;
-            this.show = show;
+            this.vorstellung = vorstellung;
             this.sold = false;
             this.reserved = false;
             // Reservationsnummer erstellen
-            this.reservationNumber = show.GetHashCode() + " " + seat.ToString();
+            this.reservationNumber = vorstellung.GetHashCode() + " " + seat.ToString();
         }
 
         /// <summary>
@@ -142,12 +142,12 @@ namespace TicketOperations.Models {
         }
 
         /// <summary>
-        /// Gets the show this ticket is for.
+        /// Gets the vorstellung this ticket is for.
         /// </summary>
         /// <remarks></remarks>
-        public Models.Show Show
+        public Models.Vorstellung Vorstellung
         {
-            get { return show; }
+            get { return vorstellung; }
         }
 
         public bool Blocked
@@ -155,7 +155,7 @@ namespace TicketOperations.Models {
             get { return blocked; }
         }
 
-        public ITicketBlockAccessKey Block()
+        public ITicketBlockierungZugangsSchlüssel Block()
         {
             if (key != null && Blocked)
             {
@@ -163,11 +163,11 @@ namespace TicketOperations.Models {
             }
 
             this.blocked = true;
-            key = new TicketBlockAccessKey();
+            key = new TicketBlockierungZugangsSchlüssel();
             return key;
         }
 
-        public void UnBlock(ITicketBlockAccessKey key)
+        public void UnBlock(ITicketBlockierungZugangsSchlüssel key)
         {
             if (this.key != key)
             {
@@ -197,8 +197,8 @@ namespace TicketOperations.Models {
             reserved = false;
             discount = false;
 
-            Reservation reservation = _databaseReservation.GetElements().Find(delegate(Reservation r) { return r.Tickets.Contains(this); });
-            reservation.RemoveTicket(this);
+            Reservierung reservierung = _databaseReservation.GetElements().Find(delegate(Reservierung r) { return r.Tickets.Contains(this); });
+            reservierung.RemoveTicket(this);
         }
 
         public void SetIdentifier(int id)

@@ -9,15 +9,15 @@ using TicketOperations.Models;
 namespace TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservierenViewSub
 {
     /// <summary>
-    /// Provides a interface for the user to select a ticket for a specific seat from a specific show.
+    /// Provides a interface for the user to select a ticket for a specific seat from a specific vorstellung.
     /// </summary>
     /// <remarks></remarks>
     public partial class Sitzplatzauswahl : Form, Observer
     {
         /// <summary>
-        /// The show that was selected in a previous form.
+        /// The vorstellung that was selected in a previous form.
         /// </summary>
-        Show selectedShow;
+        Vorstellung _selectedVorstellung;
         /// <summary>
         /// The ticket the user has currently selected.
         /// </summary>
@@ -34,16 +34,16 @@ namespace TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservierenVie
         /// <summary>
         /// Initializes a new instance of the <see cref="Sitzplatzauswahl"/> class.
         /// </summary>
-        /// <param name="selectedShow">The selected show.</param>
+        /// <param name="_selectedVorstellung">The selected vorstellung.</param>
         /// <remarks></remarks>
-        public Sitzplatzauswahl(Show selectedShow)
+        public Sitzplatzauswahl(Vorstellung _selectedVorstellung)
         {
             InitializeComponent();
-            this.selectedShow = selectedShow;
-            selectedShow.AddObserver(this);
+            this._selectedVorstellung = _selectedVorstellung;
+            _selectedVorstellung.AddObserver(this);
             this.discount = false;
 
-            this.list_sitzplatz.DataSource = selectedShow.GetAvailableTickets();
+            this.list_sitzplatz.DataSource = _selectedVorstellung.GetAvailableTickets();
             this.list_sitzplatz.DisplayMember = "Seat";
 
             this.dateTimePicker_birthDate.MaxDate = DateTime.Today;
@@ -137,7 +137,7 @@ namespace TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservierenVie
         /// <remarks></remarks>
         private void button_Zurueck_Click(object sender, EventArgs e)
         {
-            selectedShow.RemoveObserver(this);
+            _selectedVorstellung.RemoveObserver(this);
             this.Parent.Show();
             this.Close();
         }
@@ -150,7 +150,7 @@ namespace TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservierenVie
         /// <remarks></remarks>
         private void list_sitzplatz_SelectedIndexChanged(object sender, EventArgs e)
         {
-            selectedTicket = selectedShow.GetTicket(this.list_sitzplatz.SelectedIndex);
+            selectedTicket = _selectedVorstellung.GetTicket(this.list_sitzplatz.SelectedIndex);
             CheckPermission();
         }
 
@@ -212,7 +212,7 @@ namespace TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservierenVie
                 return helper;
             }
 
-            if ((DateTime.Now.Subtract(birthDate).Days / 356) < selectedShow.MovieRating)
+            if ((DateTime.Now.Subtract(birthDate).Days / 356) < _selectedVorstellung.MovieRating)
             {
                 helper.errorMessage = "Sie sind zu jung um diesen Film zu sehen.";
                 return helper;
@@ -223,15 +223,15 @@ namespace TicketOperations.Views.Besucher.BesucherKinokartenOnlineReservierenVie
         }
 
         /// <summary>
-        /// Updates the observer, when the tickets of the currently selected show change.
-        /// This happens, for example, when another user buys or reservs a ticket contained in the currently selected show.
+        /// Updates the observer, when the tickets of the currently selected vorstellung change.
+        /// This happens, for example, when another user buys or reservs a ticket contained in the currently selected vorstellung.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="subject">The subject.</param>
         /// <remarks></remarks>
         public void UpdateObserver<T>(T subject) where T : Base.AbstractClasses.Subject
         {
-            this.list_sitzplatz.DataSource = selectedShow.GetAvailableTickets();
+            this.list_sitzplatz.DataSource = _selectedVorstellung.GetAvailableTickets();
             this.list_sitzplatz.DisplayMember = "Seat";
             ((CurrencyManager)this.list_sitzplatz.BindingContext[this.list_sitzplatz.DataSource]).Refresh();
 

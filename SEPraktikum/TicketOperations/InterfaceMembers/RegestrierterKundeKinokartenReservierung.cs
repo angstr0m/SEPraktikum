@@ -5,10 +5,7 @@ using System.Text;
 
 namespace TicketOperations.InterfaceMembers
 {
-    public interface ISeatIdentifier
+    class RegestrierterKundeKinokartenReservierung : KinokarteReservieren, IRegistrierterKundeKinokartenReservierung
     {
-        int number();
-        
-        char row();
     }
 }

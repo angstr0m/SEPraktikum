@@ -26,7 +26,7 @@ namespace SEPraktikum.Views.HauptmenuViewSub.Views.HauptmenuViewSub
             }
 
             //this.Hide();
-            //kinosaalEditieren.Show();
+            //kinosaalEditieren.vorstellung();
             kinokartenReservieren.ShowDialog(this);
         }
     }

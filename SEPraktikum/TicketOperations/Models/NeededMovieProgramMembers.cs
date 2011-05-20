@@ -15,6 +15,6 @@ namespace TicketOperations.Models
         /// </summary>
         /// <value>The shows.</value>
         /// <remarks></remarks>
-        List<Show> Shows { get; set; }
+        List<Vorstellung> Shows { get; set; }
     }
 }

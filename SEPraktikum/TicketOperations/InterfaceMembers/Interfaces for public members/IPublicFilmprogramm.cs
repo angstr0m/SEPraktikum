@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace TicketOperations.InterfaceMembers
 {
-    public interface IPublicMovieProgram
+    public interface IPublicFilmprogramm
     {
         /// <summary>
         /// Gets or sets the list of shows that represent the shows that are shown in the week the movie program is responsible for.
@@ -10,7 +10,7 @@ namespace TicketOperations.InterfaceMembers
         /// <value>The shows.</value>
         /// <remarks></remarks>
         /// <pre></pre>
-        List<IPublicShow> Shows { get; }
+        List<IPublicVorstellung> Shows { get; }
 
         int GetIdentifier();
     }

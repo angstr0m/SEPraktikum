@@ -49,25 +49,30 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="InterfaceMembers\Interfaces for public members\ISeatIdentifier.cs" />
-    <Compile Include="InterfaceMembers\Interfaces for public members\ITicketBlockAccessKey.cs" />
-    <Compile Include="InterfaceMembers\Interfaces for public members\ITicketOperations.cs" />
-    <Compile Include="InterfaceMembers\PublicMovieProgram.cs" />
+    <Compile Include="InterfaceMembers\BesucherKinokartenReservierung.cs" />
+    <Compile Include="InterfaceMembers\Interfaces for public members\IBesucherKinokartenReservierung.cs" />
+    <Compile Include="InterfaceMembers\Interfaces for public members\IRegistrierterKundeKinokartenReservierung.cs" />
+    <Compile Include="InterfaceMembers\Interfaces for public members\ISitzIdentifikator.cs" />
+    <Compile Include="InterfaceMembers\Interfaces for public members\ITicketBlockierungZugangsSchlüssel.cs" />
+    <Compile Include="InterfaceMembers\Interfaces for public members\IKinokarteReservieren.cs" />
+    <Compile Include="InterfaceMembers\PublicFilmprogramm.cs" />
     <Compile Include="InterfaceMembers\PublicTicket.cs" />
-    <Compile Include="InterfaceMembers\TicketOperations.cs" />
-    <Compile Include="InterfaceMembers\PublicShow.cs" />
-    <Compile Include="Models\Booking.cs" />
+    <Compile Include="InterfaceMembers\KinokarteReservieren.cs" />
+    <Compile Include="InterfaceMembers\PublicVorstellung.cs" />
+    <Compile Include="InterfaceMembers\RegestrierterKundeKinokartenReservierung.cs" />
+    <Compile Include="InterfaceMembers\RegistrierterKundeKinokartenReservieren.cs" />
+    <Compile Include="Models\Buchung.cs" />
     <Compile Include="InterfaceMembers\Interfaces for public members\IPublicTicket.cs" />
-    <Compile Include="InterfaceMembers\Interfaces for public members\IPublicShow.cs" />
-    <Compile Include="InterfaceMembers\Interfaces for public members\IPublicMovieProgram.cs" />
-    <Compile Include="Models\MovieProgram.cs" />
+    <Compile Include="InterfaceMembers\Interfaces for public members\IPublicVorstellung.cs" />
+    <Compile Include="InterfaceMembers\Interfaces for public members\IPublicFilmprogramm.cs" />
+    <Compile Include="Models\Filmprogramm.cs" />
     <Compile Include="Models\NeededMovieProgramMembers.cs" />
     <Compile Include="Models\NeededShowMembers.cs" />
-    <Compile Include="Models\Reservation.cs" />
-    <Compile Include="Models\SeatIdentifier.cs" />
-    <Compile Include="Models\Show.cs" />
+    <Compile Include="Models\Reservierung.cs" />
+    <Compile Include="Models\SitzIdentifikator.cs" />
+    <Compile Include="Models\Vorstellung.cs" />
     <Compile Include="Models\Ticket.cs" />
-    <Compile Include="InterfaceMembers\TicketBlockAccessKey.cs" />
+    <Compile Include="InterfaceMembers\TicketBlockierungZugangsSchlüssel.cs" />
     <Compile Include="Views\Besucher\BesucherKinokartenOnlineReservierenView.cs">
       <SubType>Form</SubType>
     </Compile>
