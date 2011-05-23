@@ -1,5 +1,5 @@
 namespace Users.Models {
-	public class Employee : User {
+	public class Employee : Benutzer {
 	}
 
 }

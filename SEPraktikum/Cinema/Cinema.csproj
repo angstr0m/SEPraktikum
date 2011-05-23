@@ -38,47 +38,13 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Models\Movie.cs" />
-    <Compile Include="Models\MovieTheatre.cs" />
-    <Compile Include="Models\Seat.cs" />
-    <Compile Include="Views\Administrator\KinosaalAnlegenView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\Administrator\KinosaalAnlegenView.Designer.cs">
-      <DependentUpon>KinosaalAnlegenView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Administrator\KinosaalEditierenView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\Administrator\KinosaalEditierenView.Designer.cs">
-      <DependentUpon>KinosaalEditierenView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Administrator\KinosaalLoeschenView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\Administrator\KinosaalLoeschenView.Designer.cs">
-      <DependentUpon>KinosaalLoeschenView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Administrator\KinositzAnlegenView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\Administrator\KinositzAnlegenView.Designer.cs">
-      <DependentUpon>KinositzAnlegenView.cs</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Views\Administrator\KinosaalAnlegenView.resx">
-      <DependentUpon>KinosaalAnlegenView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\Administrator\KinosaalEditierenView.resx">
-      <DependentUpon>KinosaalEditierenView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\Administrator\KinosaalLoeschenView.resx">
-      <DependentUpon>KinosaalLoeschenView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\Administrator\KinositzAnlegenView.resx">
-      <DependentUpon>KinositzAnlegenView.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="Models\Film.cs" />
+    <Compile Include="InterfaceMembers\IFilm.cs" />
+    <Compile Include="InterfaceMembers\IKinosaal.cs" />
+    <Compile Include="InterfaceMembers\ISitz.cs" />
+    <Compile Include="Models\Kinosaal.cs" />
+    <Compile Include="Models\Sitz.cs" />
+    <Compile Include="Models\SitzIdentifikator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />

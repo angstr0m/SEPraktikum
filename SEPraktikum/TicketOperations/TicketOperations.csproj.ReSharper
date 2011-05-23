@@ -1,5 +1,5 @@
 <Configuration>
   <NamespaceFolders>
-    <SkipFolder>693E8C0C-D47E-4483-8755-3722DCB841D5/d:InterfaceMembers/d:Interfaces for public members</SkipFolder>
+    <SkipFolder>693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/d:Interfaces for public members</SkipFolder>
   </NamespaceFolders>
 </Configuration>

@@ -38,59 +38,27 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\Besucher\BesucherKinokartenOnlineReservierenView.resx">
-      <DependentUpon>BesucherKinokartenOnlineReservierenView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\Besucher\BesucherKinokartenOnlineReservierenViewSub\ReservierungsUebersicht.resx">
-      <DependentUpon>ReservierungsUebersicht.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\Besucher\BesucherKinokartenOnlineReservierenViewSub\Sitzplatzauswahl.resx">
-      <DependentUpon>Sitzplatzauswahl.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="InterfaceMembers\BesucherKinokartenReservierung.cs" />
-    <Compile Include="InterfaceMembers\Interfaces for public members\IBesucherKinokartenReservierung.cs" />
-    <Compile Include="InterfaceMembers\Interfaces for public members\IRegistrierterKundeKinokartenReservierung.cs" />
-    <Compile Include="InterfaceMembers\Interfaces for public members\ISitzIdentifikator.cs" />
-    <Compile Include="InterfaceMembers\Interfaces for public members\ITicketBlockierungZugangsSchlüssel.cs" />
-    <Compile Include="InterfaceMembers\Interfaces for public members\IKinokarteReservieren.cs" />
-    <Compile Include="InterfaceMembers\PublicFilmprogramm.cs" />
-    <Compile Include="InterfaceMembers\PublicTicket.cs" />
-    <Compile Include="InterfaceMembers\KinokarteReservieren.cs" />
-    <Compile Include="InterfaceMembers\PublicVorstellung.cs" />
-    <Compile Include="InterfaceMembers\RegestrierterKundeKinokartenReservierung.cs" />
-    <Compile Include="InterfaceMembers\RegistrierterKundeKinokartenReservieren.cs" />
+    <Compile Include="PublicInterfaceMembers\BesucherKinokartenReservierung.cs" />
+    <Compile Include="PublicInterfaceMembers\Interfaces for public members\IBesucherKinokartenReservierung.cs" />
+    <Compile Include="PublicInterfaceMembers\Interfaces for public members\IRegistrierterKundeKinokartenReservierung.cs" />
+    <Compile Include="PublicInterfaceMembers\Interfaces for public members\ISitzIdentifikator.cs" />
+    <Compile Include="PublicInterfaceMembers\Interfaces for public members\IKinokarteBlockierungZugangsSchlüssel.cs" />
+    <Compile Include="InternalInterfaceMembers\Interfaces\IKinokarteReservieren.cs" />
+    <Compile Include="PublicInterfaceMembers\PublicFilmprogramm.cs" />
+    <Compile Include="PublicInterfaceMembers\PublicKinokarte.cs" />
+    <Compile Include="InternalInterfaceMembers\KinokarteReservieren.cs" />
+    <Compile Include="PublicInterfaceMembers\PublicVorstellung.cs" />
+    <Compile Include="PublicInterfaceMembers\RegestrierterKundeKinokartenReservierung.cs" />
+    <Compile Include="PublicInterfaceMembers\RegistrierterKundeKinokartenReservieren.cs" />
     <Compile Include="Models\Buchung.cs" />
-    <Compile Include="InterfaceMembers\Interfaces for public members\IPublicTicket.cs" />
-    <Compile Include="InterfaceMembers\Interfaces for public members\IPublicVorstellung.cs" />
-    <Compile Include="InterfaceMembers\Interfaces for public members\IPublicFilmprogramm.cs" />
+    <Compile Include="PublicInterfaceMembers\Interfaces for public members\IPublicKinokarte.cs" />
+    <Compile Include="PublicInterfaceMembers\Interfaces for public members\IPublicVorstellung.cs" />
+    <Compile Include="PublicInterfaceMembers\Interfaces for public members\IPublicFilmprogramm.cs" />
     <Compile Include="Models\Filmprogramm.cs" />
-    <Compile Include="Models\NeededMovieProgramMembers.cs" />
-    <Compile Include="Models\NeededShowMembers.cs" />
     <Compile Include="Models\Reservierung.cs" />
-    <Compile Include="Models\SitzIdentifikator.cs" />
     <Compile Include="Models\Vorstellung.cs" />
-    <Compile Include="Models\Ticket.cs" />
-    <Compile Include="InterfaceMembers\TicketBlockierungZugangsSchlüssel.cs" />
-    <Compile Include="Views\Besucher\BesucherKinokartenOnlineReservierenView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\Besucher\BesucherKinokartenOnlineReservierenView.Designer.cs">
-      <DependentUpon>BesucherKinokartenOnlineReservierenView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Besucher\BesucherKinokartenOnlineReservierenViewSub\ReservierungsUebersicht.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\Besucher\BesucherKinokartenOnlineReservierenViewSub\ReservierungsUebersicht.Designer.cs">
-      <DependentUpon>ReservierungsUebersicht.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Besucher\BesucherKinokartenOnlineReservierenViewSub\Sitzplatzauswahl.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\Besucher\BesucherKinokartenOnlineReservierenViewSub\Sitzplatzauswahl.Designer.cs">
-      <DependentUpon>Sitzplatzauswahl.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Models\Kinokarte.cs" />
+    <Compile Include="PublicInterfaceMembers\KinokarteBlockierungZugangsSchlüssel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

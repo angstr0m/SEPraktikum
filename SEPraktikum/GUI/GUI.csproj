@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{723196A8-77B3-4EF6-9CAA-9C808924D210}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GUI</RootNamespace>
+    <AssemblyName>GUI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Views\Administrator\KinosaalAnlegenView.cs" />
+    <Compile Include="Views\Administrator\KinosaalAnlegenView.Designer.cs">
+      <DependentUpon>KinosaalAnlegenView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Administrator\KinosaalEditierenView.cs" />
+    <Compile Include="Views\Administrator\KinosaalEditierenView.Designer.cs">
+      <DependentUpon>KinosaalEditierenView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Administrator\KinosaalLoeschenView.cs" />
+    <Compile Include="Views\Administrator\KinosaalLoeschenView.Designer.cs">
+      <DependentUpon>KinosaalLoeschenView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Administrator\KinositzAnlegenView.cs" />
+    <Compile Include="Views\Administrator\KinositzAnlegenView.Designer.cs">
+      <DependentUpon>KinositzAnlegenView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Besucher\BesucherKinokartenOnlineReservierenView.cs" />
+    <Compile Include="Views\Besucher\BesucherKinokartenOnlineReservierenView.Designer.cs">
+      <DependentUpon>BesucherKinokartenOnlineReservierenView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Besucher\BesucherKinokartenOnlineReservierenViewSub\ReservierungsUebersicht.cs" />
+    <Compile Include="Views\Besucher\BesucherKinokartenOnlineReservierenViewSub\ReservierungsUebersicht.Designer.cs">
+      <DependentUpon>ReservierungsUebersicht.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Besucher\BesucherKinokartenOnlineReservierenViewSub\Sitzplatzauswahl.cs" />
+    <Compile Include="Views\Besucher\BesucherKinokartenOnlineReservierenViewSub\Sitzplatzauswahl.Designer.cs">
+      <DependentUpon>Sitzplatzauswahl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HauptmenuView.cs" />
+    <Compile Include="Views\HauptmenuView.Designer.cs">
+      <DependentUpon>HauptmenuView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HauptmenuViewSub\AdministratorView.cs" />
+    <Compile Include="Views\HauptmenuViewSub\AdministratorView.Designer.cs">
+      <DependentUpon>AdministratorView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HauptmenuViewSub\BesucherView.cs" />
+    <Compile Include="Views\HauptmenuViewSub\BesucherView.Designer.cs">
+      <DependentUpon>BesucherView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HauptmenuViewSub\Form1.Designer.cs">
+      <DependentUpon>KundeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HauptmenuViewSub\KundeView.cs" />
+    <Compile Include="Views\HauptmenuViewSub\MitarbeiterView.cs" />
+    <Compile Include="Views\HauptmenuViewSub\MitarbeiterView.Designer.cs">
+      <DependentUpon>MitarbeiterView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SplashScreen.cs" />
+    <Compile Include="Views\SplashScreen.Designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Administrator\KinosaalAnlegenView.resx">
+      <DependentUpon>KinosaalAnlegenView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Administrator\KinosaalEditierenView.resx">
+      <DependentUpon>KinosaalEditierenView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Administrator\KinosaalLoeschenView.resx">
+      <DependentUpon>KinosaalLoeschenView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Administrator\KinositzAnlegenView.resx">
+      <DependentUpon>KinositzAnlegenView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Besucher\BesucherKinokartenOnlineReservierenView.resx">
+      <DependentUpon>BesucherKinokartenOnlineReservierenView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Besucher\BesucherKinokartenOnlineReservierenViewSub\ReservierungsUebersicht.resx">
+      <DependentUpon>ReservierungsUebersicht.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Besucher\BesucherKinokartenOnlineReservierenViewSub\Sitzplatzauswahl.resx">
+      <DependentUpon>Sitzplatzauswahl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\HauptmenuView.resx">
+      <DependentUpon>HauptmenuView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\HauptmenuViewSub\AdministratorView.resx">
+      <DependentUpon>AdministratorView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\HauptmenuViewSub\BesucherView.resx">
+      <DependentUpon>BesucherView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\HauptmenuViewSub\KundeView.resx">
+      <DependentUpon>KundeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\HauptmenuViewSub\MitarbeiterView.resx">
+      <DependentUpon>MitarbeiterView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SplashScreen.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

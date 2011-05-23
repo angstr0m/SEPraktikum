@@ -5,24 +5,22 @@ using Database.Interfaces;
 
 namespace TicketOperations.Models {
     /// <summary>
-    /// Represents the movie program of a specific week.
-    /// The movie program contains all shows that will be shown in the specific week.
+    /// Dient der Sammlung aller Vorstellungen für eine Woche.
     /// </summary>
     /// <remarks></remarks>
 	public class Filmprogramm : Subject, IDatabaseObject
     {
         private int id;
         /// <summary>
-        /// The starting date of the movie program.
-        /// From this date the movie program contains all shows that will be shown for the duration of 7 days.
+        /// Datum ab welchem das Filmprogramm für eine Woche gültig ist.
         /// </summary>
         private DateTime startDateTime;
         /// <summary>
-        /// The shows that are shown in the week the movie program represents.
+        /// Die Vorstellungen dieses Filmprogramms.
         /// </summary>
-        private List<Vorstellung> shows;
+        private List<Vorstellung> _vorstellungen;
         /// <summary>
-        /// Movie programs must be published by the admin before beeing visible to customers.
+        /// Zeigt an, ob das Filmprogramm bereits veröffentlicht wurde.
         /// </summary>
         private bool published;
 
@@ -30,33 +28,32 @@ namespace TicketOperations.Models {
         /// Initializes a new instance of the <see cref="Filmprogramm"/> class.
         /// </summary>
         /// <param name="startTime">The start time.</param>
-        /// <param name="shows">The shows.</param>
+        /// <param name="vorstellungen">The vorstellungen.</param>
         /// <remarks></remarks>
-        public Filmprogramm(DateTime startTime, List<Vorstellung> shows)
+        public Filmprogramm(DateTime startTime, List<Vorstellung> vorstellungen)
         {
             startDateTime = startTime;
-            this.shows = shows;
+            this._vorstellungen = vorstellungen;
             published = false;
         }
 
         /// <summary>
-        /// Publishes this movie program. It can now be seen by the customers.
+        /// Veröffentlicht das Filmprogramm.
         /// </summary>
-        /// <remarks></remarks>
-        public void Publish() 
+        /// <remarks>Sobald das Filmprogramm öffentlich ist, kann es von Kunden eingesehen werden.</remarks>
+        public void Veröffentlichen() 
         {
             published = true;
         }
 
         /// <summary>
-        /// Gets or sets the list of shows that represent the shows that are shown in the week the movie program is responsible for.
+        /// Gibt die Vorstellungen dieses Filmprogramms zurück.
         /// </summary>
-        /// <value>The shows.</value>
+        /// <value></value>
         /// <remarks></remarks>
-        public List<Vorstellung> Shows
+        public List<Vorstellung> Vorstellungen
         {
-            get { return shows; }
-            set { shows = value; }
+            get { return _vorstellungen; }
         }
 
         public DateTime StartDateTime

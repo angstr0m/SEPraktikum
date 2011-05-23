@@ -15,32 +15,20 @@ namespace TicketOperations.Models {
     {
         private int _id;
         private bool _discount;
-        /// <summary>
-        /// 
-        /// </summary>
-        private int _reservationNumber;
-        /// <summary>
-        /// 
-        /// </summary>
+        private int _reservierungsnummer;
         private Vorstellung _vorstellung;
-        /// <summary>
-        /// 
-        /// </summary>
-        private List<Ticket> _tickets;
-        /// <summary>
-        /// 
-        /// </summary>
-        private Customer _customer;
+        private List<Kinokarte> _kinokarten;
+        private Kunde _kunde;
 
         private EntityManager<Reservierung> _database;
 
-        public Reservierung(Ticket ticket, Customer customer, bool discount, ITicketBlockierungZugangsSchlüssel key)
+        public Reservierung(Kinokarte kinokarte, Kunde kunde, bool discount, IKinokarteBlockierungZugangsSchlüssel key)
         {
-            _vorstellung = ticket.Vorstellung;
-            _tickets = new List<Ticket>();
-            this.AddTicket(ticket, key);
-            _reservationNumber = _tickets.Count;
-            _customer = customer;
+            _vorstellung = kinokarte.Vorstellung;
+            _kinokarten = new List<Kinokarte>();
+            this.TicketHinzufügen(kinokarte, key);
+            _reservierungsnummer = _kinokarten.Count;
+            _kunde = kunde;
             _discount = discount;
 
             _database = new EntityManager<Reservierung>();
@@ -48,94 +36,113 @@ namespace TicketOperations.Models {
         }
 
         /// <summary>
-        /// Adds the ticket.
+        /// Kinokarte der Reservierung hinzufügen
         /// </summary>
-        /// <param name="ticket">The ticket.</param>
+        /// <param name="kinokarte">Das Kinokarte welches der Reservierung hinzugefügt werden soll.</param>
         /// <remarks></remarks>
-        public void AddTicket(Ticket ticket, ITicketBlockierungZugangsSchlüssel key)
+        public void TicketHinzufügen(Kinokarte kinokarte, IKinokarteBlockierungZugangsSchlüssel key)
         {
-            if (_vorstellung != null && ticket.Vorstellung != _vorstellung)
+            if (_vorstellung != null && kinokarte.Vorstellung != _vorstellung)
             {
-                throw new System.Exception("Tickets in a reservation must all belong to the same vorstellung!");
+                throw new System.Exception("Kinokarten in a reservation must all belong to the same vorstellung!");
             }
 
-            if (ticket.Reserved || ticket.Sold)
+            if (kinokarte.Reserviert || kinokarte.Verkauft)
             {
-                throw new System.Exception("Ticket already bought or reserved!");
+                throw new System.Exception("Kinokarte already bought or reserved!");
             }
 
-            ticket.UnBlock(key);
+            kinokarte.BlockierungAufheben(key);
 
-            ticket.Discount = _discount;
-            ticket.Reserved = true;
-            _tickets.Add(ticket);
+            kinokarte.Rabatt = _discount;
+            kinokarte.Reservieren();
+            _kinokarten.Add(kinokarte);
         }
-        /// <summary>
-        /// Removes the ticket.
-        /// </summary>
-        /// <param name="ticket">The ticket.</param>
-        /// <remarks></remarks>
-        public void RemoveTicket(Ticket ticket)
-        {
-            ticket.Reserved = false;
-            _tickets.Remove(ticket);
 
-            if (_tickets.Count == 0)
+        /// <summary>
+        /// Entfernt das übergebene Kinokarte aus dieser Reservierung.
+        /// </summary>
+        /// <param name="kinokarte">Das Kinokarte.</param>
+        /// <remarks></remarks>
+        public void TicketEntfernen(Kinokarte kinokarte)
+        {
+            kinokarte.ReservierungAufheben();
+            _kinokarten.Remove(kinokarte);
+
+            if (_kinokarten.Count == 0)
             {
                 _database.RemoveElement(this);
             }
         }
         /// <summary>
-        /// Prices this instance.
+        /// Gibt den Preis dieser Reservierung zurück.
         /// </summary>
         /// <returns></returns>
-        /// <remarks></remarks>
+        /// <remarks> Der Preis dieser Reservierung ergibt sich hierbei aus der Summe der Preise aller Kinokarten. </remarks>
         public float Price()
         {
             float price = 0;
 
-            foreach (Ticket ticket in _tickets)
+            foreach (Kinokarte ticket in _kinokarten)
             {
-                price += ticket.Price;
+                price += ticket.Preis;
             }
 
             return price;
         }
         
         /// <summary>
-        /// Cancels the reservation.
+        /// Storniert diese Reservierung.
         /// </summary>
         /// <returns></returns>
         /// <remarks></remarks>
-        public void CancelReservation()
+        public void ReservierungStornieren()
         {
-            foreach (Ticket ticket in _tickets)
+            // Den Reservierungsstatus der enthaltenen Kinokarten aufheben.
+            foreach (Kinokarte ticket in _kinokarten)
             {
-                ticket.Reserved = false;
+                ticket.ReservierungAufheben();
             }
 
+            // Dann diese Reservierung aus der Datenbank entfernen.
             _database.RemoveElement(this);
         }
 
 
-        public int ReservationNumber
+        /// <summary>
+        /// Gibt die Reservierungsnummer diese Reservierung zurück.
+        /// </summary>
+        /// <remarks></remarks>
+        public int Reservierungsnummer
         {
-            get { return _reservationNumber; }
+            get { return _reservierungsnummer; }
         }
 
+        /// <summary>
+        /// Gibt die Vorstellung zu der diese Reservierung gehört zurück.
+        /// </summary>
+        /// <remarks></remarks>
         public TicketOperations.Models.Vorstellung Vorstellung
         {
             get { return _vorstellung; }
         }
 
-        public System.Collections.Generic.List<TicketOperations.Models.Ticket> Tickets
+        /// <summary>
+        /// Gibt die Kinokarten zurück, die zu dieser Vorstellung gehören.
+        /// </summary>
+        /// <remarks></remarks>
+        public System.Collections.Generic.List<TicketOperations.Models.Kinokarte> Kinokarten
         {
-            get { return _tickets; }
+            get { return _kinokarten; }
         }
 
-        public Users.Models.Customer Customer
+        /// <summary>
+        /// Gibt den Kunden zurück, dem diese Registrierung zugeordnet ist.
+        /// </summary>
+        /// <remarks></remarks>
+        public Users.Models.Kunde Kunde
         {
-            get { return _customer; }
+            get { return _kunde; }
         }
 
         public void SetIdentifier(int id)

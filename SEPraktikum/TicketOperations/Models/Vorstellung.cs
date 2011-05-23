@@ -8,7 +8,7 @@ using TicketOperations.InterfaceMembers;
 namespace TicketOperations.Models {
     
     /// <summary>
-    /// A vorstellung represents a single viewing of a movie in a specific Movietheatre.
+    /// Eine Vorstellung repräsentiert eine einzelne Vorführung eines Films in einem bestimmten Kinosaal.
     /// </summary>
     /// <remarks></remarks>
     public class Vorstellung : Subject, IDatabaseObject
@@ -16,271 +16,264 @@ namespace TicketOperations.Models {
 
         private int id;
         /// <summary>
-        /// The time, when the movie showing starts.
+        /// Startzeit des Vorstellung.
         /// </summary>
         private DateTime startTime;
         /// <summary>
-        /// The movie that is shown.
+        /// Der Film der in der Vorstellung gezeigt wird.
         /// </summary>
-        private Movie movie;
+        private Film _film;
         /// <summary>
-        /// The Movietheatre in which the movie is shown.
+        /// Der Kinosaal in dem die Vorstellung gezeigt wird.
         /// </summary>
-        private MovieTheatre hall;
+        private Kinosaal _kinosaal;
         /// <summary>
-        /// The duration of the movie shown.
-        /// </summary>
-        private int duration;
-        /// <summary>
-        /// Indicates if the movie has a pause through the showing.
+        /// Zeigt an, ob es während der Vorstellung eine Pause gibt oder nicht. 
         /// </summary>
         private bool pause;
         /// <summary>
-        /// The tickets associated with this vorstellung.
+        /// Die Kinokarten dieser Vorstellung.
         /// </summary>
-        private List<Ticket> tickets;
+        private List<Kinokarte> _kinokarten;
 
         /// <summary>
-        /// Gets or sets the start time.
+        /// Gibt die Startzeit dieser Vorstellung zurück.
         /// </summary>
-        /// <value>The start time.</value>
+        /// <value></value>
         /// <remarks></remarks>
         public DateTime StartTime
         {
             get { return startTime; }
-            set { startTime = value; }
         }
 
         /// <summary>
-        /// Gets the duration of the movie shown.
+        /// Gibt die Spieldauer des zugehörigen Films zurück.
         /// </summary>
         /// <value>The duration.</value>
         /// <remarks></remarks>
         public int Duration
         {
-            get { return duration; }
-            set { duration = value; }
+            get { return _film.Dauer; }
         }
 
         /// <summary>
-        /// Gets the movie rating (parental advisory) of the movie shown.
+        /// Gibt die Altersfreigabe das Films zurück.
         /// </summary>
         /// <remarks></remarks>
-        public int MovieRating
+        public int Altersfreigabe
         {
-            get { return movie.MovieRating; }
+            get { return _film.Altersfreigabe; }
         }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Vorstellung"/> class.
         /// </summary>
         /// <param name="startTime">The start time.</param>
-        /// <param name="movie">The movie.</param>
-        /// <param name="hall">The hall.</param>
+        /// <param name="_film">The Film.</param>
+        /// <param name="kinosaal">The _kinosaal.</param>
         /// <param name="pause">if set to <c>true</c> [pause].</param>
-        /// <param name="ticketPrice">The ticket price.</param>
+        /// <param name="ticketPrice">The Kinokarte price.</param>
         /// <remarks></remarks>
-        public Vorstellung(DateTime startTime, Movie movie, MovieTheatre hall, bool pause, float ticketPrice)
+        public Vorstellung(DateTime startTime, Film _film, Kinosaal kinosaal, bool pause, float ticketPrice)
         {
             this.startTime = startTime;
-            this.movie = movie;
-            this.hall = hall;
-            this.duration = movie.Duration;
+            this._film = _film;
+            this._kinosaal = kinosaal;
+            this.duration = _film.Dauer;
             this.pause = pause;
-            this.tickets = new List<Ticket>();
+            this._kinokarten = new List<Kinokarte>();
 
-            foreach (Seat s in hall.GetSeats())
+            foreach (Sitz s in kinosaal.GetSeats())
             {
-                tickets.Add(new Ticket(ticketPrice, s, this));
+                _kinokarten.Add(new Kinokarte(ticketPrice, s, this));
             }
         }
 
         /// <summary>
-        /// Gets the number of free tickets.
+        /// Gibt die Anzahl der Kinokarten zurück, die weder verkauft noch reserviert sind.
         /// </summary>
         /// <returns></returns>
         /// <remarks></remarks>
         public int GetNumberOfFreeSeats()
         {
-            return tickets.FindAll(
-                    delegate(Ticket t)
+            return _kinokarten.FindAll(
+                    delegate(Kinokarte t)
                     {
-                        return (!t.Sold && !t.Reserved);
+                        return (!t.Verkauft && !t.Reserviert);
                     }
                 ).Count;
         }
 
         /// <summary>
-        /// Gets the number of tickets that has been sold or reserved.
+        /// Gibt die Anzahl der Kinokarten zurück, die gekauft oder reserviert wurden.
         /// </summary>
         /// <returns></returns>
         /// <remarks></remarks>
         public int GetNumberOfBlockedSeats()
         {
-            return tickets.FindAll(
-                    delegate(Ticket t)
+            return _kinokarten.FindAll(
+                    delegate(Kinokarte t)
                     {
-                        return (t.Sold || t.Reserved);
+                        return (t.Verkauft || t.Reserviert);
                     }
                 ).Count;
         }
 
         /// <summary>
-        /// Gets the available tickets.
+        /// Gibt die Kinokarten dieser Vorstellung zurück, die weder verkauft noch reserviert sind.
         /// </summary>
         /// <returns></returns>
         /// <remarks></remarks>
-        public List<Ticket> GetAvailableTickets()
+        public List<Kinokarte> GetVerügbareKinokarten()
         {
-            return tickets.FindAll(
-                    delegate(Ticket t)
+            return _kinokarten.FindAll(
+                    delegate(Kinokarte t)
                     {
-                        return (!t.Sold && !t.Reserved);
+                        return (!t.Verkauft && !t.Reserviert);
                     }
                 );
         }
 
         /// <summary>
-        /// Gets the reserved tickets.
+        /// Gibt die reservierten Kinokarten zurück.
         /// </summary>
         /// <returns></returns>
         /// <remarks></remarks>
-        public List<Ticket> GetReservedTickets()
+        public List<Kinokarte> GetReservierteKinokarten()
         {
-            return tickets.FindAll(
-                    delegate(Ticket t)
+            return _kinokarten.FindAll(
+                    delegate(Kinokarte t)
                     {
-                        return (t.Reserved);
+                        return (t.Reserviert);
                     }
                 );
         }
 
         /// <summary>
-        /// Gets the sold tickets.
+        /// Liefert die verkauften Kinokarten zurück.
         /// </summary>
         /// <returns></returns>
         /// <remarks></remarks>
-        public List<Ticket> GetSoldTickets()
+        public List<Kinokarte> GetVerkaufteKinokarten()
         {
-            return tickets.FindAll(
-                    delegate(Ticket t)
+            return _kinokarten.FindAll(
+                    delegate(Kinokarte t)
                     {
-                        return (t.Sold);
+                        return (t.Verkauft);
                     }
                 );
         }
 
         /// <summary>
-        /// Gets the ticket at index.
+        /// Gibt eine bestimmte Kinokarte aus dieser Vorstellung zurück.
         /// </summary>
-        /// <param name="index">The index of the wanted ticket.</param>
-        /// <returns></returns>
+        /// <param name="index">Der Index der gewünschten Kinokarte.</param>
+        /// <returns>Die gewünschte Kinokarte.</returns>
         /// <remarks></remarks>
-        public Ticket GetTicket(int index)
+        public Kinokarte GetKinokarte(int index)
         {
-            return tickets[index];
+            return _kinokarten[index];
         }
 
         /// <summary>
-        /// Gets the ticket for a specific seat, identified by row and number of the seat.
+        /// Gibt eine bestimmte Kinokarte aus dieser Vorstellung zurück.
         /// </summary>
-        /// <param name="row">The row of the seat (A-Z).</param>
-        /// <param name="nr">The number of the seat.</param>
-        /// <returns></returns>
+        /// <param name="seat">Die Reihe des Sitzes (A-Z).</param>
+        /// <returns>Die gewünschte Kinokarte.</returns>
         /// <remarks></remarks>
-        public Ticket GetTicket(ISitzIdentifikator seat)
+        public Kinokarte GetKinokarte(ISitz sitz)
         {
-            return GetTicket(seat.row(), seat.number());
+            return GetKinokarte(sitz.Reihe(), sitz.Nummer());
         }
 
         /// <summary>
-        /// Gets the ticket for a specific seat, identified by row and number of the seat.
+        /// Gibt eine bestimmte Kinokarte aus dieser Vorstellung zurück.
         /// </summary>
-        /// <param name="row">The row of the seat (A-Z).</param>
-        /// <param name="nr">The number of the seat.</param>
+        /// <param name="reihe">Die Reihe des Sitzes der gewünschten Kinokarte (A-Z).</param>
+        /// <param name="nummer">Dir Nummer der gewünschten Kinokarte.</param>
         /// <returns></returns>
         /// <remarks></remarks>
-        public Ticket GetTicket(char row, int nr)
+        public Kinokarte GetKinokarte(char reihe, int nummer)
         {
-            return tickets.Find(
-                    delegate(Ticket t)
+            return _kinokarten.Find(
+                    delegate(Kinokarte t)
                     {
-                        return ((t.Seat.GetRow() == row) && (t.Seat.GetNr() == nr));
+                        return ((t.Sitz.Reihe() == reihe) && (t.Sitz.Nummer() == nummer));
                     }
                 );
         }
 
         /// <summary>
-        /// Gets the name of the movie that is shown.
+        /// Gibt den Namen des Films zurück, der gezeigt wird.
         /// </summary>
         /// <remarks></remarks>
         public String Name
         {
             get
             {
-                return movie.Name;
+                return _film.Name;
             }
         }
 
         /// <summary>
-        /// Reserves the specific ticket.
+        /// Reserviert die angegebene Kinokarte.
         /// </summary>
-        /// <param name="ticket">The ticket that should be reserved.</param>
+        /// <param name="kinokarte"></param>
         /// <remarks></remarks>
-        public void ReserveTicket(Ticket ticket)
+        public void ReserviereKinokarte(Kinokarte kinokarte)
         {
-            ticket.Reserved = true;
+            kinokarte.Reservieren();
             NotifyObservers();
         }
 
         /// <summary>
-        /// Reserves the ticket for a specific seat identified by row and number.
+        /// Reserviert die angegebene Kinokarte.
         /// </summary>
-        /// <param name="row">The row of the seat.</param>
-        /// <param name="nr">The number of the seat.</param>
+        /// <param name="row"></param>
+        /// <param name="nr"></param>
         /// <remarks></remarks>
-        public void ReserveTicket(char row, int nr)
+        public void ReserviereKinokarte(char row, int nr)
         {
-            GetTicket(row, nr).Reserved = true;
+            GetKinokarte(row, nr).Reservieren();
             NotifyObservers();
         }
 
         /// <summary>
-        /// Sells the specific ticket.
+        /// Verkauft die angegebene Kinokarte.
         /// </summary>
-        /// <param name="ticket">The ticket.</param>
+        /// <param name="kinokarte"></param>
         /// <remarks></remarks>
-        public void SellTicket(Ticket ticket)
+        public void VerkaufeKinokarte(Kinokarte kinokarte)
         {
-            ticket.Sold = true;
+            kinokarte.Verkauft = true;
             NotifyObservers();
         }
 
         /// <summary>
-        /// Sells the ticket for a specific seat identified by row and number.
+        /// Verkauft die angegebene Kinokarte.
         /// </summary>
-        /// <param name="row">The row of the wanted seat.</param>
-        /// <param name="nr">The number of the wanted seat.</param>
+        /// <param name="row"></param>
+        /// <param name="nr"></param>
         /// <remarks></remarks>
-        public void SellTicket(char row, int nr)
+        public void VerkaufeKinokarte(char row, int nr)
         {
-            GetTicket(row, nr).Sold = true;
+            GetKinokarte(row, nr).Verkauft = true;
             NotifyObservers();
         }
 
         /// <summary>
-        /// Get a specific ticket from this vorstellung.
+        /// Macht den Verkauf und oder die Reservierung einer Kinokarte rückgängig.
         /// </summary>
-        /// <param name="ticket">The ticket to get.</param>
+        /// <param name="kinokarte">The Kinokarte to get.</param>
         /// <remarks></remarks>
-        public void ReturnTicket(Ticket ticket)
+        public void KinokarteZurücksetzen(Kinokarte kinokarte)
         {
-            if (!tickets.Contains(ticket))
+            if (!_kinokarten.Contains(kinokarte))
             {
-                throw new ArgumentException("The ticket " + ticket.ToString() + " is not contained in this vorstellung!");
+                throw new ArgumentException("The Kinokarte " + kinokarte.ToString() + " is not contained in this vorstellung!");
             }
-            ticket.Sold = false;
-            ticket.Reserved = false;
+            kinokarte.Verkauft = false;
+            kinokarte.ReservierungAufheben();
             NotifyObservers();
         }
 
