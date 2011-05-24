@@ -7,12 +7,14 @@ using Users.Models;
 
 namespace Users.Interfaces
 {
-    interface IKundeninformationen
+    public interface IKundeninformationen
     {
-        void KundeHinzufügen(string name, List<Adress> adress, DateTime birthDateTime, string phone, float discount, Account account);
+        void KundeHinzufügen(string name, List<Adress> adress, DateTime birthDateTime, string phone, float discount, Zahlungsinformationen zahlungsinformationen);
 
         void KundeEntfernen(IKunde kunde);
 
         IKunde GetKunde(int kundennummer);
+
+        IKunde GetBesucher();
     }
 }

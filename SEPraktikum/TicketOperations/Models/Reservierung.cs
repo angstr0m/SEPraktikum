@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Base.AbstractClasses;
+using Users.Interfaces;
 using Users.Models;
 using Database.Models;
 using Database.Interfaces;
@@ -18,11 +19,11 @@ namespace TicketOperations.Models {
         private int _reservierungsnummer;
         private Vorstellung _vorstellung;
         private List<Kinokarte> _kinokarten;
-        private Kunde _kunde;
+        private IKunde _kunde;
 
         private EntityManager<Reservierung> _database;
 
-        public Reservierung(Kinokarte kinokarte, Kunde kunde, bool discount, IKinokarteBlockierungZugangsSchlüssel key)
+        public Reservierung(Kinokarte kinokarte, IKunde kunde, bool discount, IKinokarteBlockierungZugangsSchlüssel key)
         {
             _vorstellung = kinokarte.Vorstellung;
             _kinokarten = new List<Kinokarte>();
@@ -140,7 +141,7 @@ namespace TicketOperations.Models {
         /// Gibt den Kunden zurück, dem diese Registrierung zugeordnet ist.
         /// </summary>
         /// <remarks></remarks>
-        public Users.Models.Kunde Kunde
+        public IKunde Kunde
         {
             get { return _kunde; }
         }

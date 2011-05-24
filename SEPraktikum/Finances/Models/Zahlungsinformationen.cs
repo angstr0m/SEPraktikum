@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using Base.AbstractClasses;
 
 namespace Finances.Models {
-	public class Account : Subject {
+	public class Zahlungsinformationen : Subject {
 		private float balance;
 		private List<PaymentInfo> paymentInfo;
 

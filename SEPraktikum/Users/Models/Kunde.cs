@@ -7,48 +7,48 @@ namespace Users.Models {
 	public class Kunde : Benutzer, IKunde
 	{
 	    private int id;
-		private int customerID;
+		private int _kundennummer;
 	    private string name;
-		private List<Adress> adress;
-		private DateTime birthDateTime;
-		private String phone;
-		private float discount;
-		private Account account;
+		private List<Adress> _adresse;
+		private DateTime _geburtsdatum;
+		private String _telefonnummer;
+		private float _rabatt;
+		private Zahlungsinformationen zahlungsinformationen;
 
-        public Kunde(int customerID ,string name, List<Adress> adress, DateTime birthDateTime, string phone, float discount, Account account)
+        public Kunde(int _kundennummer ,string name, List<Adress> _adresse, DateTime _geburtsdatum, string _telefonnummer, float _rabatt, Zahlungsinformationen zahlungsinformationen)
         {
             this.name = name;
-            this.customerID = customerID;
-	        this.adress = adress;
-	        this.birthDateTime = birthDateTime;
-	        this.phone = phone;
-	        this.discount = discount;
-	        this.account = account;
+            this._kundennummer = _kundennummer;
+	        this._adresse = _adresse;
+	        this._geburtsdatum = _geburtsdatum;
+	        this._telefonnummer = _telefonnummer;
+	        this._rabatt = _rabatt;
+	        this.zahlungsinformationen = zahlungsinformationen;
 	    }
 
-	    public Account Account
+	    public Zahlungsinformationen Zahlungsinformationen
 	    {
-	        get { return account; }
+	        get { return zahlungsinformationen; }
 	    }
 
-	    public float Discount
+	    public float Rabatt
 	    {
-	        get { return discount; }
+	        get { return _rabatt; }
 	    }
 
-	    public string Phone
+	    public string Telefonnummer
 	    {
-	        get { return phone; }
+	        get { return _telefonnummer; }
 	    }
 
-	    public DateTime BirthDateTime
+	    public DateTime Geburtsdatum
 	    {
-	        get { return birthDateTime; }
+	        get { return _geburtsdatum; }
 	    }
 
-	    public List<Adress> Adress
+	    public List<Adress> Adresse
 	    {
-	        get { return adress; }
+	        get { return _adresse; }
 	    }
 
 	    public string Name
@@ -56,9 +56,9 @@ namespace Users.Models {
 	        get { return name; }
 	    }
 
-	    public int CustomerId
+	    public int Kundennummer
 	    {
-	        get { return customerID; }
+	        get { return _kundennummer; }
 	    }
 
 	    public int Id

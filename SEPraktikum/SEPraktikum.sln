@@ -7,15 +7,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Base", "Base\Base.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database", "Database\Database.csproj", "{D54D34FF-8ABC-4AEE-9190-7D0E48D49FED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cinema", "Cinema\Cinema.csproj", "{FFDCF527-C890-4B77-A201-292D5E0CE18F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kino", "Cinema\Kino.csproj", "{FFDCF527-C890-4B77-A201-292D5E0CE18F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Finances", "Finances\Finances.csproj", "{22E855AA-DE16-4254-ABC3-A413790289E9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Finanzen", "Finances\Finanzen.csproj", "{22E855AA-DE16-4254-ABC3-A413790289E9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Users", "Users\Users.csproj", "{16617112-8305-4A0C-911A-3EFF4573B7E1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Benutzer", "Users\Benutzer.csproj", "{16617112-8305-4A0C-911A-3EFF4573B7E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketOperations", "TicketOperations\TicketOperations.csproj", "{693E8C0C-D47E-4483-8755-3722DCB841D5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kinokarten", "TicketOperations\Kinokarten.csproj", "{693E8C0C-D47E-4483-8755-3722DCB841D5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI", "GUI\GUI.csproj", "{723196A8-77B3-4EF6-9CAA-9C808924D210}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anwendungskern", "Anwendungskern\Anwendungskern.csproj", "{933F4F12-DE06-4E09-8A8D-1AD192363219}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +57,10 @@ Global
 		{723196A8-77B3-4EF6-9CAA-9C808924D210}.Debug|x86.Build.0 = Debug|x86
 		{723196A8-77B3-4EF6-9CAA-9C808924D210}.Release|x86.ActiveCfg = Release|x86
 		{723196A8-77B3-4EF6-9CAA-9C808924D210}.Release|x86.Build.0 = Release|x86
+		{933F4F12-DE06-4E09-8A8D-1AD192363219}.Debug|x86.ActiveCfg = Debug|x86
+		{933F4F12-DE06-4E09-8A8D-1AD192363219}.Debug|x86.Build.0 = Debug|x86
+		{933F4F12-DE06-4E09-8A8D-1AD192363219}.Release|x86.ActiveCfg = Release|x86
+		{933F4F12-DE06-4E09-8A8D-1AD192363219}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

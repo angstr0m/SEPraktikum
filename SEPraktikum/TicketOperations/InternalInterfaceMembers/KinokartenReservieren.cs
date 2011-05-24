@@ -5,6 +5,7 @@ using System.Text;
 using Database.Models;
 using TicketOperations.Models;
 using Users.Models;
+using Users.Interfaces;
 using System.Timers;
 
 namespace TicketOperations.InterfaceMembers
@@ -13,21 +14,24 @@ namespace TicketOperations.InterfaceMembers
     /// 
     /// </summary>
     /// <remarks></remarks>
-    class KinokarteReservieren : IKinokarteReservieren
+    class KinokartenReservieren : IKinokarteReservieren
     {
         private EntityManager<Vorstellung> _databaseShows;
         private EntityManager<Kinokarte> _databaseTickets;
         private EntityManager<Filmprogramm> _databaseMoviePrograms;
         private EntityManager<Reservierung> _databaseReservations;
 
+        protected IKundeninformationen _kundeninformationen;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="T:System.Object"/> class.
         /// </summary>
         /// <remarks></remarks>
-        public KinokarteReservieren()
+        public KinokartenReservieren(IKundeninformationen kundeninformationen)
         {
             InitializeDatabase();
+
+            this._kundeninformationen = kundeninformationen;
         }
 
 
@@ -49,15 +53,17 @@ namespace TicketOperations.InterfaceMembers
         /// <param name="vorstellung">Die gewünschte Vorstellung.</param>
         /// <param name="seat">Der gewünschte Sitzplatz.</param>
         /// <param name="discount">Soll ein Rabatt auf den Preis der Kinokarte gewährt werden?</param>
-        /// <param name="customer">Der Kunde.</param>
+        /// <param name="kundennummer"></param>
         /// <param name="key">Der TransaktionsSchlüssel der für das entsperren des Kinokarten gebraucht wird.</param>
         /// <returns> Die Reservationsnummer des reservierten Kinokarten. </returns>
         /// <remarks></remarks>
-        public int TicketReservieren(IPublicVorstellung vorstellung, ISitzIdentifikator seat, bool discount, Kunde customer, IKinokarteBlockierungZugangsSchlüssel key)
+        public int KinokarteReservieren(IPublicVorstellung vorstellung, ISitzIdentifikator seat, bool discount, int kundennummer, IKinokarteBlockierungZugangsSchlüssel key)
         {
+            IKunde kunde = _kundeninformationen.GetKunde(kundennummer);
+
             Kinokarte wantedKinokarte = _databaseShows.GetElementWithId(vorstellung.GetIdentifier()).GetKinokarte(null);
 
-            Reservierung r = new Reservierung(wantedKinokarte, customer, discount, key);
+            Reservierung r = new Reservierung(wantedKinokarte, kunde, discount, key);
 
             return r.Reservierungsnummer;
         }
@@ -67,22 +73,22 @@ namespace TicketOperations.InterfaceMembers
         /// </summary>
         /// <param name="kinokarte">Das Kinokarte welches reserviert werden soll.</param>
         /// <param name="discount">Soll ein Rabatt auf die Karten gegeben werden?</param>
-        /// <param name="customer">Der Kunde.</param>
+        /// <param name="kundennummer"></param>
         /// <param name="key">Der TransaktionsSchlüssel der für das entsperren des Kinokarten gebraucht wird.</param>
         /// <returns> Die Reservationsnummer des reservierten Kinokarten. </returns>
         /// <remarks></remarks>
-        public int TicketReservieren(IPublicKinokarte kinokarte, bool discount, Kunde customer, IKinokarteBlockierungZugangsSchlüssel key)
+        public int KinokarteReservieren(IPublicKinokarte kinokarte, bool discount, int kundennummer, IKinokarteBlockierungZugangsSchlüssel key)
         {
             Kinokarte wantedKinokarte = _databaseTickets.GetElementWithId(kinokarte.GetIdentifier());
             Reservierung r = _databaseReservations.GetElements().Find(delegate(Reservierung re)
                                                                          {
-                                                                             return (re.Kunde == customer) &&
+                                                                             return (re.Kunde.Kundennummer == kundennummer) &&
                                                                                     (re.Vorstellung == (Vorstellung) kinokarte.Vorstellung);
                                                                          });
 
             if (r == null)
             {
-                r = new Reservierung(wantedKinokarte, customer, discount, key);
+                r = new Reservierung(wantedKinokarte, kundennummer, discount, key);
             } else
             {
                 r.TicketHinzufügen(wantedKinokarte, key);

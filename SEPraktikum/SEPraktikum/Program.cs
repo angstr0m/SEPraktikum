@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using Cinema.Models;
 using TicketOperations.Models;
 using Database.Models;
+using Users.Interfaces;
 
 namespace SEPraktikum.Views.HauptmenuViewSub
 {
@@ -18,14 +19,14 @@ namespace SEPraktikum.Views.HauptmenuViewSub
         {
             FillWithTestData();
             BuildComponents();
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Views.SEPraktikum());
+            //Application.EnableVisualStyles();
+            //Application.SetCompatibleTextRenderingDefault(false);
+            //Application.Run(new Views.SEPraktikum());
         }
 
         private static void BuildComponents()
         {
-            
+            IKundeninformationen kundeninformationen = new Kundeninformationen();
         }
 
         private static void FillWithTestData()

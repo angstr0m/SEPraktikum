@@ -56,9 +56,9 @@
       <Project>{D54D34FF-8ABC-4AEE-9190-7D0E48D49FED}</Project>
       <Name>Database</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Finances\Finances.csproj">
+    <ProjectReference Include="..\Finances\Finanzen.csproj">
       <Project>{22E855AA-DE16-4254-ABC3-A413790289E9}</Project>
-      <Name>Finances</Name>
+      <Name>Finanzen</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

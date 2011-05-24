@@ -2,19 +2,25 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Users.Interfaces;
 
 namespace TicketOperations.InterfaceMembers
 {
-    class BesucherKinokartenReservierung : KinokarteReservieren, IBesucherKinokartenReservierung
+    class BesucherKinokartenReservierung : KinokartenReservieren, IBesucherKinokartenReservierung
     {
-        public int TicketReservieren(IPublicVorstellung vorstellung, ISitzIdentifikator sitz, bool rabatt, IKinokarteBlockierungZugangsSchlüssel transaktionsSchlüssel)
+        public BesucherKinokartenReservierung(IKundeninformationen kundeninformationen) : base(kundeninformationen)
         {
-            throw new NotImplementedException();
+            
         }
 
-        public int TicketReservieren(IPublicKinokarte kinokarte, bool rabatt, IKinokarteBlockierungZugangsSchlüssel transaktionsSchlüssel)
+        public int KinokarteReservieren(IPublicVorstellung vorstellung, ISitzIdentifikator sitz, bool rabatt, IKinokarteBlockierungZugangsSchlüssel transaktionsSchlüssel)
         {
-            throw new NotImplementedException();
+            return base.KinokarteReservieren(vorstellung, sitz, rabatt, 0, transaktionsSchlüssel);
+        }
+
+        public int KinokarteReservieren(IPublicKinokarte kinokarte, bool rabatt, IKinokarteBlockierungZugangsSchlüssel transaktionsSchlüssel)
+        {
+            return base.KinokarteReservieren(kinokarte, rabatt, 0, transaktionsSchlüssel);
         }
     }
 }

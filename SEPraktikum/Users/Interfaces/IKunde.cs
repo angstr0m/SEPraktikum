@@ -12,19 +12,19 @@ namespace Users.Interfaces
         void AddAdress(Adress newAdress);
         void RemoveAdress(Adress adress);
 
-        Account Account { get; }
+        Zahlungsinformationen Zahlungsinformationen { get; }
 
-        float Discount { get; }
+        float Rabatt { get; }
 
-        string Phone { get; }
+        string Telefonnummer { get; }
 
-        DateTime BirthDateTime { get; }
+        DateTime Geburtsdatum { get; }
 
-        List<Adress> Adress { get; }
+        List<Adress> Adresse { get; }
 
         string Name { get; }
 
-        int CustomerId { get; }
+        int Kundennummer { get; }
 
         int Id { get; }
 

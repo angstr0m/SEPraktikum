@@ -10,67 +10,64 @@
   <RecentFiles>
     <RecentFiles>
       <File id="D54D34FF-8ABC-4AEE-9190-7D0E48D49FED/d:Interfaces/f:IDatabaseObject.cs" caret="250" fromTop="14" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Ticket.cs" caret="6769" fromTop="50" />
       <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/d:Interfaces for public members/f:IPublicVorstellung.cs" caret="127" fromTop="5" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/d:Interfaces for public members/f:ITicketBlockierungZugangsSchlüssel.cs" caret="77" fromTop="2" />
       <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Buchung.cs" caret="151" fromTop="7" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Filmprogramm.cs" caret="378" fromTop="10" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:NeededMovieProgramMembers.cs" caret="0" fromTop="0" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:NeededShowMembers.cs" caret="0" fromTop="0" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:SitzIdentifikator.cs" caret="142" fromTop="7" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Reservierung.cs" caret="334" fromTop="13" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Vorstellung.cs" caret="1396" fromTop="41" />
-      <File id="D54D34FF-8ABC-4AEE-9190-7D0E48D49FED/d:Models/f:EntityManager.cs" caret="3076" fromTop="40" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/d:Interfaces for public members/f:IRegistrierterKundeKinokartenReservierung.cs" caret="0" fromTop="0" />
       <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/d:Interfaces for public members/f:IPublicFilmprogramm.cs" caret="0" fromTop="0" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InternalInterfaceMembers/d:Interfaces/f:IKinokarteReservieren.cs" caret="1256" fromTop="28" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/d:Interfaces for public members/f:IBesucherKinokartenReservierung.cs" caret="1184" fromTop="20" />
       <File id="FFDCF527-C890-4B77-A201-292D5E0CE18F/d:Models/f:Sitz.cs" caret="189" fromTop="7" />
       <File id="FFDCF527-C890-4B77-A201-292D5E0CE18F/d:Models/f:Kinosaal.cs" caret="299" fromTop="9" />
       <File id="FFDCF527-C890-4B77-A201-292D5E0CE18F/d:Models/f:Film.cs" caret="285" fromTop="9" />
-      <File id="16617112-8305-4A0C-911A-3EFF4573B7E1/d:Models/f:Customer.cs" caret="0" fromTop="0" />
-      <File id="16617112-8305-4A0C-911A-3EFF4573B7E1/d:Models/f:ICustomer.cs" caret="1387" fromTop="44" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/f:BesucherKinokartenReservierung.cs" caret="698" fromTop="20" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InternalInterfaceMembers/f:KinokarteReservieren.cs" caret="8340" fromTop="55" />
       <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/f:PublicFilmprogramm.cs" caret="0" fromTop="0" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/f:PublicTicket.cs" caret="0" fromTop="0" />
       <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/f:PublicVorstellung.cs" caret="0" fromTop="0" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/f:RegestrierterKundeKinokartenReservierung.cs" caret="263" fromTop="8" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/f:RegistrierterKundeKinokartenReservieren.cs" caret="0" fromTop="0" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/f:TicketBlockierungZugangsSchlüssel.cs" caret="246" fromTop="11" />
-      <File id="76A4DFAD-72A0-461F-BDA4-E4C497587DD3/f:Program.cs" caret="144" fromTop="5" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Filmprogramm.cs" caret="548" fromTop="0" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Vorstellung.cs" caret="8670" fromTop="261" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/d:Interfaces for public members/f:IRegistrierterKundeKinokartenReservierung.cs" caret="0" fromTop="0" />
+      <File id="D54D34FF-8ABC-4AEE-9190-7D0E48D49FED/d:Models/f:EntityManager.cs" caret="183" fromTop="8" />
+      <File id="16617112-8305-4A0C-911A-3EFF4573B7E1/d:Models/f:Employee.cs" caret="0" fromTop="0" />
+      <File id="16617112-8305-4A0C-911A-3EFF4573B7E1/d:Models/f:Kunde.cs" caret="1945" fromTop="78" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Reservierung.cs" caret="4756" fromTop="47" />
+      <File id="16617112-8305-4A0C-911A-3EFF4573B7E1/d:Interfaces/f:IKundeninformationen.cs" caret="502" fromTop="17" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/f:RegistrierterKundeKinokartenReservieren.cs" caret="425" fromTop="11" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InternalInterfaceMembers/d:Interfaces/f:IKinokarteReservieren.cs" caret="120" fromTop="5" />
+      <File id="16617112-8305-4A0C-911A-3EFF4573B7E1/d:Interfaces/f:IKunde.cs" caret="876" fromTop="36" />
+      <File id="16617112-8305-4A0C-911A-3EFF4573B7E1/d:Interfaces/f:Kundeninformationen.cs" caret="443" fromTop="16" />
+      <File id="22E855AA-DE16-4254-ABC3-A413790289E9/d:Models/f:Zahlungsinformationen.cs" caret="0" fromTop="0" />
+      <File id="76A4DFAD-72A0-461F-BDA4-E4C497587DD3/f:Program.cs" caret="1719" fromTop="45" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/f:BesucherKinokartenReservierung.cs" caret="966" fromTop="22" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InternalInterfaceMembers/f:KinokartenReservieren.cs" caret="2227" fromTop="19" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/d:Interfaces for public members/f:ISitzIdentifikator.cs" caret="0" fromTop="0" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/d:Interfaces for public members/f:IBesucherKinokartenReservierung.cs" caret="567" fromTop="11" />
     </RecentFiles>
     <RecentEdits>
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/d:Interfaces for public members/f:IBesucherKinokartenReservierung.cs" caret="1037" fromTop="22" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/d:Interfaces for public members/f:IBesucherKinokartenReservierung.cs" caret="1015" fromTop="20" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/d:Interfaces for public members/f:IBesucherKinokartenReservierung.cs" caret="362" fromTop="8" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InternalInterfaceMembers/f:KinokarteReservieren.cs" caret="636" fromTop="22" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InternalInterfaceMembers/f:KinokarteReservieren.cs" caret="674" fromTop="27" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InternalInterfaceMembers/f:KinokarteReservieren.cs" caret="862" fromTop="29" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InternalInterfaceMembers/f:KinokarteReservieren.cs" caret="266" fromTop="12" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InternalInterfaceMembers/f:KinokarteReservieren.cs" caret="981" fromTop="31" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InternalInterfaceMembers/f:KinokarteReservieren.cs" caret="2159" fromTop="36" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InternalInterfaceMembers/f:KinokarteReservieren.cs" caret="3125" fromTop="48" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InternalInterfaceMembers/f:KinokarteReservieren.cs" caret="1947" fromTop="39" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InternalInterfaceMembers/f:KinokarteReservieren.cs" caret="2948" fromTop="50" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InternalInterfaceMembers/f:KinokarteReservieren.cs" caret="4307" fromTop="43" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InternalInterfaceMembers/f:KinokarteReservieren.cs" caret="5685" fromTop="50" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InternalInterfaceMembers/f:KinokarteReservieren.cs" caret="5841" fromTop="53" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InternalInterfaceMembers/f:KinokarteReservieren.cs" caret="7079" fromTop="55" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InternalInterfaceMembers/f:KinokarteReservieren.cs" caret="6979" fromTop="53" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InternalInterfaceMembers/f:KinokarteReservieren.cs" caret="7739" fromTop="50" />
-      <File id="D54D34FF-8ABC-4AEE-9190-7D0E48D49FED/d:Models/f:EntityManager.cs" caret="1056" fromTop="24" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/f:BesucherKinokartenReservierung.cs" caret="243" fromTop="8" />
-      <File id="FFDCF527-C890-4B77-A201-292D5E0CE18F/d:Models/f:Film.cs" caret="2883" fromTop="8" />
-      <File id="FFDCF527-C890-4B77-A201-292D5E0CE18F/d:Models/f:Kinosaal.cs" caret="1976" fromTop="8" />
-      <File id="FFDCF527-C890-4B77-A201-292D5E0CE18F/d:Models/f:Sitz.cs" caret="191" fromTop="7" />
-      <File id="FFDCF527-C890-4B77-A201-292D5E0CE18F/d:Models/f:Sitz.cs" caret="1767" fromTop="7" />
-      <File id="FFDCF527-C890-4B77-A201-292D5E0CE18F/d:Models/f:Kinosaal.cs" caret="299" fromTop="9" />
-      <File id="FFDCF527-C890-4B77-A201-292D5E0CE18F/d:Models/f:Film.cs" caret="285" fromTop="9" />
-      <File id="76A4DFAD-72A0-461F-BDA4-E4C497587DD3/f:Program.cs" caret="511" fromTop="19" />
-      <File id="76A4DFAD-72A0-461F-BDA4-E4C497587DD3/f:Program.cs" caret="840" fromTop="31" />
-      <File id="76A4DFAD-72A0-461F-BDA4-E4C497587DD3/f:Program.cs" caret="751" fromTop="26" />
-      <File id="76A4DFAD-72A0-461F-BDA4-E4C497587DD3/f:Program.cs" caret="144" fromTop="5" />
+      <File id="16617112-8305-4A0C-911A-3EFF4573B7E1/d:Interfaces/f:IKundeninformationen.cs" caret="178" fromTop="9" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/f:RegistrierterKundeKinokartenReservieren.cs" caret="425" fromTop="11" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/f:BesucherKinokartenReservierung.cs" caret="385" fromTop="10" />
+      <File id="16617112-8305-4A0C-911A-3EFF4573B7E1/d:Interfaces/f:IKundeninformationen.cs" caret="502" fromTop="17" />
+      <File id="16617112-8305-4A0C-911A-3EFF4573B7E1/d:Interfaces/f:Kundeninformationen.cs" caret="380" fromTop="14" />
+      <File id="16617112-8305-4A0C-911A-3EFF4573B7E1/d:Interfaces/f:Kundeninformationen.cs" caret="764" fromTop="27" />
+      <File id="16617112-8305-4A0C-911A-3EFF4573B7E1/d:Interfaces/f:Kundeninformationen.cs" caret="1564" fromTop="49" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InternalInterfaceMembers/f:KinokartenReservieren.cs" caret="725" fromTop="23" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InternalInterfaceMembers/f:KinokartenReservieren.cs" caret="1081" fromTop="33" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Reservierung.cs" caret="734" fromTop="24" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Reservierung.cs" caret="609" fromTop="21" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InternalInterfaceMembers/f:KinokartenReservieren.cs" caret="2642" fromTop="47" />
+      <File id="16617112-8305-4A0C-911A-3EFF4573B7E1/d:Interfaces/f:Kundeninformationen.cs" caret="988" fromTop="31" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/f:BesucherKinokartenReservierung.cs" caret="627" fromTop="17" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/f:BesucherKinokartenReservierung.cs" caret="966" fromTop="22" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Reservierung.cs" caret="4756" fromTop="47" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InternalInterfaceMembers/f:KinokartenReservieren.cs" caret="3834" fromTop="48" />
+      <File id="16617112-8305-4A0C-911A-3EFF4573B7E1/d:Interfaces/f:IKunde.cs" caret="601" fromTop="26" />
+      <File id="16617112-8305-4A0C-911A-3EFF4573B7E1/d:Interfaces/f:IKunde.cs" caret="427" fromTop="14" />
+      <File id="76A4DFAD-72A0-461F-BDA4-E4C497587DD3/f:Program.cs" caret="645" fromTop="22" />
+      <File id="76A4DFAD-72A0-461F-BDA4-E4C497587DD3/f:Program.cs" caret="840" fromTop="28" />
+      <File id="16617112-8305-4A0C-911A-3EFF4573B7E1/d:Interfaces/f:Kundeninformationen.cs" caret="178" fromTop="9" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InternalInterfaceMembers/f:KinokartenReservieren.cs" caret="363" fromTop="7" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InternalInterfaceMembers/f:KinokartenReservieren.cs" caret="2239" fromTop="50" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/d:Interfaces for public members/f:IBesucherKinokartenReservierung.cs" caret="2175" fromTop="20" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/d:Interfaces for public members/f:IBesucherKinokartenReservierung.cs" caret="1377" fromTop="10" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/d:Interfaces for public members/f:IBesucherKinokartenReservierung.cs" caret="1080" fromTop="12" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/d:Interfaces for public members/f:IBesucherKinokartenReservierung.cs" caret="993" fromTop="11" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/d:Interfaces for public members/f:IBesucherKinokartenReservierung.cs" caret="1078" fromTop="11" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/d:Interfaces for public members/f:IBesucherKinokartenReservierung.cs" caret="567" fromTop="11" />
     </RecentEdits>
   </RecentFiles>
   <NAntValidationSettings>
@@ -88,41 +85,41 @@
     <ItemStatistics item="Default">
       <Item value="namespace" priority="1" />
       <Item value="SEPraktikum" priority="0" />
-      <Item value="Interfaces" priority="7" />
+      <Item value="Interfaces" priority="8" />
       <Item value="AbstractClasses" priority="3" />
       <Item value="Base" priority="5" />
       <Item value="Base64FormattingOptions`0" priority="2" />
-      <Item value="using" priority="14" />
+      <Item value="using" priority="17" />
       <Item value="EntityManager`0" priority="0" />
       <Item value="ThreadStaticAttribute`0" priority="1" />
-      <Item value="EntityManager" priority="7" />
+      <Item value="EntityManager" priority="9" />
       <Item value="T`0" priority="8" />
-      <Item value="List" priority="8" />
-      <Item value="public" priority="31" />
+      <Item value="List" priority="9" />
+      <Item value="public" priority="35" />
       <Item value="Entity`0" priority="11" />
-      <Item value="int" priority="23" />
-      <Item value="this" priority="10" />
-      <Item value="id" priority="15" />
+      <Item value="int" priority="28" />
+      <Item value="this" priority="11" />
+      <Item value="id" priority="18" />
       <Item value="entityList" priority="5" />
-      <Item value="new" priority="37" />
+      <Item value="new" priority="41" />
       <Item value="List&lt;Entity&gt;" priority="0" />
-      <Item value="void" priority="15" />
-      <Item value="return" priority="55" />
+      <Item value="void" priority="19" />
+      <Item value="return" priority="57" />
       <Item value="InvalidTimeZoneException`0" priority="0" />
       <Item value="Predicate&lt;Entity&gt;" priority="0" />
       <Item value="Delegate`0" priority="0" />
-      <Item value="delegate" priority="5" />
+      <Item value="delegate" priority="7" />
       <Item value="e" priority="5" />
       <Item value="DatabaseSimulation`0" priority="6" />
       <Item value="foreach" priority="5" />
       <Item value="i" priority="0" />
       <Item value="IDictionary" priority="3" />
-      <Item value="private" priority="25" />
+      <Item value="private" priority="32" />
       <Item value="Type`0" priority="7" />
       <Item value="type" priority="1" />
       <Item value="for" priority="0" />
       <Item value="in" priority="1" />
-      <Item value="null" priority="1" />
+      <Item value="null" priority="5" />
       <Item value="data" priority="0" />
       <Item value="List&lt;T&gt;" priority="1" />
       <Item value="Dictionary" priority="0" />
@@ -132,7 +129,7 @@
       <Item value="typeof" priority="3" />
       <Item value="object" priority="1" />
       <Item value="ArrayList`0" priority="1" />
-      <Item value="if" priority="18" />
+      <Item value="if" priority="19" />
       <Item value="else" priority="3" />
       <Item value="ArrayList" priority="0" />
       <Item value="IList" priority="1" />
@@ -141,8 +138,8 @@
       <Item value="throw" priority="6" />
       <Item value="ArgumentException" priority="0" />
       <Item value="returnList" priority="1" />
-      <Item value="Database" priority="8" />
-      <Item value="Models" priority="3" />
+      <Item value="Database" priority="9" />
+      <Item value="Models" priority="4" />
       <Item value="MovieTheatre`0" priority="5" />
       <Item value="RuntimeMethodHandle`0" priority="0" />
       <Item value="em" priority="0" />
@@ -168,11 +165,11 @@
       <Item value="System" priority="3" />
       <Item value="Console`0" priority="0" />
       <Item value="PublicShow`0" priority="5" />
-      <Item value="TicketOperations" priority="3" />
+      <Item value="TicketOperations" priority="4" />
       <Item value="Show`0" priority="6" />
       <Item value="show" priority="10" />
       <Item value="duration" priority="0" />
-      <Item value="base" priority="0" />
+      <Item value="base" priority="5" />
       <Item value="InterfaceMembers" priority="7" />
       <Item value="IPublicShow`0" priority="5" />
       <Item value="IPublicTicket`0" priority="3" />
@@ -228,11 +225,11 @@
       <Item value="_databaseShows" priority="3" />
       <Item value="wantedTicket" priority="7" />
       <Item value="Customer" priority="0" />
-      <Item value="DateTime`0" priority="3" />
+      <Item value="DateTime`0" priority="4" />
       <Item value="usedReservationNumbers" priority="2" />
       <Item value="_databaseTickets" priority="7" />
       <Item value="_discount" priority="2" />
-      <Item value="discount" priority="4" />
+      <Item value="discount" priority="5" />
       <Item value="startDateTime" priority="0" />
       <Item value="wantedShow" priority="0" />
       <Item value="number" priority="0" />
@@ -276,9 +273,41 @@
       <Item value="m" priority="1" />
       <Item value="_databaseReservations" priority="1" />
       <Item value="rta" priority="0" />
-      <Item value="IKinokarteReservieren`0" priority="2" />
-      <Item value="IBesucherKinokartenReservierung`0" priority="0" />
+      <Item value="IKinokarteReservieren`0" priority="4" />
+      <Item value="IBesucherKinokartenReservierung`0" priority="1" />
       <Item value="KinokarteReservieren`0" priority="2" />
+      <Item value="PublicFilmprogramm`0" priority="0" />
+      <Item value="IKundeninformationen`0" priority="4" />
+      <Item value="IKunde`0" priority="9" />
+      <Item value="Adress`0" priority="0" />
+      <Item value="string" priority="1" />
+      <Item value="name" priority="1" />
+      <Item value="_daten_ikunde" priority="5" />
+      <Item value="EntityManager&lt;IKunde&gt;" priority="0" />
+      <Item value="adress" priority="0" />
+      <Item value="birthDateTime" priority="0" />
+      <Item value="phone" priority="0" />
+      <Item value="customerID" priority="0" />
+      <Item value="benutzteKundennummern" priority="1" />
+      <Item value="k" priority="2" />
+      <Item value="kundennummer" priority="1" />
+      <Item value="Users" priority="0" />
+      <Item value="kundenInformationen" priority="0" />
+      <Item value="BesucherKinokartenReservierung`0" priority="0" />
+      <Item value="kinokartenReservierung" priority="0" />
+      <Item value="RegistrierterKundeKinokartenReservieren`0" priority="0" />
+      <Item value="kundeninformationen" priority="8" />
+      <Item value="KundeHinzufügen`0" priority="1" />
+      <Item value="DateTime" priority="0" />
+      <Item value="protected" priority="0" />
+      <Item value="_kundeninformationen" priority="0" />
+      <Item value="wantedKinokarte" priority="0" />
+      <Item value="vorstellung" priority="0" />
+      <Item value="sitz" priority="0" />
+      <Item value="rabatt" priority="1" />
+      <Item value="transaktionsSchlüssel" priority="1" />
+      <Item value="kinokarte" priority="0" />
+      <Item value="Vorstellung`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:Database.Models.Entity">
       <Item value="id" priority="0" />
@@ -288,7 +317,7 @@
     <ItemStatistics item="Qualified:System.Collections.Generic.List`1">
       <Item value="Add`0" priority="3" />
       <Item value="Remove`0" priority="1" />
-      <Item value="Find`0" priority="6" />
+      <Item value="Find`0" priority="8" />
       <Item value="Count" priority="3" />
       <Item value="Contains`0" priority="1" />
     </ItemStatistics>
@@ -316,9 +345,9 @@
       <Item value="GetType`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:Database.Models.EntityManager`1">
-      <Item value="AddElement`0" priority="3" />
-      <Item value="GetElements`0" priority="20" />
-      <Item value="RemoveElement`0" priority="1" />
+      <Item value="AddElement`0" priority="4" />
+      <Item value="GetElements`0" priority="22" />
+      <Item value="RemoveElement`0" priority="2" />
       <Item value="GetElementWithId`0" priority="10" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Windows.Forms.ListBox">
@@ -408,6 +437,19 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.DateTime">
       <Item value="AddDays`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Users.Models.Kunde">
+      <Item value="name" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Users.Interfaces.IKunde">
+      <Item value="CustomerId" priority="1" />
+      <Item value="Name" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Users.Interfaces.IKundeninformationen">
+      <Item value="GetKunde`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:TicketOperations.InterfaceMembers.KinokarteReservieren">
+      <Item value="TicketReservieren`0" priority="1" />
     </ItemStatistics>
   </CompletionStatisticsManager>
 </Configuration>

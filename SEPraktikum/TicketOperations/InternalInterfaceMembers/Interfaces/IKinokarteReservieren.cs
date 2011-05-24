@@ -8,18 +8,25 @@ namespace TicketOperations.InterfaceMembers
         /// Reserves the kinokarte identified by seat row and number.
         /// </summary>
         /// <param name="vorstellung">The vorstellung.</param>
+        /// <param name="seat"></param>
+        /// <param name="discount"></param>
+        /// <param name="kundennummer"></param>
+        /// <param name="transactionkey"></param>
         /// <param name="row">The row.</param>
         /// <param name="number">The number.</param>
         /// <remarks></remarks>
-        int TicketReservieren(IPublicVorstellung vorstellung, ISitzIdentifikator seat , bool discount, Kunde customer, IKinokarteBlockierungZugangsSchlüssel transactionkey);
+        int KinokarteReservieren(IPublicVorstellung vorstellung, ISitzIdentifikator seat, bool discount, int kundennummer, IKinokarteBlockierungZugangsSchlüssel transactionkey);
 
         /// <summary>
         /// Reserves the kinokarte.
         /// </summary>
-        /// <param name="show">The vorstellung.</param>
         /// <param name="kinokarte">The kinokarte.</param>
+        /// <param name="discount"></param>
+        /// <param name="kundennummer"></param>
+        /// <param name="transactionkey"></param>
+        /// <param name="show">The vorstellung.</param>
         /// <remarks></remarks>
-        int TicketReservieren(IPublicKinokarte kinokarte, bool discount, Kunde customer, IKinokarteBlockierungZugangsSchlüssel transactionkey);
+        int KinokarteReservieren(IPublicKinokarte kinokarte, bool discount, int kundennummer, IKinokarteBlockierungZugangsSchlüssel transactionkey);
 
         /// <summary>
         /// Blocks the kinokarte identified by seat row and number.

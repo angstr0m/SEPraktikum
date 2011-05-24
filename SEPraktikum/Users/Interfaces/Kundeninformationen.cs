@@ -7,9 +7,10 @@ using Users.Models;
 
 namespace Users.Interfaces
 {
-    class Kundeninformationen : IKundeninformationen
+    public class Kundeninformationen : IKundeninformationen
     {
         private EntityManager<IKunde> _daten_ikunde;
+        private IKunde Besucher;
         private int benutzteKundennummern = 0;
         
         private void EntityManagerInitialisieren()
@@ -20,13 +21,18 @@ namespace Users.Interfaces
             }
         }
 
-        public void KundeHinzufügen(string name, List<Models.Adress> adress, DateTime birthDateTime, string phone, float discount, Finances.Models.Account account)
+        public Kundeninformationen()
         {
             EntityManagerInitialisieren();
+            
+            KundeHinzufügen("Besucher", null,new DateTime(), null,0,null);
+        }
 
-            benutzteKundennummern ++;
+        public void KundeHinzufügen(string name, List<Models.Adress> adress, DateTime birthDateTime, string phone, float discount, Finances.Models.Zahlungsinformationen zahlungsinformationen)
+        {
+            _daten_ikunde.AddElement(new Kunde(benutzteKundennummern ,name, adress,birthDateTime, phone, discount, zahlungsinformationen));
 
-            _daten_ikunde.AddElement(new Kunde(benutzteKundennummern ,name, adress,birthDateTime, phone, discount, account));
+            benutzteKundennummern++;
         }
 
         public void KundeEntfernen(IKunde kunde)
@@ -36,7 +42,12 @@ namespace Users.Interfaces
 
         public IKunde GetKunde(int kundennummer)
         {
-            return _daten_ikunde.GetElements().Find(delegate(IKunde k) { return k.CustomerId == kundennummer; });
+            return _daten_ikunde.GetElements().Find(delegate(IKunde k) { return k.Kundennummer == kundennummer; });
+        }
+
+        public IKunde GetBesucher()
+        {
+            return _daten_ikunde.GetElements().Find(delegate(IKunde k) { return k.Name == "Besucher"; });
         }
     }
 }
