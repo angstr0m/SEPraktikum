@@ -1,4 +1,6 @@
 using System;
+using TicketOperations.PublicInterfaceMembers;
+using Users.Interfaces;
 
 namespace TicketOperations.Models {
     /// <summary>
@@ -10,6 +12,10 @@ namespace TicketOperations.Models {
         /// 
         /// </summary>
 		private String isPayed;
+
+        public Buchung(Kinokarte kinokarte, IKunde kunde, bool discount, IKinokarteBlockierungZugangsSchlüssel key) : base(kinokarte, kunde, discount, key)
+        {
+        }
 
         /// <summary>
         /// Gets the is payed.

@@ -4,6 +4,7 @@ using TicketOperations.InternalInterfaceMembers.Interfaces;
 using TicketOperations.Models;
 using TicketOperations.PublicInterfaceMembers;
 using Users.Interfaces;
+using Users.Models;
 
 namespace TicketOperations.InternalInterfaceMembers
 {
@@ -17,6 +18,7 @@ namespace TicketOperations.InternalInterfaceMembers
         private EntityManager<Kinokarte> _databaseTickets;
         private EntityManager<Filmprogramm> _databaseMoviePrograms;
         private EntityManager<Reservierung> _databaseReservations;
+        private EntityManager<Kunde> _kunden;
 
         protected IBenutzerinformationen Benutzerinformationen;
 
@@ -82,10 +84,15 @@ namespace TicketOperations.InternalInterfaceMembers
                                                                              return (re.Kunde.Kundennummer == kundennummer) &&
                                                                                     (re.Vorstellung == (Vorstellung) kinokarte.Vorstellung);
                                                                          });
+            
 
             if (r == null)
             {
-                r = new Reservierung(wantedKinokarte, kundennummer, discount, key);
+                r = new Reservierung(wantedKinokarte, _kunden.GetElements().Find(delegate(Kunde k)
+                                                                                     {
+                                                                                         return k.Kundennummer ==
+                                                                                                kundennummer;
+                                                                                     }), discount, key);
             } else
             {
                 r.TicketHinzufügen(wantedKinokarte, key);

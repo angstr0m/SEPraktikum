@@ -65,20 +65,6 @@ namespace Anwendungskern.Schnittstelle
         IKinokarteBlockierungZugangsSchlüssel BlockiereSitzplatz(IPublicVorstellung gewählte_vorstellung, ISitz sitz);
 
         /// <summary>
-        /// Hebt die Blockierung einer Kinokarte für den gewählten Sitzplatz, und die gewählte Vorstellung auf.
-        /// </summary>
-        /// @param  gewählte_Vorstellung - Die Vorstellung, der die zu entblockierende Kinokarte zugeordnet ist.
-        /// @param  sitz - Der Sitzplatz dessen Blockierung aufgehoben werden soll.
-        /// @param  zugangsSchlüssel - Der Zugangsschlüssel der benötigt wird um die Blockierung des Sitzplatzes aufzuheben.
-        /// @return 
-        /// @throw  
-        /// @pre    Die gewünschte Kinokarte ist blockiert
-        /// @post   Die gewünschte Kinokarte ist nicht mehr blockiert.
-        /// @typ    Kommando.
-        /// @remarks
-        void SitzplatzBlockierungAufheben(IPublicVorstellung gewählte_vorstellung, ISitz sitz, IKinokarteBlockierungZugangsSchlüssel zugangsSchlüssel);
-
-        /// <summary>
         /// Gibt den Preis in € für eine bestimmte Kinokarte zurück.
         /// Gegebenenfalls wird ein Rabatt auf den Preis der Karte gewährt.
         /// </summary>

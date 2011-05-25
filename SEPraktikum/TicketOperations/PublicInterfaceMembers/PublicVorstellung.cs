@@ -38,6 +38,26 @@ namespace TicketOperations.PublicInterfaceMembers
             get { return _vorstellung.Name; }
         }
 
+        /// <summary>
+        /// Gets the number of free tickets.
+        /// </summary>
+        /// <returns></returns>
+        /// <remarks></remarks>
+        public int GetNumberOfFreeTickets()
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Gets the number of tickets that has been sold or reserved.
+        /// </summary>
+        /// <returns></returns>
+        /// <remarks></remarks>
+        public int GetNumberOfUnavailableTickets()
+        {
+            throw new NotImplementedException();
+        }
+
         public int GetNumberOfFreeSeats()
         {
             return _vorstellung.GetNumberOfFreeSeats();
@@ -51,7 +71,7 @@ namespace TicketOperations.PublicInterfaceMembers
         public List<IPublicKinokarte> GetAvailableTickets()
         {
             List<IPublicKinokarte> publictickets = new List<IPublicKinokarte>();
-            List<Kinokarte> tickets = _vorstellung.GetVerügbareKinokarten();
+            List<Kinokarte> tickets = _vorstellung.GetVerfügbareKinokarten();
 
             foreach (var ticket in tickets)
             {

@@ -16,10 +16,10 @@ namespace TicketOperations.PublicInterfaceMembers
             return _kinokarte.GetIdentifier();
         }
 
-        public string ReservationNumber
-        {
-            get { return _kinokarte.Reservationsnummer; }
-        }
+        //public string ReservationNumber
+        //{
+        //    get { return _kinokarte.Reservationsnummer; }
+        //}
 
         public bool Reserved
         {

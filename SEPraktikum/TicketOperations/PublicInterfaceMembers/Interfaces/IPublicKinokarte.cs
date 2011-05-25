@@ -11,7 +11,7 @@ namespace TicketOperations.PublicInterfaceMembers
         /// Gets the reservation number.
         /// </summary>
         /// <remarks></remarks>
-        string ReservationNumber { get; }
+        //string ReservationNumber { get; }
 
         /// <summary>
         /// Gets or sets a value indicating whether this <see cref="Kinokarte"/> is reserved.

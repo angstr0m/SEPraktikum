@@ -79,7 +79,6 @@ namespace TicketOperations.Models {
             this.startTime = startTime;
             this._film = _film;
             this._kinosaal = kinosaal;
-            this.duration = _film.Dauer;
             this.pause = pause;
             this._kinokarten = new List<Kinokarte>();
 
@@ -124,7 +123,7 @@ namespace TicketOperations.Models {
         /// </summary>
         /// <returns></returns>
         /// <remarks></remarks>
-        public List<Kinokarte> GetVerügbareKinokarten()
+        public List<Kinokarte> GetVerfügbareKinokarten()
         {
             return _kinokarten.FindAll(
                     delegate(Kinokarte t)

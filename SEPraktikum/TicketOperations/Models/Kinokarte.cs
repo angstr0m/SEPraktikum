@@ -63,7 +63,7 @@ namespace TicketOperations.Models
             this._verkauft = false;
             this._reserviert = false;
             // Reservationsnummer erstellen
-            this._reservationsnummer = vorstellung.GetHashCode() + " " + sitz.ToString();
+            //this._reservationsnummer = vorstellung.GetHashCode() + " " + sitz.ToString();
         }
         
         /// <summary>

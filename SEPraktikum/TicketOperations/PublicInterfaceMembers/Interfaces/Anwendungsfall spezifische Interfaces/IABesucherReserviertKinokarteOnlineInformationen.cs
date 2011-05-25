@@ -14,6 +14,6 @@ namespace TicketOperations.PublicInterfaceMembers.Interfaces.Anwendungsfall_spez
 
         bool PrüfeVerfügbarkeitVonSitzplatzFürVorstellung(IPublicVorstellung vorstellung, ISitz sitz);
 
-        float GetPreisFürKinokarte(IPublicVorstellung gewählte_vorstellung, ISitz sitz, bool rabatt);
+        float GetPreisFürKinokarte(IPublicVorstellung vorstellung, ISitz sitz, bool rabatt);
     }
 }

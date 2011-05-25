@@ -99,25 +99,5 @@
             <returns></returns>
             <remarks></remarks>
         </member>
-        <member name="M:Database.Models.EntityManager`1.AddObserver(Base.Interfaces.Observer)">
-            <summary>
-            Adds the observer.
-            </summary>
-            <param name="observer">The observer.</param>
-            <remarks></remarks>
-        </member>
-        <member name="M:Database.Models.EntityManager`1.NotifyObservers">
-            <summary>
-            Notifies the observers.
-            </summary>
-            <remarks></remarks>
-        </member>
-        <member name="M:Database.Models.EntityManager`1.RemoveObserver(Base.Interfaces.Observer)">
-            <summary>
-            Removes the observer.
-            </summary>
-            <param name="observer">The observer.</param>
-            <remarks></remarks>
-        </member>
     </members>
 </doc>
