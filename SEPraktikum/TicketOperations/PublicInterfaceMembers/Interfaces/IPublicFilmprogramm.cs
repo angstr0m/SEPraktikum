@@ -10,7 +10,7 @@ namespace TicketOperations.PublicInterfaceMembers
         /// <value>The shows.</value>
         /// <remarks></remarks>
         /// <pre></pre>
-        List<IPublicVorstellung> Shows { get; }
+        List<IPublicVorstellung> Vorstellungen { get; }
 
         int GetIdentifier();
     }

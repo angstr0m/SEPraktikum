@@ -9,7 +9,7 @@ using Users.Interfaces;
 
 namespace TicketOperations.PublicInterfaceMembers
 {
-    class KinokartenOperationen : IKinokartenOperationen
+    public class KinokartenOperationen : IKinokartenOperationen
     {
         private IBenutzerinformationen _benutzerinformationen;
 

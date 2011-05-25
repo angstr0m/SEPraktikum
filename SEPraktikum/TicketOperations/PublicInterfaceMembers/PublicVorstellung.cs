@@ -9,7 +9,7 @@ namespace TicketOperations.PublicInterfaceMembers
     /// This class is meant for giving vorstellung objects to the outside, while hiding members and methods on the vorstellung-object which should not be seen.
     /// </summary>
     /// <remarks></remarks>
-    class PublicVorstellung : IPublicVorstellung
+    public class PublicVorstellung : IPublicVorstellung
     {
         private Vorstellung _vorstellung;
 

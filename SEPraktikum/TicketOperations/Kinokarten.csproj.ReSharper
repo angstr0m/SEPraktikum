@@ -1,6 +1,6 @@
 <Configuration>
   <NamespaceFolders>
-    <SkipFolder>693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/d:Interfaces</SkipFolder>
     <SkipFolder>693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/d:Interfaces/d:Anwendungsfall spezifische Interfaces</SkipFolder>
+    <SkipFolder>693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/d:Interfaces</SkipFolder>
   </NamespaceFolders>
 </Configuration>

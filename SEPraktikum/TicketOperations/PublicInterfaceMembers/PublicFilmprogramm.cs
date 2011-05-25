@@ -12,7 +12,7 @@ namespace TicketOperations.PublicInterfaceMembers
             _movieprogram = filmprogramm;
         }
 
-        public List<IPublicVorstellung> Shows
+        public List<IPublicVorstellung> Vorstellungen
         {
             get 
             { 

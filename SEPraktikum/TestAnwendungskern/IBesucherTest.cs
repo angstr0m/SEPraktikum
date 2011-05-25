@@ -1,9 +1,14 @@
-﻿using Anwendungskern.Schnittstelle;
+﻿using SystemAdministration.Interfaces;
+using Anwendungskern.Schnittstelle;
+using Cinema.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using TicketOperations.Models;
 using TicketOperations.PublicInterfaceMembers;
 using Cinema.InterfaceMembers;
 using System.Collections.Generic;
+using TicketOperations.PublicInterfaceMembers.Interfaces;
+using Users.Interfaces;
 
 namespace TestAnwendungskern
 {
@@ -16,7 +21,14 @@ namespace TestAnwendungskern
     [TestClass()]
     public class IBesucherTest
     {
+        private float ticketpreis;
+        private IPublicVorstellung _gewählte_Vorstellung;
 
+        private IAdministration _administration;
+        private IKinokartenInformationen _kinokarteninformationen;
+        private IKinokartenOperationen _kinokartenoperationen;
+
+        private ISitz _sitz;
 
         private TestContext testContextInstance;
 
@@ -69,9 +81,26 @@ namespace TestAnwendungskern
 
         internal virtual IBesucher CreateIBesucher()
         {
-            // TODO: Instantiate an appropriate concrete class.
-            IBesucher target = null;
+            IBenutzerinformationen benutzerinformationen = new Benutzerinformationen();
+            _kinokarteninformationen = new KinokartenInformationen();
+            _kinokartenoperationen = new KinokartenOperationen(benutzerinformationen);
+            IBesucher target = new Besucher(_kinokarteninformationen, _kinokartenoperationen);
+
+            IKinoAdministration kinoAdministration = new KinoAdministration();
+            IKinokartenAdministration kinokartenAdministration = new KinokartenAdministration();
+
+            _administration = new Administration(kinokartenAdministration, kinoAdministration);
+
             return target;
+        }
+
+        [TestInitialize()]
+        internal virtual void CreateTestData()
+        {
+            _administration.FillSystemWithTestData();
+
+            _gewählte_Vorstellung = _kinokarteninformationen.GetWöchentlichesFilmprogramm().Vorstellungen[0];
+            _sitz = _gewählte_Vorstellung.GetAvailableTickets()[0].Sitz;
         }
 
         /// <summary>
@@ -80,14 +109,11 @@ namespace TestAnwendungskern
         [TestMethod()]
         public void BlockiereSitzplatzTest()
         {
-            IBesucher target = CreateIBesucher(); // TODO: Initialize to an appropriate value
-            IPublicVorstellung gewählte_vorstellung = null; // TODO: Initialize to an appropriate value
-            ISitz sitz = null; // TODO: Initialize to an appropriate value
-            IKinokarteBlockierungZugangsSchlüssel expected = null; // TODO: Initialize to an appropriate value
+            IBesucher target = CreateIBesucher();
+            Type expected = typeof(IKinokarteBlockierungZugangsSchlüssel);
             IKinokarteBlockierungZugangsSchlüssel actual;
-            actual = target.BlockiereSitzplatz(gewählte_vorstellung, sitz);
-            Assert.AreEqual(expected, actual);
-            Assert.Inconclusive("Verify the correctness of this test method.");
+            actual = target.BlockiereSitzplatz(_gewählte_Vorstellung, _sitz);
+            Assert.AreEqual(expected, actual.GetType());
         }
 
         /// <summary>
@@ -96,12 +122,10 @@ namespace TestAnwendungskern
         [TestMethod()]
         public void BlockierungFürSitzplatzAufhebenTest()
         {
-            IBesucher target = CreateIBesucher(); // TODO: Initialize to an appropriate value
-            IPublicVorstellung gewählte_vorstellung = null; // TODO: Initialize to an appropriate value
-            ISitz sitz = null; // TODO: Initialize to an appropriate value
-            IKinokarteBlockierungZugangsSchlüssel zugangsSchlüssel = null; // TODO: Initialize to an appropriate value
-            target.BlockierungFürSitzplatzAufheben(gewählte_vorstellung, sitz, zugangsSchlüssel);
-            Assert.Inconclusive("A method that does not return a value cannot be verified.");
+            IBesucher target = CreateIBesucher();
+            IKinokarteBlockierungZugangsSchlüssel zugangsSchlüssel = target.BlockiereSitzplatz(_gewählte_Vorstellung,_sitz);
+            target.BlockierungFürSitzplatzAufheben(_gewählte_Vorstellung, _sitz, zugangsSchlüssel);
+            Assert.IsFalse(_administration.IsTicketBlocked(_gewählte_Vorstellung,sitz));
         }
 
         /// <summary>
@@ -110,15 +134,12 @@ namespace TestAnwendungskern
         [TestMethod()]
         public void GetPreisFürKinokarteTest()
         {
-            IBesucher target = CreateIBesucher(); // TODO: Initialize to an appropriate value
-            IPublicVorstellung gewählte_vorstellung = null; // TODO: Initialize to an appropriate value
-            ISitz sitz = null; // TODO: Initialize to an appropriate value
-            bool rabatt = false; // TODO: Initialize to an appropriate value
-            float expected = 0F; // TODO: Initialize to an appropriate value
+            IBesucher target = CreateIBesucher(); 
+            bool rabatt = false;
+            float expected = ticketpreis;
             float actual;
-            actual = target.GetPreisFürKinokarte(gewählte_vorstellung, sitz, rabatt);
+            actual = target.GetPreisFürKinokarte(_gewählte_Vorstellung, _sitz, rabatt);
             Assert.AreEqual(expected, actual);
-            Assert.Inconclusive("Verify the correctness of this test method.");
         }
 
         /// <summary>
@@ -127,13 +148,11 @@ namespace TestAnwendungskern
         [TestMethod()]
         public void GetVerfügbareSitzplätzeFürVorstellungTest()
         {
-            IBesucher target = CreateIBesucher(); // TODO: Initialize to an appropriate value
-            IPublicVorstellung gewählte_Vorstellung = null; // TODO: Initialize to an appropriate value
-            List<ISitz> expected = null; // TODO: Initialize to an appropriate value
+            IBesucher target = CreateIBesucher();
+            Type expected = typeof(List<ISitz>);
             List<ISitz> actual;
-            actual = target.GetVerfügbareSitzplätzeFürVorstellung(gewählte_Vorstellung);
-            Assert.AreEqual(expected, actual);
-            Assert.Inconclusive("Verify the correctness of this test method.");
+            actual = target.GetVerfügbareSitzplätzeFürVorstellung(_gewählte_Vorstellung);
+            Assert.AreEqual(expected, actual.GetType());
         }
 
         /// <summary>
@@ -142,16 +161,13 @@ namespace TestAnwendungskern
         [TestMethod()]
         public void KinokarteReservierenTest()
         {
-            IBesucher target = CreateIBesucher(); // TODO: Initialize to an appropriate value
-            IPublicVorstellung gewählte_vorstellung = null; // TODO: Initialize to an appropriate value
-            ISitz sitz = null; // TODO: Initialize to an appropriate value
-            bool rabatt = false; // TODO: Initialize to an appropriate value
-            IKinokarteBlockierungZugangsSchlüssel zugangsSchlüssel = null; // TODO: Initialize to an appropriate value
-            int expected = 0; // TODO: Initialize to an appropriate value
+            IBesucher target = CreateIBesucher();
+            bool rabatt = false;
+            IKinokarteBlockierungZugangsSchlüssel zugangsSchlüssel = target.BlockiereSitzplatz(_gewählte_Vorstellung, _sitz);
+            int expected = 0;
             int actual;
-            actual = target.KinokarteReservieren(gewählte_vorstellung, sitz, rabatt, zugangsSchlüssel);
+            actual = target.KinokarteReservieren(_gewählte_Vorstellung, _sitz, rabatt, zugangsSchlüssel);
             Assert.AreEqual(expected, actual);
-            Assert.Inconclusive("Verify the correctness of this test method.");
         }
 
         /// <summary>
@@ -160,14 +176,12 @@ namespace TestAnwendungskern
         [TestMethod()]
         public void PrüfeAltersfreigabeTest()
         {
-            IBesucher target = CreateIBesucher(); // TODO: Initialize to an appropriate value
-            IPublicVorstellung gewählte_vorstellung = null; // TODO: Initialize to an appropriate value
-            DateTime geburtsdatum = new DateTime(); // TODO: Initialize to an appropriate value
-            bool expected = false; // TODO: Initialize to an appropriate value
+            IBesucher target = CreateIBesucher();
+            DateTime geburtsdatum = new DateTime(1980, 6, 10);
+            bool expected = true;
             bool actual;
-            actual = target.PrüfeAltersfreigabe(gewählte_vorstellung, geburtsdatum);
+            actual = target.PrüfeAltersfreigabe(_gewählte_Vorstellung, geburtsdatum);
             Assert.AreEqual(expected, actual);
-            Assert.Inconclusive("Verify the correctness of this test method.");
         }
 
         /// <summary>
@@ -189,14 +203,11 @@ namespace TestAnwendungskern
         [TestMethod()]
         public void ÜberprüfeVerfügbarkeitVonSitzplatzTest()
         {
-            IBesucher target = CreateIBesucher(); // TODO: Initialize to an appropriate value
-            IPublicVorstellung gewählte_vorstellung = null; // TODO: Initialize to an appropriate value
-            ISitz sitz = null; // TODO: Initialize to an appropriate value
-            bool expected = false; // TODO: Initialize to an appropriate value
+            IBesucher target = CreateIBesucher();
+            bool expected = true;
             bool actual;
-            actual = target.ÜberprüfeVerfügbarkeitVonSitzplatz(gewählte_vorstellung, sitz);
+            actual = target.ÜberprüfeVerfügbarkeitVonSitzplatz(_gewählte_Vorstellung, _sitz);
             Assert.AreEqual(expected, actual);
-            Assert.Inconclusive("Verify the correctness of this test method.");
         }
     }
 }

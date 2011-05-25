@@ -38,6 +38,8 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="PublicInterfaceMembers\Interfaces\IKinokartenAdministration.cs" />
+    <Compile Include="PublicInterfaceMembers\KinokartenAdministration.cs" />
     <Compile Include="PublicInterfaceMembers\veraltet\BesucherKinokartenReservierung.cs" />
     <Compile Include="PublicInterfaceMembers\Interfaces\Anwendungsfall spezifische Interfaces\IABesucherReserviertKinokarteOnlineInformationen.cs" />
     <Compile Include="PublicInterfaceMembers\Interfaces\Anwendungsfall spezifische Interfaces\IABesucherReserviertKinokarteOnlineOperationen.cs" />

@@ -28,6 +28,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemAdministration", "SystemAdministration\SystemAdministration.csproj", "{869A189E-5C21-49FF-AEDF-A8F449569FD4}"
+EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = SEPraktikum.vsmdi
@@ -141,6 +143,16 @@ Global
 		{71381EF0-8788-40DA-BE46-064C2800CAD8}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{71381EF0-8788-40DA-BE46-064C2800CAD8}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{71381EF0-8788-40DA-BE46-064C2800CAD8}.Release|x86.ActiveCfg = Release|Any CPU
+		{869A189E-5C21-49FF-AEDF-A8F449569FD4}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{869A189E-5C21-49FF-AEDF-A8F449569FD4}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{869A189E-5C21-49FF-AEDF-A8F449569FD4}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{869A189E-5C21-49FF-AEDF-A8F449569FD4}.Debug|x86.ActiveCfg = Debug|x86
+		{869A189E-5C21-49FF-AEDF-A8F449569FD4}.Debug|x86.Build.0 = Debug|x86
+		{869A189E-5C21-49FF-AEDF-A8F449569FD4}.Release|Any CPU.ActiveCfg = Release|x86
+		{869A189E-5C21-49FF-AEDF-A8F449569FD4}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{869A189E-5C21-49FF-AEDF-A8F449569FD4}.Release|Mixed Platforms.Build.0 = Release|x86
+		{869A189E-5C21-49FF-AEDF-A8F449569FD4}.Release|x86.ActiveCfg = Release|x86
+		{869A189E-5C21-49FF-AEDF-A8F449569FD4}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -8,12 +8,12 @@ using TicketOperations.PublicInterfaceMembers;
 
 namespace Anwendungskern.Schnittstelle
 {
-    class Besucher : IBesucher
+    public class Besucher : IBesucher
     {
         private IKinokartenInformationen _kinokartenInformationen;
         private IKinokartenOperationen _kinokartenOperationen;
 
-        Besucher (IKinokartenInformationen kinokartenInformationen, IKinokartenOperationen kinokartenOperationen)
+        public Besucher (IKinokartenInformationen kinokartenInformationen, IKinokartenOperationen kinokartenOperationen)
         {
             _kinokartenInformationen = kinokartenInformationen;
             _kinokartenOperationen = kinokartenOperationen;

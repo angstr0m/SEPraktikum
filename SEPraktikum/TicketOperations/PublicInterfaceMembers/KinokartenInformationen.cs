@@ -8,13 +8,15 @@ using TicketOperations.Models;
 
 namespace TicketOperations.PublicInterfaceMembers
 {
-    class KinokartenInformationen : IKinokartenInformationen
+    public class KinokartenInformationen : IKinokartenInformationen
     {
+        private EntityManager<Filmprogramm> _filmprogramme;
         private EntityManager<Vorstellung> _vorstellungen;
 
-        KinokartenInformationen()
+        public KinokartenInformationen()
         {
             _vorstellungen = new EntityManager<Vorstellung>();
+            _filmprogramme = new EntityManager<Filmprogramm>();
         }
 
         #region Implementation of IABesucherReserviertKinokarteOnlineInformationen
@@ -60,6 +62,20 @@ namespace TicketOperations.PublicInterfaceMembers
 
             kinokarte.Rabatt = rabatt;
             return kinokarte.Preis;
+        }
+
+        /// <summary>
+        /// Liefert das derzeit aktuelle Filmprogramm.
+        /// </summary>
+        /// <returns> Das Filmprogramm für diese Woche. </returns>
+        /// <remarks></remarks>
+        public IPublicFilmprogramm GetWöchentlichesFilmprogramm()
+        {
+            return (IPublicFilmprogramm)_filmprogramme.GetElements().Find(delegate(Filmprogramm m)
+            {
+                return (m.StartDateTime <= DateTime.Today &&
+                        m.StartDateTime.AddDays(7) >= DateTime.Today);
+            });
         }
 
         #endregion

@@ -9,4 +9,5 @@
   <Module PersistentId="16617112-8305-4A0C-911A-3EFF4573B7E1" ModuleId="Users" />
   <Module PersistentId="933F4F12-DE06-4E09-8A8D-1AD192363219" ModuleId="Anwendungskern" />
   <Module PersistentId="71381EF0-8788-40DA-BE46-064C2800CAD8" ModuleId="TestAnwendungskern" />
+  <Module PersistentId="869A189E-5C21-49FF-AEDF-A8F449569FD4" ModuleId="SystemAdministration" />
 </Modules>
