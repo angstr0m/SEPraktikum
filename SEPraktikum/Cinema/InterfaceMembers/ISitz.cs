@@ -1,7 +1,7 @@
 using System;
 using Base.Interfaces;
 
-namespace Cinema.Models
+namespace Cinema.InterfaceMembers
 {
     public interface ISitz
     {

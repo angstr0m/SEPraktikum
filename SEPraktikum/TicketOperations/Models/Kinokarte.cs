@@ -3,10 +3,10 @@ using Base.AbstractClasses;
 using Cinema.Models;
 using Database.Interfaces;
 using Database.Models;
-using TicketOperations.InterfaceMembers;
+using TicketOperations.PublicInterfaceMembers;
 
-namespace TicketOperations.Models {
-    
+namespace TicketOperations.Models
+{
     /// <summary>
     /// Repräsentiert eine Kinokarte die zu einer Vorstellung gehört.
     /// </summary>
@@ -203,24 +203,23 @@ namespace TicketOperations.Models {
         }
     }
 
-}
-
-public class TicketBlockedException : Exception
-{
+    public class TicketBlockedException : Exception
+    {
     
-}
+    }
 
-public class TicketNotBlockedException : Exception
-{
+    public class TicketNotBlockedException : Exception
+    {
 
-}
+    }
 
-public class WrongAccessKeyException : Exception
-{
+    public class WrongAccessKeyException : Exception
+    {
     
-}
+    }
 
-public class TicketNotReservedException : Exception
-{
+    public class TicketNotReservedException : Exception
+    {
     
+    }
 }

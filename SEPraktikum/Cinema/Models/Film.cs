@@ -1,5 +1,6 @@
 using System;
 using Base.AbstractClasses;
+using Cinema.InterfaceMembers;
 using Database.Interfaces;
 
 namespace Cinema.Models {

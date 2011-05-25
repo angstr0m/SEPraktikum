@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Database.Models;
+using TicketOperations.InternalInterfaceMembers.Interfaces;
 using TicketOperations.Models;
-using Users.Models;
+using TicketOperations.PublicInterfaceMembers;
 using Users.Interfaces;
-using System.Timers;
 
-namespace TicketOperations.InterfaceMembers
+namespace TicketOperations.InternalInterfaceMembers
 {
     /// <summary>
     /// 
@@ -21,17 +18,17 @@ namespace TicketOperations.InterfaceMembers
         private EntityManager<Filmprogramm> _databaseMoviePrograms;
         private EntityManager<Reservierung> _databaseReservations;
 
-        protected IKundeninformationen _kundeninformationen;
+        protected IBenutzerinformationen Benutzerinformationen;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="T:System.Object"/> class.
         /// </summary>
         /// <remarks></remarks>
-        public KinokartenReservieren(IKundeninformationen kundeninformationen)
+        public KinokartenReservieren(IBenutzerinformationen benutzerinformationen)
         {
             InitializeDatabase();
 
-            this._kundeninformationen = kundeninformationen;
+            this.Benutzerinformationen = benutzerinformationen;
         }
 
 
@@ -59,7 +56,7 @@ namespace TicketOperations.InterfaceMembers
         /// <remarks></remarks>
         public int KinokarteReservieren(IPublicVorstellung vorstellung, ISitzIdentifikator seat, bool discount, int kundennummer, IKinokarteBlockierungZugangsSchlüssel key)
         {
-            IKunde kunde = _kundeninformationen.GetKunde(kundennummer);
+            IKunde kunde = Benutzerinformationen.GetKunde(kundennummer);
 
             Kinokarte wantedKinokarte = _databaseShows.GetElementWithId(vorstellung.GetIdentifier()).GetKinokarte(null);
 

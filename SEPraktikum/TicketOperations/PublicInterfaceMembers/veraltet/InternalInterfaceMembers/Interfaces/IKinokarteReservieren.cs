@@ -1,6 +1,6 @@
-using Users.Models;
+using TicketOperations.PublicInterfaceMembers;
 
-namespace TicketOperations.InterfaceMembers
+namespace TicketOperations.InternalInterfaceMembers.Interfaces
 {
     public interface IKinokarteReservieren
     {

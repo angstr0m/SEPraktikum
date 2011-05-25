@@ -38,8 +38,8 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Interfaces\IKundeninformationen.cs" />
-    <Compile Include="Interfaces\Kundeninformationen.cs" />
+    <Compile Include="Interfaces\IBenutzerinformationen.cs" />
+    <Compile Include="Interfaces\Benutzerinformationen.cs" />
     <Compile Include="Models\Administrator.cs" />
     <Compile Include="Models\Adress.cs" />
     <Compile Include="Models\Kunde.cs" />

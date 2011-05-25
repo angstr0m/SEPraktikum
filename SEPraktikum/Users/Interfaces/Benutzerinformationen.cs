@@ -7,7 +7,7 @@ using Users.Models;
 
 namespace Users.Interfaces
 {
-    public class Kundeninformationen : IKundeninformationen
+    public class Benutzerinformationen : IBenutzerinformationen
     {
         private EntityManager<IKunde> _daten_ikunde;
         private IKunde Besucher;
@@ -21,7 +21,7 @@ namespace Users.Interfaces
             }
         }
 
-        public Kundeninformationen()
+        public Benutzerinformationen()
         {
             EntityManagerInitialisieren();
             

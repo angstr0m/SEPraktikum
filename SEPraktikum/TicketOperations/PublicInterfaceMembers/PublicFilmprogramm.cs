@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using TicketOperations.Models;
 
-namespace TicketOperations.InterfaceMembers
+namespace TicketOperations.PublicInterfaceMembers
 {
     class PublicFilmprogramm : IPublicFilmprogramm
     {

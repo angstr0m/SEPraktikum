@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Cinema.InterfaceMembers;
 using Database.Interfaces;
 
 namespace Cinema.Models {

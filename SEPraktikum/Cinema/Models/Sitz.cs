@@ -1,4 +1,5 @@
 using System;
+using Cinema.InterfaceMembers;
 
 namespace Cinema.Models {
     /// <summary>

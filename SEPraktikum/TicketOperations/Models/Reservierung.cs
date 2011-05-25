@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
 using Base.AbstractClasses;
+using TicketOperations.PublicInterfaceMembers;
 using Users.Interfaces;
 using Users.Models;
 using Database.Models;
 using Database.Interfaces;
-using TicketOperations.InterfaceMembers;
 
 namespace TicketOperations.Models {
     /// <summary>

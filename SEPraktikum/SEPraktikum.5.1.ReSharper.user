@@ -35,21 +35,9 @@
       <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/f:BesucherKinokartenReservierung.cs" caret="966" fromTop="22" />
       <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InternalInterfaceMembers/f:KinokartenReservieren.cs" caret="2227" fromTop="19" />
       <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/d:Interfaces for public members/f:ISitzIdentifikator.cs" caret="0" fromTop="0" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/d:Interfaces for public members/f:IBesucherKinokartenReservierung.cs" caret="567" fromTop="11" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/d:Interfaces for public members/f:IBesucherKinokartenReservierung.cs" caret="7048" fromTop="40" />
     </RecentFiles>
     <RecentEdits>
-      <File id="16617112-8305-4A0C-911A-3EFF4573B7E1/d:Interfaces/f:IKundeninformationen.cs" caret="178" fromTop="9" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/f:RegistrierterKundeKinokartenReservieren.cs" caret="425" fromTop="11" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/f:BesucherKinokartenReservierung.cs" caret="385" fromTop="10" />
-      <File id="16617112-8305-4A0C-911A-3EFF4573B7E1/d:Interfaces/f:IKundeninformationen.cs" caret="502" fromTop="17" />
-      <File id="16617112-8305-4A0C-911A-3EFF4573B7E1/d:Interfaces/f:Kundeninformationen.cs" caret="380" fromTop="14" />
-      <File id="16617112-8305-4A0C-911A-3EFF4573B7E1/d:Interfaces/f:Kundeninformationen.cs" caret="764" fromTop="27" />
-      <File id="16617112-8305-4A0C-911A-3EFF4573B7E1/d:Interfaces/f:Kundeninformationen.cs" caret="1564" fromTop="49" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InternalInterfaceMembers/f:KinokartenReservieren.cs" caret="725" fromTop="23" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InternalInterfaceMembers/f:KinokartenReservieren.cs" caret="1081" fromTop="33" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Reservierung.cs" caret="734" fromTop="24" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Reservierung.cs" caret="609" fromTop="21" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InternalInterfaceMembers/f:KinokartenReservieren.cs" caret="2642" fromTop="47" />
       <File id="16617112-8305-4A0C-911A-3EFF4573B7E1/d:Interfaces/f:Kundeninformationen.cs" caret="988" fromTop="31" />
       <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/f:BesucherKinokartenReservierung.cs" caret="627" fromTop="17" />
       <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/f:BesucherKinokartenReservierung.cs" caret="966" fromTop="22" />
@@ -62,12 +50,24 @@
       <File id="16617112-8305-4A0C-911A-3EFF4573B7E1/d:Interfaces/f:Kundeninformationen.cs" caret="178" fromTop="9" />
       <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InternalInterfaceMembers/f:KinokartenReservieren.cs" caret="363" fromTop="7" />
       <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:InternalInterfaceMembers/f:KinokartenReservieren.cs" caret="2239" fromTop="50" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/d:Interfaces for public members/f:IBesucherKinokartenReservierung.cs" caret="2175" fromTop="20" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/d:Interfaces for public members/f:IBesucherKinokartenReservierung.cs" caret="1377" fromTop="10" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/d:Interfaces for public members/f:IBesucherKinokartenReservierung.cs" caret="1080" fromTop="12" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/d:Interfaces for public members/f:IBesucherKinokartenReservierung.cs" caret="993" fromTop="11" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/d:Interfaces for public members/f:IBesucherKinokartenReservierung.cs" caret="1078" fromTop="11" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/d:Interfaces for public members/f:IBesucherKinokartenReservierung.cs" caret="567" fromTop="11" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/d:Interfaces for public members/f:IBesucherKinokartenReservierung.cs" caret="8240" fromTop="20" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/d:Interfaces for public members/f:IBesucherKinokartenReservierung.cs" caret="7442" fromTop="10" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/d:Interfaces for public members/f:IBesucherKinokartenReservierung.cs" caret="7145" fromTop="12" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/d:Interfaces for public members/f:IBesucherKinokartenReservierung.cs" caret="1902" fromTop="34" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/d:Interfaces for public members/f:IBesucherKinokartenReservierung.cs" caret="1277" fromTop="24" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/d:Interfaces for public members/f:IBesucherKinokartenReservierung.cs" caret="974" fromTop="21" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/d:Interfaces for public members/f:IBesucherKinokartenReservierung.cs" caret="5018" fromTop="50" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/d:Interfaces for public members/f:IBesucherKinokartenReservierung.cs" caret="3226" fromTop="17" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/d:Interfaces for public members/f:IBesucherKinokartenReservierung.cs" caret="2477" fromTop="12" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/d:Interfaces for public members/f:IBesucherKinokartenReservierung.cs" caret="664" fromTop="18" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/d:Interfaces for public members/f:IBesucherKinokartenReservierung.cs" caret="2081" fromTop="33" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/d:Interfaces for public members/f:IBesucherKinokartenReservierung.cs" caret="2887" fromTop="46" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/d:Interfaces for public members/f:IBesucherKinokartenReservierung.cs" caret="3679" fromTop="48" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/d:Interfaces for public members/f:IBesucherKinokartenReservierung.cs" caret="6088" fromTop="42" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/d:Interfaces for public members/f:IBesucherKinokartenReservierung.cs" caret="4198" fromTop="19" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/d:Interfaces for public members/f:IBesucherKinokartenReservierung.cs" caret="6914" fromTop="59" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/d:Interfaces for public members/f:IBesucherKinokartenReservierung.cs" caret="4904" fromTop="16" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:PublicInterfaceMembers/d:Interfaces for public members/f:IBesucherKinokartenReservierung.cs" caret="7048" fromTop="40" />
     </RecentEdits>
   </RecentFiles>
   <NAntValidationSettings>
@@ -308,6 +308,7 @@
       <Item value="transaktionsSchlüssel" priority="1" />
       <Item value="kinokarte" priority="0" />
       <Item value="Vorstellung`0" priority="0" />
+      <Item value="zugangsSchlüssel" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:Database.Models.Entity">
       <Item value="id" priority="0" />

@@ -26,7 +26,7 @@ namespace SEPraktikum.Views.HauptmenuViewSub
 
         private static void BuildComponents()
         {
-            IKundeninformationen kundeninformationen = new Kundeninformationen();
+            IBenutzerinformationen benutzerinformationen = new Benutzerinformationen();
         }
 
         private static void FillWithTestData()

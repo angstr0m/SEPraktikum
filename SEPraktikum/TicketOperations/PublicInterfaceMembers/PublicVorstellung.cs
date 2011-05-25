@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Cinema.Models;
-using Database.Interfaces;
 using TicketOperations.Models;
 
-namespace TicketOperations.InterfaceMembers
+namespace TicketOperations.PublicInterfaceMembers
 {
     /// <summary>
     /// Decorator for the vorstellung object.

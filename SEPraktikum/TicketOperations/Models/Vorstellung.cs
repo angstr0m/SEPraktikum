@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 using Base.AbstractClasses;
+using Cinema.InterfaceMembers;
 using Cinema.Models;
 using Database.Interfaces;
-using TicketOperations.InterfaceMembers;
 
 namespace TicketOperations.Models {
     

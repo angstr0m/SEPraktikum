@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using TicketOperations.InternalInterfaceMembers;
 using Users.Interfaces;
 
-namespace TicketOperations.InterfaceMembers
+namespace TicketOperations.PublicInterfaceMembers
 {
     class BesucherKinokartenReservierung : KinokartenReservieren, IBesucherKinokartenReservierung
     {
-        public BesucherKinokartenReservierung(IKundeninformationen kundeninformationen) : base(kundeninformationen)
+        public BesucherKinokartenReservierung(IBenutzerinformationen benutzerinformationen) : base(benutzerinformationen)
         {
             
         }

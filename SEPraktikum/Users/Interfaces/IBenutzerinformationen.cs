@@ -7,7 +7,7 @@ using Users.Models;
 
 namespace Users.Interfaces
 {
-    public interface IKundeninformationen
+    public interface IBenutzerinformationen
     {
         void KundeHinzufügen(string name, List<Adress> adress, DateTime birthDateTime, string phone, float discount, Zahlungsinformationen zahlungsinformationen);
 

@@ -1,4 +1,4 @@
-namespace TicketOperations.InterfaceMembers
+namespace TicketOperations.PublicInterfaceMembers
 {
     public interface IKinokarteBlockierungZugangsSchlüssel
     {

@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace TicketOperations.InterfaceMembers
+namespace TicketOperations.PublicInterfaceMembers
 {
     public interface IPublicFilmprogramm
     {
