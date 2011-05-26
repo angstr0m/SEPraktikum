@@ -65,6 +65,10 @@
       <Project>{D54D34FF-8ABC-4AEE-9190-7D0E48D49FED}</Project>
       <Name>Database</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SystemAdministration\SystemAdministration.csproj">
+      <Project>{869A189E-5C21-49FF-AEDF-A8F449569FD4}</Project>
+      <Name>SystemAdministration</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TicketOperations\Kinokarten.csproj">
       <Project>{693E8C0C-D47E-4483-8755-3722DCB841D5}</Project>
       <Name>Kinokarten</Name>

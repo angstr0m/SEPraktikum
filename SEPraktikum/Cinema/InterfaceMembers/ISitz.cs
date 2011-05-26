@@ -1,9 +1,10 @@
 using System;
 using Base.Interfaces;
+using Database.Interfaces;
 
 namespace Cinema.InterfaceMembers
 {
-    public interface ISitz
+    public interface ISitz : IDatabaseObject 
     {
         /// <summary>
         /// Gets or sets the identifier.

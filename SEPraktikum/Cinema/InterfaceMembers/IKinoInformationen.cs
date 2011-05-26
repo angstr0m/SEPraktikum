@@ -9,6 +9,8 @@ namespace Cinema.InterfaceMembers
     {
         List<ISitz> GetSitzplätzeInKinosaal(IKinosaal kinosaal);
 
+        List<IKinosaal> GetKinosäle();
 
+        List<IFilm> GetFilme();
     }
 }

@@ -8,6 +8,8 @@ namespace Cinema.Models {
     /// <remarks></remarks>
     public class Sitz : Base.AbstractClasses.Subject, ISitz
     {
+        private int id;
+
         /// <summary>
         /// string for representation of the Sitz in the GUI.
         /// </summary>
@@ -65,5 +67,19 @@ namespace Cinema.Models {
         {
             return identifier;
         }
-	}
+
+        #region Implementation of IDatabaseObject
+
+        public void SetIdentifier(int id)
+        {
+            this.id = id;
+        }
+
+        public int GetIdentifier()
+        {
+            return id;
+        }
+
+        #endregion
+    }
 }

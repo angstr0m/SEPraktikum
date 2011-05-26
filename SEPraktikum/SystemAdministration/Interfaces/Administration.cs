@@ -8,7 +8,7 @@ using TicketOperations.PublicInterfaceMembers.Interfaces;
 
 namespace SystemAdministration.Interfaces
 {
-    class Administration : IAdministration
+    public class Administration : IAdministration
     {
         private IKinokartenAdministration _kinokartenAdministration;
         private IKinoAdministration _kinoAdministration;
