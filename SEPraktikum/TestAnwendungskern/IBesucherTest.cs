@@ -1,6 +1,6 @@
 ﻿using SystemAdministration.Interfaces;
-using Anwendungskern.Schnittstelle;
 using Cinema.Models;
+using Fassade.Schnittstelle;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using TicketOperations.Models;
@@ -12,8 +12,8 @@ using Users.Interfaces;
 
 namespace TestAnwendungskern
 {
-    
-    
+
+
     /// <summary>
     ///This is a test class for IBesucherTest and is intended
     ///to contain all IBesucherTest Unit Tests
@@ -79,12 +79,12 @@ namespace TestAnwendungskern
         #endregion
 
 
-        internal virtual IBesucher CreateIBesucher()
+        internal virtual IFassadeBesucher CreateIBesucher()
         {
             IBenutzerinformationen benutzerinformationen = new Benutzerinformationen();
             _kinokarteninformationen = new KinokartenInformationen();
             _kinokartenoperationen = new KinokartenOperationen(benutzerinformationen);
-            IBesucher target = new Besucher(_kinokarteninformationen, _kinokartenoperationen);
+            IFassadeBesucher target = new FassadeBesucher(_kinokarteninformationen, _kinokartenoperationen);
 
             IKinoAdministration kinoAdministration = new KinoAdministration();
             IKinokartenAdministration kinokartenAdministration = new KinokartenAdministration();
@@ -109,11 +109,14 @@ namespace TestAnwendungskern
         [TestMethod()]
         public void BlockiereSitzplatzTest()
         {
-            IBesucher target = CreateIBesucher();
+            IFassadeBesucher target = CreateIBesucher();
             Type expected = typeof(IKinokarteBlockierungZugangsSchlüssel);
             IKinokarteBlockierungZugangsSchlüssel actual;
             actual = target.BlockiereSitzplatz(_gewählte_Vorstellung, _sitz);
             Assert.AreEqual(expected, actual.GetType());
+            // new
+            Assert.IsTrue(_administration.IsTicketBlocked(_gewählte_Vorstellung, _sitz));
+            Assert.IsNotNull(actual);
         }
 
         /// <summary>
@@ -122,10 +125,11 @@ namespace TestAnwendungskern
         [TestMethod()]
         public void BlockierungFürSitzplatzAufhebenTest()
         {
-            IBesucher target = CreateIBesucher();
-            IKinokarteBlockierungZugangsSchlüssel zugangsSchlüssel = target.BlockiereSitzplatz(_gewählte_Vorstellung,_sitz);
+            IFassadeBesucher target = CreateIBesucher();
+            IKinokarteBlockierungZugangsSchlüssel zugangsSchlüssel = target.BlockiereSitzplatz(_gewählte_Vorstellung, _sitz);
             target.BlockierungFürSitzplatzAufheben(_gewählte_Vorstellung, _sitz, zugangsSchlüssel);
-            Assert.IsFalse(_administration.IsTicketBlocked(_gewählte_Vorstellung,sitz));
+            Assert.IsFalse(_administration.IsTicketBlocked(_gewählte_Vorstellung, _sitz));
+            Assert.IsNotNull(zugangsSchlüssel);
         }
 
         /// <summary>
@@ -134,12 +138,14 @@ namespace TestAnwendungskern
         [TestMethod()]
         public void GetPreisFürKinokarteTest()
         {
-            IBesucher target = CreateIBesucher(); 
+            //test für wenn rabatt gesetzt, dann ticketpreis expectected == ticketpreis actual setzen
+            IFassadeBesucher target = CreateIBesucher();
             bool rabatt = false;
             float expected = ticketpreis;
             float actual;
             actual = target.GetPreisFürKinokarte(_gewählte_Vorstellung, _sitz, rabatt);
             Assert.AreEqual(expected, actual);
+            Assert.IsNotNull(actual);
         }
 
         /// <summary>
@@ -148,7 +154,7 @@ namespace TestAnwendungskern
         [TestMethod()]
         public void GetVerfügbareSitzplätzeFürVorstellungTest()
         {
-            IBesucher target = CreateIBesucher();
+            IFassadeBesucher target = CreateIBesucher();
             Type expected = typeof(List<ISitz>);
             List<ISitz> actual;
             actual = target.GetVerfügbareSitzplätzeFürVorstellung(_gewählte_Vorstellung);
@@ -161,13 +167,15 @@ namespace TestAnwendungskern
         [TestMethod()]
         public void KinokarteReservierenTest()
         {
-            IBesucher target = CreateIBesucher();
+
+            IFassadeBesucher target = CreateIBesucher();
             bool rabatt = false;
             IKinokarteBlockierungZugangsSchlüssel zugangsSchlüssel = target.BlockiereSitzplatz(_gewählte_Vorstellung, _sitz);
             int expected = 0;
             int actual;
             actual = target.KinokarteReservieren(_gewählte_Vorstellung, _sitz, rabatt, zugangsSchlüssel);
             Assert.AreEqual(expected, actual);
+            Assert.IsNotNull(actual);
         }
 
         /// <summary>
@@ -176,12 +184,16 @@ namespace TestAnwendungskern
         [TestMethod()]
         public void PrüfeAltersfreigabeTest()
         {
-            IBesucher target = CreateIBesucher();
+            //Prüfung ob Alterspreigabe bei allen vorstellungen nach 22uhr min 16Jahre 
+
+            IFassadeBesucher target = CreateIBesucher();
             DateTime geburtsdatum = new DateTime(1980, 6, 10);
             bool expected = true;
             bool actual;
             actual = target.PrüfeAltersfreigabe(_gewählte_Vorstellung, geburtsdatum);
             Assert.AreEqual(expected, actual);
+            Assert.IsNotNull(actual);
+
         }
 
         /// <summary>
@@ -190,11 +202,13 @@ namespace TestAnwendungskern
         [TestMethod()]
         public void SendeEmailMitReservierungsnummerTest()
         {
-            IBesucher target = CreateIBesucher(); // TODO: Initialize to an appropriate value
-            string email_adresse = string.Empty; // TODO: Initialize to an appropriate value
-            int reservierungsnummer = 0; // TODO: Initialize to an appropriate value
+            IFassadeBesucher target = CreateIBesucher();
+            string email_adresse = "Email";// Email Adresse von Benutzer bekommen
+            IKinokarteBlockierungZugangsSchlüssel zugangsSchlüssel = target.BlockiereSitzplatz(_gewählte_Vorstellung, _sitz);
+            int reservierungsnummer = target.KinokarteReservieren(_gewählte_Vorstellung, _sitz, false, zugangsSchlüssel);
             target.SendeEmailMitReservierungsnummer(email_adresse, reservierungsnummer);
-            Assert.Inconclusive("A method that does not return a value cannot be verified.");
+            Assert.IsNotNull(email_adresse);
+            // Test auf eigener Email ob email ankommt ist wohl besser
         }
 
         /// <summary>
@@ -203,11 +217,12 @@ namespace TestAnwendungskern
         [TestMethod()]
         public void ÜberprüfeVerfügbarkeitVonSitzplatzTest()
         {
-            IBesucher target = CreateIBesucher();
+            IFassadeBesucher target = CreateIBesucher();
             bool expected = true;
             bool actual;
             actual = target.ÜberprüfeVerfügbarkeitVonSitzplatz(_gewählte_Vorstellung, _sitz);
             Assert.AreEqual(expected, actual);
+            Assert.IsNotNull(actual);
         }
     }
 }

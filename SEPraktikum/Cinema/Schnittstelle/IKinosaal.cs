@@ -2,10 +2,11 @@ using System;
 using System.Collections.Generic;
 using Base.Interfaces;
 using Cinema.Models;
+using Database.Interfaces;
 
 namespace Cinema.InterfaceMembers
 {
-    public interface IKinosaal
+    public interface IKinosaal : IDatabaseObject
     {
         /// <summary>
         /// Gets the Sitz count.

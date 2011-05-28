@@ -8,7 +8,7 @@ namespace Cinema.Models {
     /// Representing a phyisical room in the Cinema.
     /// </summary>
     /// <remarks></remarks>
-    public class Kinosaal : Base.AbstractClasses.Subject, IDatabaseObject, IKinosaal
+    public class Kinosaal : Base.AbstractClasses.Subject, IKinosaal
     {
         /// <summary>
         /// 

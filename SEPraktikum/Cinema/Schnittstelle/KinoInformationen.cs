@@ -13,7 +13,7 @@ namespace Cinema.InterfaceMembers
         private EntityManager<Film> filme;
         private EntityManager<Sitz> sitze;
 
-        KinoInformationen()
+        public KinoInformationen()
         {
             kinosäle = new EntityManager<Kinosaal>();
             filme = new EntityManager<Film>();
@@ -24,7 +24,7 @@ namespace Cinema.InterfaceMembers
 
         public List<ISitz> GetSitzplätzeInKinosaal(IKinosaal kinosaal)
         {
-            throw new NotImplementedException();
+            Kinosaal tempKinosaal = kinosäle.GetElementWithId(kinosaal.GetIdentifier());
         }
 
         public List<IKinosaal> GetKinosäle()

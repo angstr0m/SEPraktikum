@@ -3,13 +3,15 @@ using Base.AbstractClasses;
 using Cinema.InterfaceMembers;
 using Database.Interfaces;
 
-namespace Cinema.Models {
+namespace Cinema.Models
+{
     /// <summary>
     /// Representing a single movie. Movies are organized in MoviePrograms.
     /// </summary>
     /// <remarks></remarks>
     public class Film : Subject, IDatabaseObject, IFilm
     {
+        private int id;
         /// <summary>
         /// Name of the movie.
         /// </summary>
@@ -26,10 +28,6 @@ namespace Cinema.Models {
         /// 
         /// </summary>
         private String originCountry;
-        /// <summary>
-        /// 
-        /// </summary>
-        private DateTime startDateTime;
         /// <summary>
         /// 
         /// </summary>
@@ -59,13 +57,13 @@ namespace Cinema.Models {
         /// <param name="movieCast">The movie cast.</param>
         /// <param name="director">The director.</param>
         /// <remarks></remarks>
-        public Film(String name ,String genre, int _dauer, string originCountry, DateTime startDateTime, int _altersfreigabe, string movieCast, string director)
+        public Film(String name, String genre, int _dauer, string originCountry, int _altersfreigabe, string movieCast, string director)
         {
             this.name = name;
             this.genre = genre;
             this._dauer = _dauer;
             this.originCountry = originCountry;
-            this.startDateTime = startDateTime;
+
             this._altersfreigabe = _altersfreigabe;
             this.movieCast = movieCast;
             this.director = director;
@@ -120,11 +118,12 @@ namespace Cinema.Models {
         /// </summary>
         /// <value>The start date time.</value>
         /// <remarks></remarks>
-        public System.DateTime StartDateTime
+        public DateTime StartDateTime
         {
-            get { return startDateTime; }
-            set { startDateTime = value; }
+            get { throw new NotImplementedException(); }
+            set { throw new NotImplementedException(); }
         }
+
 
         /// <summary>
         /// Gets or sets the week.
@@ -172,12 +171,12 @@ namespace Cinema.Models {
 
         public void SetIdentifier(int id)
         {
-            throw new NotImplementedException();
+            this.id = id;
         }
 
         public int GetIdentifier()
         {
-            throw new NotImplementedException();
+            return id;
         }
     }
 

@@ -17,7 +17,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kinokarten", "TicketOperati
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI", "GUI\GUI.csproj", "{723196A8-77B3-4EF6-9CAA-9C808924D210}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anwendungskern", "Anwendungskern\Anwendungskern.csproj", "{933F4F12-DE06-4E09-8A8D-1AD192363219}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fassade", "Anwendungskern\Fassade.csproj", "{933F4F12-DE06-4E09-8A8D-1AD192363219}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestAnwendungskern", "TestAnwendungskern\TestAnwendungskern.csproj", "{71381EF0-8788-40DA-BE46-064C2800CAD8}"
 EndProject

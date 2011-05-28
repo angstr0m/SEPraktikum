@@ -41,6 +41,7 @@
     <Compile Include="InterfaceMembers\IKinoAdministration.cs" />
     <Compile Include="InterfaceMembers\IKinoInformationen.cs" />
     <Compile Include="InterfaceMembers\KinoAdministration.cs" />
+    <Compile Include="InterfaceMembers\KinoInformationen.cs" />
     <Compile Include="Models\Film.cs" />
     <Compile Include="InterfaceMembers\IFilm.cs" />
     <Compile Include="InterfaceMembers\IKinosaal.cs" />

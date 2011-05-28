@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Cinema.InterfaceMembers
 {
-    interface IKinoInformationen
+    public interface IKinoInformationen
     {
         List<ISitz> GetSitzplätzeInKinosaal(IKinosaal kinosaal);
 
