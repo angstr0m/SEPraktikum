@@ -1,9 +1,12 @@
 using System;
 using Base.AbstractClasses;
 using Cinema.Models;
+using Cinema.Schnittstelle;
 using Database.Interfaces;
 using Database.Models;
 using TicketOperations.PublicInterfaceMembers;
+using TicketOperations.Schnittstelle;
+using TicketOperations.Schnittstelle.Interfaces;
 
 namespace TicketOperations.Models
 {
@@ -13,10 +16,14 @@ namespace TicketOperations.Models
     /// <remarks> Eine Kinokarte kann gekauft und oder reserviert werden.
     /// Ist eine Kinokarte 15 Minuten vor Beginn der Vorstellung reserviert, 
     /// aber nicht gekauft so wird die Reservierung für diese Karte storniert. </remarks>
-    public class Kinokarte : Subject, IDatabaseObject
+    internal class Kinokarte : Subject, IDatabaseObject
     {
         private int id;
-        private IKinokarteBlockierungZugangsSchlüssel key;
+        /// <summary>
+        /// Wenn die Kinokarte blockiert ist wird dieser Schlüssel benötigt, um die Blockierung aufzuheben.
+        /// Wird erst zugewiesen, wenn die Kinokarte initial blockiert wird.
+        /// </summary>
+        private IKinokarteBlockierungZugangsSchlüssel zugangsSchlüssel;
         /// <summary>
         /// Gibt an, ob diese Karte bereits verkauft wurde.
         /// </summary>
@@ -25,7 +32,9 @@ namespace TicketOperations.Models
         /// Gibt an ob diese Karte reserviert wurde.
         /// </summary>
         private bool _reserviert;
-
+        /// <summary>
+        /// Gibt an, ob diese Karte 
+        /// </summary>
         private bool _blockiert;
         /// <summary>
         /// Gibt an ob auf den Kaufpreis dieser Karte 10% Rabatt gewährt werden soll.
@@ -38,32 +47,30 @@ namespace TicketOperations.Models
         /// <summary>
         /// Der zugehörige Sitz zu dieser Kinokarte.
         /// </summary>
-        private Sitz sitz;
+        private ISitz _sitz;
         /// <summary>
         /// Die Vorstellung zu der diese Kinokarte gehört.
         /// </summary>
-        private Vorstellung vorstellung;
+        private Vorstellung _vorstellung;
         /// <summary>
         /// Entity Manager für den Zugriff auf die Reservierungen.
         /// </summary>
-        private EntityManager<Reservierung> _databaseReservation;
+        private EntityManager<Reservierung> _reservierungen;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Kinokarte"/> class.
+        /// Initialisiert eine neue Instanz der <see cref="Kinokarte"/> Klasse.
         /// </summary>
         /// <param name="preis"> Der Preis der Kinokarte. </param>
         /// <param name="sitz"> Der zugehörige Sitz dieser Vorstellung. </param>
         /// <param name="vorstellung"> Die zugehörige Vorstellung. </param>
         /// <remarks></remarks>
-        public Kinokarte(float preis, Sitz sitz, Vorstellung vorstellung)
+        public Kinokarte(float preis, ISitz sitz, Vorstellung vorstellung)
         {
             this._preis = preis;
-            this.sitz = sitz;
-            this.vorstellung = vorstellung;
+            this._sitz = sitz;
+            this._vorstellung = vorstellung;
             this._verkauft = false;
             this._reserviert = false;
-            // Reservationsnummer erstellen
-            //this._reservationsnummer = vorstellung.GetHashCode() + " " + sitz.ToString();
         }
         
         /// <summary>
@@ -122,9 +129,9 @@ namespace TicketOperations.Models
         /// Gets the Sitz that belongs to this kinokarte.
         /// </summary>
         /// <remarks></remarks>
-        public Sitz Sitz
+        public ISitz Sitz
         {
-            get { return sitz; }
+            get { return _sitz; }
         }
 
         /// <summary>
@@ -133,7 +140,7 @@ namespace TicketOperations.Models
         /// <remarks></remarks>
         public Models.Vorstellung Vorstellung
         {
-            get { return vorstellung; }
+            get { return _vorstellung; }
         }
 
         public bool Blockiert
@@ -143,26 +150,27 @@ namespace TicketOperations.Models
 
         public IKinokarteBlockierungZugangsSchlüssel Blockieren()
         {
-            if (key != null && Blockiert)
+            if (zugangsSchlüssel != null && Blockiert)
             {
-                throw new TicketBlockedException();
+                // Kinokarte ist bereits blockiert!
+                throw new KinokarteBlockiertException();
             }
 
             this._blockiert = true;
-            key = new KinokarteBlockierungZugangsSchlüssel();
-            return key;
+            zugangsSchlüssel = new KinokarteBlockierungZugangsSchlüssel();
+            return zugangsSchlüssel;
         }
 
         public void BlockierungAufheben(IKinokarteBlockierungZugangsSchlüssel key)
         {
-            if (this.key != key)
+            if (this.zugangsSchlüssel != key)
             {
-                throw new WrongAccessKeyException();
+                throw new UngültigerZugangsschlüsselException();
             }
 
             if (!this.Blockiert)
             {
-                throw new TicketNotBlockedException();
+                throw new KinokarteNichtBlockiertException();
             }
 
             this._blockiert = false;
@@ -177,18 +185,18 @@ namespace TicketOperations.Models
         {
             if (Blockiert)
             {
-                throw new TicketBlockedException();
+                throw new KinokarteBlockiertException();
             }
 
             if (!Reserviert)
             {
-                throw new TicketNotReservedException();
+                throw new KinokarteNichtReserviertException();
             }
 
             _reserviert = false;
             _rabatt = false;
 
-            Reservierung reservierung = _databaseReservation.GetElements().Find(delegate(Reservierung r) { return r.Kinokarten.Contains(this); });
+            Reservierung reservierung = _reservierungen.GetElements().Find(delegate(Reservierung r) { return r.Kinokarten.Contains(this); });
             reservierung.TicketEntfernen(this);
         }
 
@@ -203,22 +211,24 @@ namespace TicketOperations.Models
         }
     }
 
-    public class TicketBlockedException : Exception
+    // TODO Schauen, welche Exceptions noch geworfen werden dürfen! 
+
+    public class KinokarteBlockiertException : Exception
     {
     
     }
 
-    public class TicketNotBlockedException : Exception
+    public class KinokarteNichtBlockiertException : Exception
     {
 
     }
 
-    public class WrongAccessKeyException : Exception
+    public class UngültigerZugangsschlüsselException : Exception
     {
     
     }
 
-    public class TicketNotReservedException : Exception
+    public class KinokarteNichtReserviertException : Exception
     {
     
     }

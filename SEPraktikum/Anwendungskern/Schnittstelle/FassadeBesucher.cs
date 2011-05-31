@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using Cinema.InterfaceMembers;
+using Cinema.Schnittstelle;
 using TicketOperations.PublicInterfaceMembers;
 using System.Net.Mail;
+using TicketOperations.Schnittstelle.Interfaces;
 
 namespace Fassade.Schnittstelle
 {

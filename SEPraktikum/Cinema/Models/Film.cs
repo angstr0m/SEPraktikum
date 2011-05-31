@@ -1,172 +1,101 @@
 using System;
 using Base.AbstractClasses;
-using Cinema.InterfaceMembers;
+using Cinema.Schnittstelle;
 using Database.Interfaces;
 
 namespace Cinema.Models
 {
     /// <summary>
-    /// Representing a single movie. Movies are organized in MoviePrograms.
+    /// Repräsentiert einen Film.
+    /// Dieser Film kann in mehreren Vorstellungen gezeigt werden.
     /// </summary>
     /// <remarks></remarks>
-    public class Film : Subject, IDatabaseObject, IFilm
+    internal class Film : Subject, IDatabaseObject, IFilm
     {
+        /// <summary>
+        /// Die Id des Objekts in der Datenbank.
+        /// </summary>
         private int id;
         /// <summary>
-        /// Name of the movie.
+        /// Der Name des Films.
         /// </summary>
         private String name;
         /// <summary>
-        /// genre of the movie
+        /// Das Genre des Films.
         /// </summary>
         private String genre;
         /// <summary>
-        /// Dauer in minutes
+        /// Dauer des Films in Minuten.
         /// </summary>
         private int _dauer;
         /// <summary>
-        /// 
+        /// Land in dem der Film produziert wurde.
         /// </summary>
-        private String originCountry;
+        private String herkunftsLand;
         /// <summary>
-        /// 
-        /// </summary>
-        private int week;
-        /// <summary>
-        /// FSK-rating of the movie.
+        /// Altersfreigabe des Films.
         /// </summary>
         private int _altersfreigabe;
         /// <summary>
-        /// 
+        /// Schauspieler die an diesem Film mitgewirkt haben.
         /// </summary>
-        private String movieCast;
+        private String schauspieler;
         /// <summary>
-        /// 
+        /// Der name des Regisseurs des Films.
         /// </summary>
-        private String director;
+        private String regisseur;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Film"/> class.
-        /// </summary>
-        /// <param name="name">The name.</param>
-        /// <param name="genre">The genre.</param>
-        /// <param name="_dauer">The Dauer.</param>
-        /// <param name="originCountry">The origin country.</param>
-        /// <param name="startDateTime">The start date time.</param>
-        /// <param name="_altersfreigabe">The movie rating.</param>
-        /// <param name="movieCast">The movie cast.</param>
-        /// <param name="director">The director.</param>
-        /// <remarks></remarks>
-        public Film(String name, String genre, int _dauer, string originCountry, int _altersfreigabe, string movieCast, string director)
+        public Film(String name, String genre, int _dauer, string herkunftsLand, int _altersfreigabe, string schauspieler, string regisseur)
         {
             this.name = name;
             this.genre = genre;
             this._dauer = _dauer;
-            this.originCountry = originCountry;
+            this.herkunftsLand = herkunftsLand;
 
             this._altersfreigabe = _altersfreigabe;
-            this.movieCast = movieCast;
-            this.director = director;
+            this.schauspieler = schauspieler;
+            this.regisseur = regisseur;
         }
 
-        /// <summary>
-        /// Gets or sets the name.
-        /// </summary>
-        /// <value>The name.</value>
-        /// <remarks></remarks>
-        public String Name
+
+        public string Regisseur
         {
-            get { return name; }
-            set { name = value; }
+            get { return regisseur; }
         }
 
-        /// <summary>
-        /// Gets or sets the genre.
-        /// </summary>
-        /// <value>The genre.</value>
-        /// <remarks></remarks>
-        public string Genre
+        public string Schauspieler
         {
-            get { return genre; }
-            set { genre = value; }
+            get { return schauspieler; }
         }
 
-        /// <summary>
-        /// Gets or sets the Dauer.
-        /// </summary>
-        /// <value>The Dauer.</value>
-        /// <remarks></remarks>
-        public int Dauer
-        {
-            get { return _dauer; }
-            set { _dauer = value; }
-        }
-
-        /// <summary>
-        /// Gets or sets the origin country.
-        /// </summary>
-        /// <value>The origin country.</value>
-        /// <remarks></remarks>
-        public string OriginCountry
-        {
-            get { return originCountry; }
-            set { originCountry = value; }
-        }
-
-        /// <summary>
-        /// Gets or sets the start date time.
-        /// </summary>
-        /// <value>The start date time.</value>
-        /// <remarks></remarks>
-        public DateTime StartDateTime
-        {
-            get { throw new NotImplementedException(); }
-            set { throw new NotImplementedException(); }
-        }
-
-
-        /// <summary>
-        /// Gets or sets the week.
-        /// </summary>
-        /// <value>The week.</value>
-        /// <remarks></remarks>
-        public int Week
-        {
-            get { return week; }
-            set { week = value; }
-        }
-
-        /// <summary>
-        /// Gets or sets the movie rating.
-        /// </summary>
-        /// <value>The movie rating.</value>
-        /// <remarks></remarks>
         public int Altersfreigabe
         {
             get { return _altersfreigabe; }
-            set { _altersfreigabe = value; }
         }
 
-        /// <summary>
-        /// Gets or sets the movie cast.
-        /// </summary>
-        /// <value>The movie cast.</value>
-        /// <remarks></remarks>
-        public string MovieCast
+        public string HerkunftsLand
         {
-            get { return movieCast; }
-            set { movieCast = value; }
+            get { return herkunftsLand; }
         }
 
-        /// <summary>
-        /// Gets or sets the director.
-        /// </summary>
-        /// <value>The director.</value>
-        /// <remarks></remarks>
-        public string Director
+        public int Dauer
         {
-            get { return director; }
-            set { director = value; }
+            get { return _dauer; }
+        }
+
+        public string Genre
+        {
+            get { return genre; }
+        }
+
+        public string Name
+        {
+            get { return name; }
+        }
+
+        public int Id
+        {
+            get { return id; }
         }
 
         public void SetIdentifier(int id)

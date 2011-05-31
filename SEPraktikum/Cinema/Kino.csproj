@@ -38,17 +38,18 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="InterfaceMembers\IKinoAdministration.cs" />
-    <Compile Include="InterfaceMembers\IKinoInformationen.cs" />
-    <Compile Include="InterfaceMembers\KinoAdministration.cs" />
-    <Compile Include="InterfaceMembers\KinoInformationen.cs" />
     <Compile Include="Models\Film.cs" />
-    <Compile Include="InterfaceMembers\IFilm.cs" />
-    <Compile Include="InterfaceMembers\IKinosaal.cs" />
-    <Compile Include="InterfaceMembers\ISitz.cs" />
     <Compile Include="Models\Kinosaal.cs" />
     <Compile Include="Models\Sitz.cs" />
     <Compile Include="Models\SitzIdentifikator.cs" />
+    <Compile Include="Schnittstelle\IFilm.cs" />
+    <Compile Include="Schnittstelle\IKinoAdministration.cs" />
+    <Compile Include="Schnittstelle\IKinoInformationen.cs" />
+    <Compile Include="Schnittstelle\IKinosaal.cs" />
+    <Compile Include="Schnittstelle\ISitz.cs" />
+    <Compile Include="Schnittstelle\ISitzIdentifikator.cs" />
+    <Compile Include="Schnittstelle\KinoAdministration.cs" />
+    <Compile Include="Schnittstelle\KinoInformationen.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />

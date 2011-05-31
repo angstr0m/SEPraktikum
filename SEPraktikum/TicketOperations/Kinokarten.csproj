@@ -38,34 +38,33 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="PublicInterfaceMembers\Interfaces\IKinokartenInformationen.cs" />
-    <Compile Include="PublicInterfaceMembers\Interfaces\IKinokartenAdministration.cs" />
-    <Compile Include="PublicInterfaceMembers\KinokartenAdministration.cs" />
-    <Compile Include="PublicInterfaceMembers\veraltet\BesucherKinokartenReservierung.cs" />
-    <Compile Include="PublicInterfaceMembers\Interfaces\Anwendungsfall spezifische Interfaces\IABesucherReserviertKinokarteOnlineInformationen.cs" />
-    <Compile Include="PublicInterfaceMembers\Interfaces\Anwendungsfall spezifische Interfaces\IABesucherReserviertKinokarteOnlineOperationen.cs" />
-    <Compile Include="PublicInterfaceMembers\veraltet\IBesucherKinokartenReservierung.cs" />
-    <Compile Include="PublicInterfaceMembers\Interfaces\IKinokartenOperationen.cs" />
-    <Compile Include="PublicInterfaceMembers\veraltet\IRegistrierterKundeKinokartenReservierung.cs" />
-    <Compile Include="PublicInterfaceMembers\Interfaces\ISitzIdentifikator.cs" />
-    <Compile Include="PublicInterfaceMembers\Interfaces\IKinokarteBlockierungZugangsSchlüssel.cs" />
-    <Compile Include="PublicInterfaceMembers\veraltet\InternalInterfaceMembers\Interfaces\IKinokarteReservieren.cs" />
-    <Compile Include="PublicInterfaceMembers\KinokartenInformationen.cs" />
-    <Compile Include="PublicInterfaceMembers\KinokartenOperationen.cs" />
-    <Compile Include="PublicInterfaceMembers\PublicFilmprogramm.cs" />
-    <Compile Include="PublicInterfaceMembers\PublicKinokarte.cs" />
-    <Compile Include="PublicInterfaceMembers\veraltet\InternalInterfaceMembers\KinokartenReservieren.cs" />
-    <Compile Include="PublicInterfaceMembers\PublicVorstellung.cs" />
-    <Compile Include="PublicInterfaceMembers\veraltet\RegistrierterKundeKinokartenReservieren.cs" />
     <Compile Include="Models\Buchung.cs" />
-    <Compile Include="PublicInterfaceMembers\Interfaces\IPublicKinokarte.cs" />
-    <Compile Include="PublicInterfaceMembers\Interfaces\IPublicVorstellung.cs" />
-    <Compile Include="PublicInterfaceMembers\Interfaces\IPublicFilmprogramm.cs" />
     <Compile Include="Models\Filmprogramm.cs" />
     <Compile Include="Models\Reservierung.cs" />
     <Compile Include="Models\Vorstellung.cs" />
     <Compile Include="Models\Kinokarte.cs" />
-    <Compile Include="PublicInterfaceMembers\KinokarteBlockierungZugangsSchlüssel.cs" />
+    <Compile Include="Schnittstelle\Interfaces\Anwendungsfall spezifische Interfaces\IABesucherReserviertKinokarteOnlineInformationen.cs" />
+    <Compile Include="Schnittstelle\Interfaces\Anwendungsfall spezifische Interfaces\IABesucherReserviertKinokarteOnlineOperationen.cs" />
+    <Compile Include="Schnittstelle\Interfaces\IKinokarteBlockierungZugangsSchlüssel.cs" />
+    <Compile Include="Schnittstelle\Interfaces\IKinokartenAdministration.cs" />
+    <Compile Include="Schnittstelle\Interfaces\IKinokartenInformationen.cs" />
+    <Compile Include="Schnittstelle\Interfaces\IKinokartenOperationen.cs" />
+    <Compile Include="Schnittstelle\Interfaces\IPublicFilmprogramm.cs" />
+    <Compile Include="Schnittstelle\Interfaces\IPublicKinokarte.cs" />
+    <Compile Include="Schnittstelle\Interfaces\IPublicVorstellung.cs" />
+    <Compile Include="Schnittstelle\KinokarteBlockierungZugangsSchlüssel.cs" />
+    <Compile Include="Schnittstelle\KinokartenAdministration.cs" />
+    <Compile Include="Schnittstelle\KinokartenInformationen.cs" />
+    <Compile Include="Schnittstelle\KinokartenOperationen.cs" />
+    <Compile Include="Schnittstelle\PublicFilmprogramm.cs" />
+    <Compile Include="Schnittstelle\PublicKinokarte.cs" />
+    <Compile Include="Schnittstelle\PublicVorstellung.cs" />
+    <Compile Include="veraltet\BesucherKinokartenReservierung.cs" />
+    <Compile Include="veraltet\IBesucherKinokartenReservierung.cs" />
+    <Compile Include="veraltet\InternalInterfaceMembers\Interfaces\IKinokarteReservieren.cs" />
+    <Compile Include="veraltet\InternalInterfaceMembers\KinokartenReservieren.cs" />
+    <Compile Include="veraltet\IRegistrierterKundeKinokartenReservierung.cs" />
+    <Compile Include="veraltet\RegistrierterKundeKinokartenReservieren.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -91,7 +90,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="PublicInterfaceMembers\veraltet\InternalInterfaceMembers\Controller\" />
+    <Folder Include="veraltet\InternalInterfaceMembers\Controller\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -2,7 +2,7 @@ using System;
 using Base.Interfaces;
 using Database.Interfaces;
 
-namespace Cinema.InterfaceMembers
+namespace Cinema.Schnittstelle
 {
     public interface ISitz : IDatabaseObject 
     {

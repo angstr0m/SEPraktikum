@@ -1,6 +1,7 @@
 ﻿using TicketOperations.Models;
+using TicketOperations.Schnittstelle.Interfaces;
 
-namespace TicketOperations.PublicInterfaceMembers
+namespace TicketOperations.Schnittstelle
 {
     class PublicKinokarte : IPublicKinokarte
     {

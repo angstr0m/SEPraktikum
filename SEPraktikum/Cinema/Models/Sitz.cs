@@ -1,12 +1,12 @@
 using System;
-using Cinema.InterfaceMembers;
+using Cinema.Schnittstelle;
 
 namespace Cinema.Models {
     /// <summary>
     /// Representing a single Sitz in a specific Kinosaal
     /// </summary>
     /// <remarks></remarks>
-    public class Sitz : Base.AbstractClasses.Subject, ISitz
+    internal class Sitz : Base.AbstractClasses.Subject, ISitz
     {
         private int id;
 

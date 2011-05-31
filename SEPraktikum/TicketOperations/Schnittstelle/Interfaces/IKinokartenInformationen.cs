@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
-using Cinema.InterfaceMembers;
+using Cinema.Schnittstelle;
 using TicketOperations.PublicInterfaceMembers.Interfaces.Anwendungsfall_spezifische_Interfaces;
 
-namespace TicketOperations.PublicInterfaceMembers
+namespace TicketOperations.Schnittstelle.Interfaces
 {
     public interface IKinokartenInformationen : IABesucherReserviertKinokarteOnlineInformationen
     {

@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
 using TicketOperations.Models;
+using TicketOperations.Schnittstelle.Interfaces;
 
-namespace TicketOperations.PublicInterfaceMembers
+namespace TicketOperations.Schnittstelle
 {
     class PublicFilmprogramm : IPublicFilmprogramm
     {

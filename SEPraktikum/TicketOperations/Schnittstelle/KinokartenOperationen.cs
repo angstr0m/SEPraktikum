@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Cinema.InterfaceMembers;
+﻿using Cinema.Schnittstelle;
 using Database.Models;
 using TicketOperations.Models;
+using TicketOperations.Schnittstelle.Interfaces;
 using Users.Interfaces;
 
-namespace TicketOperations.PublicInterfaceMembers
+namespace TicketOperations.Schnittstelle
 {
     public class KinokartenOperationen : IKinokartenOperationen
     {

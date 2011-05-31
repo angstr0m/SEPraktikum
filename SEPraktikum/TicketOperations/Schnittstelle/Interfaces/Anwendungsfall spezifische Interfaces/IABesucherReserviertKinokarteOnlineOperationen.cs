@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Cinema.InterfaceMembers;
+using Cinema.Schnittstelle;
+using TicketOperations.Schnittstelle.Interfaces;
 
 namespace TicketOperations.PublicInterfaceMembers.Interfaces.Anwendungsfall_spezifische_Interfaces
 {

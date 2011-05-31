@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Cinema.Models;
+﻿using Cinema.Models;
 
-namespace Cinema.InterfaceMembers
+namespace Cinema.Schnittstelle
 {
     public class KinoAdministration : IKinoAdministration
     {

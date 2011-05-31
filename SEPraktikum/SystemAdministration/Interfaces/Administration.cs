@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Cinema.InterfaceMembers;
+using Cinema.Schnittstelle;
 using TicketOperations.PublicInterfaceMembers;
 using TicketOperations.PublicInterfaceMembers.Interfaces;
+using TicketOperations.Schnittstelle.Interfaces;
 
 namespace SystemAdministration.Interfaces
 {

@@ -1,7 +1,10 @@
-﻿using TicketOperations.InternalInterfaceMembers;
+﻿using Cinema.Schnittstelle;
+using TicketOperations.PublicInterfaceMembers;
+using TicketOperations.Schnittstelle.Interfaces;
+using TicketOperations.Schnittstelle.veraltet.InternalInterfaceMembers;
 using Users.Interfaces;
 
-namespace TicketOperations.PublicInterfaceMembers
+namespace TicketOperations.Schnittstelle.veraltet
 {
     class BesucherKinokartenReservierung : KinokartenReservieren, IBesucherKinokartenReservierung
     {

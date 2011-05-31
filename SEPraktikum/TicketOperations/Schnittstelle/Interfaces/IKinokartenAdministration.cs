@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Cinema.InterfaceMembers;
+﻿using Cinema.Schnittstelle;
 
-namespace TicketOperations.PublicInterfaceMembers.Interfaces
+namespace TicketOperations.Schnittstelle.Interfaces
 {
     public interface IKinokartenAdministration
     {

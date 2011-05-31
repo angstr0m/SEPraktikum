@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using Cinema.InterfaceMembers;
+using Cinema.Schnittstelle;
 using Database.Interfaces;
 
 namespace Cinema.Models {
@@ -8,7 +8,7 @@ namespace Cinema.Models {
     /// Representing a phyisical room in the Cinema.
     /// </summary>
     /// <remarks></remarks>
-    public class Kinosaal : Base.AbstractClasses.Subject, IKinosaal
+    internal class Kinosaal : Base.AbstractClasses.Subject, IKinosaal
     {
         /// <summary>
         /// 

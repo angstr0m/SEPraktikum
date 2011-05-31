@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Base.AbstractClasses;
 using TicketOperations.PublicInterfaceMembers;
+using TicketOperations.Schnittstelle.Interfaces;
 using Users.Interfaces;
 using Users.Models;
 using Database.Models;
@@ -9,31 +10,49 @@ using Database.Interfaces;
 
 namespace TicketOperations.Models {
     /// <summary>
-    /// 
+    /// Repräsentiert eine Reservierung.
+    /// Tätigt ein Kunde eine Reservierung, wird ein neues Objekt dieses Typs erzeugt und in der Datenbank gespeichert.
     /// </summary>
     /// <remarks></remarks>
-    public class Reservierung : Subject, IDatabaseObject
+    internal class Reservierung : Subject, IDatabaseObject
     {
         private int _id;
-        private bool _discount;
+        /// <summary>
+        /// Gibt an, ob auf die Karten dieser Vorstellung ein Rabatt von 10% auf den Preis gewährt wird.
+        /// </summary>
+        private bool _rabatt;
+        /// <summary>
+        /// Die Reservierungsnummer unter der die Karten dieser Reservierung abgeholt werden können.
+        /// </summary>
         private int _reservierungsnummer;
+        /// <summary>
+        /// Die Vorstellung zu der die Karten dieser Vorstellung gehören.
+        /// </summary>
         private Vorstellung _vorstellung;
+        /// <summary>
+        /// Die Kinokarten die zu dieser Reservierung gehören.
+        /// </summary>
         private List<Kinokarte> _kinokarten;
+        /// <summary>
+        /// Die Referenz auf den Kunden, welcher diese Reservierung getätigt hat.
+        /// </summary>
         private IKunde _kunde;
+        /// <summary>
+        /// Ermöglicht den Zugriff auf die Reservierungen in der Datenbank.
+        /// </summary>
+        private EntityManager<Reservierung> _reservierungen;
 
-        private EntityManager<Reservierung> _database;
-
-        public Reservierung(Kinokarte kinokarte, IKunde kunde, bool discount, IKinokarteBlockierungZugangsSchlüssel key)
+        public Reservierung(Kinokarte kinokarte, IKunde kunde, bool rabatt, IKinokarteBlockierungZugangsSchlüssel key)
         {
             _vorstellung = kinokarte.Vorstellung;
             _kinokarten = new List<Kinokarte>();
             this.TicketHinzufügen(kinokarte, key);
             _reservierungsnummer = _kinokarten.Count;
             _kunde = kunde;
-            _discount = discount;
+            _rabatt = rabatt;
 
-            _database = new EntityManager<Reservierung>();
-            _database.AddElement(this);
+            _reservierungen = new EntityManager<Reservierung>();
+            _reservierungen.AddElement(this);
         }
 
         /// <summary>
@@ -55,7 +74,7 @@ namespace TicketOperations.Models {
 
             kinokarte.BlockierungAufheben(key);
 
-            kinokarte.Rabatt = _discount;
+            kinokarte.Rabatt = _rabatt;
             kinokarte.Reservieren();
             _kinokarten.Add(kinokarte);
         }
@@ -72,7 +91,7 @@ namespace TicketOperations.Models {
 
             if (_kinokarten.Count == 0)
             {
-                _database.RemoveElement(this);
+                _reservierungen.RemoveElement(this);
             }
         }
         /// <summary>
@@ -83,7 +102,8 @@ namespace TicketOperations.Models {
         public float Price()
         {
             float price = 0;
-
+            
+            // Den Preis aller Kinokarten dieser Reservierung aufsummieren.
             foreach (Kinokarte ticket in _kinokarten)
             {
                 price += ticket.Preis;
@@ -106,7 +126,7 @@ namespace TicketOperations.Models {
             }
 
             // Dann diese Reservierung aus der Datenbank entfernen.
-            _database.RemoveElement(this);
+            _reservierungen.RemoveElement(this);
         }
 
 

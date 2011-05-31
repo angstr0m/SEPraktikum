@@ -4,7 +4,7 @@ using Base.Interfaces;
 using Cinema.Models;
 using Database.Interfaces;
 
-namespace Cinema.InterfaceMembers
+namespace Cinema.Schnittstelle
 {
     public interface IKinosaal : IDatabaseObject
     {

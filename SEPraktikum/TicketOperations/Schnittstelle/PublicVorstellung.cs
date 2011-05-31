@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using TicketOperations.Models;
+using TicketOperations.Schnittstelle.Interfaces;
 
-namespace TicketOperations.PublicInterfaceMembers
+namespace TicketOperations.Schnittstelle
 {
     /// <summary>
     /// Decorator for the vorstellung object.
@@ -20,7 +21,7 @@ namespace TicketOperations.PublicInterfaceMembers
 
         public DateTime StartTime
         {
-            get { return _vorstellung.StartTime; }
+            get { return _vorstellung.StartZeit; }
         }
 
         public int Duration

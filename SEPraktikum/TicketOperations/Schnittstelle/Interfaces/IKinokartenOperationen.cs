@@ -1,7 +1,6 @@
-﻿using Cinema.InterfaceMembers;
-using TicketOperations.PublicInterfaceMembers.Interfaces.Anwendungsfall_spezifische_Interfaces;
+﻿using TicketOperations.PublicInterfaceMembers.Interfaces.Anwendungsfall_spezifische_Interfaces;
 
-namespace TicketOperations.PublicInterfaceMembers
+namespace TicketOperations.Schnittstelle.Interfaces
 {
     public interface IKinokartenOperationen : IABesucherReserviertKinokarteOnlineOperationen
     {

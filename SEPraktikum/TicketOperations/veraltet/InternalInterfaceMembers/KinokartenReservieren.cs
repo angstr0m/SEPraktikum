@@ -1,12 +1,14 @@
 ﻿using System;
+using Cinema.Schnittstelle;
 using Database.Models;
-using TicketOperations.InternalInterfaceMembers.Interfaces;
 using TicketOperations.Models;
 using TicketOperations.PublicInterfaceMembers;
+using TicketOperations.Schnittstelle.Interfaces;
+using TicketOperations.Schnittstelle.veraltet.InternalInterfaceMembers.Interfaces;
 using Users.Interfaces;
 using Users.Models;
 
-namespace TicketOperations.InternalInterfaceMembers
+namespace TicketOperations.Schnittstelle.veraltet.InternalInterfaceMembers
 {
     /// <summary>
     /// 
@@ -184,8 +186,8 @@ namespace TicketOperations.InternalInterfaceMembers
         {
             return (IPublicFilmprogramm)_databaseMoviePrograms.GetElements().Find(delegate(Filmprogramm m)
                                                           {
-                                                              return (m.StartDateTime <= DateTime.Today &&
-                                                                      m.StartDateTime.AddDays(7) >= DateTime.Today);
+                                                              return (m.StartDatum <= DateTime.Today &&
+                                                                      m.StartDatum.AddDays(7) >= DateTime.Today);
                                                           });
         }
     }

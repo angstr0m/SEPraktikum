@@ -1,8 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Base.AbstractClasses;
-using Cinema.InterfaceMembers;
-using Cinema.Models;
+using Cinema.Schnittstelle;
 using Database.Interfaces;
 
 namespace TicketOperations.Models {
@@ -11,26 +10,26 @@ namespace TicketOperations.Models {
     /// Eine Vorstellung repräsentiert eine einzelne Vorführung eines Films in einem bestimmten Kinosaal.
     /// </summary>
     /// <remarks></remarks>
-    public class Vorstellung : Subject, IDatabaseObject
+    internal class Vorstellung : Subject, IDatabaseObject
     {
 
         private int id;
         /// <summary>
         /// Startzeit des Vorstellung.
         /// </summary>
-        private DateTime startTime;
+        private DateTime _startZeit;
         /// <summary>
         /// Der Film der in der Vorstellung gezeigt wird.
         /// </summary>
-        private Film _film;
+        private IFilm _film;
         /// <summary>
         /// Der Kinosaal in dem die Vorstellung gezeigt wird.
         /// </summary>
-        private Kinosaal _kinosaal;
+        private IKinosaal _kinosaal;
         /// <summary>
         /// Zeigt an, ob es während der Vorstellung eine Pause gibt oder nicht. 
         /// </summary>
-        private bool pause;
+        private bool _pause;
         /// <summary>
         /// Die Kinokarten dieser Vorstellung.
         /// </summary>
@@ -41,9 +40,9 @@ namespace TicketOperations.Models {
         /// </summary>
         /// <value></value>
         /// <remarks></remarks>
-        public DateTime StartTime
+        public DateTime StartZeit
         {
-            get { return startTime; }
+            get { return _startZeit; }
         }
 
         /// <summary>
@@ -68,21 +67,21 @@ namespace TicketOperations.Models {
         /// <summary>
         /// Initializes a new instance of the <see cref="Vorstellung"/> class.
         /// </summary>
-        /// <param name="startTime">The start time.</param>
+        /// <param name="startZeit">The start time.</param>
         /// <param name="_film">The Film.</param>
         /// <param name="kinosaal">The _kinosaal.</param>
         /// <param name="pause">if set to <c>true</c> [pause].</param>
         /// <param name="ticketPrice">The Kinokarte price.</param>
         /// <remarks></remarks>
-        public Vorstellung(DateTime startTime, Film _film, Kinosaal kinosaal, bool pause, float ticketPrice)
+        public Vorstellung(DateTime startZeit, IFilm _film, IKinosaal kinosaal, bool pause, float ticketPrice)
         {
-            this.startTime = startTime;
+            this._startZeit = startZeit;
             this._film = _film;
             this._kinosaal = kinosaal;
-            this.pause = pause;
+            this._pause = pause;
             this._kinokarten = new List<Kinokarte>();
 
-            foreach (Sitz s in kinosaal.GetSeats())
+            foreach (ISitz s in kinosaal.GetSeats())
             {
                 _kinokarten.Add(new Kinokarte(ticketPrice, s, this));
             }

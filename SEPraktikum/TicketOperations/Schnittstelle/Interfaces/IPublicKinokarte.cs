@@ -1,7 +1,7 @@
 using Cinema.Models;
 using TicketOperations.Models;
 
-namespace TicketOperations.PublicInterfaceMembers
+namespace TicketOperations.Schnittstelle.Interfaces
 {
     public interface IPublicKinokarte
     {

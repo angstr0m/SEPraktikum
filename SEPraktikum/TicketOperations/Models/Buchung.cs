@@ -1,5 +1,6 @@
 using System;
 using TicketOperations.PublicInterfaceMembers;
+using TicketOperations.Schnittstelle.Interfaces;
 using Users.Interfaces;
 
 namespace TicketOperations.Models {
@@ -7,7 +8,7 @@ namespace TicketOperations.Models {
     /// 
     /// </summary>
     /// <remarks></remarks>
-	public class Buchung : Reservierung  {
+	internal class Buchung : Reservierung  {
         /// <summary>
         /// 
         /// </summary>

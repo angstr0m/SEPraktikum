@@ -8,13 +8,13 @@ namespace TicketOperations.Models {
     /// Dient der Sammlung aller Vorstellungen für eine Woche.
     /// </summary>
     /// <remarks></remarks>
-	public class Filmprogramm : Subject, IDatabaseObject
+	internal class Filmprogramm : Subject, IDatabaseObject
     {
         private int id;
         /// <summary>
         /// Datum ab welchem das Filmprogramm für eine Woche gültig ist.
         /// </summary>
-        private DateTime startDateTime;
+        private DateTime _startDatum;
         /// <summary>
         /// Die Vorstellungen dieses Filmprogramms.
         /// </summary>
@@ -22,19 +22,18 @@ namespace TicketOperations.Models {
         /// <summary>
         /// Zeigt an, ob das Filmprogramm bereits veröffentlicht wurde.
         /// </summary>
-        private bool published;
+        private bool _veröffentlicht;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Filmprogramm"/> class.
-        /// </summary>
-        /// <param name="startTime">The start time.</param>
-        /// <param name="vorstellungen">The vorstellungen.</param>
-        /// <remarks></remarks>
         public Filmprogramm(DateTime startTime, List<Vorstellung> vorstellungen)
         {
-            startDateTime = startTime;
+            _startDatum = startTime;
             this._vorstellungen = vorstellungen;
-            published = false;
+            _veröffentlicht = false;
+        }
+
+        public bool Veröffentlicht
+        {
+            get { return _veröffentlicht; }
         }
 
         /// <summary>
@@ -43,7 +42,7 @@ namespace TicketOperations.Models {
         /// <remarks>Sobald das Filmprogramm öffentlich ist, kann es von Kunden eingesehen werden.</remarks>
         public void Veröffentlichen() 
         {
-            published = true;
+            _veröffentlicht = true;
         }
 
         /// <summary>
@@ -56,9 +55,9 @@ namespace TicketOperations.Models {
             get { return _vorstellungen; }
         }
 
-        public DateTime StartDateTime
+        public DateTime StartDatum
         {
-            get { return startDateTime; }
+            get { return _startDatum; }
         }
 
         public void SetIdentifier(int id)

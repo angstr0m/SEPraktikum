@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using Cinema.InterfaceMembers;
+using Cinema.Schnittstelle;
 using TicketOperations.PublicInterfaceMembers;
+using TicketOperations.Schnittstelle.Interfaces;
 
 namespace Fassade.Schnittstelle
 {

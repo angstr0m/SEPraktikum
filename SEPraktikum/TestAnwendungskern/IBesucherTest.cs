@@ -1,13 +1,15 @@
 ﻿using SystemAdministration.Interfaces;
 using Cinema.Models;
+using Cinema.Schnittstelle;
 using Fassade.Schnittstelle;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using TicketOperations.Models;
 using TicketOperations.PublicInterfaceMembers;
-using Cinema.InterfaceMembers;
 using System.Collections.Generic;
 using TicketOperations.PublicInterfaceMembers.Interfaces;
+using TicketOperations.Schnittstelle;
+using TicketOperations.Schnittstelle.Interfaces;
 using Users.Interfaces;
 
 namespace TestAnwendungskern

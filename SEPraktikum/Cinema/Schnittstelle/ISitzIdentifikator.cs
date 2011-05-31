@@ -1,4 +1,4 @@
-﻿namespace TicketOperations.PublicInterfaceMembers
+﻿namespace Cinema.Schnittstelle
 {
     public interface ISitzIdentifikator
     {

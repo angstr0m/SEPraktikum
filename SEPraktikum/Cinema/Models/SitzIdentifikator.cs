@@ -1,6 +1,6 @@
 ﻿namespace Cinema.Models
 {
-    class SitzIdentifikator
+    internal class SitzIdentifikator
     {
         private char _reihe;
         private int _nummer;

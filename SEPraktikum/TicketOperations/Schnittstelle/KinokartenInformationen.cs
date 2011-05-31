@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Cinema.InterfaceMembers;
+using Cinema.Schnittstelle;
 using Database.Models;
 using TicketOperations.Models;
+using TicketOperations.Schnittstelle.Interfaces;
 
-namespace TicketOperations.PublicInterfaceMembers
+namespace TicketOperations.Schnittstelle
 {
     public class KinokartenInformationen : IKinokartenInformationen
     {
@@ -73,8 +72,8 @@ namespace TicketOperations.PublicInterfaceMembers
         {
             return (IPublicFilmprogramm)_filmprogramme.GetElements().Find(delegate(Filmprogramm m)
             {
-                return (m.StartDateTime <= DateTime.Today &&
-                        m.StartDateTime.AddDays(7) >= DateTime.Today);
+                return (m.StartDatum <= DateTime.Today &&
+                        m.StartDatum.AddDays(7) >= DateTime.Today);
             });
         }
 
