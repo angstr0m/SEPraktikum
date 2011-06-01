@@ -2,6 +2,6 @@
 {
     public interface IKinoAdministration
     {
-        void FillWithTestData();
+        void TestdatenEinrichten();
     }
 }

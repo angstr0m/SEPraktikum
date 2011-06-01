@@ -6,7 +6,7 @@ namespace Cinema.Schnittstelle
     {
         #region Implementation of IKinoAdministration
 
-        public void FillWithTestData()
+        public void TestdatenEinrichten()
         {
             IFilm hdr1 = new Film("Herr der Ringe - Die Gefährten", "Adventure", 178, "USA", 12, "Elijah Wood, Ian McKellen, Orlando Bloom, Viggo Mortensen", "Peter Jackson");
             IFilm hdr2 = new Film("Der Herr der Ringe - Die zwei Türme", "Adventure", 179, "USA", 12, "Elijah Wood, Ian McKellen, Orlando Bloom, Viggo Mortensen", "Peter Jackson");

@@ -9,57 +9,24 @@ namespace Cinema.Schnittstelle
     public interface IKinosaal : IDatabaseObject
     {
         /// <summary>
-        /// Gets the Sitz count.
+        /// Gibt die Anzahl der Sitze im Kino zurück.
         /// </summary>
         /// <remarks></remarks>
-        int SeatCount { get; }
+        int SitzAnzahl { get; }
 
         /// <summary>
-        /// Gets or sets the name.
+        /// Gibt den Namen des Kinosaals zurück.
         /// </summary>
-        /// <value>The name.</value>
+        /// <value>Der Name des Kinosaals.</value>
         /// <remarks></remarks>
-        String Name { get; set; }
+        String Name { get; }
 
         /// <summary>
-        /// Gets the seats.
+        /// Gibt eine Liste von Sitzplätzen zurück.
+        /// Diese Liste enthält die Sitzplätze in diesem Kinosaal.
         /// </summary>
         /// <returns></returns>
         /// <remarks></remarks>
-        List<Sitz> GetSeats();
-
-        /// <summary>
-        /// Adds the Sitz.
-        /// </summary>
-        /// <param name="sitz">The Sitz.</param>
-        /// <remarks></remarks>
-        void AddSeat(Sitz sitz);
-
-        /// <summary>
-        /// Removes the Sitz.
-        /// </summary>
-        /// <param name="sitz">The Sitz.</param>
-        /// <remarks></remarks>
-        void RemoveSeat(Sitz sitz);
-
-        /// <summary>
-        /// Adds the observer to the observer list.
-        /// </summary>
-        /// <param name="observer">The observer.</param>
-        /// <remarks></remarks>
-        void AddObserver(Observer observer);
-
-        /// <summary>
-        /// Removes the observer from the observer list.
-        /// </summary>
-        /// <param name="observer">The observer.</param>
-        /// <remarks></remarks>
-        void RemoveObserver(Observer observer);
-
-        /// <summary>
-        /// Notifies the observers.
-        /// </summary>
-        /// <remarks></remarks>
-        void NotifyObservers();
+        List<ISitz> GetSitzplätze();
     }
 }

@@ -1,12 +1,13 @@
 using System;
 using Cinema.Schnittstelle;
+using Database.Interfaces;
 
 namespace Cinema.Models {
     /// <summary>
     /// Representing a single Sitz in a specific Kinosaal
     /// </summary>
     /// <remarks></remarks>
-    internal class Sitz : Base.AbstractClasses.Subject, ISitz
+    internal class Sitz : Base.AbstractClasses.Subject, ISitz, IDatabaseObject
     {
         private int id;
 

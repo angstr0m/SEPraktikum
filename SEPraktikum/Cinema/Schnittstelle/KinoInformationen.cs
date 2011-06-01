@@ -22,6 +22,7 @@ namespace Cinema.Schnittstelle
         public List<ISitz> GetSitzplätzeInKinosaal(IKinosaal kinosaal)
         {
             Kinosaal tempKinosaal = kinosäle.GetElementWithId(kinosaal.GetIdentifier());
+            return tempKinosaal.GetSitzplätze();
         }
 
         public List<IKinosaal> GetKinosäle()

@@ -25,7 +25,7 @@ namespace SystemAdministration.Interfaces
         public void FillSystemWithTestData()
         {
             _kinokartenAdministration.FillWithTestData();
-            _kinoAdministration.FillWithTestData();
+            _kinoAdministration.TestdatenEinrichten();
         }
 
         public bool IsTicketBlocked(IPublicVorstellung vorstellung, ISitz sitz)

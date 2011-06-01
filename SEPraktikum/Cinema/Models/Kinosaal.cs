@@ -11,129 +11,143 @@ namespace Cinema.Models {
     internal class Kinosaal : Base.AbstractClasses.Subject, IKinosaal
     {
         /// <summary>
-        /// 
+        /// Die Id dieses Kinosaals in der Datenbank.
         /// </summary>
-        private String name;
+        private int id;
         /// <summary>
-        /// 
+        /// Der Name des Kinosaals.
         /// </summary>
-        private int seatCount;
+        private String _name;
         /// <summary>
-        /// 
+        /// Die Anzahl der Sitze des Kinosaals.
         /// </summary>
-        private List<Sitz> seats;
+        private int _sitzAnzahl;
+        /// <summary>
+        /// Die Sitzplätze dieses Kinosaals.
+        /// </summary>
+        private List<Sitz> _sitzplätze;
 
         /// <summary>
-        /// Gets the Sitz count.
+        /// Gibt die Anzahl der Sitzplätze zurück.
         /// </summary>
         /// <remarks></remarks>
-        public int SeatCount
+        public int SitzAnzahl
         {
-            get { return seatCount; }
+            get { return _sitzAnzahl; }
         }
 
         /// <summary>
-        /// Gets or sets the name.
+        /// Gibt den Namen des Kinosaals zurück, oder ändert ihn.
         /// </summary>
-        /// <value>The name.</value>
+        /// <value>Der Name des Kinosaals.</value>
         /// <remarks></remarks>
         public String Name
         {
-            get { return name; }
-            set { name = value; }
+            get { return _name; }
+            set { _name = value; }
         }
 
         /// <summary>
-        /// Gets the seats.
+        /// Gibt eine Liste von Sitzplätzen zurück.
+        /// Diese Liste enthält die Sitzplätze in diesem Kinosaal.
         /// </summary>
         /// <returns></returns>
         /// <remarks></remarks>
-        public List<Sitz> GetSeats()
+        public List<ISitz> GetSitzplätze()
         {
-            return new List<Sitz>(seats); // seats are immutable.
+            List<ISitz> returnList = new List<ISitz>();
+
+            foreach (Sitz sitz in _sitzplätze)
+            {
+                returnList.Add(sitz);
+            }
+
+            return returnList;
         }
 
         /// <summary>
-        /// Adds the Sitz.
+        /// Einen Sitzplatz zu den Sitzplätzen dieses Kinosaals hinzufügen.
         /// </summary>
-        /// <param name="sitz">The Sitz.</param>
+        /// <param name="sitz">Der Sitz, welcher hinzugefügt werden soll.</param>
         /// <remarks></remarks>
-        public void AddSeat(Sitz sitz) {
-            seats.Add(sitz);
-            UpdateSeatCount();
+        public void SitzplatzHinzufügen(Sitz sitz) {
+            _sitzplätze.Add(sitz);
+            SitzplatzAnzahlNeuBerechnen();
         }
 
         /// <summary>
-        /// Removes the Sitz.
+        /// Einen Sitzplatz von den Sitzplätzen dieses Kinosaals entfernen.
         /// </summary>
-        /// <param name="sitz">The Sitz.</param>
+        /// <param name="sitz">Der Sitz, welcher entfernt werden soll.</param>
         /// <remarks></remarks>
-        public void RemoveSeat(Sitz sitz)
+        public void SitzplatzEntfernen(Sitz sitz)
         {
-            seats.Remove(sitz);
-            UpdateSeatCount();
+            _sitzplätze.Remove(sitz);
+            SitzplatzAnzahlNeuBerechnen();
         }
 
         /// <summary>
-        /// Updates the Sitz count.
+        /// Berechnet die Anzahl der Sitzplätze neu.s
         /// </summary>
         /// <remarks></remarks>
-        private void UpdateSeatCount()
+        private void SitzplatzAnzahlNeuBerechnen()
         {
-            this.seatCount = seats.Count;
+            this._sitzAnzahl = _sitzplätze.Count;
             NotifyObservers();
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Kinosaal"/> class.
+        /// Initialisiert eine neue Instanz der <see cref="Kinosaal"/> Klasse.
         /// </summary>
-        /// <param name="_name">The _name.</param>
-        /// <param name="seats_per_rank">The seats_per_rank.</param>
-        /// <param name="ranks">The ranks.</param>
+        /// <param name="name">Der Name des Kinosaals.</param>
+        /// <param name="sitzplätze_pro_reihe">Anzahl der Sitzplätze pro Reihe.</param>
+        /// <param name="anzahl_reihen">Anzahl der Reihen</param>
         /// <remarks></remarks>
-        public Kinosaal(String _name, int seats_per_rank, int ranks)
+        public Kinosaal(String name, int sitzplätze_pro_reihe, int anzahl_reihen)
         {
-            this.name = _name;
+            this._name = name;
 
             char[] alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
             List<Sitz> seats = new List<Sitz>();
 
-            // Generate the needed number of seats.
-            for (int i = 0; i < ranks; i++)
+            // Benötigte Anzahl von Sitzplätzen erstellen,
+            // und den Sitzplätzen des Kinosaal hinzufügen.
+            for (int i = 0; i < anzahl_reihen; i++)
             {
                 char rank = alphabet[i];
-                for (int j = 0; j < seats_per_rank; j++)
+                for (int j = 0; j < sitzplätze_pro_reihe; j++)
                 {
                     Sitz tempSitz = new Sitz(rank, j);
                     seats.Add(tempSitz);
                 }
             }
 
-            this.seats = seats;
-            UpdateSeatCount();
+            this._sitzplätze = seats;
+            SitzplatzAnzahlNeuBerechnen();
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Kinosaal"/> class.
+        /// Initialisiert eine neue Instanz der <see cref="Kinosaal"/> Klasse.
+        /// Benutzen Sie diesen Konstruktor, wenn bereits eine Liste von Sitzplätzen vorhanden ist.
         /// </summary>
-        /// <param name="_name">The _name.</param>
-        /// <param name="_seats">The _seats.</param>
+        /// <param name="name">Der Name des Kinosaals.</param>
+        /// <param name="sitzplätze">Eine Liste von Sitzplätzen.</param>
         /// <remarks></remarks>
-        public Kinosaal(String _name, List<Sitz> _seats)
+        public Kinosaal(String name, List<Sitz> sitzplätze)
         {
-            this.name = _name;
-            this.seats = _seats;
-            UpdateSeatCount();
+            this._name = name;
+            this._sitzplätze = sitzplätze;
+            SitzplatzAnzahlNeuBerechnen();
         }
 
         public void SetIdentifier(int id)
         {
-            throw new NotImplementedException();
+            this.id = id;
         }
 
         public int GetIdentifier()
         {
-            throw new NotImplementedException();
+            return id;
         }
     }
 

@@ -16,33 +16,48 @@
       <File id="933F4F12-DE06-4E09-8A8D-1AD192363219/d:Schnittstelle/f:IFassadeBesucher.cs" caret="48" fromTop="0" />
       <File id="71381EF0-8788-40DA-BE46-064C2800CAD8/f:IBesucherTest.cs" caret="60" fromTop="1" />
       <File id="76A4DFAD-72A0-461F-BDA4-E4C497587DD3/f:Program.cs" caret="13" fromTop="0" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Buchung.cs" caret="679" fromTop="23" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Filmprogramm.cs" caret="287" fromTop="10" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Kinokarte.cs" caret="663" fromTop="17" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Reservierung.cs" caret="404" fromTop="15" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Vorstellung.cs" caret="390" fromTop="13" />
       <File id="FFDCF527-C890-4B77-A201-292D5E0CE18F/d:Models/f:Kinosaal.cs" caret="270" fromTop="10" />
       <File id="FFDCF527-C890-4B77-A201-292D5E0CE18F/d:Models/f:Sitz.cs" caret="212" fromTop="8" />
+      <File id="FFDCF527-C890-4B77-A201-292D5E0CE18F/d:Models/f:Film.cs" caret="129" fromTop="6" />
       <File id="FFDCF527-C890-4B77-A201-292D5E0CE18F/d:Models/f:SitzIdentifikator.cs" caret="41" fromTop="2" />
-      <File id="FFDCF527-C890-4B77-A201-292D5E0CE18F/d:Models/f:Film.cs" caret="388" fromTop="14" />
+      <File id="FFDCF527-C890-4B77-A201-292D5E0CE18F/d:Schnittstelle/f:IFilm.cs" caret="192" fromTop="9" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Buchung.cs" caret="679" fromTop="23" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Filmprogramm.cs" caret="1136" fromTop="35" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Kinokarte.cs" caret="6424" fromTop="12" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Reservierung.cs" caret="4332" fromTop="52" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Vorstellung.cs" caret="534" fromTop="18" />
     </RecentFiles>
     <RecentEdits>
-      <File id="933F4F12-DE06-4E09-8A8D-1AD192363219/d:Schnittstelle/f:FassadeBesucher.cs" caret="9657" fromTop="176" />
-      <File id="71381EF0-8788-40DA-BE46-064C2800CAD8/f:IBesucherTest.cs" caret="8603" fromTop="32" />
-      <File id="933F4F12-DE06-4E09-8A8D-1AD192363219/d:Schnittstelle/f:IFassadeBesucher.cs" caret="7818" fromTop="0" />
-      <File id="71381EF0-8788-40DA-BE46-064C2800CAD8/f:IBesucherTest.cs" caret="2340" fromTop="1" />
-      <File id="76A4DFAD-72A0-461F-BDA4-E4C497587DD3/f:Program.cs" caret="662" fromTop="29" />
-      <File id="76A4DFAD-72A0-461F-BDA4-E4C497587DD3/f:Program.cs" caret="284" fromTop="18" />
-      <File id="76A4DFAD-72A0-461F-BDA4-E4C497587DD3/f:Program.cs" caret="13" fromTop="0" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Buchung.cs" caret="264" fromTop="10" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Filmprogramm.cs" caret="287" fromTop="10" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Kinokarte.cs" caret="663" fromTop="17" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Reservierung.cs" caret="404" fromTop="15" />
-      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Vorstellung.cs" caret="390" fromTop="13" />
-      <File id="FFDCF527-C890-4B77-A201-292D5E0CE18F/d:Models/f:Kinosaal.cs" caret="270" fromTop="10" />
-      <File id="FFDCF527-C890-4B77-A201-292D5E0CE18F/d:Models/f:Sitz.cs" caret="212" fromTop="8" />
-      <File id="FFDCF527-C890-4B77-A201-292D5E0CE18F/d:Models/f:SitzIdentifikator.cs" caret="41" fromTop="2" />
-      <File id="FFDCF527-C890-4B77-A201-292D5E0CE18F/d:Models/f:Film.cs" caret="251" fromTop="9" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Filmprogramm.cs" caret="521" fromTop="16" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Filmprogramm.cs" caret="832" fromTop="9" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Kinokarte.cs" caret="1411" fromTop="33" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Kinokarte.cs" caret="2639" fromTop="35" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Kinokarte.cs" caret="4776" fromTop="36" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Kinokarte.cs" caret="2873" fromTop="30" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Kinokarte.cs" caret="2195" fromTop="39" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Kinokarte.cs" caret="1070" fromTop="7" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Kinokarte.cs" caret="5391" fromTop="34" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Kinokarte.cs" caret="7178" fromTop="46" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Kinokarte.cs" caret="7097" fromTop="41" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Kinokarte.cs" caret="7269" fromTop="51" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Kinokarte.cs" caret="1878" fromTop="28" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Kinokarte.cs" caret="2020" fromTop="32" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Kinokarte.cs" caret="6966" fromTop="39" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Reservierung.cs" caret="494" fromTop="13" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Reservierung.cs" caret="765" fromTop="20" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Reservierung.cs" caret="945" fromTop="24" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Reservierung.cs" caret="1110" fromTop="28" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Reservierung.cs" caret="1264" fromTop="32" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Reservierung.cs" caret="1440" fromTop="36" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Reservierung.cs" caret="1547" fromTop="40" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Reservierung.cs" caret="4091" fromTop="45" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Vorstellung.cs" caret="697" fromTop="24" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Vorstellung.cs" caret="837" fromTop="28" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Vorstellung.cs" caret="77" fromTop="2" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Vorstellung.cs" caret="2482" fromTop="39" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Vorstellung.cs" caret="2772" fromTop="47" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Vorstellung.cs" caret="567" fromTop="19" />
+      <File id="693E8C0C-D47E-4483-8755-3722DCB841D5/d:Models/f:Vorstellung.cs" caret="1011" fromTop="31" />
     </RecentEdits>
   </RecentFiles>
   <NAntValidationSettings>

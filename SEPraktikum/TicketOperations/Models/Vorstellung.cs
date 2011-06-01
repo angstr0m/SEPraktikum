@@ -9,6 +9,7 @@ namespace TicketOperations.Models {
     /// <summary>
     /// Eine Vorstellung repräsentiert eine einzelne Vorführung eines Films in einem bestimmten Kinosaal.
     /// </summary>
+    /// 
     /// <remarks></remarks>
     internal class Vorstellung : Subject, IDatabaseObject
     {
@@ -81,7 +82,7 @@ namespace TicketOperations.Models {
             this._pause = pause;
             this._kinokarten = new List<Kinokarte>();
 
-            foreach (ISitz s in kinosaal.GetSeats())
+            foreach (ISitz s in kinosaal.GetSitzplätze())
             {
                 _kinokarten.Add(new Kinokarte(ticketPrice, s, this));
             }
