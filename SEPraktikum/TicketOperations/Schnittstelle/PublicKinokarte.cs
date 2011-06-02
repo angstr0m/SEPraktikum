@@ -1,4 +1,5 @@
-﻿using TicketOperations.Models;
+﻿using Cinema.Schnittstelle;
+using TicketOperations.Models;
 using TicketOperations.Schnittstelle.Interfaces;
 
 namespace TicketOperations.Schnittstelle
@@ -7,7 +8,7 @@ namespace TicketOperations.Schnittstelle
     {
         private Kinokarte _kinokarte;
 
-        public PublicKinokarte(Kinokarte kinokarte)
+        internal PublicKinokarte(Kinokarte kinokarte)
         {
             _kinokarte = kinokarte;
         }
@@ -17,32 +18,27 @@ namespace TicketOperations.Schnittstelle
             return _kinokarte.GetIdentifier();
         }
 
-        //public string ReservationNumber
-        //{
-        //    get { return _kinokarte.Reservationsnummer; }
-        //}
-
-        public bool Reserved
+        public bool Reserviert
         {
             get { return _kinokarte.Reserviert; }
         }
 
-        public bool Discount
+        public bool Rabatt
         {
             get { return _kinokarte.Rabatt; }
         }
 
-        public bool Sold
+        public bool Verkauft
         {
             get { return _kinokarte.Verkauft; }
         }
 
-        public float Price
+        public float Preis
         {
             get { return _kinokarte.Preis; }
         }
 
-        public Cinema.Models.Sitz Sitz
+        public ISitz Sitz
         {
             get { return _kinokarte.Sitz; }
         }

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Cinema.Schnittstelle;
 
 namespace TicketOperations.Schnittstelle.Interfaces
 {
@@ -8,81 +9,80 @@ namespace TicketOperations.Schnittstelle.Interfaces
         int GetIdentifier();
 
         /// <summary>
-        /// Gets or sets the start time.
+        /// Gibt die Startzeit der Vorstellung zurück.
         /// </summary>
-        /// <value>The start time.</value>
+        /// <value>Die Startzeit der Vorstellung.</value>
         /// <remarks></remarks>
-        DateTime StartTime { get; }
+        DateTime StartZeit { get; }
 
         /// <summary>
-        /// Gets the duration of the movie shown.
+        /// Gibt die Spieldauer der Vorstellung zurück.
         /// </summary>
-        /// <value>The duration.</value>
+        /// <value>Die Spieldauer des Films dieser Vorstellung.</value>
         /// <remarks></remarks>
-        int Duration { get; }
+        int Spieldauer { get; }
 
         /// <summary>
-        /// Gets the movie rating (parental advisory) of the movie shown.
+        /// Gibt die Altersfreigabe des Films dieser Vorstellung zurück.
         /// </summary>
         /// <remarks></remarks>
-        int MovieRating { get; }
+        int Altersfreigabe { get; }
 
         /// <summary>
-        /// Gets the name of the movie that is shown.
+        /// Gibt den Namen des Films zurück, welcher in dieser Vorstellung gezeigt wird.
         /// </summary>
         /// <remarks></remarks>
         String Name { get; }
 
         /// <summary>
-        /// Gets the number of free tickets.
+        /// Gibt die Anzahl der noch verfügbaren Kinokarten zurück.
         /// </summary>
         /// <returns></returns>
         /// <remarks></remarks>
-        int GetNumberOfFreeTickets();
+        int GetAnzahlFreierKinokarten();
 
         /// <summary>
-        /// Gets the number of tickets that has been sold or reserved.
+        /// Gibt die Anzahl der nicht verfügbaren Kinokarten zurück.
         /// </summary>
         /// <returns></returns>
         /// <remarks></remarks>
-        int GetNumberOfUnavailableTickets();
+        int GetAnzahlNichtVerfügbarerKinokarten();
 
         /// <summary>
-        /// Gets the available tickets.
+        /// Gibt eine Liste der Kinokarten dieser Vorstellung zurück, die weder gekauft noch reserviert wurden.
         /// </summary>
         /// <returns></returns>
         /// <remarks></remarks>
-        List<IPublicKinokarte> GetAvailableTickets();
+        List<IPublicKinokarte> VerfügbareKinokarten();
 
         /// <summary>
-        /// Gets the reserved tickets.
+        /// Gibt eine Liste der Kinokarten dieser Vorstellung zurück, welche reserviert wurden.
         /// </summary>
         /// <returns></returns>
         /// <remarks></remarks>
-        List<IPublicKinokarte> GetReservedTickets();
+        List<IPublicKinokarte> ReservierteKinokarten();
 
         /// <summary>
-        /// Gets the sold tickets.
+        /// Gibt eine Liste der Kinokarten dieser Vorstellung zurück, welche verkauft wurden.
         /// </summary>
         /// <returns></returns>
         /// <remarks></remarks>
-        List<IPublicKinokarte> GetSoldTickets();
+        List<IPublicKinokarte> VerkaufteKinokarten();
 
         /// <summary>
-        /// Gets the ticket at index.
+        /// Gibt eine Kinokarte an einem bestimmten Index zurück.
         /// </summary>
-        /// <param name="index">The index of the wanted ticket.</param>
+        /// <param name="index">Der Index der gewünschten Kinokarte.</param>
         /// <returns></returns>
         /// <remarks></remarks>
-        IPublicKinokarte GetTicket(int index);
+        IPublicKinokarte GetKinokarte(int index);
 
         /// <summary>
-        /// Gets the ticket for a specific seat, identified by row and number of the seat.
+        /// Gibt eine Kinokarte für einen bestimmten Sitz zurück.
         /// </summary>
-        /// <param name="row">The row of the seat (A-Z).</param>
-        /// <param name="nr">The number of the seat.</param>
+        /// <param name="sitzIdentifikator"> Der Identifikator des gewünschten Sitzplatzes.</param>
         /// <returns></returns>
         /// <remarks></remarks>
-        IPublicKinokarte GetTicket(char row, int nr);
+        IPublicKinokarte GetKinokarte(ISitzIdentifikator sitzIdentifikator);
     }
 }

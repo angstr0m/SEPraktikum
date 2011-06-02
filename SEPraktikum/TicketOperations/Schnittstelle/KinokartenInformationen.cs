@@ -9,11 +9,20 @@ namespace TicketOperations.Schnittstelle
 {
     public class KinokartenInformationen : IKinokartenInformationen
     {
+        private IKinoInformationen _kinoinformationen;
+
+        internal IKinoInformationen Kinoinformationen
+        {
+            get { return _kinoinformationen; }
+        }
+
         private EntityManager<Filmprogramm> _filmprogramme;
         private EntityManager<Vorstellung> _vorstellungen;
 
-        public KinokartenInformationen()
+        // TODO Werden KinoInformationen wirklich gebraucht???
+        public KinokartenInformationen(IKinoInformationen kinoInformationen)
         {
+            _kinoinformationen = kinoInformationen;
             _vorstellungen = new EntityManager<Vorstellung>();
             _filmprogramme = new EntityManager<Filmprogramm>();
         }

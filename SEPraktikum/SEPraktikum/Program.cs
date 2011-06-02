@@ -1,4 +1,7 @@
 ﻿using System;
+using Cinema.Schnittstelle;
+using TicketOperations.Schnittstelle;
+using TicketOperations.Schnittstelle.Interfaces;
 using Users.Interfaces;
 
 namespace SEPraktikum.Views.HauptmenuViewSub
@@ -19,7 +22,12 @@ namespace SEPraktikum.Views.HauptmenuViewSub
 
         private static void BuildComponents()
         {
+            // Komponenten initialisieren.
+            // Abhängigkeiten zwischen den Komponenten werden per Constructor-Injection aufgebaut.
             IBenutzerinformationen benutzerinformationen = new Benutzerinformationen();
+            IKinoInformationen kinoInformationen = new KinoInformationen();
+            IKinokartenInformationen kinokartenInformationen = new KinokartenInformationen();
+            IKinokartenOperationen kinokartenOperationen = new KinokartenOperationen(benutzerinformationen);
         }
     }
 }

@@ -102,7 +102,7 @@ namespace TestAnwendungskern
             _administration.FillSystemWithTestData();
 
             _gewählte_Vorstellung = _kinokarteninformationen.GetWöchentlichesFilmprogramm().Vorstellungen[0];
-            _sitz = _gewählte_Vorstellung.GetAvailableTickets()[0].Sitz;
+            _sitz = _gewählte_Vorstellung.VerfügbareKinokarten()[0].Sitz;
         }
 
         /// <summary>

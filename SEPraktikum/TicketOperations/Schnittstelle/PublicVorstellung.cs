@@ -14,22 +14,22 @@ namespace TicketOperations.Schnittstelle
     {
         private Vorstellung _vorstellung;
 
-        public PublicVorstellung(Vorstellung vorstellung)
+        internal PublicVorstellung(Vorstellung vorstellung)
         {
             _vorstellung = vorstellung;
         }
 
-        public DateTime StartTime
+        public DateTime StartZeit
         {
             get { return _vorstellung.StartZeit; }
         }
 
-        public int Duration
+        public int Spieldauer
         {
             get { return _vorstellung.Duration; }
         }
 
-        public int MovieRating
+        public int Altersfreigabe
         {
             get { return _vorstellung.Altersfreigabe; }
         }
@@ -44,7 +44,7 @@ namespace TicketOperations.Schnittstelle
         /// </summary>
         /// <returns></returns>
         /// <remarks></remarks>
-        public int GetNumberOfFreeTickets()
+        public int GetAnzahlFreierKinokarten()
         {
             throw new NotImplementedException();
         }
@@ -54,7 +54,7 @@ namespace TicketOperations.Schnittstelle
         /// </summary>
         /// <returns></returns>
         /// <remarks></remarks>
-        public int GetNumberOfUnavailableTickets()
+        public int GetAnzahlNichtVerfügbarerKinokarten()
         {
             throw new NotImplementedException();
         }
@@ -69,7 +69,7 @@ namespace TicketOperations.Schnittstelle
             return _vorstellung.GetNumberOfBlockedSeats();
         }
 
-        public List<IPublicKinokarte> GetAvailableTickets()
+        public List<IPublicKinokarte> VerfügbareKinokarten()
         {
             List<IPublicKinokarte> publictickets = new List<IPublicKinokarte>();
             List<Kinokarte> tickets = _vorstellung.GetVerfügbareKinokarten();
@@ -82,7 +82,7 @@ namespace TicketOperations.Schnittstelle
             return publictickets;
         }
 
-        public List<IPublicKinokarte> GetReservedTickets()
+        public List<IPublicKinokarte> ReservierteKinokarten()
         {
             List<IPublicKinokarte> publictickets = new List<IPublicKinokarte>();
             List<Kinokarte> tickets = _vorstellung.GetReservierteKinokarten();
@@ -95,7 +95,7 @@ namespace TicketOperations.Schnittstelle
             return publictickets;
         }
 
-        public List<IPublicKinokarte> GetSoldTickets()
+        public List<IPublicKinokarte> VerkaufteKinokarten()
         {
             List<IPublicKinokarte> publictickets = new List<IPublicKinokarte>();
             List<Kinokarte> tickets = _vorstellung.GetVerkaufteKinokarten();
@@ -108,12 +108,12 @@ namespace TicketOperations.Schnittstelle
             return publictickets;
         }
 
-        public IPublicKinokarte GetTicket(int index)
+        public IPublicKinokarte GetKinokarte(int index)
         {
             return new PublicKinokarte(_vorstellung.GetKinokarte(index));
         }
 
-        public IPublicKinokarte GetTicket(char row, int nr)
+        public IPublicKinokarte GetKinokarte(char row, int nr)
         {
             return new PublicKinokarte(_vorstellung.GetKinokarte(row, nr));
         }

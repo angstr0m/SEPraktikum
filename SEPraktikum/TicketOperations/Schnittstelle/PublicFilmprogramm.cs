@@ -8,7 +8,7 @@ namespace TicketOperations.Schnittstelle
     {
         private Filmprogramm _movieprogram;
 
-        public PublicFilmprogramm(Filmprogramm filmprogramm)
+        internal PublicFilmprogramm(Filmprogramm filmprogramm)
         {
             _movieprogram = filmprogramm;
         }

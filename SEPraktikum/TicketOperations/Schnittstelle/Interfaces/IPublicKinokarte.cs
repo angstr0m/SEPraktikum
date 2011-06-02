@@ -1,4 +1,5 @@
 using Cinema.Models;
+using Cinema.Schnittstelle;
 using TicketOperations.Models;
 
 namespace TicketOperations.Schnittstelle.Interfaces
@@ -18,7 +19,7 @@ namespace TicketOperations.Schnittstelle.Interfaces
         /// </summary>
         /// <value><c>true</c> if reserved; otherwise, <c>false</c>.</value>
         /// <remarks></remarks>
-        bool Reserved { get;}
+        bool Reserviert { get;}
 
         /// <summary>
         /// Gets or sets a value indicating whether this <see cref="Kinokarte"/> is discounted.
@@ -27,26 +28,26 @@ namespace TicketOperations.Schnittstelle.Interfaces
         /// </summary>
         /// <value><c>true</c> if the ticketprice is discounted; otherwise, <c>false</c>.</value>
         /// <remarks></remarks>
-        bool Discount { get;}
+        bool Rabatt { get;}
 
         /// <summary>
         /// Gets or sets a value indicating whether this <see cref="Kinokarte"/> is sold.
         /// </summary>
         /// <value><c>true</c> if sold; otherwise, <c>false</c>.</value>
         /// <remarks></remarks>
-        bool Sold { get;}
+        bool Verkauft { get;}
 
         /// <summary>
         /// Gets the price of the ticket, taking into account any discount.
         /// </summary>
         /// <remarks></remarks>
-        float Price { get; }
+        float Preis { get; }
 
         /// <summary>
         /// Gets the Sitz that belongs to this ticket.
         /// </summary>
         /// <remarks></remarks>
-        Sitz Sitz { get; }
+        ISitz Sitz { get; }
 
         /// <summary>
         /// Gets the vorstellung this ticket is for.

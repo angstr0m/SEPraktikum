@@ -269,7 +269,7 @@ namespace TicketOperations.Models {
         {
             if (!_kinokarten.Contains(kinokarte))
             {
-                throw new ArgumentException("The Kinokarte " + kinokarte.ToString() + " is not contained in this vorstellung!");
+                throw new ArgumentException("Die Kinokarte " + kinokarte.ToString() + " gehört nicht zu dieser Vorstellung!");
             }
             kinokarte.Verkauft = false;
             kinokarte.ReservierungAufheben();
