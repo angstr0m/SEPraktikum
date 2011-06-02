@@ -39,8 +39,8 @@ namespace Kinokarten.Schnittstelle
         public bool PrüfeAltersfreigabeFürVorstellung(IPublicVorstellung vorstellung, DateTime geburtsdatum)
         {
             Vorstellung wantedVorstellung = _vorstellungen.GetElementWithId(vorstellung.GetIdentifier());
-
-            return (DateTime.Now - geburtsdatum).CompareTo(wantedVorstellung.Altersfreigabe) <= 0;
+            TimeSpan temp =DateTime.Now.Date - geburtsdatum.Date;
+            return ((temp.Days)/356) >= (wantedVorstellung.Altersfreigabe);
         }
 
         public bool PrüfeVerfügbarkeitVonSitzplatzFürVorstellung(IPublicVorstellung vorstellung, ISitz sitz)
@@ -82,11 +82,11 @@ namespace Kinokarten.Schnittstelle
         /// <remarks></remarks>
         public IPublicFilmprogramm GetWöchentlichesFilmprogramm()
         {
-            return (IPublicFilmprogramm)_filmprogramme.GetElements().Find(delegate(Filmprogramm m)
+            return new PublicFilmprogramm(_filmprogramme.GetElements().Find(delegate(Filmprogramm m)
             {
-                return (m.StartDatum <= DateTime.Today &&
-                        m.StartDatum.AddDays(7) >= DateTime.Today);
-            });
+                return (m.StartDatum.Date <= DateTime.Today &&
+                        m.StartDatum.AddDays(7).Date >= DateTime.Today);
+            }));
         }
 
 

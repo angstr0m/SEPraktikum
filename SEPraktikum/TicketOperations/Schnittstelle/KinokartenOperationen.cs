@@ -33,7 +33,7 @@ namespace Kinokarten.Schnittstelle
 
             IKinokarteBlockierungZugangsSchlüssel key = wantedVorstellung.GetKinokarte(sitz).Blockieren();
 
-            return key;
+            return  (IKinokarteBlockierungZugangsSchlüssel) key;
         }
 
         public int KinokarteReservieren(IPublicVorstellung vorstellung, ISitz sitz, bool rabatt, IKinokarteBlockierungZugangsSchlüssel zugangsSchlüssel)

@@ -14,7 +14,7 @@ namespace TicketOperations.PublicInterfaceMembers.Interfaces.Anwendungsfall_spez
 
         int KinokarteReservieren(int kundennummer,IPublicVorstellung gewählte_vorstellung, ISitz sitz, bool rabatt, IKinokarteBlockierungZugangsSchlüssel zugangsSchlüssel);
 
-        void BlockierungFürSitzplatzAufheben(IPublicVorstellung gewählte_vorstellung, ISitz sitz, IKinokarteBlockierungZugangsSchlüssel zugangsSchlüssel);
+        //void BlockierungFürSitzplatzAufheben(IPublicVorstellung gewählte_vorstellung, ISitz sitz, IKinokarteBlockierungZugangsSchlüssel zugangsSchlüssel);
 
        
     }

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Users</name>
+    </assembly>
+    <members>
+        <member name="M:Users.Interfaces.IKunde.AddObserver(Base.Interfaces.Observer)">
+            <summary>
+            Adds the observer to the observer list.
+            </summary>
+            <param name="observer">The observer.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:Users.Interfaces.IKunde.RemoveObserver(Base.Interfaces.Observer)">
+            <summary>
+            Removes the observer from the observer list.
+            </summary>
+            <param name="observer">The observer.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:Users.Interfaces.IKunde.NotifyObservers">
+            <summary>
+            Notifies the observers.
+            </summary>
+            <remarks></remarks>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Base</name>
+    </assembly>
+    <members>
+        <member name="T:Base.AbstractClasses.Subject">
+            <summary>
+            Observer pattern Observable implementation.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="F:Base.AbstractClasses.Subject.flag_iterating">
+            <summary>
+            Used to prevent the altering of the observer list while iterating over it.
+            </summary>
+        </member>
+        <member name="F:Base.AbstractClasses.Subject.flag_update_list">
+            <summary>
+            Set when, while an iteration was done, a new observer signed up.
+            </summary>
+        </member>
+        <member name="F:Base.AbstractClasses.Subject.observers_workingCopy">
+            <summary>
+            Temporary copy of the observer-list.
+            </summary>
+        </member>
+        <member name="F:Base.AbstractClasses.Subject.observers">
+            <summary>
+            The list of the observers.
+            </summary>
+        </member>
+        <member name="M:Base.AbstractClasses.Subject.AddObserver(Base.Interfaces.Observer)">
+            <summary>
+            Adds the observer to the observer list.
+            </summary>
+            <param name="observer">The observer.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:Base.AbstractClasses.Subject.RemoveObserver(Base.Interfaces.Observer)">
+            <summary>
+            Removes the observer from the observer list.
+            </summary>
+            <param name="observer">The observer.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:Base.AbstractClasses.Subject.NotifyObservers">
+            <summary>
+            Notifies the observers.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:Base.Interfaces.Model">
+            <summary>
+            Used for shared properties of all models.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:Base.Interfaces.Controller">
+            <summary>
+            Used for shared properties of all controllers.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:Base.Interfaces.View">
+            <summary>
+            Used for shared properties of all views.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:Base.Interfaces.Observer">
+            <summary>
+            Observer functionality of the MVC-Pattern.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="M:Base.Interfaces.Observer.UpdateObserver``1(``0)">
+            <summary>
+            The subject will call this method to notify the observer of an update. See MVC-Pattern.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="subject">The subject.</param>
+            <remarks></remarks>
+        </member>
+    </members>
+</doc>

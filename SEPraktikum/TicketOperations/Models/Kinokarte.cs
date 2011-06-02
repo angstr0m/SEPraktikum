@@ -69,6 +69,8 @@ namespace Kinokarten.Models
             this._vorstellung = vorstellung;
             this._verkauft = false;
             this._reserviert = false;
+            this._blockiert = false;
+
         }
         
         /// <summary>
@@ -148,6 +150,7 @@ namespace Kinokarten.Models
 
         public IKinokarteBlockierungZugangsSchlüssel Blockieren()
         {
+            System.Console.WriteLine("Blockiert!");
             if (zugangsSchlüssel != null && Blockiert)
             {
                 // Kinokarte ist bereits blockiert!
@@ -156,7 +159,7 @@ namespace Kinokarten.Models
 
             this._blockiert = true;
             zugangsSchlüssel = new KinokarteBlockierungZugangsSchlüssel();
-            return zugangsSchlüssel;
+            return (IKinokarteBlockierungZugangsSchlüssel) zugangsSchlüssel;
         }
 
         public void BlockierungAufheben(IKinokarteBlockierungZugangsSchlüssel key)

@@ -10,7 +10,7 @@ namespace Database.Models
     /// 
     /// </summary>
     /// <remarks></remarks>
-    class DatabaseSimulation : Subject, Model
+    internal class DatabaseSimulation : Subject, Model
     {
         /// <summary>
         /// 
@@ -58,7 +58,7 @@ namespace Database.Models
                 entityDict[typeof(T)] = new List<T>();
             }
 
-            entityDict[typeof(T)].Add(value);
+          ((List<T>)entityDict[typeof(T)]).Add(value);
 
             NotifyObservers();
         }
@@ -99,6 +99,14 @@ namespace Database.Models
             else
             {
                 return null;
+            }
+        }
+
+        public void RemoveAllValuesFromDatabaseForType(Type type)
+        {
+            if (entityDict.ContainsKey(type))
+            {
+                entityDict.Remove(type);
             }
         }
     }

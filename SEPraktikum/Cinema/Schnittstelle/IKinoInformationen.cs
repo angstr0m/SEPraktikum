@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using Database.Models;
+using Cinema.Models;
 
 namespace Cinema.Schnittstelle
 {
@@ -9,5 +11,8 @@ namespace Cinema.Schnittstelle
         List<IKinosaal> GetKinosäle();
 
         List<IFilm> GetFilme();
+
+        
+        
     }
 }

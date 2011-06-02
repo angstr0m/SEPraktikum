@@ -96,7 +96,7 @@ namespace Fassade.Schnittstelle
         /// @remarks
         public IKinokarteBlockierungZugangsSchlüssel BlockiereSitzplatz(IPublicVorstellung gewählte_vorstellung, ISitz sitz)
         {
-            return _kinokartenOperationen.BlockiereKinokarte(gewählte_vorstellung, sitz);
+            return _kinokartenOperationen.BlockiereKinokarte(gewählte_vorstellung, sitz) as IKinokarteBlockierungZugangsSchlüssel;
         }
 
         /// <summary>

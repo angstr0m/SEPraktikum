@@ -23,7 +23,7 @@ namespace Database.Models
         {
             DatabaseSimulation.Instance.AddObserver(this);
         }
-        
+
         /// <summary>
         /// Searches for a free identifier and returns it.
         /// </summary>
@@ -34,7 +34,7 @@ namespace Database.Models
             int id = 0;
             bool isFree = false;
 
-            while(!isFree)
+            while (!isFree)
             {
                 id++;
 
@@ -45,7 +45,7 @@ namespace Database.Models
                     {
                         isFree = false;
                         break;
-                    }    
+                    }
                 }
 
                 if (isFree)
@@ -81,7 +81,7 @@ namespace Database.Models
 
         public T GetElementWithId(int id)
         {
-            List<T> searchList = DatabaseSimulation.Instance.GetValuesFromDatabaseForType(typeof(T));
+            List<T> searchList = (List<T>)DatabaseSimulation.Instance.GetValuesFromDatabaseForType(typeof(T));
 
             return searchList.Find(delegate(T t) { return t.GetIdentifier() == id; });
         }
@@ -93,11 +93,12 @@ namespace Database.Models
         /// <remarks></remarks>
         public List<T> GetElements()
         {
-            List<T> returnList = DatabaseSimulation.Instance.GetValuesFromDatabaseForType(typeof (T));
-            if(returnList == null)
+            List<T> returnList = (List<T>)DatabaseSimulation.Instance.GetValuesFromDatabaseForType(typeof(T));
+            if (returnList == null)
             {
                 return new List<T>();
-            } else
+            }
+            else
             {
                 return returnList;
             }
@@ -106,6 +107,11 @@ namespace Database.Models
         public void UpdateObserver<T>(T subject) where T : Subject
         {
             NotifyObservers();
+        }
+
+        public void RemoveAllElements()
+        {
+            DatabaseSimulation.Instance.RemoveAllValuesFromDatabaseForType(typeof(T));
         }
     }
 }
