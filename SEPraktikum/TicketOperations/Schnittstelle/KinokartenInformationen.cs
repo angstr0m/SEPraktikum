@@ -90,10 +90,7 @@ namespace TicketOperations.Schnittstelle
         }
 
 
-        public IKunde GetKundenInformationen(int kundennummer) { 
-            IBenutzerinformationen benutzerinfos = new Benutzerinformationen();
-            return benutzerinfos.GetKunde(kundennummer);
-        }
+       
 
         #endregion
 

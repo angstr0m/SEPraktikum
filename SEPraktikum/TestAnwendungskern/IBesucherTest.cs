@@ -86,7 +86,7 @@ namespace TestAnwendungskern
             IBenutzerinformationen benutzerinformationen = new Benutzerinformationen();
             _kinokarteninformationen = new KinokartenInformationen();
             _kinokartenoperationen = new KinokartenOperationen(benutzerinformationen);
-            IFassadeBesucher target = new FassadeBesucher(_kinokarteninformationen, _kinokartenoperationen);
+            IFassadeBesucher target = new FassadeBesucher(_kinokarteninformationen, _kinokartenoperationen, benutzerinformationen);
 
             IKinoAdministration kinoAdministration = new KinoAdministration();
             IKinokartenAdministration kinokartenAdministration = new KinokartenAdministration();
@@ -102,7 +102,7 @@ namespace TestAnwendungskern
             _administration.FillSystemWithTestData();
 
             _gewählte_Vorstellung = _kinokarteninformationen.GetWöchentlichesFilmprogramm().Vorstellungen[0];
-            _sitz = _gewählte_Vorstellung.GetAvailableTickets()[0].Sitz;
+            _sitz = (ISitz) _gewählte_Vorstellung.GetAvailableTickets()[0].Sitz;
         }
 
         /// <summary>

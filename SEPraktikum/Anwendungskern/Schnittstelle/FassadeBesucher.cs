@@ -4,6 +4,7 @@ using Cinema.Schnittstelle;
 using TicketOperations.PublicInterfaceMembers;
 using System.Net.Mail;
 using TicketOperations.Schnittstelle.Interfaces;
+using Users.Interfaces;
 
 namespace Fassade.Schnittstelle
 {
@@ -11,11 +12,14 @@ namespace Fassade.Schnittstelle
     {
         private IKinokartenInformationen _kinokartenInformationen;
         private IKinokartenOperationen _kinokartenOperationen;
+        private IBenutzerinformationen _benutzerInformationen;
 
-        public FassadeBesucher(IKinokartenInformationen kinokartenInformationen, IKinokartenOperationen kinokartenOperationen)
-        {
+
+        public FassadeBesucher(IKinokartenInformationen kinokartenInformationen, IKinokartenOperationen kinokartenOperationen , IBenutzerinformationen benutzerInformationen)        {
             _kinokartenInformationen = kinokartenInformationen;
             _kinokartenOperationen = kinokartenOperationen;
+           _benutzerInformationen = benutzerInformationen;
+
         }
 
         #region Implementation of IFassadeBesucher
@@ -28,7 +32,7 @@ namespace Fassade.Schnittstelle
         /// @throw
         /// @pre    
         /// @post
-        /// @typ    Abfrage.
+        /// @typ Abfrage.
         /// @remarks    
         public List<ISitz> GetVerfügbareSitzplätzeFürVorstellung(IPublicVorstellung gewählte_Vorstellung)
         {
@@ -168,6 +172,14 @@ namespace Fassade.Schnittstelle
         {
             MailMessage massage = new MailMessage("meinemail@gmail.com", email_adresse, "Reservierung", "Sehr Geehrter Kunde hier ist ihre Reservierungsnummer: " + reservierungsnummer);
         }
+           
+        
+        public IKunde GetKundenInformationen(int kundennummer) { 
+            
+            return _benutzerInformationen.GetKunde(kundennummer);
+        }               
+    
+       
 
         #endregion
     }

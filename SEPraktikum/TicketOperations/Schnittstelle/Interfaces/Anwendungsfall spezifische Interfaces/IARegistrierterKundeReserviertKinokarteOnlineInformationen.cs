@@ -10,13 +10,13 @@ namespace TicketOperations.PublicInterfaceMembers.Interfaces.Anwendungsfall_spez
 {
     public interface IARegistrierterKundeReserviertKinokarteOnlineInformationen
     {
-        List<IPublicKinokarte> GetVerfügbareKinokartenFürVorstellung(IPublicVorstellung vorstellung);
+       // List<IPublicKinokarte> GetVerfügbareKinokartenFürVorstellung(IPublicVorstellung vorstellung);
 
         bool PrüfeAltersfreigabeFürVorstellung(IPublicVorstellung vorstellung, IKunde kunde);
+       
+       // bool PrüfeVerfügbarkeitVonSitzplatzFürVorstellung(IPublicVorstellung vorstellung, ISitz sitz);
 
-        bool PrüfeVerfügbarkeitVonSitzplatzFürVorstellung(IPublicVorstellung vorstellung, ISitz sitz);
-
-        float GetPreisFürKinokarte(IPublicVorstellung vorstellung, ISitz sitz, bool rabatt);
+        //float GetPreisFürKinokarte(IPublicVorstellung vorstellung, ISitz sitz, bool rabatt);
         
         
 

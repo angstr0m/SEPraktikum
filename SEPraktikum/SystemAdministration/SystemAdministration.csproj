@@ -34,6 +34,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\Administration.cs" />
+    <Compile Include="Interfaces\IAdministration.cs" />
+    <Compile Include="SystemTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\Cinema\Kino.csproj">
       <Project>{FFDCF527-C890-4B77-A201-292D5E0CE18F}</Project>
       <Name>Kino</Name>
@@ -42,14 +47,6 @@
       <Project>{693E8C0C-D47E-4483-8755-3722DCB841D5}</Project>
       <Name>Kinokarten</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Interfaces\Administration.cs" />
-    <Compile Include="Interfaces\IAdministration.cs" />
-    <Compile Include="SystemTest.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="System" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
