@@ -5,7 +5,7 @@ using TicketOperations.PublicInterfaceMembers.Interfaces.Anwendungsfall_spezifis
 
 namespace TicketOperations.Schnittstelle.Interfaces
 {
-    public interface IKinokartenInformationen : IABesucherReserviertKinokarteOnlineInformationen
+    public interface IKinokartenInformationen : IABesucherReserviertKinokarteOnlineInformationen , IARegistrierterKundeReserviertKinokarteOnlineInformationen
     {
         List<IPublicKinokarte> GetVerfügbareKinokartenFürVorstellung(IPublicVorstellung vorstellung);
         bool PrüfeAltersfreigabeFürVorstellung(IPublicVorstellung vorstellung, DateTime geburtsdatum);

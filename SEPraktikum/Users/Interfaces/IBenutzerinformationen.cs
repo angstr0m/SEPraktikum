@@ -16,5 +16,6 @@ namespace Users.Interfaces
         IKunde GetKunde(int kundennummer);
 
         IKunde GetBesucher();
+     
     }
 }

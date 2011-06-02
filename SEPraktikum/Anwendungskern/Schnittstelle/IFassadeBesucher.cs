@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using Cinema.Schnittstelle;
 using TicketOperations.PublicInterfaceMembers;
 using TicketOperations.Schnittstelle.Interfaces;
+using Users.Interfaces;
+
 
 namespace Fassade.Schnittstelle
 {
@@ -124,5 +126,12 @@ namespace Fassade.Schnittstelle
         /// @typ    Kommando.
         /// @remarks    Um eine gültige Reservierungsnummer zu erhalten muss erst die Reservierung einer Karte über die jeweiligen Methoden vorgenommen werden.
         void SendeEmailMitReservierungsnummer(string email_adresse, int reservierungsnummer);
+
+        IKunde GetKundenInformationen(int kundennummer);
+
+        bool KundenAnmeldung(String email, String password);
+
+       
+
     }
 }

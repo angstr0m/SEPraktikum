@@ -61,6 +61,10 @@
       <Project>{693E8C0C-D47E-4483-8755-3722DCB841D5}</Project>
       <Name>Kinokarten</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Users\Benutzer.csproj">
+      <Project>{16617112-8305-4A0C-911A-3EFF4573B7E1}</Project>
+      <Name>Benutzer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

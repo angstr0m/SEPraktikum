@@ -2,7 +2,7 @@
 
 namespace TicketOperations.Schnittstelle.Interfaces
 {
-    public interface IKinokartenOperationen : IABesucherReserviertKinokarteOnlineOperationen
+    public interface IKinokartenOperationen : IABesucherReserviertKinokarteOnlineOperationen , IARegistrierterKundeReserviertKinokarteOnlineOperationen
     {
         
     }
