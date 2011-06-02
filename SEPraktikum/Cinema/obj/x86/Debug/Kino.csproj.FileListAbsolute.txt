@@ -10,3 +10,15 @@ C:\Users\N3trunner.MITTELERDE\Desktop\Dropbox\HAW\Semester3\SE\Praktika\SEPrakti
 C:\Users\N3trunner.MITTELERDE\Desktop\Dropbox\HAW\Semester3\SE\Praktika\SEPraktikumVisualStudio\SEPraktikum\Cinema\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\N3trunner.MITTELERDE\Desktop\Dropbox\HAW\Semester3\SE\Praktika\SEPraktikumVisualStudio\SEPraktikum\Cinema\obj\x86\Debug\Cinema.dll
 C:\Users\N3trunner.MITTELERDE\Desktop\Dropbox\HAW\Semester3\SE\Praktika\SEPraktikumVisualStudio\SEPraktikum\Cinema\obj\x86\Debug\Cinema.pdb
+C:\Users\André\Documents\SePraktikum\SEPraktikum\Cinema\bin\Debug\Cinema.dll
+C:\Users\André\Documents\SePraktikum\SEPraktikum\Cinema\bin\Debug\Cinema.pdb
+C:\Users\André\Documents\SePraktikum\SEPraktikum\Cinema\bin\Debug\Cinema.XML
+C:\Users\André\Documents\SePraktikum\SEPraktikum\Cinema\bin\Debug\Base.dll
+C:\Users\André\Documents\SePraktikum\SEPraktikum\Cinema\bin\Debug\Database.dll
+C:\Users\André\Documents\SePraktikum\SEPraktikum\Cinema\bin\Debug\Base.pdb
+C:\Users\André\Documents\SePraktikum\SEPraktikum\Cinema\bin\Debug\Base.xml
+C:\Users\André\Documents\SePraktikum\SEPraktikum\Cinema\bin\Debug\Database.pdb
+C:\Users\André\Documents\SePraktikum\SEPraktikum\Cinema\bin\Debug\Database.xml
+C:\Users\André\Documents\SePraktikum\SEPraktikum\Cinema\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\André\Documents\SePraktikum\SEPraktikum\Cinema\obj\x86\Debug\Cinema.dll
+C:\Users\André\Documents\SePraktikum\SEPraktikum\Cinema\obj\x86\Debug\Cinema.pdb

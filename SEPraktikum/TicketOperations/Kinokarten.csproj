@@ -45,6 +45,8 @@
     <Compile Include="Models\Kinokarte.cs" />
     <Compile Include="Schnittstelle\Interfaces\Anwendungsfall spezifische Interfaces\IABesucherReserviertKinokarteOnlineInformationen.cs" />
     <Compile Include="Schnittstelle\Interfaces\Anwendungsfall spezifische Interfaces\IABesucherReserviertKinokarteOnlineOperationen.cs" />
+    <Compile Include="Schnittstelle\Interfaces\Anwendungsfall spezifische Interfaces\IARegistrierterKundeReserviertKinokarteOnlineInformationen.cs" />
+    <Compile Include="Schnittstelle\Interfaces\Anwendungsfall spezifische Interfaces\IARegistrierterKundeReserviertKinokarteOnlineOperationen.cs" />
     <Compile Include="Schnittstelle\Interfaces\IKinokarteBlockierungZugangsSchlüssel.cs" />
     <Compile Include="Schnittstelle\Interfaces\IKinokartenAdministration.cs" />
     <Compile Include="Schnittstelle\Interfaces\IKinokartenInformationen.cs" />

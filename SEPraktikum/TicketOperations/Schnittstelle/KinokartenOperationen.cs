@@ -47,6 +47,17 @@ namespace TicketOperations.Schnittstelle
             return r.Reservierungsnummer;
         }
 
+        public int KinokarteReservieren(int kundennummer, IPublicVorstellung vorstellung, ISitz sitz, bool rabatt, IKinokarteBlockierungZugangsSchlüssel zugangsSchlüssel) {
+           IKunde kunde = _benutzerinformationen.GetKunde(kundennummer);
+
+           Kinokarte wantedKinokarte = _vorstellungen.GetElementWithId(vorstellung.GetIdentifier()).GetKinokarte(sitz);
+
+           Reservierung r = new Reservierung(wantedKinokarte, kunde, rabatt, zugangsSchlüssel);
+
+           return r.Reservierungsnummer;
+        }
+
+
         public void BlockierungFürSitzplatzAufheben(IPublicVorstellung vorstellung, ISitz sitz, IKinokarteBlockierungZugangsSchlüssel zugangsSchlüssel)
         {
             Vorstellung wantedVorstellung = _vorstellungen.GetElementWithId(vorstellung.GetIdentifier());

@@ -7,6 +7,7 @@ using TicketOperations.PublicInterfaceMembers;
 using TicketOperations.PublicInterfaceMembers.Interfaces;
 using TicketOperations.Schnittstelle.Interfaces;
 
+
 namespace SystemAdministration.Interfaces
 {
     public class Administration : IAdministration

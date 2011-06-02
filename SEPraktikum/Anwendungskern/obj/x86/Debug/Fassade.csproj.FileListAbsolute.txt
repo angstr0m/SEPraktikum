@@ -21,3 +21,6 @@ C:\Users\N3trunner.MITTELERDE\Desktop\Dropbox\HAW\Semester3\SE\Praktika\SEPrakti
 C:\Users\N3trunner.MITTELERDE\Desktop\Dropbox\HAW\Semester3\SE\Praktika\SEPraktikumVisualStudio\SEPraktikum\Anwendungskern\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\N3trunner.MITTELERDE\Desktop\Dropbox\HAW\Semester3\SE\Praktika\SEPraktikumVisualStudio\SEPraktikum\Anwendungskern\obj\x86\Debug\Fassade.dll
 C:\Users\N3trunner.MITTELERDE\Desktop\Dropbox\HAW\Semester3\SE\Praktika\SEPraktikumVisualStudio\SEPraktikum\Anwendungskern\obj\x86\Debug\Fassade.pdb
+C:\Users\André\Documents\SePraktikum\SEPraktikum\Anwendungskern\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\André\Documents\SePraktikum\SEPraktikum\Anwendungskern\obj\x86\Debug\Fassade.dll
+C:\Users\André\Documents\SePraktikum\SEPraktikum\Anwendungskern\obj\x86\Debug\Fassade.pdb

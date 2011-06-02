@@ -49,5 +49,6 @@ namespace Users.Interfaces
         {
             return _daten_ikunde.GetElements().Find(delegate(IKunde k) { return k.Name == "Besucher"; });
         }
+       
     }
 }

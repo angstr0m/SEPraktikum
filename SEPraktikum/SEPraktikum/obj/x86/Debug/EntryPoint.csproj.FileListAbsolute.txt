@@ -29,3 +29,4 @@ C:\Users\N3trunner.MITTELERDE\Desktop\Dropbox\HAW\Semester3\SE\Praktika\SEPrakti
 C:\Users\N3trunner.MITTELERDE\Desktop\Dropbox\HAW\Semester3\SE\Praktika\SEPraktikumVisualStudio\SEPraktikum\SEPraktikum\bin\Debug\SEPraktikum.XML
 C:\Users\N3trunner.MITTELERDE\Desktop\Dropbox\HAW\Semester3\SE\Praktika\SEPraktikumVisualStudio\SEPraktikum\SEPraktikum\bin\Debug\TicketOperations.xml
 C:\Users\N3trunner.MITTELERDE\Desktop\Dropbox\HAW\Semester3\SE\Praktika\SEPraktikumVisualStudio\SEPraktikum\SEPraktikum\bin\Debug\Finances.xml
+C:\Users\André\Documents\SePraktikum\SEPraktikum\SEPraktikum\obj\x86\Debug\SEPraktikum.exe

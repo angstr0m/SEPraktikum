@@ -4,6 +4,7 @@ using Cinema.Schnittstelle;
 using Database.Models;
 using TicketOperations.Models;
 using TicketOperations.Schnittstelle.Interfaces;
+using Users.Interfaces;
 
 namespace TicketOperations.Schnittstelle
 {
@@ -43,6 +44,7 @@ namespace TicketOperations.Schnittstelle
             return publicKinokarten;
         }
 
+
         public bool PrüfeAltersfreigabeFürVorstellung(IPublicVorstellung vorstellung, DateTime geburtsdatum)
         {
             Vorstellung wantedVorstellung = _vorstellungen.GetElementWithId(vorstellung.GetIdentifier());
@@ -62,6 +64,16 @@ namespace TicketOperations.Schnittstelle
 
             return true;
         }
+
+
+
+        bool PrüfeAltersfreigabeFürVorstellung(IPublicVorstellung vorstellung, IKunde kunde) {
+            Vorstellung wantedVorstellung = _vorstellungen.GetElementWithId(vorstellung.GetIdentifier());
+
+            return (DateTime.Now - kunde.Geburtsdatum).CompareTo(wantedVorstellung.Altersfreigabe) <= 0;
+        }
+
+
 
         public float GetPreisFürKinokarte(IPublicVorstellung vorstellung, ISitz sitz, bool rabatt)
         {
@@ -86,6 +98,11 @@ namespace TicketOperations.Schnittstelle
             });
         }
 
+
+       
+
         #endregion
+
+
     }
 }

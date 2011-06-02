@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using Cinema.Schnittstelle;
 using TicketOperations.PublicInterfaceMembers;
 using TicketOperations.Schnittstelle.Interfaces;
+using Users.Interfaces;
+
 
 namespace Fassade.Schnittstelle
 {
@@ -124,5 +126,24 @@ namespace Fassade.Schnittstelle
         /// @typ    Kommando.
         /// @remarks    Um eine gültige Reservierungsnummer zu erhalten muss erst die Reservierung einer Karte über die jeweiligen Methoden vorgenommen werden.
         void SendeEmailMitReservierungsnummer(string email_adresse, int reservierungsnummer);
+
+
+        /// <summary>
+        /// Gibt die Kundeninformationen anhand der kundennummer aus.
+        /// </summary>
+        /// @param kundennummer - Die Kundennummer des Kunden
+        /// @return 
+        /// @throw
+        /// @pre die Kundennummer ist syntaktisch gültig
+        /// @pre die Kundennummer ist semantisch gültig
+        /// @post Die Informationen des Kunden wurden ausgegeben
+        /// @typ Abfrage
+        /// <returns></returns>
+
+        IKunde GetKundenInformationen(int kundennummer);    
+       
+
+
+
     }
 }
