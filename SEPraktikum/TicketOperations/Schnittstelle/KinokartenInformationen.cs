@@ -2,28 +2,19 @@
 using System.Collections.Generic;
 using Cinema.Schnittstelle;
 using Database.Models;
-using TicketOperations.Models;
-using TicketOperations.Schnittstelle.Interfaces;
+using Kinokarten.Models;
+using Kinokarten.Schnittstelle.Interfaces;
 using Users.Interfaces;
 
-namespace TicketOperations.Schnittstelle
+namespace Kinokarten.Schnittstelle
 {
     public class KinokartenInformationen : IKinokartenInformationen
     {
-        private IKinoInformationen _kinoinformationen;
-
-        internal IKinoInformationen Kinoinformationen
-        {
-            get { return _kinoinformationen; }
-        }
-
         private EntityManager<Filmprogramm> _filmprogramme;
         private EntityManager<Vorstellung> _vorstellungen;
 
-        // TODO Werden KinoInformationen wirklich gebraucht???
-        public KinokartenInformationen(IKinoInformationen kinoInformationen)
+        public KinokartenInformationen()
         {
-            _kinoinformationen = kinoInformationen;
             _vorstellungen = new EntityManager<Vorstellung>();
             _filmprogramme = new EntityManager<Filmprogramm>();
         }
@@ -67,7 +58,7 @@ namespace TicketOperations.Schnittstelle
 
 
 
-        bool PrüfeAltersfreigabeFürVorstellung(IPublicVorstellung vorstellung, IKunde kunde) {
+        public bool PrüfeAltersfreigabeFürVorstellung(IPublicVorstellung vorstellung, IKunde kunde) {
             Vorstellung wantedVorstellung = _vorstellungen.GetElementWithId(vorstellung.GetIdentifier());
 
             return (DateTime.Now - kunde.Geburtsdatum).CompareTo(wantedVorstellung.Altersfreigabe) <= 0;

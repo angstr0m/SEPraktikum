@@ -1,10 +1,10 @@
 ﻿using Cinema.Schnittstelle;
 using Database.Models;
-using TicketOperations.Models;
-using TicketOperations.Schnittstelle.Interfaces;
+using Kinokarten.Models;
+using Kinokarten.Schnittstelle.Interfaces;
 using Users.Interfaces;
 
-namespace TicketOperations.Schnittstelle
+namespace Kinokarten.Schnittstelle
 {
     public class KinokartenOperationen : IKinokartenOperationen
     {

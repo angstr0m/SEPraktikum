@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Base.AbstractClasses;
 using Database.Interfaces;
 
-namespace TicketOperations.Models {
+namespace Kinokarten.Models {
     /// <summary>
     /// Dient der Sammlung aller Vorstellungen für eine Woche.
     /// </summary>

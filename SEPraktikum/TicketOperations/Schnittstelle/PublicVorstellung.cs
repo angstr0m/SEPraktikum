@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using TicketOperations.Models;
-using TicketOperations.Schnittstelle.Interfaces;
+using Cinema.Schnittstelle;
+using Kinokarten.Models;
+using Kinokarten.Schnittstelle.Interfaces;
 
-namespace TicketOperations.Schnittstelle
+namespace Kinokarten.Schnittstelle
 {
     /// <summary>
     /// Decorator for the vorstellung object.
@@ -111,6 +112,17 @@ namespace TicketOperations.Schnittstelle
         public IPublicKinokarte GetKinokarte(int index)
         {
             return new PublicKinokarte(_vorstellung.GetKinokarte(index));
+        }
+
+        /// <summary>
+        /// Gibt eine Kinokarte für einen bestimmten Sitz zurück.
+        /// </summary>
+        /// <param name="sitzIdentifikator"> Der Identifikator des gewünschten Sitzplatzes.</param>
+        /// <returns></returns>
+        /// <remarks></remarks>
+        public IPublicKinokarte GetKinokarte(ISitzIdentifikator sitzIdentifikator)
+        {
+            return new PublicKinokarte(_vorstellung.GetKinokarte(sitzIdentifikator));
         }
 
         public IPublicKinokarte GetKinokarte(char row, int nr)

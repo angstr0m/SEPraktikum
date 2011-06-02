@@ -1,9 +1,8 @@
 ﻿using Cinema.Schnittstelle;
-using TicketOperations.PublicInterfaceMembers;
-using TicketOperations.Schnittstelle.Interfaces;
-using TicketOperations.Schnittstelle.veraltet.InternalInterfaceMembers.Interfaces;
+using Kinokarten.Schnittstelle.Interfaces;
+using Kinokarten.veraltet.InternalInterfaceMembers.Interfaces;
 
-namespace TicketOperations.Schnittstelle.veraltet
+namespace Kinokarten.veraltet
 {
     interface IBesucherKinokartenReservierung : IKinokarteReservieren
     {

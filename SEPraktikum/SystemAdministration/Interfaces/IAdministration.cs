@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Cinema.Schnittstelle;
+using Kinokarten.Schnittstelle.Interfaces;
 using TicketOperations.PublicInterfaceMembers;
-using TicketOperations.Schnittstelle.Interfaces;
 
 namespace SystemAdministration.Interfaces
 {

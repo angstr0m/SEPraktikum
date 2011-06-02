@@ -4,106 +4,25 @@
         <name>Cinema</name>
     </assembly>
     <members>
-        <member name="M:Cinema.InterfaceMembers.IKinosaal.GetSeats">
-            <summary>
-            Gets the seats.
-            </summary>
-            <returns></returns>
-            <remarks></remarks>
-        </member>
-        <member name="M:Cinema.InterfaceMembers.IKinosaal.AddSeat(Cinema.Models.Sitz)">
-            <summary>
-            Adds the Sitz.
-            </summary>
-            <param name="sitz">The Sitz.</param>
-            <remarks></remarks>
-        </member>
-        <member name="M:Cinema.InterfaceMembers.IKinosaal.RemoveSeat(Cinema.Models.Sitz)">
-            <summary>
-            Removes the Sitz.
-            </summary>
-            <param name="sitz">The Sitz.</param>
-            <remarks></remarks>
-        </member>
-        <member name="M:Cinema.InterfaceMembers.IKinosaal.AddObserver(Base.Interfaces.Observer)">
-            <summary>
-            Adds the observer to the observer list.
-            </summary>
-            <param name="observer">The observer.</param>
-            <remarks></remarks>
-        </member>
-        <member name="M:Cinema.InterfaceMembers.IKinosaal.RemoveObserver(Base.Interfaces.Observer)">
-            <summary>
-            Removes the observer from the observer list.
-            </summary>
-            <param name="observer">The observer.</param>
-            <remarks></remarks>
-        </member>
-        <member name="M:Cinema.InterfaceMembers.IKinosaal.NotifyObservers">
-            <summary>
-            Notifies the observers.
-            </summary>
-            <remarks></remarks>
-        </member>
-        <member name="P:Cinema.InterfaceMembers.IKinosaal.SeatCount">
-            <summary>
-            Gets the Sitz count.
-            </summary>
-            <remarks></remarks>
-        </member>
-        <member name="P:Cinema.InterfaceMembers.IKinosaal.Name">
-            <summary>
-            Gets or sets the name.
-            </summary>
-            <value>The name.</value>
-            <remarks></remarks>
-        </member>
-        <member name="M:Cinema.InterfaceMembers.ISitz.Reihe">
+        <member name="M:Cinema.Schnittstelle.ISitz.Reihe">
             <summary>
             Gets the row.
             </summary>
             <returns></returns>
             <remarks></remarks>
         </member>
-        <member name="M:Cinema.InterfaceMembers.ISitz.Nummer">
+        <member name="M:Cinema.Schnittstelle.ISitz.Nummer">
             <summary>
             Gets the nr.
             </summary>
             <returns></returns>
             <remarks></remarks>
         </member>
-        <member name="M:Cinema.InterfaceMembers.ISitz.ToString">
+        <member name="M:Cinema.Schnittstelle.ISitz.ToString">
             <summary>
             Returns a <see cref="T:System.String"/> that represents this instance.
             </summary>
             <returns>A <see cref="T:System.String"/> that represents this instance.</returns>
-            <remarks></remarks>
-        </member>
-        <member name="M:Cinema.InterfaceMembers.ISitz.AddObserver(Base.Interfaces.Observer)">
-            <summary>
-            Adds the observer to the observer list.
-            </summary>
-            <param name="observer">The observer.</param>
-            <remarks></remarks>
-        </member>
-        <member name="M:Cinema.InterfaceMembers.ISitz.RemoveObserver(Base.Interfaces.Observer)">
-            <summary>
-            Removes the observer from the observer list.
-            </summary>
-            <param name="observer">The observer.</param>
-            <remarks></remarks>
-        </member>
-        <member name="M:Cinema.InterfaceMembers.ISitz.NotifyObservers">
-            <summary>
-            Notifies the observers.
-            </summary>
-            <remarks></remarks>
-        </member>
-        <member name="P:Cinema.InterfaceMembers.ISitz.Identifier">
-            <summary>
-            Gets or sets the identifier.
-            </summary>
-            <value>The identifier.</value>
             <remarks></remarks>
         </member>
         <member name="T:Cinema.Models.Kinosaal">
@@ -112,288 +31,152 @@
             </summary>
             <remarks></remarks>
         </member>
-        <member name="F:Cinema.Models.Kinosaal.name">
+        <member name="M:Cinema.Schnittstelle.IKinosaal.GetSitzplätze">
             <summary>
-            
-            </summary>
-        </member>
-        <member name="F:Cinema.Models.Kinosaal.seatCount">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="F:Cinema.Models.Kinosaal.seats">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:Cinema.Models.Kinosaal.GetSeats">
-            <summary>
-            Gets the seats.
+            Gibt eine Liste von Sitzplätzen zurück.
+            Diese Liste enthält die Sitzplätze in diesem Kinosaal.
             </summary>
             <returns></returns>
             <remarks></remarks>
         </member>
-        <member name="M:Cinema.Models.Kinosaal.AddSeat(Cinema.Models.Sitz)">
+        <member name="P:Cinema.Schnittstelle.IKinosaal.SitzAnzahl">
             <summary>
-            Adds the Sitz.
+            Gibt die Anzahl der Sitze im Kino zurück.
             </summary>
-            <param name="sitz">The Sitz.</param>
             <remarks></remarks>
         </member>
-        <member name="M:Cinema.Models.Kinosaal.RemoveSeat(Cinema.Models.Sitz)">
+        <member name="P:Cinema.Schnittstelle.IKinosaal.Name">
             <summary>
-            Removes the Sitz.
+            Gibt den Namen des Kinosaals zurück.
             </summary>
-            <param name="sitz">The Sitz.</param>
+            <value>Der Name des Kinosaals.</value>
             <remarks></remarks>
         </member>
-        <member name="M:Cinema.Models.Kinosaal.UpdateSeatCount">
+        <member name="F:Cinema.Models.Kinosaal.id">
             <summary>
-            Updates the Sitz count.
+            Die Id dieses Kinosaals in der Datenbank.
+            </summary>
+        </member>
+        <member name="F:Cinema.Models.Kinosaal._name">
+            <summary>
+            Der Name des Kinosaals.
+            </summary>
+        </member>
+        <member name="F:Cinema.Models.Kinosaal._sitzAnzahl">
+            <summary>
+            Die Anzahl der Sitze des Kinosaals.
+            </summary>
+        </member>
+        <member name="F:Cinema.Models.Kinosaal._sitzplätze">
+            <summary>
+            Die Sitzplätze dieses Kinosaals.
+            </summary>
+        </member>
+        <member name="M:Cinema.Models.Kinosaal.GetSitzplätze">
+            <summary>
+            Gibt eine Liste von Sitzplätzen zurück.
+            Diese Liste enthält die Sitzplätze in diesem Kinosaal.
+            </summary>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:Cinema.Models.Kinosaal.SitzplatzHinzufügen(Cinema.Models.Sitz)">
+            <summary>
+            Einen Sitzplatz zu den Sitzplätzen dieses Kinosaals hinzufügen.
+            </summary>
+            <param name="sitz">Der Sitz, welcher hinzugefügt werden soll.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:Cinema.Models.Kinosaal.SitzplatzEntfernen(Cinema.Models.Sitz)">
+            <summary>
+            Einen Sitzplatz von den Sitzplätzen dieses Kinosaals entfernen.
+            </summary>
+            <param name="sitz">Der Sitz, welcher entfernt werden soll.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:Cinema.Models.Kinosaal.SitzplatzAnzahlNeuBerechnen">
+            <summary>
+            Berechnet die Anzahl der Sitzplätze neu.s
             </summary>
             <remarks></remarks>
         </member>
         <member name="M:Cinema.Models.Kinosaal.#ctor(System.String,System.Int32,System.Int32)">
             <summary>
-            Initializes a new instance of the <see cref="T:Cinema.Models.Kinosaal"/> class.
+            Initialisiert eine neue Instanz der <see cref="T:Cinema.Models.Kinosaal"/> Klasse.
             </summary>
-            <param name="_name">The _name.</param>
-            <param name="seats_per_rank">The seats_per_rank.</param>
-            <param name="ranks">The ranks.</param>
+            <param name="name">Der Name des Kinosaals.</param>
+            <param name="sitzplätze_pro_reihe">Anzahl der Sitzplätze pro Reihe.</param>
+            <param name="anzahl_reihen">Anzahl der Reihen</param>
             <remarks></remarks>
         </member>
         <member name="M:Cinema.Models.Kinosaal.#ctor(System.String,System.Collections.Generic.List{Cinema.Models.Sitz})">
             <summary>
-            Initializes a new instance of the <see cref="T:Cinema.Models.Kinosaal"/> class.
+            Initialisiert eine neue Instanz der <see cref="T:Cinema.Models.Kinosaal"/> Klasse.
+            Benutzen Sie diesen Konstruktor, wenn bereits eine Liste von Sitzplätzen vorhanden ist.
             </summary>
-            <param name="_name">The _name.</param>
-            <param name="_seats">The _seats.</param>
+            <param name="name">Der Name des Kinosaals.</param>
+            <param name="sitzplätze">Eine Liste von Sitzplätzen.</param>
             <remarks></remarks>
         </member>
-        <member name="P:Cinema.Models.Kinosaal.SeatCount">
+        <member name="P:Cinema.Models.Kinosaal.SitzAnzahl">
             <summary>
-            Gets the Sitz count.
+            Gibt die Anzahl der Sitzplätze zurück.
             </summary>
             <remarks></remarks>
         </member>
         <member name="P:Cinema.Models.Kinosaal.Name">
             <summary>
-            Gets or sets the name.
+            Gibt den Namen des Kinosaals zurück, oder ändert ihn.
             </summary>
-            <value>The name.</value>
+            <value>Der Name des Kinosaals.</value>
             <remarks></remarks>
         </member>
         <member name="T:Cinema.Models.Film">
             <summary>
-            Representing a single movie. Movies are organized in MoviePrograms.
+            Repräsentiert einen Film.
+            Dieser Film kann in mehreren Vorstellungen gezeigt werden.
             </summary>
             <remarks></remarks>
         </member>
-        <member name="M:Cinema.InterfaceMembers.IFilm.AddObserver(Base.Interfaces.Observer)">
+        <member name="F:Cinema.Models.Film.id">
             <summary>
-            Adds the observer to the observer list.
+            Die Id des Objekts in der Datenbank.
             </summary>
-            <param name="observer">The observer.</param>
-            <remarks></remarks>
-        </member>
-        <member name="M:Cinema.InterfaceMembers.IFilm.RemoveObserver(Base.Interfaces.Observer)">
-            <summary>
-            Removes the observer from the observer list.
-            </summary>
-            <param name="observer">The observer.</param>
-            <remarks></remarks>
-        </member>
-        <member name="M:Cinema.InterfaceMembers.IFilm.NotifyObservers">
-            <summary>
-            Notifies the observers.
-            </summary>
-            <remarks></remarks>
-        </member>
-        <member name="P:Cinema.InterfaceMembers.IFilm.Name">
-            <summary>
-            Gets or sets the name.
-            </summary>
-            <value>The name.</value>
-            <remarks></remarks>
-        </member>
-        <member name="P:Cinema.InterfaceMembers.IFilm.Genre">
-            <summary>
-            Gets or sets the genre.
-            </summary>
-            <value>The genre.</value>
-            <remarks></remarks>
-        </member>
-        <member name="P:Cinema.InterfaceMembers.IFilm.Dauer">
-            <summary>
-            Gets or sets the duration.
-            </summary>
-            <value>The duration.</value>
-            <remarks></remarks>
-        </member>
-        <member name="P:Cinema.InterfaceMembers.IFilm.OriginCountry">
-            <summary>
-            Gets or sets the origin country.
-            </summary>
-            <value>The origin country.</value>
-            <remarks></remarks>
-        </member>
-        <member name="P:Cinema.InterfaceMembers.IFilm.StartDateTime">
-            <summary>
-            Gets or sets the start date time.
-            </summary>
-            <value>The start date time.</value>
-            <remarks></remarks>
-        </member>
-        <member name="P:Cinema.InterfaceMembers.IFilm.Week">
-            <summary>
-            Gets or sets the week.
-            </summary>
-            <value>The week.</value>
-            <remarks></remarks>
-        </member>
-        <member name="P:Cinema.InterfaceMembers.IFilm.Altersfreigabe">
-            <summary>
-            Gets or sets the movie rating.
-            </summary>
-            <value>The movie rating.</value>
-            <remarks></remarks>
-        </member>
-        <member name="P:Cinema.InterfaceMembers.IFilm.MovieCast">
-            <summary>
-            Gets or sets the movie cast.
-            </summary>
-            <value>The movie cast.</value>
-            <remarks></remarks>
-        </member>
-        <member name="P:Cinema.InterfaceMembers.IFilm.Director">
-            <summary>
-            Gets or sets the director.
-            </summary>
-            <value>The director.</value>
-            <remarks></remarks>
         </member>
         <member name="F:Cinema.Models.Film.name">
             <summary>
-            Name of the movie.
+            Der Name des Films.
             </summary>
         </member>
         <member name="F:Cinema.Models.Film.genre">
             <summary>
-            genre of the movie
+            Das Genre des Films.
             </summary>
         </member>
         <member name="F:Cinema.Models.Film._dauer">
             <summary>
-            Dauer in minutes
+            Dauer des Films in Minuten.
             </summary>
         </member>
-        <member name="F:Cinema.Models.Film.originCountry">
+        <member name="F:Cinema.Models.Film.herkunftsLand">
             <summary>
-            
-            </summary>
-        </member>
-        <member name="F:Cinema.Models.Film.startDateTime">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="F:Cinema.Models.Film.week">
-            <summary>
-            
+            Land in dem der Film produziert wurde.
             </summary>
         </member>
         <member name="F:Cinema.Models.Film._altersfreigabe">
             <summary>
-            FSK-rating of the movie.
+            Altersfreigabe des Films.
             </summary>
         </member>
-        <member name="F:Cinema.Models.Film.movieCast">
+        <member name="F:Cinema.Models.Film.schauspieler">
             <summary>
-            
+            Schauspieler die an diesem Film mitgewirkt haben.
             </summary>
         </member>
-        <member name="F:Cinema.Models.Film.director">
+        <member name="F:Cinema.Models.Film.regisseur">
             <summary>
-            
+            Der name des Regisseurs des Films.
             </summary>
-        </member>
-        <member name="M:Cinema.Models.Film.#ctor(System.String,System.String,System.Int32,System.String,System.DateTime,System.Int32,System.String,System.String)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Cinema.Models.Film"/> class.
-            </summary>
-            <param name="name">The name.</param>
-            <param name="genre">The genre.</param>
-            <param name="_dauer">The Dauer.</param>
-            <param name="originCountry">The origin country.</param>
-            <param name="startDateTime">The start date time.</param>
-            <param name="_altersfreigabe">The movie rating.</param>
-            <param name="movieCast">The movie cast.</param>
-            <param name="director">The director.</param>
-            <remarks></remarks>
-        </member>
-        <member name="P:Cinema.Models.Film.Name">
-            <summary>
-            Gets or sets the name.
-            </summary>
-            <value>The name.</value>
-            <remarks></remarks>
-        </member>
-        <member name="P:Cinema.Models.Film.Genre">
-            <summary>
-            Gets or sets the genre.
-            </summary>
-            <value>The genre.</value>
-            <remarks></remarks>
-        </member>
-        <member name="P:Cinema.Models.Film.Dauer">
-            <summary>
-            Gets or sets the Dauer.
-            </summary>
-            <value>The Dauer.</value>
-            <remarks></remarks>
-        </member>
-        <member name="P:Cinema.Models.Film.OriginCountry">
-            <summary>
-            Gets or sets the origin country.
-            </summary>
-            <value>The origin country.</value>
-            <remarks></remarks>
-        </member>
-        <member name="P:Cinema.Models.Film.StartDateTime">
-            <summary>
-            Gets or sets the start date time.
-            </summary>
-            <value>The start date time.</value>
-            <remarks></remarks>
-        </member>
-        <member name="P:Cinema.Models.Film.Week">
-            <summary>
-            Gets or sets the week.
-            </summary>
-            <value>The week.</value>
-            <remarks></remarks>
-        </member>
-        <member name="P:Cinema.Models.Film.Altersfreigabe">
-            <summary>
-            Gets or sets the movie rating.
-            </summary>
-            <value>The movie rating.</value>
-            <remarks></remarks>
-        </member>
-        <member name="P:Cinema.Models.Film.MovieCast">
-            <summary>
-            Gets or sets the movie cast.
-            </summary>
-            <value>The movie cast.</value>
-            <remarks></remarks>
-        </member>
-        <member name="P:Cinema.Models.Film.Director">
-            <summary>
-            Gets or sets the director.
-            </summary>
-            <value>The director.</value>
-            <remarks></remarks>
         </member>
         <member name="T:Cinema.Models.Sitz">
             <summary>

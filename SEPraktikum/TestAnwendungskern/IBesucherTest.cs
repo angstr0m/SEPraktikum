@@ -2,14 +2,13 @@
 using Cinema.Models;
 using Cinema.Schnittstelle;
 using Fassade.Schnittstelle;
+using Kinokarten.Schnittstelle;
+using Kinokarten.Schnittstelle.Interfaces;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using TicketOperations.Models;
 using TicketOperations.PublicInterfaceMembers;
 using System.Collections.Generic;
 using TicketOperations.PublicInterfaceMembers.Interfaces;
-using TicketOperations.Schnittstelle;
-using TicketOperations.Schnittstelle.Interfaces;
 using Users.Interfaces;
 
 namespace TestAnwendungskern
@@ -102,7 +101,7 @@ namespace TestAnwendungskern
             _administration.FillSystemWithTestData();
 
             _gewählte_Vorstellung = _kinokarteninformationen.GetWöchentlichesFilmprogramm().Vorstellungen[0];
-            _sitz = (ISitz) _gewählte_Vorstellung.GetAvailableTickets()[0].Sitz;
+            _sitz = (ISitz) _gewählte_Vorstellung.VerfügbareKinokarten()[0].Sitz;
         }
 
         /// <summary>

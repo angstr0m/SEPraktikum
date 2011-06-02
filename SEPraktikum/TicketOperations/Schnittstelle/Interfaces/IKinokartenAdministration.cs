@@ -1,6 +1,6 @@
 ﻿using Cinema.Schnittstelle;
 
-namespace TicketOperations.Schnittstelle.Interfaces
+namespace Kinokarten.Schnittstelle.Interfaces
 {
     public interface IKinokartenAdministration
     {

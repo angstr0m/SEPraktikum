@@ -1,8 +1,7 @@
 using Cinema.Schnittstelle;
-using TicketOperations.PublicInterfaceMembers;
-using TicketOperations.Schnittstelle.Interfaces;
+using Kinokarten.Schnittstelle.Interfaces;
 
-namespace TicketOperations.Schnittstelle.veraltet.InternalInterfaceMembers.Interfaces
+namespace Kinokarten.veraltet.InternalInterfaceMembers.Interfaces
 {
     public interface IKinokarteReservieren
     {
@@ -10,14 +9,14 @@ namespace TicketOperations.Schnittstelle.veraltet.InternalInterfaceMembers.Inter
         /// Reserves the kinokarte identified by seat row and number.
         /// </summary>
         /// <param name="vorstellung">The vorstellung.</param>
-        /// <param name="seat"></param>
+        /// <param name="sitz"></param>
         /// <param name="discount"></param>
         /// <param name="kundennummer"></param>
         /// <param name="transactionkey"></param>
         /// <param name="row">The row.</param>
         /// <param name="number">The number.</param>
         /// <remarks></remarks>
-        int KinokarteReservieren(IPublicVorstellung vorstellung, ISitzIdentifikator seat, bool discount, int kundennummer, IKinokarteBlockierungZugangsSchlüssel transactionkey);
+        int KinokarteReservieren(IPublicVorstellung vorstellung, ISitzIdentifikator sitz, bool discount, int kundennummer, IKinokarteBlockierungZugangsSchlüssel transactionkey);
 
         /// <summary>
         /// Reserves the kinokarte.
@@ -37,7 +36,7 @@ namespace TicketOperations.Schnittstelle.veraltet.InternalInterfaceMembers.Inter
         /// <param name="row">The row.</param>
         /// <param name="number">The number.</param>
         /// <remarks></remarks>
-        IKinokarteBlockierungZugangsSchlüssel TicketBlockieren(IPublicVorstellung vorstellung, ISitzIdentifikator seat);
+        IKinokarteBlockierungZugangsSchlüssel TicketBlockieren(IPublicVorstellung vorstellung, ISitzIdentifikator sitz);
 
         /// <summary>
         /// Blocks the kinokarte.
@@ -54,7 +53,7 @@ namespace TicketOperations.Schnittstelle.veraltet.InternalInterfaceMembers.Inter
         /// <param name="row">The row.</param>
         /// <param name="number">The number.</param>
         /// <remarks></remarks>
-        void TicketBlockierungAufheben(IPublicVorstellung vorstellung, ISitzIdentifikator seat, IKinokarteBlockierungZugangsSchlüssel key);
+        void TicketBlockierungAufheben(IPublicVorstellung vorstellung, ISitzIdentifikator sitz, IKinokarteBlockierungZugangsSchlüssel key);
 
         /// <summary>
         /// Unblocks the kinokarte.

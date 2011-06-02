@@ -1,7 +1,7 @@
 ﻿using System;
 using Cinema.Schnittstelle;
-using TicketOperations.Schnittstelle;
-using TicketOperations.Schnittstelle.Interfaces;
+using Kinokarten.Schnittstelle;
+using Kinokarten.Schnittstelle.Interfaces;
 using Users.Interfaces;
 
 namespace SEPraktikum.Views.HauptmenuViewSub

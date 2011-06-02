@@ -4,7 +4,7 @@ using Base.AbstractClasses;
 using Cinema.Schnittstelle;
 using Database.Interfaces;
 
-namespace TicketOperations.Models {
+namespace Kinokarten.Models {
     
     /// <summary>
     /// Eine Vorstellung repräsentiert eine einzelne Vorführung eines Films in einem bestimmten Kinosaal.
@@ -175,9 +175,19 @@ namespace TicketOperations.Models {
         }
 
         /// <summary>
+        /// Gibt eine bestimmte Kinokarte, aus dieser Vorstellung, für einen bestimmten Sitzplatz zurück.
+        /// </summary>
+        /// <param name="sitz">Der Identfikator des Sitzplatzes.</param>
+        /// <returns></returns>
+        public Kinokarte GetKinokarte(ISitzIdentifikator sitz)
+        {
+            return GetKinokarte(sitz.Reihe(), sitz.Nummer());
+        }
+
+        /// <summary>
         /// Gibt eine bestimmte Kinokarte aus dieser Vorstellung zurück.
         /// </summary>
-        /// <param name="seat">Die Reihe des Sitzes (A-Z).</param>
+        /// <param name="sitz">Referenz auf den gewünschten Sitzplatz.</param>
         /// <returns>Die gewünschte Kinokarte.</returns>
         /// <remarks></remarks>
         public Kinokarte GetKinokarte(ISitz sitz)

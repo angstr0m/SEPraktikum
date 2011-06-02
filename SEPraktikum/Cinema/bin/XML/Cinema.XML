@@ -25,6 +25,12 @@
             <returns>A <see cref="T:System.String"/> that represents this instance.</returns>
             <remarks></remarks>
         </member>
+        <member name="T:Cinema.Models.Kinosaal">
+            <summary>
+            Representing a phyisical room in the Cinema.
+            </summary>
+            <remarks></remarks>
+        </member>
         <member name="M:Cinema.Schnittstelle.IKinosaal.GetSitzplätze">
             <summary>
             Gibt eine Liste von Sitzplätzen zurück.
@@ -44,12 +50,6 @@
             Gibt den Namen des Kinosaals zurück.
             </summary>
             <value>Der Name des Kinosaals.</value>
-            <remarks></remarks>
-        </member>
-        <member name="T:Cinema.Models.Kinosaal">
-            <summary>
-            Representing a phyisical room in the Cinema.
-            </summary>
             <remarks></remarks>
         </member>
         <member name="F:Cinema.Models.Kinosaal.id">

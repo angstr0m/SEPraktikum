@@ -1,7 +1,7 @@
-﻿using TicketOperations.Schnittstelle.veraltet.InternalInterfaceMembers;
+﻿using Kinokarten.veraltet.InternalInterfaceMembers;
 using Users.Interfaces;
 
-namespace TicketOperations.Schnittstelle.veraltet
+namespace Kinokarten.veraltet
 {
     class RegistrierterKundeKinokartenReservieren : KinokartenReservieren, IRegistrierterKundeKinokartenReservierung
     {

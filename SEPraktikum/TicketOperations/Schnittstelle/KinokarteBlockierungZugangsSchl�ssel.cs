@@ -1,6 +1,6 @@
-﻿using TicketOperations.Schnittstelle.Interfaces;
+﻿using Kinokarten.Schnittstelle.Interfaces;
 
-namespace TicketOperations.Schnittstelle
+namespace Kinokarten.Schnittstelle
 {
     public class KinokarteBlockierungZugangsSchlüssel : IKinokarteBlockierungZugangsSchlüssel
     {

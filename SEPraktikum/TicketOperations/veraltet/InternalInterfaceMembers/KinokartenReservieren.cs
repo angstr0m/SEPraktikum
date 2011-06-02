@@ -1,14 +1,13 @@
 ﻿using System;
 using Cinema.Schnittstelle;
 using Database.Models;
-using TicketOperations.Models;
-using TicketOperations.PublicInterfaceMembers;
-using TicketOperations.Schnittstelle.Interfaces;
-using TicketOperations.Schnittstelle.veraltet.InternalInterfaceMembers.Interfaces;
+using Kinokarten.Models;
+using Kinokarten.Schnittstelle.Interfaces;
+using Kinokarten.veraltet.InternalInterfaceMembers.Interfaces;
 using Users.Interfaces;
 using Users.Models;
 
-namespace TicketOperations.Schnittstelle.veraltet.InternalInterfaceMembers
+namespace Kinokarten.veraltet.InternalInterfaceMembers
 {
     /// <summary>
     /// 
@@ -52,17 +51,17 @@ namespace TicketOperations.Schnittstelle.veraltet.InternalInterfaceMembers
         /// Reserviert ein Kinokarte.
         /// </summary>
         /// <param name="vorstellung">Die gewünschte Vorstellung.</param>
-        /// <param name="seat">Der gewünschte Sitzplatz.</param>
+        /// <param name="sitz">Der gewünschte Sitzplatz.</param>
         /// <param name="discount">Soll ein Rabatt auf den Preis der Kinokarte gewährt werden?</param>
         /// <param name="kundennummer"></param>
         /// <param name="key">Der TransaktionsSchlüssel der für das entsperren des Kinokarten gebraucht wird.</param>
         /// <returns> Die Reservationsnummer des reservierten Kinokarten. </returns>
         /// <remarks></remarks>
-        public int KinokarteReservieren(IPublicVorstellung vorstellung, ISitzIdentifikator seat, bool discount, int kundennummer, IKinokarteBlockierungZugangsSchlüssel key)
+        public int KinokarteReservieren(IPublicVorstellung vorstellung, ISitzIdentifikator sitz, bool discount, int kundennummer, IKinokarteBlockierungZugangsSchlüssel key)
         {
             IKunde kunde = Benutzerinformationen.GetKunde(kundennummer);
 
-            Kinokarte wantedKinokarte = _databaseShows.GetElementWithId(vorstellung.GetIdentifier()).GetKinokarte(null);
+            Kinokarte wantedKinokarte = _databaseShows.GetElementWithId(vorstellung.GetIdentifier()).GetKinokarte(sitz);
 
             Reservierung r = new Reservierung(wantedKinokarte, kunde, discount, key);
 
@@ -137,15 +136,15 @@ namespace TicketOperations.Schnittstelle.veraltet.InternalInterfaceMembers
         /// Blockiert das gewünschte Kinokarte, und gibt den Zugangsschlüssel für die Aufhebung der Blockierung zurück.
         /// </summary>
         /// <param name="vorstellung">Die gewünschte Vorstellung.</param>
-        /// <param name="seat">Der gewünschte Sitzplatz.</param>
+        /// <param name="sitz">Der gewünschte Sitzplatz.</param>
         /// <returns> Schlüsselobjekt zum entblockieren des Kinokarten. </returns>
         /// <remarks></remarks>
-        public IKinokarteBlockierungZugangsSchlüssel TicketBlockieren(IPublicVorstellung vorstellung, ISitzIdentifikator seat)
+        public IKinokarteBlockierungZugangsSchlüssel TicketBlockieren(IPublicVorstellung vorstellung, ISitzIdentifikator sitz)
         {
 
             Vorstellung wantedVorstellung = _databaseShows.GetElementWithId(vorstellung.GetIdentifier());
 
-            IKinokarteBlockierungZugangsSchlüssel key = wantedVorstellung.GetKinokarte(null).Blockieren();
+            IKinokarteBlockierungZugangsSchlüssel key = wantedVorstellung.GetKinokarte(sitz).Blockieren();
 
             return key;
         }
@@ -161,15 +160,15 @@ namespace TicketOperations.Schnittstelle.veraltet.InternalInterfaceMembers
         /// Hebt die Blockierung des Kinokarten mit Hilfe des übergebenen Schlüssels auf.
         /// </summary>
         /// <param name="vorstellung">Die gewünschte Vorstellung.</param>
-        /// <param name="seat">Der gewünschte Sitzplatz.</param>
+        /// <param name="sitz">Der gewünschte Sitzplatz.</param>
         /// <param name="key">Zugangsschlüssel der zur Aufhebung der Blockade benötigt wird.</param>
         /// <remarks></remarks>
-        public void TicketBlockierungAufheben(IPublicVorstellung vorstellung, ISitzIdentifikator seat, IKinokarteBlockierungZugangsSchlüssel key)
+        public void TicketBlockierungAufheben(IPublicVorstellung vorstellung, ISitzIdentifikator sitz, IKinokarteBlockierungZugangsSchlüssel key)
         {
 
             Vorstellung wantedVorstellung = _databaseShows.GetElementWithId(vorstellung.GetIdentifier());
 
-            wantedVorstellung.GetKinokarte(null).BlockierungAufheben(key);
+            wantedVorstellung.GetKinokarte(sitz).BlockierungAufheben(key);
         }
 
         public void TicketBlockierungAufheben(IPublicKinokarte kinokarte, IKinokarteBlockierungZugangsSchlüssel key)

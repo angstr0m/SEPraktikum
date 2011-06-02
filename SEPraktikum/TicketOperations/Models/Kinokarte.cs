@@ -1,14 +1,12 @@
 using System;
 using Base.AbstractClasses;
-using Cinema.Models;
 using Cinema.Schnittstelle;
 using Database.Interfaces;
 using Database.Models;
-using TicketOperations.PublicInterfaceMembers;
-using TicketOperations.Schnittstelle;
-using TicketOperations.Schnittstelle.Interfaces;
+using Kinokarten.Schnittstelle;
+using Kinokarten.Schnittstelle.Interfaces;
 
-namespace TicketOperations.Models
+namespace Kinokarten.Models
 {
     /// <summary>
     /// Repräsentiert eine Kinokarte die zu einer Vorstellung gehört.

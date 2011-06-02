@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Cinema.Schnittstelle;
-using TicketOperations.Schnittstelle.Interfaces;
+using Kinokarten.Schnittstelle.Interfaces;
 using Users.Interfaces;
 
 namespace TicketOperations.PublicInterfaceMembers.Interfaces.Anwendungsfall_spezifische_Interfaces

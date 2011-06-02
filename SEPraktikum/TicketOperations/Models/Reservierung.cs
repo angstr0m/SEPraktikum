@@ -1,14 +1,11 @@
-using System;
 using System.Collections.Generic;
 using Base.AbstractClasses;
-using TicketOperations.PublicInterfaceMembers;
-using TicketOperations.Schnittstelle.Interfaces;
+using Kinokarten.Schnittstelle.Interfaces;
 using Users.Interfaces;
-using Users.Models;
 using Database.Models;
 using Database.Interfaces;
 
-namespace TicketOperations.Models {
+namespace Kinokarten.Models {
     /// <summary>
     /// Repräsentiert eine Reservierung.
     /// Tätigt ein Kunde eine Reservierung, wird ein neues Objekt dieses Typs erzeugt und in der Datenbank gespeichert.
@@ -143,7 +140,7 @@ namespace TicketOperations.Models {
         /// Gibt die Vorstellung zu der diese Reservierung gehört zurück.
         /// </summary>
         /// <remarks></remarks>
-        public TicketOperations.Models.Vorstellung Vorstellung
+        public Vorstellung Vorstellung
         {
             get { return _vorstellung; }
         }
@@ -152,7 +149,7 @@ namespace TicketOperations.Models {
         /// Gibt die Kinokarten zurück, die zu dieser Vorstellung gehören.
         /// </summary>
         /// <remarks></remarks>
-        public System.Collections.Generic.List<TicketOperations.Models.Kinokarte> Kinokarten
+        public System.Collections.Generic.List<Kinokarte> Kinokarten
         {
             get { return _kinokarten; }
         }

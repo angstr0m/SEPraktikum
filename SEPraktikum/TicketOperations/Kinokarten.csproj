@@ -8,8 +8,8 @@
     <ProjectGuid>{693E8C0C-D47E-4483-8755-3722DCB841D5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TicketOperations</RootNamespace>
-    <AssemblyName>TicketOperations</AssemblyName>
+    <RootNamespace>Kinokarten</RootNamespace>
+    <AssemblyName>Kinokarten</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -61,12 +61,6 @@
     <Compile Include="Schnittstelle\PublicFilmprogramm.cs" />
     <Compile Include="Schnittstelle\PublicKinokarte.cs" />
     <Compile Include="Schnittstelle\PublicVorstellung.cs" />
-    <Compile Include="veraltet\BesucherKinokartenReservierung.cs" />
-    <Compile Include="veraltet\IBesucherKinokartenReservierung.cs" />
-    <Compile Include="veraltet\InternalInterfaceMembers\Interfaces\IKinokarteReservieren.cs" />
-    <Compile Include="veraltet\InternalInterfaceMembers\KinokartenReservieren.cs" />
-    <Compile Include="veraltet\IRegistrierterKundeKinokartenReservierung.cs" />
-    <Compile Include="veraltet\RegistrierterKundeKinokartenReservieren.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -91,9 +85,7 @@
       <Name>Benutzer</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="veraltet\InternalInterfaceMembers\Controller\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

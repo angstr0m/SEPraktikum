@@ -1,9 +1,8 @@
 using System;
-using TicketOperations.PublicInterfaceMembers;
-using TicketOperations.Schnittstelle.Interfaces;
+using Kinokarten.Schnittstelle.Interfaces;
 using Users.Interfaces;
 
-namespace TicketOperations.Models {
+namespace Kinokarten.Models {
     /// <summary>
     /// 
     /// </summary>
