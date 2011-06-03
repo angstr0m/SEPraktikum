@@ -191,13 +191,13 @@ namespace TestAnwendungskern
         public void SendeEmailMitReservierungsnummerTest()
         {
             IFassadeBesucher target = CreateIBesucher();
-            string email_adresse = "Email"; // Email Adresse von Benutzer bekommen
+            string email_adresse = "malte.eckhoff@jokersworld.de";
             IKinokarteBlockierungZugangsSchlüssel zugangsSchlüssel = target.BlockiereSitzplatz(_gewählte_Vorstellung,
                                                                                                _sitz);
             int reservierungsnummer = target.KinokarteReservieren(_gewählte_Vorstellung, _sitz, false, zugangsSchlüssel);
             target.SendeEmailMitReservierungsnummer(email_adresse, reservierungsnummer);
             Assert.IsNotNull(email_adresse);
-            // Test auf eigener Email ob email ankommt ist wohl besser
+            // Ob die E-Mail auch wirklich ankommt muss vom Besitzer des E-Mail Kontos gerprüft werden!
         }
 
         /// <summary>

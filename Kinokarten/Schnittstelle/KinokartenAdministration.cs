@@ -92,12 +92,12 @@ namespace Kinokarten.Schnittstelle
 
         public bool IsTicketBlocked(IPublicVorstellung vorstellung, ISitz sitz)
         {
-            throw new NotImplementedException();
+            return _vorstellungen.GetElementWithId(vorstellung.GetIdentifier()).GetKinokarte(sitz).Blockiert;
         }
 
         public bool IsTicketReserved(IPublicVorstellung vorstellung, ISitz sitz)
         {
-            throw new NotImplementedException();
+            return _vorstellungen.GetElementWithId(vorstellung.GetIdentifier()).GetKinokarte(sitz).Reserviert;
         }
 
         #endregion
