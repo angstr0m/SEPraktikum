@@ -1,0 +1,596 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Kinokarten</name>
+    </assembly>
+    <members>
+        <member name="M:Kinokarten.Schnittstelle.Interfaces.IKinokartenInformationen.GetWöchentlichesFilmprogramm">
+            <summary>
+            Liefert das derzeit aktuelle Filmprogramm.
+            </summary>
+            <returns> Das Filmprogramm für diese Woche. </returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:Kinokarten.Schnittstelle.KinokartenInformationen.GetWöchentlichesFilmprogramm">
+            <summary>
+            Liefert das derzeit aktuelle Filmprogramm.
+            </summary>
+            <returns> Das Filmprogramm für diese Woche. </returns>
+            <remarks></remarks>
+        </member>
+        <member name="T:Kinokarten.Models.Vorstellung">
+            <summary>
+            Eine Vorstellung repräsentiert eine einzelne Vorführung eines Films in einem bestimmten Kinosaal.
+            </summary>
+            
+            <remarks></remarks>
+        </member>
+        <member name="F:Kinokarten.Models.Vorstellung._film">
+            <summary>
+            Der Film der in der Vorstellung gezeigt wird.
+            </summary>
+        </member>
+        <member name="F:Kinokarten.Models.Vorstellung._kinokarten">
+            <summary>
+            Die Kinokarten dieser Vorstellung.
+            </summary>
+        </member>
+        <member name="F:Kinokarten.Models.Vorstellung._startZeit">
+            <summary>
+            Startzeit des Vorstellung.
+            </summary>
+        </member>
+        <member name="F:Kinokarten.Models.Vorstellung._kinosaal">
+            <summary>
+            Der Kinosaal in dem die Vorstellung gezeigt wird.
+            </summary>
+        </member>
+        <member name="F:Kinokarten.Models.Vorstellung._pause">
+            <summary>
+            Zeigt an, ob es während der Vorstellung eine Pause gibt oder nicht. 
+            </summary>
+        </member>
+        <member name="M:Kinokarten.Models.Vorstellung.#ctor(System.DateTime,Kino.Schnittstelle.IFilm,Kino.Schnittstelle.IKinosaal,System.Boolean,System.Single)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Kinokarten.Models.Vorstellung"/> class.
+            </summary>
+            <param name="startZeit">The start time.</param>
+            <param name="_film">The Film.</param>
+            <param name="kinosaal">The _kinosaal.</param>
+            <param name="pause">if set to <c>true</c> [pause].</param>
+            <param name="ticketPrice">The Kinokarte price.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:Kinokarten.Models.Vorstellung.GetNumberOfFreeSeats">
+            <summary>
+            Gibt die Anzahl der Kinokarten zurück, die weder verkauft noch reserviert sind.
+            </summary>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:Kinokarten.Models.Vorstellung.GetNumberOfBlockedSeats">
+            <summary>
+            Gibt die Anzahl der Kinokarten zurück, die gekauft oder reserviert wurden.
+            </summary>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:Kinokarten.Models.Vorstellung.GetVerfügbareKinokarten">
+            <summary>
+            Gibt die Kinokarten dieser Vorstellung zurück, die weder verkauft noch reserviert sind.
+            </summary>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:Kinokarten.Models.Vorstellung.GetReservierteKinokarten">
+            <summary>
+            Gibt die reservierten Kinokarten zurück.
+            </summary>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:Kinokarten.Models.Vorstellung.GetVerkaufteKinokarten">
+            <summary>
+            Liefert die verkauften Kinokarten zurück.
+            </summary>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:Kinokarten.Models.Vorstellung.GetKinokarte(System.Int32)">
+            <summary>
+            Gibt eine bestimmte Kinokarte aus dieser Vorstellung zurück.
+            </summary>
+            <param name="index">Der Index der gewünschten Kinokarte.</param>
+            <returns>Die gewünschte Kinokarte.</returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:Kinokarten.Models.Vorstellung.GetKinokarte(Kino.Schnittstelle.ISitzIdentifikator)">
+            <summary>
+            Gibt eine bestimmte Kinokarte, aus dieser Vorstellung, für einen bestimmten Sitzplatz zurück.
+            </summary>
+            <param name="sitz">Der Identfikator des Sitzplatzes.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Kinokarten.Models.Vorstellung.GetKinokarte(Kino.Schnittstelle.ISitz)">
+            <summary>
+            Gibt eine bestimmte Kinokarte aus dieser Vorstellung zurück.
+            </summary>
+            <param name="sitz">Referenz auf den gewünschten Sitzplatz.</param>
+            <returns>Die gewünschte Kinokarte.</returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:Kinokarten.Models.Vorstellung.GetKinokarte(System.Char,System.Int32)">
+            <summary>
+            Gibt eine bestimmte Kinokarte aus dieser Vorstellung zurück.
+            </summary>
+            <param name="reihe">Die Reihe des Sitzes der gewünschten Kinokarte (A-Z).</param>
+            <param name="nummer">Dir Nummer der gewünschten Kinokarte.</param>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:Kinokarten.Models.Vorstellung.ReserviereKinokarte(Kinokarten.Models.Kinokarte)">
+            <summary>
+            Reserviert die angegebene Kinokarte.
+            </summary>
+            <param name="kinokarte"></param>
+            <remarks></remarks>
+        </member>
+        <member name="M:Kinokarten.Models.Vorstellung.ReserviereKinokarte(System.Char,System.Int32)">
+            <summary>
+            Reserviert die angegebene Kinokarte.
+            </summary>
+            <param name="row"></param>
+            <param name="nr"></param>
+            <remarks></remarks>
+        </member>
+        <member name="M:Kinokarten.Models.Vorstellung.VerkaufeKinokarte(Kinokarten.Models.Kinokarte)">
+            <summary>
+            Verkauft die angegebene Kinokarte.
+            </summary>
+            <param name="kinokarte"></param>
+            <remarks></remarks>
+        </member>
+        <member name="M:Kinokarten.Models.Vorstellung.VerkaufeKinokarte(System.Char,System.Int32)">
+            <summary>
+            Verkauft die angegebene Kinokarte.
+            </summary>
+            <param name="row"></param>
+            <param name="nr"></param>
+            <remarks></remarks>
+        </member>
+        <member name="M:Kinokarten.Models.Vorstellung.KinokarteZurücksetzen(Kinokarten.Models.Kinokarte)">
+            <summary>
+            Macht den Verkauf und oder die Reservierung einer Kinokarte rückgängig.
+            </summary>
+            <param name="kinokarte">The Kinokarte to get.</param>
+            <remarks></remarks>
+        </member>
+        <member name="P:Kinokarten.Models.Vorstellung.StartZeit">
+            <summary>
+            Gibt die Startzeit dieser Vorstellung zurück.
+            </summary>
+            <value></value>
+            <remarks></remarks>
+        </member>
+        <member name="P:Kinokarten.Models.Vorstellung.Duration">
+            <summary>
+            Gibt die Spieldauer des zugehörigen Films zurück.
+            </summary>
+            <value>The duration.</value>
+            <remarks></remarks>
+        </member>
+        <member name="P:Kinokarten.Models.Vorstellung.Altersfreigabe">
+            <summary>
+            Gibt die Altersfreigabe das Films zurück.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:Kinokarten.Models.Vorstellung.Name">
+            <summary>
+            Gibt den Namen des Films zurück, der gezeigt wird.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:Kinokarten.Models.Buchung">
+            <summary>
+            
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:Kinokarten.Models.Reservierung">
+            <summary>
+            Repräsentiert eine Reservierung.
+            Tätigt ein Kunde eine Reservierung, wird ein neues Objekt dieses Typs erzeugt und in der Datenbank gespeichert.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="F:Kinokarten.Models.Reservierung._kinokarten">
+            <summary>
+            Die Kinokarten die zu dieser Reservierung gehören.
+            </summary>
+        </member>
+        <member name="F:Kinokarten.Models.Reservierung._kunde">
+            <summary>
+            Die Referenz auf den Kunden, welcher diese Reservierung getätigt hat.
+            </summary>
+        </member>
+        <member name="F:Kinokarten.Models.Reservierung._rabatt">
+            <summary>
+            Gibt an, ob auf die Karten dieser Vorstellung ein Rabatt von 10% auf den Preis gewährt wird.
+            </summary>
+        </member>
+        <member name="F:Kinokarten.Models.Reservierung._reservierungen">
+            <summary>
+            Ermöglicht den Zugriff auf die Reservierungen in der Datenbank.
+            </summary>
+        </member>
+        <member name="F:Kinokarten.Models.Reservierung._reservierungsnummer">
+            <summary>
+            Die Reservierungsnummer unter der die Karten dieser Reservierung abgeholt werden können.
+            </summary>
+        </member>
+        <member name="F:Kinokarten.Models.Reservierung._vorstellung">
+            <summary>
+            Die Vorstellung zu der die Karten dieser Vorstellung gehören.
+            </summary>
+        </member>
+        <member name="M:Kinokarten.Models.Reservierung.TicketHinzufügen(Kinokarten.Models.Kinokarte,Kinokarten.Schnittstelle.Interfaces.IKinokarteBlockierungZugangsSchlüssel)">
+            <summary>
+            Kinokarte der Reservierung hinzufügen
+            </summary>
+            <param name="kinokarte">Das Kinokarte welches der Reservierung hinzugefügt werden soll.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:Kinokarten.Models.Reservierung.TicketEntfernen(Kinokarten.Models.Kinokarte)">
+            <summary>
+            Entfernt das übergebene Kinokarte aus dieser Reservierung.
+            </summary>
+            <param name="kinokarte">Das Kinokarte.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:Kinokarten.Models.Reservierung.Price">
+            <summary>
+            Gibt den Preis dieser Reservierung zurück.
+            </summary>
+            <returns></returns>
+            <remarks> Der Preis dieser Reservierung ergibt sich hierbei aus der Summe der Preise aller Kinokarten. </remarks>
+        </member>
+        <member name="M:Kinokarten.Models.Reservierung.ReservierungStornieren">
+            <summary>
+            Storniert diese Reservierung.
+            </summary>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="P:Kinokarten.Models.Reservierung.Reservierungsnummer">
+            <summary>
+            Gibt die Reservierungsnummer diese Reservierung zurück.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:Kinokarten.Models.Reservierung.Vorstellung">
+            <summary>
+            Gibt die Vorstellung zu der diese Reservierung gehört zurück.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:Kinokarten.Models.Reservierung.Kinokarten">
+            <summary>
+            Gibt die Kinokarten zurück, die zu dieser Vorstellung gehören.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:Kinokarten.Models.Reservierung.Kunde">
+            <summary>
+            Gibt den Kunden zurück, dem diese Registrierung zugeordnet ist.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="F:Kinokarten.Models.Buchung.isPayed">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Kinokarten.Models.Buchung.GetIsPayed">
+            <summary>
+            Gets the is payed.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="M:Kinokarten.Models.Buchung.SetIsPayed(System.Object)">
+            <summary>
+            Sets the is payed.
+            </summary>
+            <param name="isPayed">The is payed.</param>
+            <remarks></remarks>
+        </member>
+        <member name="P:Kinokarten.Schnittstelle.Interfaces.IPublicFilmprogramm.Vorstellungen">
+            <summary>
+            Gets or sets the list of shows that represent the shows that are shown in the week the movie program is responsible for.
+            </summary>
+            <value>The shows.</value>
+            <remarks></remarks>
+            <pre></pre>
+        </member>
+        <member name="T:Kinokarten.Models.Filmprogramm">
+            <summary>
+            Dient der Sammlung aller Vorstellungen für eine Woche.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="F:Kinokarten.Models.Filmprogramm._startDatum">
+            <summary>
+            Datum ab welchem das Filmprogramm für eine Woche gültig ist.
+            </summary>
+        </member>
+        <member name="F:Kinokarten.Models.Filmprogramm._vorstellungen">
+            <summary>
+            Die Vorstellungen dieses Filmprogramms.
+            </summary>
+        </member>
+        <member name="F:Kinokarten.Models.Filmprogramm._veröffentlicht">
+            <summary>
+            Zeigt an, ob das Filmprogramm bereits veröffentlicht wurde.
+            </summary>
+        </member>
+        <member name="M:Kinokarten.Models.Filmprogramm.Veröffentlichen">
+            <summary>
+            Veröffentlicht das Filmprogramm.
+            </summary>
+            <remarks>Sobald das Filmprogramm öffentlich ist, kann es von Kunden eingesehen werden.</remarks>
+        </member>
+        <member name="P:Kinokarten.Models.Filmprogramm.Vorstellungen">
+            <summary>
+            Gibt die Vorstellungen dieses Filmprogramms zurück.
+            </summary>
+            <value></value>
+            <remarks></remarks>
+        </member>
+        <member name="P:Kinokarten.Schnittstelle.Interfaces.IPublicKinokarte.Reserviert">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:Kinokarten.Models.Kinokarte"/> is reserved.
+            </summary>
+            <value><c>true</c> if reserved; otherwise, <c>false</c>.</value>
+            <remarks></remarks>
+        </member>
+        <member name="P:Kinokarten.Schnittstelle.Interfaces.IPublicKinokarte.Rabatt">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:Kinokarten.Models.Kinokarte"/> is discounted.
+            This is true when it was bought buy a student/pupil and or pensioneer.
+            The discount is always 10%.
+            </summary>
+            <value><c>true</c> if the ticketprice is discounted; otherwise, <c>false</c>.</value>
+            <remarks></remarks>
+        </member>
+        <member name="P:Kinokarten.Schnittstelle.Interfaces.IPublicKinokarte.Verkauft">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:Kinokarten.Models.Kinokarte"/> is sold.
+            </summary>
+            <value><c>true</c> if sold; otherwise, <c>false</c>.</value>
+            <remarks></remarks>
+        </member>
+        <member name="P:Kinokarten.Schnittstelle.Interfaces.IPublicKinokarte.Preis">
+            <summary>
+            Gets the price of the ticket, taking into account any discount.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:Kinokarten.Schnittstelle.Interfaces.IPublicKinokarte.Sitz">
+            <summary>
+            Gets the Sitz that belongs to this ticket.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:Kinokarten.Schnittstelle.Interfaces.IPublicKinokarte.Vorstellung">
+            <summary>
+            Gets the vorstellung this ticket is for.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:Kinokarten.Schnittstelle.PublicVorstellung">
+            <summary>
+            Decorator for the vorstellung object.
+            This class is meant for giving vorstellung objects to the outside, while hiding members and methods on the vorstellung-object which should not be seen.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="M:Kinokarten.Schnittstelle.Interfaces.IPublicVorstellung.GetAnzahlFreierKinokarten">
+            <summary>
+            Gibt die Anzahl der noch verfügbaren Kinokarten zurück.
+            </summary>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:Kinokarten.Schnittstelle.Interfaces.IPublicVorstellung.GetAnzahlNichtVerfügbarerKinokarten">
+            <summary>
+            Gibt die Anzahl der nicht verfügbaren Kinokarten zurück.
+            </summary>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:Kinokarten.Schnittstelle.Interfaces.IPublicVorstellung.VerfügbareKinokarten">
+            <summary>
+            Gibt eine Liste der Kinokarten dieser Vorstellung zurück, die weder gekauft noch reserviert wurden.
+            </summary>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:Kinokarten.Schnittstelle.Interfaces.IPublicVorstellung.ReservierteKinokarten">
+            <summary>
+            Gibt eine Liste der Kinokarten dieser Vorstellung zurück, welche reserviert wurden.
+            </summary>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:Kinokarten.Schnittstelle.Interfaces.IPublicVorstellung.VerkaufteKinokarten">
+            <summary>
+            Gibt eine Liste der Kinokarten dieser Vorstellung zurück, welche verkauft wurden.
+            </summary>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:Kinokarten.Schnittstelle.Interfaces.IPublicVorstellung.GetKinokarte(System.Int32)">
+            <summary>
+            Gibt eine Kinokarte an einem bestimmten Index zurück.
+            </summary>
+            <param name="index">Der Index der gewünschten Kinokarte.</param>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:Kinokarten.Schnittstelle.Interfaces.IPublicVorstellung.GetKinokarte(Kino.Schnittstelle.ISitzIdentifikator)">
+            <summary>
+            Gibt eine Kinokarte für einen bestimmten Sitz zurück.
+            </summary>
+            <param name="sitzIdentifikator"> Der Identifikator des gewünschten Sitzplatzes.</param>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="P:Kinokarten.Schnittstelle.Interfaces.IPublicVorstellung.StartZeit">
+            <summary>
+            Gibt die Startzeit der Vorstellung zurück.
+            </summary>
+            <value>Die Startzeit der Vorstellung.</value>
+            <remarks></remarks>
+        </member>
+        <member name="P:Kinokarten.Schnittstelle.Interfaces.IPublicVorstellung.Spieldauer">
+            <summary>
+            Gibt die Spieldauer der Vorstellung zurück.
+            </summary>
+            <value>Die Spieldauer des Films dieser Vorstellung.</value>
+            <remarks></remarks>
+        </member>
+        <member name="P:Kinokarten.Schnittstelle.Interfaces.IPublicVorstellung.Altersfreigabe">
+            <summary>
+            Gibt die Altersfreigabe des Films dieser Vorstellung zurück.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:Kinokarten.Schnittstelle.Interfaces.IPublicVorstellung.Name">
+            <summary>
+            Gibt den Namen des Films zurück, welcher in dieser Vorstellung gezeigt wird.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="M:Kinokarten.Schnittstelle.PublicVorstellung.GetAnzahlFreierKinokarten">
+            <summary>
+            Gets the number of free tickets.
+            </summary>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:Kinokarten.Schnittstelle.PublicVorstellung.GetAnzahlNichtVerfügbarerKinokarten">
+            <summary>
+            Gets the number of tickets that has been sold or reserved.
+            </summary>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:Kinokarten.Schnittstelle.PublicVorstellung.GetKinokarte(Kino.Schnittstelle.ISitzIdentifikator)">
+            <summary>
+            Gibt eine Kinokarte für einen bestimmten Sitz zurück.
+            </summary>
+            <param name="sitzIdentifikator"> Der Identifikator des gewünschten Sitzplatzes.</param>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="T:Kinokarten.Models.Kinokarte">
+            <summary>
+            Repräsentiert eine Kinokarte die zu einer Vorstellung gehört.
+            </summary>
+            <remarks> Eine Kinokarte kann gekauft und oder reserviert werden.
+            Ist eine Kinokarte 15 Minuten vor Beginn der Vorstellung reserviert, 
+            aber nicht gekauft so wird die Reservierung für diese Karte storniert. </remarks>
+        </member>
+        <member name="F:Kinokarten.Models.Kinokarte._preis">
+            <summary>
+            Der Preis der Kinokarte.
+            </summary>
+        </member>
+        <member name="F:Kinokarten.Models.Kinokarte._sitz">
+            <summary>
+            Der zugehörige Sitz zu dieser Kinokarte.
+            </summary>
+        </member>
+        <member name="F:Kinokarten.Models.Kinokarte._vorstellung">
+            <summary>
+            Die Vorstellung zu der diese Kinokarte gehört.
+            </summary>
+        </member>
+        <member name="F:Kinokarten.Models.Kinokarte._blockiert">
+            <summary>
+            Gibt an, ob diese Karte 
+            </summary>
+        </member>
+        <member name="F:Kinokarten.Models.Kinokarte._rabatt">
+            <summary>
+            Gibt an ob auf den Kaufpreis dieser Karte 10% Rabatt gewährt werden soll.
+            </summary>
+        </member>
+        <member name="F:Kinokarten.Models.Kinokarte._reserviert">
+            <summary>
+            Gibt an ob diese Karte reserviert wurde.
+            </summary>
+        </member>
+        <member name="F:Kinokarten.Models.Kinokarte._reservierungen">
+            <summary>
+            Entity Manager für den Zugriff auf die Reservierungen.
+            </summary>
+        </member>
+        <member name="F:Kinokarten.Models.Kinokarte.zugangsSchlüssel">
+            <summary>
+            Wenn die Kinokarte blockiert ist wird dieser Schlüssel benötigt, um die Blockierung aufzuheben.
+            Wird erst zugewiesen, wenn die Kinokarte initial blockiert wird.
+            </summary>
+        </member>
+        <member name="M:Kinokarten.Models.Kinokarte.#ctor(System.Single,Kino.Schnittstelle.ISitz,Kinokarten.Models.Vorstellung)">
+            <summary>
+            Initialisiert eine neue Instanz der <see cref="T:Kinokarten.Models.Kinokarte"/> Klasse.
+            </summary>
+            <param name="preis"> Der Preis der Kinokarte. </param>
+            <param name="sitz"> Der zugehörige Sitz dieser Vorstellung. </param>
+            <param name="vorstellung"> Die zugehörige Vorstellung. </param>
+            <remarks></remarks>
+        </member>
+        <member name="P:Kinokarten.Models.Kinokarte.Reserviert">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:Kinokarten.Models.Kinokarte"/> is Reserviert.
+            </summary>
+            <value><c>true</c> if Reserviert; otherwise, <c>false</c>.</value>
+            <remarks></remarks>
+        </member>
+        <member name="P:Kinokarten.Models.Kinokarte.Rabatt">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:Kinokarten.Models.Kinokarte"/> is discounted.
+            This is true when it was bought buy a student/pupil and or pensioneer.
+            The Rabatt is always 10%.
+            </summary>
+            <value><c>true</c> if the ticketprice is discounted; otherwise, <c>false</c>.</value>
+            <remarks></remarks>
+        </member>
+        <member name="P:Kinokarten.Models.Kinokarte.Verkauft">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:Kinokarten.Models.Kinokarte"/> is sold.
+            </summary>
+            <value><c>true</c> if sold; otherwise, <c>false</c>.</value>
+            <remarks></remarks>
+        </member>
+        <member name="P:Kinokarten.Models.Kinokarte.Preis">
+            <summary>
+            Gets the _preis of the kinokarte, taking into account any Rabatt.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:Kinokarten.Models.Kinokarte.Sitz">
+            <summary>
+            Gets the Sitz that belongs to this kinokarte.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:Kinokarten.Models.Kinokarte.Vorstellung">
+            <summary>
+            Gets the vorstellung this kinokarte is for.
+            </summary>
+            <remarks></remarks>
+        </member>
+    </members>
+</doc>
