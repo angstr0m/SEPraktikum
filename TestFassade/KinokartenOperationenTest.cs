@@ -1,9 +1,19 @@
 ﻿using Kinokarten.Schnittstelle;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using Users.Interfaces;
 using Kinokarten.Schnittstelle.Interfaces;
 using Kino.Schnittstelle;
+using NUnit.Framework;
+
+using NUnitAssert = NUnit.Framework.Assert;
+
+
+using TestClass = NUnit.Framework.TestFixtureAttribute;
+using TestMethod = NUnit.Framework.TestAttribute;
+using TestCleanup = NUnit.Framework.TearDownAttribute;
+using TestInitialize = NUnit.Framework.SetUpAttribute;
+using ClassCleanup = NUnit.Framework.TestFixtureTearDownAttribute;
+using ClassInitialize = NUnit.Framework.TestFixtureSetUpAttribute;
 
 namespace TestAnwendungskern
 {

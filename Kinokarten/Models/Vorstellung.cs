@@ -58,10 +58,14 @@ namespace Kinokarten.Models
             _pause = pause;
             _kinokarten = new List<Kinokarte>();
 
+            Console.WriteLine("Kinokarten erstellen Anfang: " + DateTime.Now);
+
             foreach (ISitz s in kinosaal.GetSitzplätze())
             {
                 _kinokarten.Add(new Kinokarte(ticketPrice, s, this));
             }
+
+            Console.WriteLine("Kinokarten erstellen Ende: " + DateTime.Now);
 
             EntityManager<Vorstellung> vorstellungen = new EntityManager<Vorstellung>();
             vorstellungen.AddElement(this);

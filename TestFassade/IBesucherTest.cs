@@ -5,8 +5,18 @@ using Fassade.Schnittstelle;
 using Kino.Schnittstelle;
 using Kinokarten.Schnittstelle;
 using Kinokarten.Schnittstelle.Interfaces;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Users.Interfaces;
+using NUnit.Framework;
+
+using NUnitAssert = NUnit.Framework.Assert;
+
+
+using TestClass = NUnit.Framework.TestFixtureAttribute;
+using TestMethod = NUnit.Framework.TestAttribute;
+using TestCleanup = NUnit.Framework.TearDownAttribute;
+using TestInitialize = NUnit.Framework.SetUpAttribute;
+using ClassCleanup = NUnit.Framework.TestFixtureTearDownAttribute;
+using ClassInitialize = NUnit.Framework.TestFixtureSetUpAttribute;
 
 namespace TestAnwendungskern
 {
@@ -113,7 +123,7 @@ namespace TestAnwendungskern
         /// - ob die Methode einen gültigen Zugangsschlüssel zurückgegeben hat.
         /// - ob der Sitzplatz auf den Status blockiert gesetzt wurde.
         /// </verification>
-        [TestMethod]
+        [Test]
         public void BlockiereSitzplatzTest_Success()
         {
             IFassadeBesucher target = CreateIBesucher();
@@ -146,7 +156,7 @@ namespace TestAnwendungskern
         /// Es wird überprüft:
         /// - ob der Status des Tickets auf nicht blockiert gesetzt wurde.
         /// </verification>
-        [TestMethod]
+        [Test]
         public void BlockierungFürSitzplatzAufhebenTest_Success()
         {
             IFassadeBesucher target = CreateIBesucher();
@@ -178,7 +188,7 @@ namespace TestAnwendungskern
         /// Es wird überprüft:
         /// - ob der Preis der Kinokarte dem eingestellten Preis entspricht.
         /// </verification>
-        [TestMethod]
+        [Test]
         public void GetPreisFürKinokarteTest_Success()
         {
             //test für wenn rabatt gesetzt, dann _kinokartenPreis expectected == _kinokartenPreis actual setzen
@@ -212,7 +222,7 @@ namespace TestAnwendungskern
         /// Es wird überprüft:
         /// - ob der Preis der Kinokarte dem eingestellten Preis entspricht.
         /// </verification>
-        [TestMethod]
+        [Test]
         public void GetPreisFürKinokarteMitRabattTest_Success()
         {
             //test für wenn rabatt gesetzt, dann _kinokartenPreis expectected == _kinokartenPreis actual setzen
@@ -228,7 +238,7 @@ namespace TestAnwendungskern
         /// <summary>
         ///A test for GetVerfügbareSitzplätzeFürVorstellung
         ///</summary>
-        [TestMethod]
+        [Test]
         public void GetVerfügbareSitzplätzeFürVorstellungTest()
         {
             IFassadeBesucher target = CreateIBesucher();
@@ -241,7 +251,7 @@ namespace TestAnwendungskern
         /// <summary>
         ///A test for KinokarteReservieren
         ///</summary>
-        [TestMethod]
+        [Test]
         public void KinokarteReservierenTest()
         {
             IFassadeBesucher target = CreateIBesucher();
@@ -258,7 +268,7 @@ namespace TestAnwendungskern
         /// <summary>
         ///A test for PrüfeAltersfreigabe
         ///</summary>
-        [TestMethod]
+        [Test]
         public void PrüfeAltersfreigabeTest()
         {
             //Prüfung ob Alterspreigabe bei allen vorstellungen nach 22uhr min 16Jahre 
@@ -275,7 +285,7 @@ namespace TestAnwendungskern
         /// <summary>
         ///A test for SendeEmailMitReservierungsnummer
         ///</summary>
-        [TestMethod]
+        [Test]
         public void SendeEmailMitReservierungsnummerTest()
         {
             IFassadeBesucher target = CreateIBesucher();
@@ -291,7 +301,7 @@ namespace TestAnwendungskern
         /// <summary>
         ///A test for ÜberprüfeVerfügbarkeitVonSitzplatz
         ///</summary>
-        [TestMethod]
+        [Test]
         public void ÜberprüfeVerfügbarkeitVonSitzplatzTest()
         {
             IFassadeBesucher target = CreateIBesucher();

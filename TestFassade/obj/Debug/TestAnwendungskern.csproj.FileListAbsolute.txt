@@ -50,3 +50,5 @@ C:\Users\N3trunner.MITTELERDE\Desktop\C#\SEPraktikum\TestFassade\bin\Debug\Users
 C:\Users\N3trunner.MITTELERDE\Desktop\C#\SEPraktikum\TestFassade\bin\Debug\Users.xml
 C:\Users\N3trunner.MITTELERDE\Desktop\C#\SEPraktikum\TestFassade\bin\Debug\Finances.pdb
 C:\Users\N3trunner.MITTELERDE\Desktop\C#\SEPraktikum\TestFassade\bin\Debug\Finances.xml
+C:\Users\N3trunner.MITTELERDE\Desktop\C#\SEPraktikum\TestFassade\bin\Debug\nunit.framework.dll
+C:\Users\N3trunner.MITTELERDE\Desktop\C#\SEPraktikum\TestFassade\bin\Debug\nunit.framework.xml

@@ -153,7 +153,7 @@ namespace Kinokarten.Models
 
         public IKinokarteBlockierungZugangsSchlüssel Blockieren()
         {
-            Console.WriteLine("Blockiert!");
+            //Console.WriteLine("Blockiert!");
             //if (zugangsSchlüssel != null && Blockiert)
             //{
             //    // Kinokarte ist bereits blockiert!

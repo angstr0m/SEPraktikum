@@ -3,12 +3,27 @@ using Database.Models;
 using Kino.Models;
 using Kinokarten.Models;
 using Kinokarten.Schnittstelle;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+//using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using Kinokarten.Schnittstelle.Interfaces;
 using Kino.Schnittstelle;
 using System.Collections.Generic;
+using NUnit.Framework;
 using Users.Interfaces;
+using Users.Models;
+//using NUnit.Framework;
+//using TestClass = NUnit.Framework.TestFixtureAttribute;
+//using TestMethod = NUnit.Framework.TestAttribute;
+//using TestCleanup = NUnit.Framework.TearDownAttribute;
+//using TestInitialize = NUnit.Framework.SetUpAttribute;
+//using ClassCleanup = NUnit.Framework.TestFixtureTearDownAttribute;
+//using ClassInitialize = NUnit.Framework.TestFixtureSetUpAttribute;
+
+using NUnitAssert = NUnit.Framework.Assert;
+
+//using NUnitAssert = NUnit.Framework.Assert;
+
+
 
 namespace TestAnwendungskern
 {
@@ -16,9 +31,10 @@ namespace TestAnwendungskern
     ///This is a test class for KinokartenInformationenTest and is intended
     ///to contain all KinokartenInformationenTest Unit Tests
     ///</summary>
-    [TestClass()]
+    [TestFixture]
     public class KinokartenInformationenTest
     {
+        EntityManager<Kinokarte> _kinokarten = new EntityManager<Kinokarte>();
         EntityManager<Vorstellung> _vorstellungen = new EntityManager<Vorstellung>();
         EntityManager<Filmprogramm> _filmprogramme = new EntityManager<Filmprogramm>();
         static EntityManager<Film> _filme = new EntityManager<Film>();
@@ -78,11 +94,20 @@ namespace TestAnwendungskern
         #endregion
 
         // Testklasse initialisieren
-        [ClassInitialize]
         public static void InitializeTest(TestContext testContext)
         {
-            _filme.RemoveAllElements();
-            _kinosäle.RemoveAllElements();
+           
+        }
+
+        // Testdaten für jeden Test neu initialisieren
+        [SetUp]
+        public virtual void CreateTestData()
+        {
+            Console.WriteLine("Setup starts: " + DateTime.Now);
+
+            
+
+            Console.WriteLine("Filme erstellen Start: " + DateTime.Now);
 
             var hdr1 = new Film("Herr der Ringe - Die Gefährten", "Adventure", 178, "USA", 12,
                                 "Elijah Wood, Ian McKellen, Orlando Bloom, Viggo Mortensen", "Peter Jackson");
@@ -95,55 +120,75 @@ namespace TestAnwendungskern
             var tron2 = new Film("TRON: Legacy", "Sci-Fi", 125, "USA", 12, "Jeff Bridges, Garrett Hedlund, Olivia Wilde",
                                  "Joseph Kosinski");
 
+            Console.WriteLine("Filme erstellen Ende: " + DateTime.Now);
+
+            Console.WriteLine("Kinosäle erstellen Start: " + DateTime.Now);
+
             var saal1 = new Kinosaal("Saal 1", 10, 10);
             var saal2 = new Kinosaal("Saal 2", 10, 10);
             var saal3 = new Kinosaal("Saal 3", 10, 10);
-        }
 
-        // Testdaten für jeden Test neu initialisieren
-        [TestInitialize]
-        public virtual void CreateTestData()
-        {
-            _vorstellungen.RemoveAllElements();
-            _filmprogramme.RemoveAllElements();
+            Console.WriteLine("Kinosäle erstellen Ende: " + DateTime.Now);
+
+            Console.WriteLine("Vorstellungen erstellen Start: " + DateTime.Now);
 
             IKinoInformationen kinoinfo = new KinoInformationen();
+            List<Film> filme = _filme.GetElements();
+            List<Kinosaal> kinosäle = _kinosäle.GetElements();
 
-            var vorstellung1 = new Vorstellung(new DateTime(2011, 05, 26, 12, 00, 00, 00), _filme.GetElements()[0],
-                                               _kinosäle.GetElements()[0], false, KinokartenPreis);
-            var vorstellung2 = new Vorstellung(new DateTime(2011, 05, 26, 13, 00, 00, 00), _filme.GetElements()[1],
-                                               _kinosäle.GetElements()[1], false, KinokartenPreis);
-            var vorstellung3 = new Vorstellung(new DateTime(2011, 05, 26, 14, 00, 00, 00), _filme.GetElements()[2],
-                                               _kinosäle.GetElements()[2], false, KinokartenPreis);
-            var vorstellung4 = new Vorstellung(new DateTime(2011, 05, 26, 18, 00, 00, 00), _filme.GetElements()[3],
-                                               _kinosäle.GetElements()[0], false, KinokartenPreis);
-            var vorstellung5 = new Vorstellung(new DateTime(2011, 05, 26, 18, 00, 00, 00), _filme.GetElements()[4],
-                                               _kinosäle.GetElements()[1], false, KinokartenPreis);
-            var vorstellung6 = new Vorstellung(new DateTime(2011, 05, 27, 12, 00, 00, 00), _filme.GetElements()[0],
-                                               _kinosäle.GetElements()[0], false, KinokartenPreis);
-            var vorstellung7 = new Vorstellung(new DateTime(2011, 05, 27, 13, 00, 00, 00), _filme.GetElements()[1],
-                                               _kinosäle.GetElements()[1], false, KinokartenPreis);
-            var vorstellung8 = new Vorstellung(new DateTime(2011, 05, 27, 14, 00, 00, 00), _filme.GetElements()[2],
-                                               _kinosäle.GetElements()[2], false, KinokartenPreis);
-            var vorstellung9 = new Vorstellung(new DateTime(2011, 05, 27, 18, 00, 00, 00), _filme.GetElements()[3],
-                                               _kinosäle.GetElements()[0], false, KinokartenPreis);
-            var vorstellung10 = new Vorstellung(new DateTime(2011, 05, 27, 18, 00, 00, 00), _filme.GetElements()[4],
-                                                _kinosäle.GetElements()[1], false, KinokartenPreis);
-            var vorstellung11 = new Vorstellung(new DateTime(2011, 05, 28, 12, 00, 00, 00), _filme.GetElements()[0],
-                                                _kinosäle.GetElements()[0], false, KinokartenPreis);
-            var vorstellung12 = new Vorstellung(new DateTime(2011, 05, 28, 13, 00, 00, 00), _filme.GetElements()[1],
-                                                _kinosäle.GetElements()[1], false, KinokartenPreis);
-            var vorstellung13 = new Vorstellung(new DateTime(2011, 05, 28, 14, 00, 00, 00), _filme.GetElements()[2],
-                                                _kinosäle.GetElements()[2], false, KinokartenPreis);
-            var vorstellung14 = new Vorstellung(new DateTime(2011, 05, 28, 18, 00, 00, 00), _filme.GetElements()[3],
-                                                _kinosäle.GetElements()[0], false, KinokartenPreis);
-            var vorstellung15 = new Vorstellung(new DateTime(2011, 05, 28, 18, 00, 00, 00), _filme.GetElements()[4],
-                                                _kinosäle.GetElements()[1], false, KinokartenPreis);
+            new Vorstellung(new DateTime(2011, 05, 26, 12, 00, 00, 00), filme[0],
+                                               kinosäle[0], false, KinokartenPreis);
+            new Vorstellung(new DateTime(2011, 05, 26, 13, 00, 00, 00), filme[1],
+                                               kinosäle[1], false, KinokartenPreis);
+            new Vorstellung(new DateTime(2011, 05, 26, 14, 00, 00, 00), filme[2],
+                                               kinosäle[2], false, KinokartenPreis);
+            new Vorstellung(new DateTime(2011, 05, 26, 18, 00, 00, 00), filme[3],
+                                               kinosäle[0], false, KinokartenPreis);
+            new Vorstellung(new DateTime(2011, 05, 26, 18, 00, 00, 00), filme[4],
+                                               kinosäle[1], false, KinokartenPreis);
+            new Vorstellung(new DateTime(2011, 05, 27, 12, 00, 00, 00), filme[0],
+                                               kinosäle[0], false, KinokartenPreis);
+            new Vorstellung(new DateTime(2011, 05, 27, 13, 00, 00, 00), filme[1],
+                                               kinosäle[1], false, KinokartenPreis);
+            new Vorstellung(new DateTime(2011, 05, 27, 14, 00, 00, 00), filme[2],
+                                               kinosäle[2], false, KinokartenPreis);
+            new Vorstellung(new DateTime(2011, 05, 27, 18, 00, 00, 00), filme[3],
+                                               kinosäle[0], false, KinokartenPreis);
+            new Vorstellung(new DateTime(2011, 05, 27, 18, 00, 00, 00), filme[4],
+                                                kinosäle[1], false, KinokartenPreis);
+            new Vorstellung(new DateTime(2011, 05, 28, 12, 00, 00, 00), filme[0],
+                                                kinosäle[0], false, KinokartenPreis);
+            new Vorstellung(new DateTime(2011, 05, 28, 13, 00, 00, 00), filme[1],
+                                                kinosäle[1], false, KinokartenPreis);
+            new Vorstellung(new DateTime(2011, 05, 28, 14, 00, 00, 00), filme[2],
+                                                kinosäle[2], false, KinokartenPreis);
+            new Vorstellung(new DateTime(2011, 05, 28, 18, 00, 00, 00), filme[3],
+                                                kinosäle[0], false, KinokartenPreis);
+            new Vorstellung(new DateTime(2011, 05, 28, 18, 00, 00, 00), filme[4],
+                                                kinosäle[1], false, KinokartenPreis);
+
+            Console.WriteLine("Vorstellungen erstellen Ende: " + DateTime.Now);
 
             var filmprogramm = new Filmprogramm(DateTime.Now, _vorstellungen.GetElements());
 
             _gewählte_Vorstellung = new PublicVorstellung(_filmprogramme.GetElements()[0].Vorstellungen[0]);
             _sitz = _gewählte_Vorstellung.VerfügbareKinokarten()[0].Sitz;
+
+            Console.WriteLine("Setup ended: " + DateTime.Now);
+        }
+
+        [TearDown]
+        public virtual void CleanUp()
+        {
+            Console.WriteLine("RemoveAllElementsBegin: " + DateTime.Now);
+            
+            _filme.RemoveAllElements();
+            _kinosäle.RemoveAllElements();
+            _vorstellungen.RemoveAllElements();
+            _filmprogramme.RemoveAllElements();
+            _kinokarten.RemoveAllElements();
+
+            Console.WriteLine("RemoveAllElementsEnd: " + DateTime.Now);
         }
 
         /// <summary>
@@ -166,7 +211,7 @@ namespace TestAnwendungskern
         /// Es wird überprüft:
         /// - ob der zurückgegebene Preis dem konfigurierten entspricht.
         /// </verification>
-        [TestMethod()]
+        [Test]
         public void GetPreisFürKinokarteTest_Success()
         {
             KinokartenInformationen target = new KinokartenInformationen();
@@ -206,7 +251,7 @@ namespace TestAnwendungskern
         /// - ob diese Liste nicht leer ist.
         /// - ob die Kinokarten in dieser Liste weder blockiert, reserviert oder verkauft sind.
         /// </verification>
-        [TestMethod()]
+        [Test]
         public void GetVerfügbareKinokartenFürVorstellungTest_Success()
         {
             KinokartenInformationen target = new KinokartenInformationen();
@@ -300,7 +345,7 @@ namespace TestAnwendungskern
         /// - ob das Filmprogramm Vorstellungen besitzt.
         /// - ob das Filmprogramm die erwarteten Vorstellungen besitzt. 
         /// </verification>
-        [TestMethod()]
+        [Test]
         public void GetWöchentlichesFilmprogrammTest_Success()
         {
             KinokartenInformationen target = new KinokartenInformationen();
@@ -314,6 +359,7 @@ namespace TestAnwendungskern
             Assert.IsTrue(erwarteteVorstellungen.Count == actual.Vorstellungen.Count);
 
             bool valid = true;
+            int i = 0;
             foreach (var publicVorstellung in actual.Vorstellungen)
             {
                 valid = erwarteteVorstellungen.Exists(v => v.GetIdentifier() == publicVorstellung.GetIdentifier());
@@ -321,6 +367,8 @@ namespace TestAnwendungskern
                 {
                     break;
                 }
+
+                Console.WriteLine(i++);
             }
 
             Assert.IsTrue(valid);
@@ -330,10 +378,11 @@ namespace TestAnwendungskern
         /// TF-13: Altersfreigabenüberprüfung prüfen.
         /// </summary>
         /// <description>
-        /// Geburtsdatum gegen den 
+        /// Das Geburtsdatum wírd mit der Altersfreigabe des Films der Vorstellung verglichen.
         /// </description>
         /// <precondition>
-        /// - Es muss sich ein valides Filmprogramm in den Testdaten befinden.
+        /// - _gewählte_Vorstellung muss auf eine gültige Vorstellung verweisen
+        /// - Der Film der gewählten Vorstellung muss eine Altersfreigabe muss kleiner gleich 18 besitzen.
         /// </precondition>
         /// <input>
         /// Keine direkte Eingabe des Benutzers.
@@ -342,31 +391,34 @@ namespace TestAnwendungskern
         /// Keine direkte Ausgabe an den Benutzer.
         /// </output>
         /// <verification>
-        /// Es wird überprüft:
-        /// - ob ein Filmprogramm zurückgegeben wurde.
-        /// - ob das Filmprogramm Vorstellungen besitzt.
-        /// - ob das Filmprogramm die erwarteten Vorstellungen besitzt. 
+        /// Wird true zurückgegeben, wenn das Geburtsdatum ein anschauen der Vorstellung erlaubt?
         /// </verification>
-        [TestMethod()]
+        [Test]
         public void PrüfeAltersfreigabeFürVorstellungTest_Success()
         {
             KinokartenInformationen target = new KinokartenInformationen();
             IPublicVorstellung vorstellung = _gewählte_Vorstellung;
-            DateTime geburtsdatum = new DateTime(1980, 6, 10); 
+            DateTime geburtsdatum1 = (DateTime.Now.AddYears(-_gewählte_Vorstellung.Altersfreigabe)).AddDays(-1);
+            DateTime geburtsdatum2 = (DateTime.Now.AddYears(-_gewählte_Vorstellung.Altersfreigabe)).AddYears(-5);
             bool expected = true;
             bool actual;
-            actual = target.PrüfeAltersfreigabeFürVorstellung(vorstellung, geburtsdatum);
+
+            actual = target.PrüfeAltersfreigabeFürVorstellung(vorstellung, geburtsdatum1);
+            Assert.AreEqual(expected, actual);
+
+            actual = target.PrüfeAltersfreigabeFürVorstellung(vorstellung, geburtsdatum2);
             Assert.AreEqual(expected, actual);
         }
 
         /// <summary>
-        /// TF-14: Altersfreigabe prüfen.
+        /// TF-14: Altersfreigabenüberprüfung prüfen.
         /// </summary>
         /// <description>
-        /// Das wöchentliche Filmprogramm soll abgefragt werden. 
+        /// Das Geburtsdatum wírd mit der Altersfreigabe des Films der Vorstellung verglichen.
         /// </description>
         /// <precondition>
-        /// - Es muss sich ein valides Filmprogramm in den Testdaten befinden.
+        /// - _gewählte_Vorstellung muss auf eine gültige Vorstellung verweisen
+        /// - Der Film der gewählten Vorstellung muss eine Altersfreigabe muss kleiner gleich 18 besitzen.
         /// </precondition>
         /// <input>
         /// Keine direkte Eingabe des Benutzers.
@@ -375,43 +427,127 @@ namespace TestAnwendungskern
         /// Keine direkte Ausgabe an den Benutzer.
         /// </output>
         /// <verification>
-        /// Es wird überprüft:
-        /// - ob ein Filmprogramm zurückgegeben wurde.
-        /// - ob das Filmprogramm Vorstellungen besitzt.
-        /// - ob das Filmprogramm die erwarteten Vorstellungen besitzt. 
+        /// Wird false zurückgegeben, wenn das Geburtsdatum ein anschauen der Vorstellung verbietet?
         /// </verification>
-        [TestMethod()]
+        [Test]
         public void PrüfeAltersfreigabeFürVorstellungTest_Failure()
         {
             KinokartenInformationen target = new KinokartenInformationen();
             IPublicVorstellung vorstellung = _gewählte_Vorstellung;
-            DateTime geburtsdatum = new DateTime(2005, 6, 10);
+
+            DateTime geburtsdatum1 = (DateTime.Now.AddYears(-_gewählte_Vorstellung.Altersfreigabe)).AddDays(1);
+            DateTime geburtsdatum2 = (DateTime.Now.AddYears(-_gewählte_Vorstellung.Altersfreigabe)).AddYears(3);
+
             bool expected = false;
             bool actual;
-            actual = target.PrüfeAltersfreigabeFürVorstellung(vorstellung, geburtsdatum);
+            actual = target.PrüfeAltersfreigabeFürVorstellung(vorstellung, geburtsdatum1);
+            Assert.AreEqual(expected, actual);
+
+            actual = target.PrüfeAltersfreigabeFürVorstellung(vorstellung, geburtsdatum2);
             Assert.AreEqual(expected, actual);
         }
 
         /// <summary>
-        ///A test for PrüfeAltersfreigabeFürVorstellung
-        ///</summary>
-        [TestMethod()]
-        public void PrüfeAltersfreigabeFürVorstellungTest1()
+        /// TF-15: Altersfreigabenüberprüfung prüfen.
+        /// </summary>
+        /// <description>
+        /// Das Geburtsdatum des Kunden wírd mit der Altersfreigabe des Films der Vorstellung verglichen.
+        /// </description>
+        /// <precondition>
+        /// - _gewählte_Vorstellung muss auf eine gültige Vorstellung verweisen
+        /// - Der Film der gewählten Vorstellung muss eine Altersfreigabe muss kleiner gleich 18 besitzen.
+        /// </precondition>
+        /// <input>
+        /// Keine direkte Eingabe des Benutzers.
+        /// </input>
+        /// <output>
+        /// Keine direkte Ausgabe an den Benutzer.
+        /// </output>
+        /// <verification>
+        /// Wird true zurückgegeben, wenn das Geburtsdatum ein anschauen der Vorstellung erlaubt?
+        /// </verification>
+        [Test]
+        public void PrüfeAltersfreigabeFürVorstellungTest1_Success()
         {
-            KinokartenInformationen target = new KinokartenInformationen(); // TODO: Initialize to an appropriate value
-            IPublicVorstellung vorstellung = null; // TODO: Initialize to an appropriate value
-            IKunde kunde = null; // TODO: Initialize to an appropriate value
-            bool expected = false; // TODO: Initialize to an appropriate value
+            KinokartenInformationen target = new KinokartenInformationen();
+            IPublicVorstellung vorstellung = _gewählte_Vorstellung;
+
+            DateTime geburtsdatum1 = (DateTime.Now.AddYears(-_gewählte_Vorstellung.Altersfreigabe)).AddDays(-1);
+            DateTime geburtsdatum2 = (DateTime.Now.AddYears(-_gewählte_Vorstellung.Altersfreigabe)).AddYears(-5);
+            IKunde kunde1 = new Kunde(1,"Testkunde",null, geburtsdatum1, "123", 0, null);
+            IKunde kunde2 = new Kunde(1, "Testkunde", null, geburtsdatum2, "123", 0, null);
+            
+            bool expected = true;
             bool actual;
-            actual = target.PrüfeAltersfreigabeFürVorstellung(vorstellung, kunde);
+
+            actual = target.PrüfeAltersfreigabeFürVorstellung(vorstellung, kunde1);
             Assert.AreEqual(expected, actual);
-            Assert.Inconclusive("Verify the correctness of this test method.");
+
+            actual = target.PrüfeAltersfreigabeFürVorstellung(vorstellung, kunde2);
+            Assert.AreEqual(expected, actual);
         }
 
         /// <summary>
-        ///A test for PrüfeVerfügbarkeitVonSitzplatzFürVorstellung
-        ///</summary>
-        [TestMethod()]
+        /// TF-16: Altersfreigabenüberprüfung prüfen.
+        /// </summary>
+        /// <description>
+        /// Das Geburtsdatum des Kunden wírd mit der Altersfreigabe des Films der Vorstellung verglichen.
+        /// </description>
+        /// <precondition>
+        /// - _gewählte_Vorstellung muss auf eine gültige Vorstellung verweisen
+        /// - Der Film der gewählten Vorstellung muss eine geeignete Altersfreigabe besitzen.
+        /// </precondition>
+        /// <input>
+        /// Keine direkte Eingabe des Benutzers.
+        /// </input>
+        /// <output>
+        /// Keine direkte Ausgabe an den Benutzer.
+        /// </output>
+        /// <verification>
+        /// Wird false zurückgegeben, wenn das Geburtsdatum ein anschauen der Vorstellung verbietet?
+        /// </verification>
+        [Test]
+        public void PrüfeAltersfreigabeFürVorstellungTest1_Failure()
+        {
+            KinokartenInformationen target = new KinokartenInformationen();
+            IPublicVorstellung vorstellung = _gewählte_Vorstellung;
+
+            DateTime geburtsdatum1 = (DateTime.Now.AddYears(-_gewählte_Vorstellung.Altersfreigabe)).AddDays(1);
+            DateTime geburtsdatum2 = (DateTime.Now.AddYears(-_gewählte_Vorstellung.Altersfreigabe)).AddYears(3);
+            IKunde kunde1 = new Kunde(1, "Testkunde", null, geburtsdatum1, "123", 0, null);
+            IKunde kunde2 = new Kunde(1, "Testkunde", null, geburtsdatum2, "123", 0, null);
+            
+            bool expected = false;
+            bool actual;
+            
+            actual = target.PrüfeAltersfreigabeFürVorstellung(vorstellung, kunde1);
+            Assert.AreEqual(expected, actual);
+
+            actual = target.PrüfeAltersfreigabeFürVorstellung(vorstellung, kunde2);
+            Assert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        /// TF-17: Verfügbarkeit von Sitzplatz prüfen
+        /// </summary>
+        /// <description>
+        /// Der angegebene Sitzplatz wird auf Verfügbarkeit geprüft.
+        /// Damit ein Sitzplatz verfügbar ist, muss die entsprechende Kinokarte der gewählten Vorstellung weder Reserviert, oder Verkauft sein.
+        /// </description>
+        /// <precondition>
+        /// - _gewählte_Vorstellung muss auf eine gültige Vorstellung verweisen
+        /// - Der Film der gewählten Vorstellung muss eine geeignete Altersfreigabe besitzen.
+        /// </precondition>
+        /// <input>
+        /// Keine direkte Eingabe des Benutzers.
+        /// </input>
+        /// <output>
+        /// Keine direkte Ausgabe an den Benutzer.
+        /// </output>
+        /// <verification>
+        /// Wird false zurückgegeben, wenn das Geburtsdatum ein anschauen der Vorstellung verbietet?
+        /// </verification>
+        [Test]
         public void PrüfeVerfügbarkeitVonSitzplatzFürVorstellungTest()
         {
             KinokartenInformationen target = new KinokartenInformationen(); // TODO: Initialize to an appropriate value

@@ -39,8 +39,9 @@ namespace Kinokarten.Schnittstelle
         public bool PrüfeAltersfreigabeFürVorstellung(IPublicVorstellung vorstellung, DateTime geburtsdatum)
         {
             Vorstellung wantedVorstellung = _vorstellungen.GetElementWithId(vorstellung.GetIdentifier());
-            TimeSpan temp = DateTime.Now.Date - geburtsdatum.Date;
-            return ((temp.Days)/356) >= (wantedVorstellung.Altersfreigabe);
+            TimeSpan temp = DateTime.Now.Date.Subtract(geburtsdatum.Date);
+            TimeSpan temp2 = DateTime.Now - (DateTime.Now.Date.AddYears(-vorstellung.Altersfreigabe));
+            return (temp.TotalDays >= temp2.TotalDays);
         }
 
         public bool PrüfeVerfügbarkeitVonSitzplatzFürVorstellung(IPublicVorstellung vorstellung, ISitz sitz)

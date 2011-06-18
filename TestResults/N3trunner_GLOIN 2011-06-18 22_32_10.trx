@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="d3edb572-d064-4e49-9b76-761d1cd34214" name="N3trunner@GLOIN 2011-06-18 22:32:10" runUser="MITTELERDE\N3trunner" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Default Test Settings" id="dfab986e-f6e8-49ac-a429-47210dd57309">
+    <Deployment runDeploymentRoot="N3trunner_GLOIN 2011-06-18 22_32_10">
+      <DeploymentItem filename="C:\Users\N3trunner.MITTELERDE\Desktop\C#\SEPraktikum\Finances\bin\Debug\Finances.dll" />
+      <DeploymentItem filename="C:\Users\N3trunner.MITTELERDE\Desktop\C#\SEPraktikum\Kinokarten\bin\Debug\Kinokarten.dll" />
+      <DeploymentItem filename="C:\Users\N3trunner.MITTELERDE\Desktop\C#\SEPraktikum\Fassade\bin\Debug\Fassade.dll" />
+      <DeploymentItem filename="C:\Users\N3trunner.MITTELERDE\Desktop\C#\SEPraktikum\Benutzer\bin\Debug\Users.dll" />
+      <DeploymentItem filename="C:\Users\N3trunner.MITTELERDE\Desktop\C#\SEPraktikum\Base\bin\Debug\Base.dll" />
+      <DeploymentItem filename="C:\Users\N3trunner.MITTELERDE\Desktop\C#\SEPraktikum\Database\bin\Debug\Database.dll" />
+      <DeploymentItem filename="C:\Users\N3trunner.MITTELERDE\Desktop\C#\SEPraktikum\Kino\bin\Debug\Kino.dll" />
+      <DeploymentItem filename="C:\Users\N3trunner.MITTELERDE\Desktop\C#\SEPraktikum\SystemAdministration\bin\Debug\SystemAdministration.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2011-06-18T22:32:10.5354229+02:00" queuing="2011-06-18T22:32:11.8434229+02:00" start="2011-06-18T22:32:12.0954229+02:00" finish="2011-06-18T22:38:23.3204229+02:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="8" executed="4" error="0" failed="1" timeout="0" aborted="1" inconclusive="0" passedButRunAborted="2" notRunnable="0" notExecuted="4" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="PrüfeAltersfreigabeFürVorstellungTest_Failure" storage="c:\users\n3trunner.mittelerde\desktop\c#\sepraktikum\testfassade\bin\debug\testanwendungskern.dll" id="d8b947c8-afdc-97a2-063e-c445c0c92827">
+      <Execution id="974afcee-5ea1-4100-8574-2e16b6c03833" />
+      <TestMethod codeBase="C:/Users/N3trunner.MITTELERDE/Desktop/C#/SEPraktikum/TestFassade/bin/Debug/TestAnwendungskern.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestAnwendungskern.KinokartenInformationenTest, TestAnwendungskern, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="PrüfeAltersfreigabeFürVorstellungTest_Failure" />
+    </UnitTest>
+    <UnitTest name="PrüfeAltersfreigabeFürVorstellungTest_Success" storage="c:\users\n3trunner.mittelerde\desktop\c#\sepraktikum\testfassade\bin\debug\testanwendungskern.dll" id="d9017091-f2a7-6b98-49d1-0ffa20f96d51">
+      <Execution id="cb6bf8c7-b86c-4169-814a-7d011df452ab" />
+      <TestMethod codeBase="C:/Users/N3trunner.MITTELERDE/Desktop/C#/SEPraktikum/TestFassade/bin/Debug/TestAnwendungskern.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestAnwendungskern.KinokartenInformationenTest, TestAnwendungskern, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="PrüfeAltersfreigabeFürVorstellungTest_Success" />
+    </UnitTest>
+    <UnitTest name="GetWöchentlichesFilmprogrammTest_Success" storage="c:\users\n3trunner.mittelerde\desktop\c#\sepraktikum\testfassade\bin\debug\testanwendungskern.dll" id="66c66928-a328-73f1-8dc1-4f57d3c685f5">
+      <Execution id="21f89e6b-6fb1-4480-8891-968cfafd4914" />
+      <TestMethod codeBase="C:/Users/N3trunner.MITTELERDE/Desktop/C#/SEPraktikum/TestFassade/bin/Debug/TestAnwendungskern.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestAnwendungskern.KinokartenInformationenTest, TestAnwendungskern, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GetWöchentlichesFilmprogrammTest_Success" />
+    </UnitTest>
+    <UnitTest name="PrüfeVerfügbarkeitVonSitzplatzFürVorstellungTest" storage="c:\users\n3trunner.mittelerde\desktop\c#\sepraktikum\testfassade\bin\debug\testanwendungskern.dll" id="53ec1bb8-4b56-1335-f4e1-3d1ea00eec7a">
+      <Execution id="67dd25ef-cce5-46a0-8bf2-147181e20c29" />
+      <TestMethod codeBase="C:/Users/N3trunner.MITTELERDE/Desktop/C#/SEPraktikum/TestFassade/bin/Debug/TestAnwendungskern.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestAnwendungskern.KinokartenInformationenTest, TestAnwendungskern, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="PrüfeVerfügbarkeitVonSitzplatzFürVorstellungTest" />
+    </UnitTest>
+    <UnitTest name="GetPreisFürKinokarteTest_Success" storage="c:\users\n3trunner.mittelerde\desktop\c#\sepraktikum\testfassade\bin\debug\testanwendungskern.dll" id="2cce4c90-ea2f-6bde-cd20-3e7d1cbaf8ca">
+      <Execution id="5b27a27e-dc0d-4e03-8ad5-1cb81bf2b1ce" />
+      <TestMethod codeBase="C:/Users/N3trunner.MITTELERDE/Desktop/C#/SEPraktikum/TestFassade/bin/Debug/TestAnwendungskern.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestAnwendungskern.KinokartenInformationenTest, TestAnwendungskern, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GetPreisFürKinokarteTest_Success" />
+    </UnitTest>
+    <UnitTest name="PrüfeAltersfreigabeFürVorstellungTest1_Success" storage="c:\users\n3trunner.mittelerde\desktop\c#\sepraktikum\testfassade\bin\debug\testanwendungskern.dll" id="41ccf1d8-fad2-4778-2d18-83e0593a84b8">
+      <Execution id="ba34b4c9-f1bd-4b7b-82c1-be567135be28" />
+      <TestMethod codeBase="C:/Users/N3trunner.MITTELERDE/Desktop/C#/SEPraktikum/TestFassade/bin/Debug/TestAnwendungskern.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestAnwendungskern.KinokartenInformationenTest, TestAnwendungskern, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="PrüfeAltersfreigabeFürVorstellungTest1_Success" />
+    </UnitTest>
+    <UnitTest name="GetVerfügbareKinokartenFürVorstellungTest_Success" storage="c:\users\n3trunner.mittelerde\desktop\c#\sepraktikum\testfassade\bin\debug\testanwendungskern.dll" id="1e56fcab-f406-0622-e5bb-ec2d7e81b97d">
+      <Execution id="6665d3ff-ce36-4009-b178-c64324e982fe" />
+      <TestMethod codeBase="C:/Users/N3trunner.MITTELERDE/Desktop/C#/SEPraktikum/TestFassade/bin/Debug/TestAnwendungskern.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestAnwendungskern.KinokartenInformationenTest, TestAnwendungskern, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GetVerfügbareKinokartenFürVorstellungTest_Success" />
+    </UnitTest>
+    <UnitTest name="PrüfeAltersfreigabeFürVorstellungTest1_Failure" storage="c:\users\n3trunner.mittelerde\desktop\c#\sepraktikum\testfassade\bin\debug\testanwendungskern.dll" id="15aa400c-8cdc-0490-f568-6818f059415f">
+      <Execution id="8756e4e4-18a4-4994-9311-5d139a8324a1" />
+      <TestMethod codeBase="C:/Users/N3trunner.MITTELERDE/Desktop/C#/SEPraktikum/TestFassade/bin/Debug/TestAnwendungskern.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestAnwendungskern.KinokartenInformationenTest, TestAnwendungskern, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="PrüfeAltersfreigabeFürVorstellungTest1_Failure" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="15aa400c-8cdc-0490-f568-6818f059415f" executionId="8756e4e4-18a4-4994-9311-5d139a8324a1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1e56fcab-f406-0622-e5bb-ec2d7e81b97d" executionId="6665d3ff-ce36-4009-b178-c64324e982fe" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2cce4c90-ea2f-6bde-cd20-3e7d1cbaf8ca" executionId="5b27a27e-dc0d-4e03-8ad5-1cb81bf2b1ce" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="41ccf1d8-fad2-4778-2d18-83e0593a84b8" executionId="ba34b4c9-f1bd-4b7b-82c1-be567135be28" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="53ec1bb8-4b56-1335-f4e1-3d1ea00eec7a" executionId="67dd25ef-cce5-46a0-8bf2-147181e20c29" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="66c66928-a328-73f1-8dc1-4f57d3c685f5" executionId="21f89e6b-6fb1-4480-8891-968cfafd4914" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d8b947c8-afdc-97a2-063e-c445c0c92827" executionId="974afcee-5ea1-4100-8574-2e16b6c03833" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d9017091-f2a7-6b98-49d1-0ffa20f96d51" executionId="cb6bf8c7-b86c-4169-814a-7d011df452ab" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="8756e4e4-18a4-4994-9311-5d139a8324a1" testId="15aa400c-8cdc-0490-f568-6818f059415f" testName="PrüfeAltersfreigabeFürVorstellungTest1_Failure" computerName="GLOIN" duration="00:00:11.2441960" startTime="2011-06-18T22:32:12.1724229+02:00" endTime="2011-06-18T22:32:24.1484229+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8756e4e4-18a4-4994-9311-5d139a8324a1">
+      <Output>
+        <ErrorInfo>
+          <Message>Test method TestAnwendungskern.KinokartenInformationenTest.PrüfeAltersfreigabeFürVorstellungTest1_Failure threw exception: 
+System.ArgumentException: Object must be of type TimeSpan.</Message>
+          <StackTrace>    at System.TimeSpan.CompareTo(Object value)
+   at Kinokarten.Schnittstelle.KinokartenInformationen.PrüfeAltersfreigabeFürVorstellung(IPublicVorstellung vorstellung, IKunde kunde) in C:\Users\N3trunner.MITTELERDE\Desktop\C#\SEPraktikum\Kinokarten\Schnittstelle\KinokartenInformationen.cs:line 65
+   at TestAnwendungskern.KinokartenInformationenTest.PrüfeAltersfreigabeFürVorstellungTest1_Failure() in C:\Users\N3trunner.MITTELERDE\Desktop\C#\SEPraktikum\TestFassade\KinokartenInformationenTest.cs:line 478
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="6665d3ff-ce36-4009-b178-c64324e982fe" testId="1e56fcab-f406-0622-e5bb-ec2d7e81b97d" testName="GetVerfügbareKinokartenFürVorstellungTest_Success" computerName="GLOIN" duration="00:01:15.3484710" startTime="2011-06-18T22:32:24.1594229+02:00" endTime="2011-06-18T22:33:39.5094229+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="PassedButRunAborted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6665d3ff-ce36-4009-b178-c64324e982fe">
+    </UnitTestResult>
+    <UnitTestResult executionId="5b27a27e-dc0d-4e03-8ad5-1cb81bf2b1ce" testId="2cce4c90-ea2f-6bde-cd20-3e7d1cbaf8ca" testName="GetPreisFürKinokarteTest_Success" computerName="GLOIN" duration="00:03:25.2526934" startTime="2011-06-18T22:33:39.5164229+02:00" endTime="2011-06-18T22:37:04.7644229+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="PassedButRunAborted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5b27a27e-dc0d-4e03-8ad5-1cb81bf2b1ce">
+    </UnitTestResult>
+    <UnitTestResult executionId="ba34b4c9-f1bd-4b7b-82c1-be567135be28" testId="41ccf1d8-fad2-4778-2d18-83e0593a84b8" testName="PrüfeAltersfreigabeFürVorstellungTest1_Success" computerName="GLOIN" duration="00:01:13.3540000" startTime="2011-06-18T22:37:04.7684229+02:00" endTime="2011-06-18T22:38:18.1224229+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Aborted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ba34b4c9-f1bd-4b7b-82c1-be567135be28">
+      <Output>
+        <ErrorInfo>
+          <Message>User aborted test run.</Message>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="67dd25ef-cce5-46a0-8bf2-147181e20c29" testId="53ec1bb8-4b56-1335-f4e1-3d1ea00eec7a" testName="PrüfeVerfügbarkeitVonSitzplatzFürVorstellungTest" computerName="GLOIN" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="67dd25ef-cce5-46a0-8bf2-147181e20c29">
+    </UnitTestResult>
+    <UnitTestResult executionId="21f89e6b-6fb1-4480-8891-968cfafd4914" testId="66c66928-a328-73f1-8dc1-4f57d3c685f5" testName="GetWöchentlichesFilmprogrammTest_Success" computerName="GLOIN" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="21f89e6b-6fb1-4480-8891-968cfafd4914">
+    </UnitTestResult>
+    <UnitTestResult executionId="974afcee-5ea1-4100-8574-2e16b6c03833" testId="d8b947c8-afdc-97a2-063e-c445c0c92827" testName="PrüfeAltersfreigabeFürVorstellungTest_Failure" computerName="GLOIN" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="974afcee-5ea1-4100-8574-2e16b6c03833">
+    </UnitTestResult>
+    <UnitTestResult executionId="cb6bf8c7-b86c-4169-814a-7d011df452ab" testId="d9017091-f2a7-6b98-49d1-0ffa20f96d51" testName="PrüfeAltersfreigabeFürVorstellungTest_Success" computerName="GLOIN" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cb6bf8c7-b86c-4169-814a-7d011df452ab">
+    </UnitTestResult>
+  </Results>
+</TestRun>

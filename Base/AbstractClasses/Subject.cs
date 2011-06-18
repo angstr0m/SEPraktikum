@@ -79,7 +79,7 @@ namespace Base.AbstractClasses
             observers_workingCopy = new List<Observer>(observers);
             foreach (Observer observer in observers)
             {
-                Console.WriteLine("Observer notified!");
+                //Console.WriteLine("Observer notified!");
                 observer.UpdateObserver(this);
             }
 
