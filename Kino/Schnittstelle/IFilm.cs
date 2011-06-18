@@ -1,6 +1,8 @@
+using Database.Interfaces;
+
 namespace Kino.Schnittstelle
 {
-    public interface IFilm
+    public interface IFilm : IDatabaseObject
     {
         string Regisseur { get; }
         string Schauspieler { get; }

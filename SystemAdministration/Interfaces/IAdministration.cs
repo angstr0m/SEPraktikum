@@ -5,7 +5,7 @@ namespace SystemAdministration.Interfaces
 {
     public interface IAdministration
     {
-        void FillSystemWithTestData();
+        void FillSystemWithTestData(float kinokartenpreis);
 
         bool IsTicketBlocked(IPublicVorstellung vorstellung, ISitz sitz);
 

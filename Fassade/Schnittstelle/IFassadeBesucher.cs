@@ -8,6 +8,8 @@ namespace Fassade.Schnittstelle
 {
     public interface IFassadeBesucher
     {
+        // TODO Pre- und Postconditions mit Code-Contracts implementieren.
+
         /// <summary>
         /// Gibt eine Liste der verfügbaren Sitzplätze für die gewählte Vorstellung zurück.
         /// </summary>
@@ -60,7 +62,7 @@ namespace Fassade.Schnittstelle
         /// @post   Die gewünschte Kinokarte ist blockiert.
         /// @typ    Kommando.
         /// @remarks
-        IKinokarteBlockierungZugangsSchlüssel BlockiereSitzplatz(IPublicVorstellung gewählte_vorstellung, ISitz sitz);
+        IKinokarteBlockierungZugangsSchlüssel BlockiereSitzplatz(IPublicVorstellung gewählteVorstellung, ISitz sitz);
 
         /// <summary>
         /// Gibt den Preis in € für eine bestimmte Kinokarte zurück.
@@ -103,7 +105,7 @@ namespace Fassade.Schnittstelle
         /// @param  sitz - Der gewünschte Sitzplatz über den die zu entblockierende Kinokarte ermittelt wird.
         /// @param  zugangsSchlüssel - Ein ZugangsSchlüsselObjekt, der für den Zugriff auf die blockierte Kinokarte notwendig ist.
         /// @return Gibt die Reservierungsnummer für die reservierte Kinokarte zurück.
-        /// @throw  ZugangsSchlüsselUngültigException
+        /// @throw  UngültigerZugangsschlüsselException
         /// @pre    Die gewünschte Kinokarte ist blockiert    
         /// @post   Die gewünschte Kinokarte ist nicht mehr blockiert
         /// @typ    Kommando.

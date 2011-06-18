@@ -50,6 +50,7 @@
     <Compile Include="Schnittstelle\ISitzIdentifikator.cs" />
     <Compile Include="Schnittstelle\KinoAdministration.cs" />
     <Compile Include="Schnittstelle\KinoInformationen.cs" />
+    <Compile Include="TestFriends.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />

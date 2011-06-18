@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Base.AbstractClasses;
 using Database.Interfaces;
+using Database.Models;
 using Kino.Schnittstelle;
 
 namespace Kinokarten.Models
@@ -61,6 +62,9 @@ namespace Kinokarten.Models
             {
                 _kinokarten.Add(new Kinokarte(ticketPrice, s, this));
             }
+
+            EntityManager<Vorstellung> vorstellungen = new EntityManager<Vorstellung>();
+            vorstellungen.AddElement(this);
         }
 
         /// <summary>
@@ -126,14 +130,14 @@ namespace Kinokarten.Models
         }
 
         /// <summary>
-        /// Gibt die Kinokarten dieser Vorstellung zurück, die weder verkauft noch reserviert sind.
+        /// Gibt die Kinokarten dieser Vorstellung zurück, die weder verkauft, blockiert noch reserviert sind.
         /// </summary>
         /// <returns></returns>
         /// <remarks></remarks>
         public List<Kinokarte> GetVerfügbareKinokarten()
         {
             return _kinokarten.FindAll(
-                delegate(Kinokarte t) { return (!t.Verkauft && !t.Reserviert); }
+                delegate(Kinokarte t) { return (!t.Verkauft && !t.Reserviert && !t.Blockiert); }
                 );
         }
 

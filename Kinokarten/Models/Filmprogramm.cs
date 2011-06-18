@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Base.AbstractClasses;
 using Database.Interfaces;
+using Database.Models;
 
 namespace Kinokarten.Models
 {
@@ -33,6 +34,9 @@ namespace Kinokarten.Models
             _startDatum = startTime;
             _vorstellungen = vorstellungen;
             _veröffentlicht = false;
+
+            EntityManager<Filmprogramm> filmprogramme = new EntityManager<Filmprogramm>();
+            filmprogramme.AddElement(this);
         }
 
         public bool Veröffentlicht

@@ -61,6 +61,7 @@
     <Compile Include="Schnittstelle\PublicFilmprogramm.cs" />
     <Compile Include="Schnittstelle\PublicKinokarte.cs" />
     <Compile Include="Schnittstelle\PublicVorstellung.cs" />
+    <Compile Include="TestFriends.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

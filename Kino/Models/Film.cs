@@ -1,6 +1,7 @@
 using System;
 using Base.AbstractClasses;
 using Database.Interfaces;
+using Database.Models;
 using Kino.Schnittstelle;
 
 namespace Kino.Models
@@ -10,7 +11,7 @@ namespace Kino.Models
     /// Dieser Film kann in mehreren Vorstellungen gezeigt werden.
     /// </summary>
     /// <remarks></remarks>
-    internal class Film : Subject, IDatabaseObject, IFilm
+    internal class Film : Subject, IFilm
     {
         /// <summary>
         /// Altersfreigabe des Films.
@@ -63,6 +64,9 @@ namespace Kino.Models
             this._altersfreigabe = _altersfreigabe;
             this.schauspieler = schauspieler;
             this.regisseur = regisseur;
+
+            EntityManager<Film> filme = new EntityManager<Film>();
+            filme.AddElement(this);
         }
 
         public int Id

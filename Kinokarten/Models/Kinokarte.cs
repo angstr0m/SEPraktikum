@@ -74,6 +74,9 @@ namespace Kinokarten.Models
             Verkauft = false;
             _reserviert = false;
             _blockiert = false;
+
+            EntityManager<Kinokarte> kinokarten = new EntityManager<Kinokarte>();
+            kinokarten.AddElement(this);
         }
 
         /// <summary>
@@ -151,11 +154,11 @@ namespace Kinokarten.Models
         public IKinokarteBlockierungZugangsSchlüssel Blockieren()
         {
             Console.WriteLine("Blockiert!");
-            if (zugangsSchlüssel != null && Blockiert)
-            {
-                // Kinokarte ist bereits blockiert!
-                throw new KinokarteBlockiertException();
-            }
+            //if (zugangsSchlüssel != null && Blockiert)
+            //{
+            //    // Kinokarte ist bereits blockiert!
+            //    throw new KinokarteBlockiertException();
+            //}
 
             _blockiert = true;
             zugangsSchlüssel = new KinokarteBlockierungZugangsSchlüssel();
@@ -169,10 +172,10 @@ namespace Kinokarten.Models
                 throw new UngültigerZugangsschlüsselException();
             }
 
-            if (!Blockiert)
-            {
-                throw new KinokarteNichtBlockiertException();
-            }
+            //if (!Blockiert)
+            //{
+            //    throw new KinokarteNichtBlockiertException();
+            //}
 
             _blockiert = false;
         }
@@ -184,15 +187,15 @@ namespace Kinokarten.Models
 
         public void ReservierungAufheben()
         {
-            if (Blockiert)
-            {
-                throw new KinokarteBlockiertException();
-            }
+            //if (Blockiert)
+            //{
+            //    throw new KinokarteBlockiertException();
+            //}
 
-            if (!Reserviert)
-            {
-                throw new KinokarteNichtReserviertException();
-            }
+            //if (!Reserviert)
+            //{
+            //    throw new KinokarteNichtReserviertException();
+            //}
 
             _reserviert = false;
             _rabatt = false;
@@ -212,8 +215,6 @@ namespace Kinokarten.Models
             return id;
         }
     }
-
-    // TODO Schauen, welche Exceptions noch geworfen werden dürfen! 
 
     public class KinokarteBlockiertException : Exception
     {

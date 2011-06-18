@@ -175,7 +175,7 @@ namespace Fassade.Schnittstelle
         /// @remarks    Um eine gültige Reservierungsnummer zu erhalten muss erst die Reservierung einer Karte über die jeweiligen Methoden vorgenommen werden.
         public void SendeEmailMitReservierungsnummer(string email_adresse, int reservierungsnummer)
         {
-            var message = new MailMessage("meinemail@gmail.com", email_adresse, "Reservierung",
+            var message = new MailMessage(email_adresse, email_adresse, "Reservierung",
                                           "Sehr Geehrter Kunde hier ist ihre Reservierungsnummer: " +
                                           reservierungsnummer);
         }

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="397a18af-53da-4c8a-9cd2-bfd5ff31cde1" name="N3trunner@GLOIN 2011-06-18 17:09:12" runUser="MITTELERDE\N3trunner" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Default Test Settings" id="7ab7378c-cee8-4daf-a69e-294de842db6f">
+    <Deployment runDeploymentRoot="N3trunner_GLOIN 2011-06-18 17_09_12">
+      <DeploymentItem filename="C:\Users\N3trunner.MITTELERDE\Desktop\C#\SEPraktikum\Fassade\bin\Debug\Fassade.dll" />
+      <DeploymentItem filename="C:\Users\N3trunner.MITTELERDE\Desktop\C#\SEPraktikum\Kino\bin\Debug\Kino.dll" />
+      <DeploymentItem filename="C:\Users\N3trunner.MITTELERDE\Desktop\C#\SEPraktikum\Benutzer\bin\Debug\Users.dll" />
+      <DeploymentItem filename="C:\Users\N3trunner.MITTELERDE\Desktop\C#\SEPraktikum\SystemAdministration\bin\Debug\SystemAdministration.dll" />
+      <DeploymentItem filename="C:\Users\N3trunner.MITTELERDE\Desktop\C#\SEPraktikum\Base\bin\Debug\Base.dll" />
+      <DeploymentItem filename="C:\Users\N3trunner.MITTELERDE\Desktop\C#\SEPraktikum\Kinokarten\bin\Debug\Kinokarten.dll" />
+      <DeploymentItem filename="C:\Users\N3trunner.MITTELERDE\Desktop\C#\SEPraktikum\Database\bin\Debug\Database.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2011-06-18T17:09:12.7792098+02:00" queuing="2011-06-18T17:09:25.4112063+02:00" start="2011-06-18T17:09:26.3783753+02:00" finish="2011-06-18T17:09:32.8677673+02:00" />
+  <ResultSummary outcome="Error">
+    <Counters total="1" executed="1" error="0" failed="0" timeout="0" aborted="1" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+    <RunInfos>
+      <RunInfo computerName="GLOIN" outcome="Error" timestamp="2011-06-18T17:09:32.8521678+02:00">
+        <Text>Test host process exited unexpectedly.</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="GetPreisFürKinokarteTest_Success" storage="c:\users\n3trunner.mittelerde\desktop\c#\sepraktikum\testfassade\bin\debug\testanwendungskern.dll" id="2cce4c90-ea2f-6bde-cd20-3e7d1cbaf8ca">
+      <Execution id="f1bb1121-008d-4492-a4b3-1b3e2f1425c8" />
+      <TestMethod codeBase="C:/Users/N3trunner.MITTELERDE/Desktop/C#/SEPraktikum/TestFassade/bin/Debug/TestAnwendungskern.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestAnwendungskern.KinokartenInformationenTest, TestAnwendungskern, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GetPreisFürKinokarteTest_Success" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="2cce4c90-ea2f-6bde-cd20-3e7d1cbaf8ca" executionId="f1bb1121-008d-4492-a4b3-1b3e2f1425c8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="f1bb1121-008d-4492-a4b3-1b3e2f1425c8" testId="2cce4c90-ea2f-6bde-cd20-3e7d1cbaf8ca" testName="GetPreisFürKinokarteTest_Success" computerName="GLOIN" duration="00:00:06.3177975" startTime="2011-06-18T17:09:26.5499698+02:00" endTime="2011-06-18T17:09:32.8677673+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Aborted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f1bb1121-008d-4492-a4b3-1b3e2f1425c8">
+    </UnitTestResult>
+  </Results>
+</TestRun>

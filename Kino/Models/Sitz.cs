@@ -1,6 +1,7 @@
 using System;
 using Base.AbstractClasses;
 using Database.Interfaces;
+using Database.Models;
 using Kino.Schnittstelle;
 
 namespace Kino.Models
@@ -29,6 +30,9 @@ namespace Kino.Models
         {
             _identifikator = new SitzIdentifikator(sitzReihe, sitzNummer);
             identifier = "Reihe: " + sitzReihe + ", Nummer: " + sitzNummer;
+
+            EntityManager<Sitz> sitze = new EntityManager<Sitz>();
+            sitze.AddElement(this);
         }
 
         /// <summary>

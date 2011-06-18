@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="411ef9a3-5de6-4378-a43b-7155a574c648" name="N3trunner@GLOIN 2011-06-18 12:49:05" runUser="MITTELERDE\N3trunner" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Default Test Settings" id="08d69f58-fc7c-4be1-98e2-ff97514c8253">
+    <Deployment runDeploymentRoot="N3trunner_GLOIN 2011-06-18 12_49_05">
+      <DeploymentItem filename="C:\Users\N3trunner.MITTELERDE\Desktop\C#\SEPraktikum\Fassade\bin\Debug\Fassade.dll" />
+      <DeploymentItem filename="C:\Users\N3trunner.MITTELERDE\Desktop\C#\SEPraktikum\Kino\bin\Debug\Kino.dll" />
+      <DeploymentItem filename="C:\Users\N3trunner.MITTELERDE\Desktop\C#\SEPraktikum\Benutzer\bin\Debug\Users.dll" />
+      <DeploymentItem filename="C:\Users\N3trunner.MITTELERDE\Desktop\C#\SEPraktikum\SystemAdministration\bin\Debug\SystemAdministration.dll" />
+      <DeploymentItem filename="C:\Users\N3trunner.MITTELERDE\Desktop\C#\SEPraktikum\Base\bin\Debug\Base.dll" />
+      <DeploymentItem filename="C:\Users\N3trunner.MITTELERDE\Desktop\C#\SEPraktikum\Kinokarten\bin\Debug\Kinokarten.dll" />
+      <DeploymentItem filename="C:\Users\N3trunner.MITTELERDE\Desktop\C#\SEPraktikum\Database\bin\Debug\Database.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2011-06-18T12:49:05.5671613+02:00" queuing="2011-06-18T12:49:06.0642110+02:00" start="2011-06-18T12:49:06.1002146+02:00" finish="2011-06-18T12:49:07.1273173+02:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="1" executed="1" error="0" failed="1" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="GetVerfügbareKinokartenFürVorstellungTest_Success" storage="c:\users\n3trunner.mittelerde\desktop\c#\sepraktikum\testfassade\bin\debug\testanwendungskern.dll" id="1e56fcab-f406-0622-e5bb-ec2d7e81b97d">
+      <Execution id="9b3e3b8b-1d40-4ad4-b862-aac1acd16188" />
+      <TestMethod codeBase="C:/Users/N3trunner.MITTELERDE/Desktop/C#/SEPraktikum/TestFassade/bin/Debug/TestAnwendungskern.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestAnwendungskern.KinokartenInformationenTest, TestAnwendungskern, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GetVerfügbareKinokartenFürVorstellungTest_Success" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="1e56fcab-f406-0622-e5bb-ec2d7e81b97d" executionId="9b3e3b8b-1d40-4ad4-b862-aac1acd16188" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="9b3e3b8b-1d40-4ad4-b862-aac1acd16188" testId="1e56fcab-f406-0622-e5bb-ec2d7e81b97d" testName="GetVerfügbareKinokartenFürVorstellungTest_Success" computerName="GLOIN" duration="00:00:00.1200309" startTime="2011-06-18T12:49:06.1022148+02:00" endTime="2011-06-18T12:49:06.8312877+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9b3e3b8b-1d40-4ad4-b862-aac1acd16188">
+      <Output>
+        <StdOut>Testdaten werden erstellt.
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!
+Observer notified!</StdOut>
+        <ErrorInfo>
+          <Message>Test method TestAnwendungskern.KinokartenInformationenTest.GetVerfügbareKinokartenFürVorstellungTest_Success threw exception: 
+System.NullReferenceException: Object reference not set to an instance of an object.</Message>
+          <StackTrace>    at Database.Models.EntityManager`1.GetElementWithId(Int32 id) in C:\Users\N3trunner.MITTELERDE\Desktop\C#\SEPraktikum\Database\Models\EntityManager.cs:line 92
+   at TestAnwendungskern.KinokartenInformationenTest.GetVerfügbareKinokartenFürVorstellungTest_Success() in C:\Users\N3trunner.MITTELERDE\Desktop\C#\SEPraktikum\TestFassade\KinokartenInformationenTest.cs:line 175
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

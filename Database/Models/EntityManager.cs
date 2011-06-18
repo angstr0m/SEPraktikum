@@ -40,12 +40,14 @@ namespace Database.Models
             int id = 0;
             bool isFree = false;
 
+            List<T> elements = GetElements();
+
             while (!isFree)
             {
                 id++;
 
                 isFree = true;
-                foreach (T elem in GetElements())
+                foreach (T elem in elements)
                 {
                     if (elem.GetIdentifier() == id)
                     {
@@ -89,7 +91,14 @@ namespace Database.Models
         {
             var searchList = (List<T>) DatabaseSimulation.Instance.GetValuesFromDatabaseForType(typeof (T));
 
-            return searchList.Find(delegate(T t) { return t.GetIdentifier() == id; });
+            if (searchList != null)
+            {
+                return searchList.Find(delegate(T t) { return t.GetIdentifier() == id; });
+            }
+            else
+            {
+                return default(T);
+            }
         }
 
         /// <summary>

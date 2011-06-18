@@ -16,10 +16,10 @@ namespace SystemAdministration.Interfaces
 
         #region Implementation of IAdministration
 
-        public void FillSystemWithTestData()
+        public void FillSystemWithTestData(float kinokartenPreis)
         {
             _kinoAdministration.TestdatenEinrichten();
-            _kinokartenAdministration.FillWithTestData();
+            _kinokartenAdministration.TestdatenEinrichten(kinokartenPreis);
         }
 
         public bool IsTicketBlocked(IPublicVorstellung vorstellung, ISitz sitz)

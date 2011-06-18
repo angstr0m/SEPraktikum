@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Base.AbstractClasses;
 using Database.Interfaces;
+using Database.Models;
 using Kino.Schnittstelle;
 
 namespace Kino.Models
@@ -55,6 +56,9 @@ namespace Kino.Models
 
             _sitzpl‰tze = seats;
             SitzplatzAnzahlNeuBerechnen();
+
+            EntityManager<Kinosaal> kinos‰‰le = new EntityManager<Kinosaal>();
+            kinos‰‰le.AddElement(this);
         }
 
         /// <summary>
