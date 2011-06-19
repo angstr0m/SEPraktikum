@@ -52,3 +52,5 @@ C:\Users\N3trunner.MITTELERDE\Desktop\C#\SEPraktikum\TestFassade\bin\Debug\Finan
 C:\Users\N3trunner.MITTELERDE\Desktop\C#\SEPraktikum\TestFassade\bin\Debug\Finances.xml
 C:\Users\N3trunner.MITTELERDE\Desktop\C#\SEPraktikum\TestFassade\bin\Debug\nunit.framework.dll
 C:\Users\N3trunner.MITTELERDE\Desktop\C#\SEPraktikum\TestFassade\bin\Debug\nunit.framework.xml
+C:\Users\N3trunner.MITTELERDE\Desktop\C#\SEPraktikum\TestFassade\bin\Debug\Database_Accessor.dll
+C:\Users\N3trunner.MITTELERDE\Desktop\C#\SEPraktikum\TestFassade\bin\Debug\Database_Accessor.pdb

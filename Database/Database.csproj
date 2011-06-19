@@ -41,6 +41,7 @@
     <Compile Include="Interfaces\IDatabaseObject.cs" />
     <Compile Include="Models\DatabaseSimulation.cs" />
     <Compile Include="Models\EntityManager.cs" />
+    <Compile Include="TestFriends.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Base\Base.csproj">

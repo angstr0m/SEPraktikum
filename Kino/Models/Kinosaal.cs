@@ -41,6 +41,7 @@ namespace Kino.Models
 
             char[] alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
             var seats = new List<Sitz>();
+            seats.Capacity = sitzplätze_pro_reihe*anzahl_reihen;
 
             // Benötigte Anzahl von Sitzplätzen erstellen,
             // und den Sitzplätzen des Kinosaal hinzufügen.
@@ -102,11 +103,14 @@ namespace Kino.Models
         public List<ISitz> GetSitzplätze()
         {
             var returnList = new List<ISitz>();
+            returnList.Capacity = _sitzplätze.Count;
 
-            foreach (Sitz sitz in _sitzplätze)
-            {
-                returnList.Add(sitz);
-            }
+            returnList.AddRange(_sitzplätze);
+
+            //foreach (Sitz sitz in _sitzplätze)
+            //{
+            //    returnList.Add(sitz);
+            //}
 
             return returnList;
         }

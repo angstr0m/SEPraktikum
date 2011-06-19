@@ -1,5 +1,6 @@
 using System;
 using Database.Interfaces;
+using Kino.Models;
 
 namespace Kino.Schnittstelle
 {
@@ -18,6 +19,8 @@ namespace Kino.Schnittstelle
         /// <returns></returns>
         /// <remarks></remarks>
         int Nummer();
+
+        ISitzIdentifikator Identifikator { get; }
 
         /// <summary>
         /// Returns a <see cref="System.String"/> that represents this instance.

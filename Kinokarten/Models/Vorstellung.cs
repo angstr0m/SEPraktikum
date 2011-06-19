@@ -57,10 +57,12 @@ namespace Kinokarten.Models
             _kinosaal = kinosaal;
             _pause = pause;
             _kinokarten = new List<Kinokarte>();
+            List<ISitz> kinosaalSitzplätze = kinosaal.GetSitzplätze();
+            _kinokarten.Capacity = kinosaalSitzplätze.Count;
 
             Console.WriteLine("Kinokarten erstellen Anfang: " + DateTime.Now);
 
-            foreach (ISitz s in kinosaal.GetSitzplätze())
+            foreach (ISitz s in kinosaalSitzplätze)
             {
                 _kinokarten.Add(new Kinokarte(ticketPrice, s, this));
             }

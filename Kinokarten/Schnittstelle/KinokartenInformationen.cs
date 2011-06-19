@@ -49,7 +49,7 @@ namespace Kinokarten.Schnittstelle
             Vorstellung wantedVorstellung = _vorstellungen.GetElementWithId(vorstellung.GetIdentifier());
             Kinokarte kinokarte = wantedVorstellung.GetKinokarte(sitz);
 
-            if (kinokarte.Reserviert || kinokarte.Verkauft || kinokarte.Reserviert)
+            if (kinokarte.Reserviert || kinokarte.Verkauft || kinokarte.Blockiert)
             {
                 return false;
             }
@@ -62,7 +62,7 @@ namespace Kinokarten.Schnittstelle
         {
             Vorstellung wantedVorstellung = _vorstellungen.GetElementWithId(vorstellung.GetIdentifier());
 
-            return (DateTime.Now - kunde.Geburtsdatum).CompareTo(wantedVorstellung.Altersfreigabe) <= 0;
+            return (DateTime.Now - kunde.Geburtsdatum).TotalDays >= (DateTime.Now - DateTime.Now.AddYears(-wantedVorstellung.Altersfreigabe)).TotalDays;
         }
 
 

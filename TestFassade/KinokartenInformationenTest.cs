@@ -11,16 +11,6 @@ using System.Collections.Generic;
 using NUnit.Framework;
 using Users.Interfaces;
 using Users.Models;
-//using NUnit.Framework;
-//using TestClass = NUnit.Framework.TestFixtureAttribute;
-//using TestMethod = NUnit.Framework.TestAttribute;
-//using TestCleanup = NUnit.Framework.TearDownAttribute;
-//using TestInitialize = NUnit.Framework.SetUpAttribute;
-//using ClassCleanup = NUnit.Framework.TestFixtureTearDownAttribute;
-//using ClassInitialize = NUnit.Framework.TestFixtureSetUpAttribute;
-
-using NUnitAssert = NUnit.Framework.Assert;
-
 //using NUnitAssert = NUnit.Framework.Assert;
 
 
@@ -34,6 +24,7 @@ namespace TestAnwendungskern
     [TestFixture]
     public class KinokartenInformationenTest
     {
+        EntityManager<Sitz> _sitze = new EntityManager<Sitz>();
         EntityManager<Kinokarte> _kinokarten = new EntityManager<Kinokarte>();
         EntityManager<Vorstellung> _vorstellungen = new EntityManager<Vorstellung>();
         EntityManager<Filmprogramm> _filmprogramme = new EntityManager<Filmprogramm>();
@@ -182,6 +173,7 @@ namespace TestAnwendungskern
         {
             Console.WriteLine("RemoveAllElementsBegin: " + DateTime.Now);
             
+            _sitze.RemoveAllElements();
             _filme.RemoveAllElements();
             _kinosäle.RemoveAllElements();
             _vorstellungen.RemoveAllElements();
@@ -532,11 +524,11 @@ namespace TestAnwendungskern
         /// </summary>
         /// <description>
         /// Der angegebene Sitzplatz wird auf Verfügbarkeit geprüft.
-        /// Damit ein Sitzplatz verfügbar ist, muss die entsprechende Kinokarte der gewählten Vorstellung weder Reserviert, oder Verkauft sein.
+        /// Damit ein Sitzplatz verfügbar ist, muss die entsprechende Kinokarte der gewählten Vorstellung weder Reserviert, blockiert, oder Verkauft sein.
         /// </description>
         /// <precondition>
         /// - _gewählte_Vorstellung muss auf eine gültige Vorstellung verweisen
-        /// - Der Film der gewählten Vorstellung muss eine geeignete Altersfreigabe besitzen.
+        /// - _sitz muss auf einen geeigneten Sitzplatz verweisen.
         /// </precondition>
         /// <input>
         /// Keine direkte Eingabe des Benutzers.
@@ -545,19 +537,73 @@ namespace TestAnwendungskern
         /// Keine direkte Ausgabe an den Benutzer.
         /// </output>
         /// <verification>
-        /// Wird false zurückgegeben, wenn das Geburtsdatum ein anschauen der Vorstellung verbietet?
+        /// Wird true zurückgegeben, wenn der Sitzplatz verfügbar ist?
         /// </verification>
         [Test]
-        public void PrüfeVerfügbarkeitVonSitzplatzFürVorstellungTest()
+        public void PrüfeVerfügbarkeitVonSitzplatzFürVorstellungTest_Success()
         {
-            KinokartenInformationen target = new KinokartenInformationen(); // TODO: Initialize to an appropriate value
-            IPublicVorstellung vorstellung = null; // TODO: Initialize to an appropriate value
-            ISitz sitz = null; // TODO: Initialize to an appropriate value
-            bool expected = false; // TODO: Initialize to an appropriate value
+            KinokartenInformationen target = new KinokartenInformationen();
+            IPublicVorstellung vorstellung = _gewählte_Vorstellung;
+            ISitz sitz = _sitz;
+
+            bool expected = true;
             bool actual;
+
             actual = target.PrüfeVerfügbarkeitVonSitzplatzFürVorstellung(vorstellung, sitz);
             Assert.AreEqual(expected, actual);
-            Assert.Inconclusive("Verify the correctness of this test method.");
+        }
+
+        /// <summary>
+        /// TF-18: Verfügbarkeit von Sitzplatz prüfen
+        /// </summary>
+        /// <description>
+        /// Der angegebene Sitzplatz wird auf Verfügbarkeit geprüft.
+        /// Damit ein Sitzplatz verfügbar ist, muss die entsprechende Kinokarte der gewählten Vorstellung weder Reserviert, blockiert, oder Verkauft sein.
+        /// </description>
+        /// <precondition>
+        /// - _gewählte_Vorstellung muss auf eine gültige Vorstellung verweisen
+        /// - _sitz muss auf einen geeigneten Sitzplatz verweisen.
+        /// - _gewählte_Vorstellung muss einen Kinosaal mit mindestens 3 Sitzplätzen in Reihe A besitzen.
+        /// </precondition>
+        /// <input>
+        /// Keine direkte Eingabe des Benutzers.
+        /// </input>
+        /// <output>
+        /// Keine direkte Ausgabe an den Benutzer.
+        /// </output>
+        /// <verification>
+        /// Wird false zurückgegeben, wenn der Sitzplatz nicht verfügbar ist?
+        /// </verification>
+        [Test]
+        public void PrüfeVerfügbarkeitVonSitzplatzFürVorstellungTest_Failure()
+        {
+            KinokartenInformationen target = new KinokartenInformationen();
+            Vorstellung vorstellung = _vorstellungen.GetElementWithId(_gewählte_Vorstellung.GetIdentifier());
+            ISitz sitz = _sitz;
+
+            bool expected = false;
+            bool actual;
+
+            Kinokarte karte1 = vorstellung.GetKinokarte('A',0);
+            Kinokarte karte2 = vorstellung.GetKinokarte('A', 1);
+            Kinokarte karte3 = vorstellung.GetKinokarte('A', 2);
+
+            karte1.Blockieren();
+            karte2.Blockieren();
+            karte2.Reservieren();
+            karte3.Verkauft = true;
+
+            // Karte ist Blockiert
+            actual = target.PrüfeVerfügbarkeitVonSitzplatzFürVorstellung(_gewählte_Vorstellung, karte1.Sitz);
+            Assert.AreEqual(expected, actual);
+
+            // Karte ist Reserviert
+            actual = target.PrüfeVerfügbarkeitVonSitzplatzFürVorstellung(_gewählte_Vorstellung, karte2.Sitz);
+            Assert.AreEqual(expected, actual);
+
+            // Karte ist Verkauft
+            actual = target.PrüfeVerfügbarkeitVonSitzplatzFürVorstellung(_gewählte_Vorstellung, karte3.Sitz);
+            Assert.AreEqual(expected, actual);
         }
     }
 }

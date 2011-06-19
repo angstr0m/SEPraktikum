@@ -57,10 +57,11 @@ namespace Database.Models
             if (!entityDict.ContainsKey(typeof (T)))
             {
                 entityDict[typeof (T)] = new List<T>();
+                ((List<T>) entityDict[typeof (T)]).Capacity = 1000000; // Dauerndes resizen vermeiden. Speicherplatz sollte kein Problem sein...hoffentlich :(.
             }
 
-            ((List<T>) entityDict[typeof (T)]).Add(value);
-
+            ((List<T>)entityDict[typeof (T)]).Add(value);
+            
             NotifyObservers();
         }
 

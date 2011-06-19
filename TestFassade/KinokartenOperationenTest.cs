@@ -23,7 +23,7 @@ namespace TestAnwendungskern
     ///This is a test class for KinokartenOperationenTest and is intended
     ///to contain all KinokartenOperationenTest Unit Tests
     ///</summary>
-    [TestClass()]
+    [TestFixture]
     public class KinokartenOperationenTest
     {
 
@@ -80,7 +80,7 @@ namespace TestAnwendungskern
         /// <summary>
         ///A test for KinokartenOperationen Constructor
         ///</summary>
-        [TestMethod()]
+        [Test]
         public void KinokartenOperationenConstructorTest()
         {
             IBenutzerinformationen benutzerinformationen = null; // TODO: Initialize to an appropriate value
@@ -91,7 +91,7 @@ namespace TestAnwendungskern
         /// <summary>
         ///A test for BlockiereKinokarte
         ///</summary>
-        [TestMethod()]
+        [Test]
         public void BlockiereKinokarteTest()
         {
             IBenutzerinformationen benutzerinformationen = null; // TODO: Initialize to an appropriate value
@@ -108,7 +108,7 @@ namespace TestAnwendungskern
         /// <summary>
         ///A test for BlockierungFürSitzplatzAufheben
         ///</summary>
-        [TestMethod()]
+        [Test]
         public void BlockierungFürSitzplatzAufhebenTest()
         {
             IBenutzerinformationen benutzerinformationen = null; // TODO: Initialize to an appropriate value
@@ -123,7 +123,7 @@ namespace TestAnwendungskern
         /// <summary>
         ///A test for KinokarteReservieren
         ///</summary>
-        [TestMethod()]
+        [Test]
         public void KinokarteReservierenTest()
         {
             IBenutzerinformationen benutzerinformationen = null; // TODO: Initialize to an appropriate value
@@ -142,7 +142,7 @@ namespace TestAnwendungskern
         /// <summary>
         ///A test for KinokarteReservieren
         ///</summary>
-        [TestMethod()]
+        [Test]
         public void KinokarteReservierenTest1()
         {
             IBenutzerinformationen benutzerinformationen = null; // TODO: Initialize to an appropriate value

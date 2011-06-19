@@ -5,7 +5,6 @@ using Database.Interfaces;
 
 namespace Database.Models
 {
-    //TODO EntityManager mit verketten Listen implementieren!
     /// <summary>
     /// 
     /// </summary>

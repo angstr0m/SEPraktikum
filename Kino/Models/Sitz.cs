@@ -13,6 +13,12 @@ namespace Kino.Models
     internal class Sitz : Subject, ISitz, IDatabaseObject
     {
         private readonly SitzIdentifikator _identifikator;
+
+        public ISitzIdentifikator Identifikator
+        {
+            get { return _identifikator as ISitzIdentifikator; }
+        }
+
         private int id;
 
         /// <summary>
