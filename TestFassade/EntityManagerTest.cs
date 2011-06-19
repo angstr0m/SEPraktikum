@@ -41,8 +41,6 @@ namespace TestAnwendungskern
 
         #region Implementation of IDatabaseObject
 
-        private int _id;
-
         public void SetIdentifier(int id)
         {
             _testElement.SetIdentifier(id);
@@ -145,9 +143,6 @@ namespace TestAnwendungskern
         public void EntityManagerConstructorTest()
         {
             Assert.DoesNotThrow(delegate { EntityManager<TestElement> target = new EntityManager<TestElement>(); });
-            //Assert.DoesNotThrow(delegate { EntityManager<Film> target = new EntityManager<Film>(); });
-            //Assert.DoesNotThrow(delegate { EntityManager<Kinokarte> target = new EntityManager<Kinokarte>(); });
-            //Assert.DoesNotThrow(delegate { EntityManager<Sitz> target = new EntityManager<Sitz>(); });
         }
 
         /// <summary>
@@ -160,9 +155,9 @@ namespace TestAnwendungskern
             T elem = elementToAdd;
             target.AddElement(elem);
 
-            DatabaseSimulation database = DatabaseSimulation.Instance;
+            //DatabaseSimulation database = DatabaseSimulation.Instance;
 
-            List<T> actual = database.GetValuesFromDatabaseForType(typeof (T));
+            List<T> actual = target.GetElements();
 
             // Tests durchführen
             Assert.NotNull(actual);
@@ -171,7 +166,7 @@ namespace TestAnwendungskern
             Assert.True(actual[0].Equals(elementToAdd));
 
             // Aufräumen
-            database.RemoveAllValuesFromDatabaseForType(typeof(T));
+            target.RemoveAllElements();
         }
 
         /// <summary>
@@ -403,7 +398,7 @@ namespace TestAnwendungskern
             }
 
             target.RemoveAllElements();
-            Assert.Null(DatabaseSimulation.Instance.GetValuesFromDatabaseForType(typeof(T)));
+            Assert.True(target.GetElements().Count == 0);
         }
 
         /// <summary>
@@ -458,7 +453,7 @@ namespace TestAnwendungskern
             T elementToRemove = testElements[random.Next(testElements.Count)];
 
             EntityManager<T> target = new EntityManager<T>();
-            DatabaseSimulation databaseSimulation = DatabaseSimulation.Instance;
+            //DatabaseSimulation databaseSimulation = DatabaseSimulation.Instance;
             T elem = elementToRemove;
             bool expected = true;
             bool actual;
@@ -477,7 +472,7 @@ namespace TestAnwendungskern
             actual = target.RemoveElement(elem);
             Assert.AreEqual(expected, actual);
 
-            List<T> valuesInDatabase = databaseSimulation.GetValuesFromDatabaseForType(typeof(T));
+            List<T> valuesInDatabase = target.GetElements();
 
             // Sicherstellen, das das Objekt wirklich aus der Datenbank gelöscht wurde.
             if (testElements.Count == 1)
