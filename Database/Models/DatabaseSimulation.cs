@@ -79,7 +79,7 @@ namespace Database.Models
                 return false;
             }
 
-            bool rv = entityDict[typeof (T)].Remove(value);
+            bool rv = ((List<T>)entityDict[typeof (T)]).Remove(value);
 
             NotifyObservers();
 

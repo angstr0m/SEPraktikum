@@ -44,8 +44,6 @@ namespace Database.Models
 
             while (!isFree)
             {
-                id++;
-
                 isFree = true;
                 foreach (T elem in elements)
                 {
@@ -60,6 +58,8 @@ namespace Database.Models
                 {
                     break;
                 }
+
+                id++;
             }
 
             return id;
