@@ -4,7 +4,7 @@ using Kinokarten.Schnittstelle.Interfaces;
 
 namespace Kinokarten.Schnittstelle
 {
-    internal class PublicKinokarte : IPublicKinokarte
+    public class PublicKinokarte
     {
         private readonly Kinokarte _kinokarte;
 
@@ -13,7 +13,7 @@ namespace Kinokarten.Schnittstelle
             _kinokarte = kinokarte;
         }
 
-        #region IPublicKinokarte Members
+        #region PublicKinokarte Members
 
         public int GetIdentifier()
         {
@@ -45,7 +45,7 @@ namespace Kinokarten.Schnittstelle
             get { return _kinokarte.Sitz; }
         }
 
-        public IPublicVorstellung Vorstellung
+        public PublicVorstellung Vorstellung
         {
             get { return new PublicVorstellung(_kinokarte.Vorstellung); }
         }

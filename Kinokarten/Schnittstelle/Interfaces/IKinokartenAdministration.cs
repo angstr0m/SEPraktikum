@@ -7,8 +7,8 @@ namespace Kinokarten.Schnittstelle.Interfaces
     {
         void TestdatenEinrichten(float kinokartenpreis);
 
-        bool IsTicketBlocked(IPublicVorstellung vorstellung, ISitz sitz);
+        bool IsTicketBlocked(PublicVorstellung vorstellung, ISitz sitz);
 
-        bool IsTicketReserved(IPublicVorstellung vorstellung, ISitz sitz);
+        bool IsTicketReserved(PublicVorstellung vorstellung, ISitz sitz);
     }
 }

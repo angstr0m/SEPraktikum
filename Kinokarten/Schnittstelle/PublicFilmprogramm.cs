@@ -4,7 +4,7 @@ using Kinokarten.Schnittstelle.Interfaces;
 
 namespace Kinokarten.Schnittstelle
 {
-    internal class PublicFilmprogramm : IPublicFilmprogramm
+    public class PublicFilmprogramm
     {
         private readonly Filmprogramm _movieprogram;
 
@@ -13,13 +13,13 @@ namespace Kinokarten.Schnittstelle
             _movieprogram = filmprogramm;
         }
 
-        #region IPublicFilmprogramm Members
+        #region PublicFilmprogramm Members
 
-        public List<IPublicVorstellung> Vorstellungen
+        public List<PublicVorstellung> Vorstellungen
         {
             get
             {
-                var shows = new List<IPublicVorstellung>();
+                var shows = new List<PublicVorstellung>();
 
                 foreach (Vorstellung s in _movieprogram.Vorstellungen)
                 {

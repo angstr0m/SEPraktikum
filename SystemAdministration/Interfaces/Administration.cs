@@ -1,4 +1,5 @@
 ﻿using Kino.Schnittstelle;
+using Kinokarten.Schnittstelle;
 using Kinokarten.Schnittstelle.Interfaces;
 
 namespace SystemAdministration.Interfaces
@@ -22,12 +23,12 @@ namespace SystemAdministration.Interfaces
             _kinokartenAdministration.TestdatenEinrichten(kinokartenPreis);
         }
 
-        public bool IsTicketBlocked(IPublicVorstellung vorstellung, ISitz sitz)
+        public bool IsTicketBlocked(PublicVorstellung vorstellung, ISitz sitz)
         {
             return _kinokartenAdministration.IsTicketBlocked(vorstellung, sitz);
         }
 
-        public bool IsTicketReserved(IPublicVorstellung vorstellung, ISitz sitz)
+        public bool IsTicketReserved(PublicVorstellung vorstellung, ISitz sitz)
         {
             return _kinokartenAdministration.IsTicketReserved(vorstellung, sitz);
         }

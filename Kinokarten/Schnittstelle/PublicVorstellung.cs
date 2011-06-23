@@ -11,7 +11,7 @@ namespace Kinokarten.Schnittstelle
     /// This class is meant for giving vorstellung objects to the outside, while hiding members and methods on the vorstellung-object which should not be seen.
     /// </summary>
     /// <remarks></remarks>
-    public class PublicVorstellung : IPublicVorstellung
+    public class PublicVorstellung
     {
         private readonly Vorstellung _vorstellung;
 
@@ -20,7 +20,7 @@ namespace Kinokarten.Schnittstelle
             _vorstellung = vorstellung;
         }
 
-        #region IPublicVorstellung Members
+        #region PublicVorstellung Members
 
         public DateTime StartZeit
         {
@@ -62,9 +62,9 @@ namespace Kinokarten.Schnittstelle
             throw new NotImplementedException();
         }
 
-        public List<IPublicKinokarte> VerfügbareKinokarten()
+        public List<PublicKinokarte> VerfügbareKinokarten()
         {
-            var publictickets = new List<IPublicKinokarte>();
+            var publictickets = new List<PublicKinokarte>();
             List<Kinokarte> tickets = _vorstellung.GetVerfügbareKinokarten();
 
             foreach (Kinokarte ticket in tickets)
@@ -75,9 +75,9 @@ namespace Kinokarten.Schnittstelle
             return publictickets;
         }
 
-        public List<IPublicKinokarte> ReservierteKinokarten()
+        public List<PublicKinokarte> ReservierteKinokarten()
         {
-            var publictickets = new List<IPublicKinokarte>();
+            var publictickets = new List<PublicKinokarte>();
             List<Kinokarte> tickets = _vorstellung.GetReservierteKinokarten();
 
             foreach (Kinokarte ticket in tickets)
@@ -88,9 +88,9 @@ namespace Kinokarten.Schnittstelle
             return publictickets;
         }
 
-        public List<IPublicKinokarte> VerkaufteKinokarten()
+        public List<PublicKinokarte> VerkaufteKinokarten()
         {
-            var publictickets = new List<IPublicKinokarte>();
+            var publictickets = new List<PublicKinokarte>();
             List<Kinokarte> tickets = _vorstellung.GetVerkaufteKinokarten();
 
             foreach (Kinokarte ticket in tickets)
@@ -101,7 +101,7 @@ namespace Kinokarten.Schnittstelle
             return publictickets;
         }
 
-        public IPublicKinokarte GetKinokarte(int index)
+        public PublicKinokarte GetKinokarte(int index)
         {
             return new PublicKinokarte(_vorstellung.GetKinokarte(index));
         }
@@ -112,7 +112,7 @@ namespace Kinokarten.Schnittstelle
         /// <param name="sitzIdentifikator"> Der Identifikator des gewünschten Sitzplatzes.</param>
         /// <returns></returns>
         /// <remarks></remarks>
-        public IPublicKinokarte GetKinokarte(ISitzIdentifikator sitzIdentifikator)
+        public PublicKinokarte GetKinokarte(ISitzIdentifikator sitzIdentifikator)
         {
             return new PublicKinokarte(_vorstellung.GetKinokarte(sitzIdentifikator));
         }
@@ -134,7 +134,7 @@ namespace Kinokarten.Schnittstelle
             return _vorstellung.GetNumberOfBlockedSeats();
         }
 
-        public IPublicKinokarte GetKinokarte(char row, int nr)
+        public PublicKinokarte GetKinokarte(char row, int nr)
         {
             return new PublicKinokarte(_vorstellung.GetKinokarte(row, nr));
         }

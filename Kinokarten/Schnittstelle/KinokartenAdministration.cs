@@ -20,12 +20,12 @@ namespace Kinokarten.Schnittstelle
             
         }
 
-        public bool IsTicketBlocked(IPublicVorstellung vorstellung, ISitz sitz)
+        public bool IsTicketBlocked(PublicVorstellung vorstellung, ISitz sitz)
         {
             return _vorstellungen.GetElementWithId(vorstellung.GetIdentifier()).GetKinokarte(sitz).Blockiert;
         }
 
-        public bool IsTicketReserved(IPublicVorstellung vorstellung, ISitz sitz)
+        public bool IsTicketReserved(PublicVorstellung vorstellung, ISitz sitz)
         {
             return _vorstellungen.GetElementWithId(vorstellung.GetIdentifier()).GetKinokarte(sitz).Reserviert;
         }

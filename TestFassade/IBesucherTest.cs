@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using SystemAdministration.Interfaces;
 using Fassade.Schnittstelle;
+using Finances.Schnittstelle;
 using Kino.Schnittstelle;
 using Kinokarten.Schnittstelle;
 using Kinokarten.Schnittstelle.Interfaces;
@@ -29,7 +30,7 @@ namespace TestAnwendungskern
 
     {
         private static IAdministration _administration;
-        private IPublicVorstellung _gewählte_Vorstellung;
+        private PublicVorstellung _gewählte_Vorstellung;
         private IKinokartenInformationen _kinokarteninformationen;
         private IKinokartenOperationen _kinokartenoperationen;
 
@@ -84,8 +85,9 @@ namespace TestAnwendungskern
         internal virtual IFassadeBesucher CreateIBesucher()
         {
             IBenutzerinformationen benutzerinformationen = new Benutzerinformationen();
+            IFinanzenOperationen finanzenOperationen = new FinanzenOperationen();
             _kinokarteninformationen = new KinokartenInformationen();
-            _kinokartenoperationen = new KinokartenOperationen(benutzerinformationen);
+            _kinokartenoperationen = new KinokartenOperationen(benutzerinformationen, finanzenOperationen);
             IFassadeBesucher target = new FassadeBesucher(_kinokarteninformationen, _kinokartenoperationen,
                                                           benutzerinformationen);
             _administration.FillSystemWithTestData(KinokartenPreis);

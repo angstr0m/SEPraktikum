@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Kino.Schnittstelle;
+using Kinokarten.Schnittstelle;
 using Kinokarten.Schnittstelle.Interfaces;
 using Users.Interfaces;
 
@@ -20,7 +21,7 @@ namespace Fassade.Schnittstelle
         /// @post
         /// @typ    Abfrage.
         /// @remarks    
-        List<ISitz> GetVerfügbareSitzplätzeFürVorstellung(IPublicVorstellung gewählte_Vorstellung);
+        List<ISitz> GetVerfügbareSitzplätzeFürVorstellung(PublicVorstellung gewählte_Vorstellung);
 
         /// <summary>
         /// Überprüft ob ein Kunde alt genug ist, um den Film der angegebenen Vorstellung ansehen zu dürfen.
@@ -34,7 +35,7 @@ namespace Fassade.Schnittstelle
         /// @post
         /// @typ    Abfrage.
         /// @remarks
-        bool PrüfeAltersfreigabe(IPublicVorstellung gewählte_vorstellung, DateTime geburtsdatum);
+        bool PrüfeAltersfreigabe(PublicVorstellung gewählte_vorstellung, DateTime geburtsdatum);
 
         /// <summary>
         /// Überprüft ob eine Kinokarte für den angegebenen Sitzplatz für die angegebene Vorstellung noch nicht reserviert und/oder verkauft wurde.
@@ -47,7 +48,7 @@ namespace Fassade.Schnittstelle
         /// @post
         /// @typ    Abfrage.
         /// @remarks
-        bool ÜberprüfeVerfügbarkeitVonSitzplatz(IPublicVorstellung gewählte_vorstellung, ISitz sitz);
+        bool ÜberprüfeVerfügbarkeitVonSitzplatz(PublicVorstellung gewählte_vorstellung, ISitz sitz);
 
         /// <summary>
         /// Blockiert die Kinokarte für den gewählten Sitzplatz, und die gewählte Vorstellung.
@@ -62,7 +63,7 @@ namespace Fassade.Schnittstelle
         /// @post   Die gewünschte Kinokarte ist blockiert.
         /// @typ    Kommando.
         /// @remarks
-        IKinokarteBlockierungZugangsSchlüssel BlockiereSitzplatz(IPublicVorstellung gewählteVorstellung, ISitz sitz);
+        IKinokarteBlockierungZugangsSchlüssel BlockiereSitzplatz(PublicVorstellung gewählteVorstellung, ISitz sitz);
 
         /// <summary>
         /// Gibt den Preis in € für eine bestimmte Kinokarte zurück.
@@ -77,7 +78,7 @@ namespace Fassade.Schnittstelle
         /// @post
         /// @typ    Abfrage.
         /// @remarks
-        float GetPreisFürKinokarte(IPublicVorstellung gewählte_vorstellung, ISitz sitz, bool rabatt);
+        float GetPreisFürKinokarte(PublicVorstellung gewählte_vorstellung, ISitz sitz, bool rabatt);
 
         /// <summary>
         /// Reserviert die gewünschte Kinokarte für den FassadeBesucher, und gibt die Reservierungsnummer für die Karte zurück.
@@ -95,7 +96,7 @@ namespace Fassade.Schnittstelle
         /// @post   Die gewünschte Kinokarte ist nicht mehr blockiert
         /// @typ    Kommando.
         /// @remarks    Bevor die Kinokarte reserviert werden kann, muss sie mit Hilfe der Funktion BlockiereSitzplatz blockiert worden sein.
-        int KinokarteReservieren(IPublicVorstellung gewählte_vorstellung, ISitz sitz, bool rabatt,
+        int KinokarteReservieren(PublicVorstellung gewählte_vorstellung, ISitz sitz, bool rabatt,
                                  IKinokarteBlockierungZugangsSchlüssel zugangsSchlüssel);
 
         /// <summary>
@@ -110,7 +111,7 @@ namespace Fassade.Schnittstelle
         /// @post   Die gewünschte Kinokarte ist nicht mehr blockiert
         /// @typ    Kommando.
         /// @remarks    Bevor die Blockierung einer Kinokarte aufgehoben werden kann, muss diese zuvor mit der Methode BlockiereSitzplatz blockiert worden sein.
-        void BlockierungFürSitzplatzAufheben(IPublicVorstellung gewählte_vorstellung, ISitz sitz,
+        void BlockierungFürSitzplatzAufheben(PublicVorstellung gewählte_vorstellung, ISitz sitz,
                                              IKinokarteBlockierungZugangsSchlüssel zugangsSchlüssel);
 
         /// <summary>

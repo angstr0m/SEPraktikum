@@ -1,4 +1,5 @@
 ﻿using Database.Models;
+using Finances.Schnittstelle;
 using Kino.Schnittstelle;
 using Kinokarten.Models;
 using Kinokarten.Schnittstelle.Interfaces;
@@ -9,15 +10,17 @@ namespace Kinokarten.Schnittstelle
     public class KinokartenOperationen : IKinokartenOperationen
     {
         private readonly IBenutzerinformationen _benutzerinformationen;
+        private readonly IFinanzenOperationen _finanzenoperationen;
 
         private readonly EntityManager<Vorstellung> _vorstellungen;
         private EntityManager<Filmprogramm> _filmprogramme;
         private EntityManager<Kinokarte> _kinokarten;
         private EntityManager<Reservierung> _reservierungen;
 
-        public KinokartenOperationen(IBenutzerinformationen benutzerinformationen)
+        public KinokartenOperationen(IBenutzerinformationen benutzerinformationen, IFinanzenOperationen finanzenOperationen)
         {
             _benutzerinformationen = benutzerinformationen;
+            _finanzenoperationen = finanzenOperationen;
 
             _vorstellungen = new EntityManager<Vorstellung>();
             _kinokarten = new EntityManager<Kinokarte>();
@@ -25,9 +28,9 @@ namespace Kinokarten.Schnittstelle
             _reservierungen = new EntityManager<Reservierung>();
         }
 
-        #region Implementation of IABesucherReserviertKinokarteOnlineOperationen
+        #region Implementation of IKinokartenOperationen
 
-        public IKinokarteBlockierungZugangsSchlüssel BlockiereKinokarte(IPublicVorstellung vorstellung, ISitz sitz)
+        public IKinokarteBlockierungZugangsSchlüssel BlockiereKinokarte(PublicVorstellung vorstellung, ISitz sitz)
         {
             Vorstellung wantedVorstellung = _vorstellungen.GetElementWithId(vorstellung.GetIdentifier());
 
@@ -36,7 +39,7 @@ namespace Kinokarten.Schnittstelle
             return key;
         }
 
-        public int KinokarteReservieren(IPublicVorstellung vorstellung, ISitz sitz, bool rabatt,
+        public int KinokarteReservieren(PublicVorstellung vorstellung, ISitz sitz, bool rabatt,
                                         IKinokarteBlockierungZugangsSchlüssel zugangsSchlüssel)
         {
             IKunde kunde = _benutzerinformationen.GetBesucher();
@@ -48,7 +51,7 @@ namespace Kinokarten.Schnittstelle
             return r.Reservierungsnummer;
         }
 
-        public int KinokarteReservieren(int kundennummer, IPublicVorstellung vorstellung, ISitz sitz, bool rabatt,
+        public int KinokarteReservieren(int kundennummer, PublicVorstellung vorstellung, ISitz sitz, bool rabatt,
                                         IKinokarteBlockierungZugangsSchlüssel zugangsSchlüssel)
         {
             IKunde kunde = _benutzerinformationen.GetKunde(kundennummer);
@@ -61,7 +64,7 @@ namespace Kinokarten.Schnittstelle
         }
 
 
-        public void BlockierungFürSitzplatzAufheben(IPublicVorstellung vorstellung, ISitz sitz,
+        public void BlockierungFürSitzplatzAufheben(PublicVorstellung vorstellung, ISitz sitz,
                                                     IKinokarteBlockierungZugangsSchlüssel zugangsSchlüssel)
         {
             Vorstellung wantedVorstellung = _vorstellungen.GetElementWithId(vorstellung.GetIdentifier());

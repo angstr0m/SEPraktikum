@@ -31,7 +31,7 @@ namespace TestAnwendungskern
         static EntityManager<Film> _filme = new EntityManager<Film>();
         static EntityManager<Kinosaal> _kinosäle = new EntityManager<Kinosaal>();
 
-        private IPublicVorstellung _gewählte_Vorstellung;
+        private PublicVorstellung _gewählte_Vorstellung;
         private ISitz _sitz;
         // Preis den alle Testkinokarten verwenden werden.
         private const float KinokartenPreis = 6.0f;
@@ -207,7 +207,7 @@ namespace TestAnwendungskern
         public void GetPreisFürKinokarteTest_Success()
         {
             KinokartenInformationen target = new KinokartenInformationen();
-            IPublicVorstellung vorstellung = _gewählte_Vorstellung;
+            PublicVorstellung vorstellung = _gewählte_Vorstellung;
             ISitz sitz = _sitz;
             bool rabatt = false;
             float expected = KinokartenPreis;
@@ -247,7 +247,7 @@ namespace TestAnwendungskern
         public void GetVerfügbareKinokartenFürVorstellungTest_Success()
         {
             KinokartenInformationen target = new KinokartenInformationen();
-            IPublicVorstellung vorstellung = _gewählte_Vorstellung;
+            PublicVorstellung vorstellung = _gewählte_Vorstellung;
             EntityManager<Kinokarte> kinokarten = new EntityManager<Kinokarte>();
 
             // Vorstellung mit gleicher ID wie der gewählten PublicVorstellung finden
@@ -281,14 +281,14 @@ namespace TestAnwendungskern
             expected.RemoveAll(delegate(Kinokarte k) { return (k.Blockiert || k.Verkauft || k.Reserviert); });
 
             // Verfügbare Kinokarten für die Vorstellung abfragen.
-            List<IPublicKinokarte> actual;
+            List<PublicKinokarte> actual;
             actual = target.GetVerfügbareKinokartenFürVorstellung(vorstellung);
 
             // Für den Vergleich werden Kinokarten benötigt.
             // GetVerfügbareKinokartenFürVorstellung gibt jedoch nur PublicKionokarten zurück.
             // Für den Vergleich mit den erwarteten Ergebnissen müssen also die zugehörigen Kinokarten extrahiert werden.
             List<Kinokarte> vergleichsListe = new List<Kinokarte>();
-            foreach(IPublicKinokarte k in actual)
+            foreach(PublicKinokarte k in actual)
             {
                 vergleichsListe.Add(kinokarten.GetElementWithId(k.GetIdentifier()));
             }
@@ -342,7 +342,7 @@ namespace TestAnwendungskern
         {
             KinokartenInformationen target = new KinokartenInformationen();
             List<Vorstellung> erwarteteVorstellungen = _vorstellungen.GetElements();
-            IPublicFilmprogramm actual;
+            PublicFilmprogramm actual;
             actual = target.GetWöchentlichesFilmprogramm();
             
             // Ist ein Filmprogramm zurückgegeben worden?
@@ -389,7 +389,7 @@ namespace TestAnwendungskern
         public void PrüfeAltersfreigabeFürVorstellungTest_Success()
         {
             KinokartenInformationen target = new KinokartenInformationen();
-            IPublicVorstellung vorstellung = _gewählte_Vorstellung;
+            PublicVorstellung vorstellung = _gewählte_Vorstellung;
             DateTime geburtsdatum1 = (DateTime.Now.AddYears(-_gewählte_Vorstellung.Altersfreigabe)).AddDays(-1);
             DateTime geburtsdatum2 = (DateTime.Now.AddYears(-_gewählte_Vorstellung.Altersfreigabe)).AddYears(-5);
             bool expected = true;
@@ -425,7 +425,7 @@ namespace TestAnwendungskern
         public void PrüfeAltersfreigabeFürVorstellungTest_Failure()
         {
             KinokartenInformationen target = new KinokartenInformationen();
-            IPublicVorstellung vorstellung = _gewählte_Vorstellung;
+            PublicVorstellung vorstellung = _gewählte_Vorstellung;
 
             DateTime geburtsdatum1 = (DateTime.Now.AddYears(-_gewählte_Vorstellung.Altersfreigabe)).AddDays(1);
             DateTime geburtsdatum2 = (DateTime.Now.AddYears(-_gewählte_Vorstellung.Altersfreigabe)).AddYears(3);
@@ -462,7 +462,7 @@ namespace TestAnwendungskern
         public void PrüfeAltersfreigabeFürVorstellungTest1_Success()
         {
             KinokartenInformationen target = new KinokartenInformationen();
-            IPublicVorstellung vorstellung = _gewählte_Vorstellung;
+            PublicVorstellung vorstellung = _gewählte_Vorstellung;
 
             DateTime geburtsdatum1 = (DateTime.Now.AddYears(-_gewählte_Vorstellung.Altersfreigabe)).AddDays(-1);
             DateTime geburtsdatum2 = (DateTime.Now.AddYears(-_gewählte_Vorstellung.Altersfreigabe)).AddYears(-5);
@@ -502,7 +502,7 @@ namespace TestAnwendungskern
         public void PrüfeAltersfreigabeFürVorstellungTest1_Failure()
         {
             KinokartenInformationen target = new KinokartenInformationen();
-            IPublicVorstellung vorstellung = _gewählte_Vorstellung;
+            PublicVorstellung vorstellung = _gewählte_Vorstellung;
 
             DateTime geburtsdatum1 = (DateTime.Now.AddYears(-_gewählte_Vorstellung.Altersfreigabe)).AddDays(1);
             DateTime geburtsdatum2 = (DateTime.Now.AddYears(-_gewählte_Vorstellung.Altersfreigabe)).AddYears(3);
@@ -543,7 +543,7 @@ namespace TestAnwendungskern
         public void PrüfeVerfügbarkeitVonSitzplatzFürVorstellungTest_Success()
         {
             KinokartenInformationen target = new KinokartenInformationen();
-            IPublicVorstellung vorstellung = _gewählte_Vorstellung;
+            PublicVorstellung vorstellung = _gewählte_Vorstellung;
             ISitz sitz = _sitz;
 
             bool expected = true;

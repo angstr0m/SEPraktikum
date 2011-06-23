@@ -52,7 +52,6 @@
     <Compile Include="EntityManagerTest.cs" />
     <Compile Include="IBesucherTest.cs" />
     <Compile Include="KinokartenInformationenTest.cs" />
-    <Compile Include="KinokartenOperationenTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

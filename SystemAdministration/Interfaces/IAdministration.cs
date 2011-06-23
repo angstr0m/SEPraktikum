@@ -1,4 +1,5 @@
 ﻿using Kino.Schnittstelle;
+using Kinokarten.Schnittstelle;
 using Kinokarten.Schnittstelle.Interfaces;
 
 namespace SystemAdministration.Interfaces
@@ -7,8 +8,8 @@ namespace SystemAdministration.Interfaces
     {
         void FillSystemWithTestData(float kinokartenpreis);
 
-        bool IsTicketBlocked(IPublicVorstellung vorstellung, ISitz sitz);
+        bool IsTicketBlocked(PublicVorstellung vorstellung, ISitz sitz);
 
-        bool IsTicketReserved(IPublicVorstellung vorstellung, ISitz sitz);
+        bool IsTicketReserved(PublicVorstellung vorstellung, ISitz sitz);
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Net.Mail;
 using Kino.Schnittstelle;
+using Kinokarten.Schnittstelle;
 using Kinokarten.Schnittstelle.Interfaces;
 using Users.Interfaces;
 
@@ -35,14 +36,14 @@ namespace Fassade.Schnittstelle
         /// @post
         /// @typ Abfrage.
         /// @remarks    
-        public List<ISitz> GetVerfügbareSitzplätzeFürVorstellung(IPublicVorstellung gewählte_Vorstellung)
+        public List<ISitz> GetVerfügbareSitzplätzeFürVorstellung(PublicVorstellung gewählte_Vorstellung)
         {
-            List<IPublicKinokarte> kinokarten =
+            List<PublicKinokarte> kinokarten =
                 _kinokartenInformationen.GetVerfügbareKinokartenFürVorstellung(gewählte_Vorstellung);
 
             var verfügbareSitzplätze = new List<ISitz>();
 
-            foreach (IPublicKinokarte kinokarte in kinokarten)
+            foreach (PublicKinokarte kinokarte in kinokarten)
             {
                 verfügbareSitzplätze.Add(kinokarte.Sitz);
             }
@@ -62,7 +63,7 @@ namespace Fassade.Schnittstelle
         /// @post
         /// @typ    Abfrage.
         /// @remarks
-        public bool PrüfeAltersfreigabe(IPublicVorstellung gewählte_vorstellung, DateTime geburtsdatum)
+        public bool PrüfeAltersfreigabe(PublicVorstellung gewählte_vorstellung, DateTime geburtsdatum)
         {
             return _kinokartenInformationen.PrüfeAltersfreigabeFürVorstellung(gewählte_vorstellung, geburtsdatum);
         }
@@ -78,7 +79,7 @@ namespace Fassade.Schnittstelle
         /// @post
         /// @typ    Abfrage.
         /// @remarks
-        public bool ÜberprüfeVerfügbarkeitVonSitzplatz(IPublicVorstellung gewählte_vorstellung, ISitz sitz)
+        public bool ÜberprüfeVerfügbarkeitVonSitzplatz(PublicVorstellung gewählte_vorstellung, ISitz sitz)
         {
             return _kinokartenInformationen.PrüfeVerfügbarkeitVonSitzplatzFürVorstellung(gewählte_vorstellung, sitz);
         }
@@ -96,7 +97,7 @@ namespace Fassade.Schnittstelle
         /// @post   Die gewünschte Kinokarte ist blockiert.
         /// @typ    Kommando.
         /// @remarks
-        public IKinokarteBlockierungZugangsSchlüssel BlockiereSitzplatz(IPublicVorstellung gewählte_vorstellung,
+        public IKinokarteBlockierungZugangsSchlüssel BlockiereSitzplatz(PublicVorstellung gewählte_vorstellung,
                                                                         ISitz sitz)
         {
             return _kinokartenOperationen.BlockiereKinokarte(gewählte_vorstellung, sitz);
@@ -115,7 +116,7 @@ namespace Fassade.Schnittstelle
         /// @post
         /// @typ    Abfrage.
         /// @remarks
-        public float GetPreisFürKinokarte(IPublicVorstellung gewählte_vorstellung, ISitz sitz, bool rabatt)
+        public float GetPreisFürKinokarte(PublicVorstellung gewählte_vorstellung, ISitz sitz, bool rabatt)
         {
             return _kinokartenInformationen.GetPreisFürKinokarte(gewählte_vorstellung, sitz, rabatt);
         }
@@ -135,7 +136,7 @@ namespace Fassade.Schnittstelle
         /// @post   Die gewünschte Kinokarte ist nicht mehr blockiert
         /// @typ    Kommando.
         /// @remarks    Bevor die Kinokarte reserviert werden kann, muss sie mit Hilfe der Funktion BlockiereSitzplatz blockiert worden sein.
-        public int KinokarteReservieren(IPublicVorstellung gewählte_vorstellung, ISitz sitz, bool rabatt,
+        public int KinokarteReservieren(PublicVorstellung gewählte_vorstellung, ISitz sitz, bool rabatt,
                                         IKinokarteBlockierungZugangsSchlüssel zugangsSchlüssel)
         {
             return _kinokartenOperationen.KinokarteReservieren(gewählte_vorstellung, sitz, rabatt, zugangsSchlüssel);
@@ -153,7 +154,7 @@ namespace Fassade.Schnittstelle
         /// @post   Die gewünschte Kinokarte ist nicht mehr blockiert
         /// @typ    Kommando.
         /// @remarks    Bevor die Blockierung einer Kinokarte aufgehoben werden kann, muss diese zuvor mit der Methode BlockiereSitzplatz blockiert worden sein.
-        public void BlockierungFürSitzplatzAufheben(IPublicVorstellung gewählte_vorstellung, ISitz sitz,
+        public void BlockierungFürSitzplatzAufheben(PublicVorstellung gewählte_vorstellung, ISitz sitz,
                                                     IKinokarteBlockierungZugangsSchlüssel zugangsSchlüssel)
         {
             _kinokartenOperationen.BlockierungFürSitzplatzAufheben(gewählte_vorstellung, sitz, zugangsSchlüssel);

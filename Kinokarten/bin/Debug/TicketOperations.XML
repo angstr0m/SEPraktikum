@@ -304,14 +304,6 @@
             <param name="isPayed">The is payed.</param>
             <remarks></remarks>
         </member>
-        <member name="P:Kinokarten.Schnittstelle.Interfaces.IPublicFilmprogramm.Vorstellungen">
-            <summary>
-            Gets or sets the list of shows that represent the shows that are shown in the week the movie program is responsible for.
-            </summary>
-            <value>The shows.</value>
-            <remarks></remarks>
-            <pre></pre>
-        </member>
         <member name="T:Kinokarten.Models.Filmprogramm">
             <summary>
             Dient der Sammlung aller Vorstellungen für eine Woche.
@@ -346,128 +338,10 @@
             <value></value>
             <remarks></remarks>
         </member>
-        <member name="P:Kinokarten.Schnittstelle.Interfaces.IPublicKinokarte.Reserviert">
-            <summary>
-            Gets or sets a value indicating whether this <see cref="T:Kinokarten.Models.Kinokarte"/> is reserved.
-            </summary>
-            <value><c>true</c> if reserved; otherwise, <c>false</c>.</value>
-            <remarks></remarks>
-        </member>
-        <member name="P:Kinokarten.Schnittstelle.Interfaces.IPublicKinokarte.Rabatt">
-            <summary>
-            Gets or sets a value indicating whether this <see cref="T:Kinokarten.Models.Kinokarte"/> is discounted.
-            This is true when it was bought buy a student/pupil and or pensioneer.
-            The discount is always 10%.
-            </summary>
-            <value><c>true</c> if the ticketprice is discounted; otherwise, <c>false</c>.</value>
-            <remarks></remarks>
-        </member>
-        <member name="P:Kinokarten.Schnittstelle.Interfaces.IPublicKinokarte.Verkauft">
-            <summary>
-            Gets or sets a value indicating whether this <see cref="T:Kinokarten.Models.Kinokarte"/> is sold.
-            </summary>
-            <value><c>true</c> if sold; otherwise, <c>false</c>.</value>
-            <remarks></remarks>
-        </member>
-        <member name="P:Kinokarten.Schnittstelle.Interfaces.IPublicKinokarte.Preis">
-            <summary>
-            Gets the price of the ticket, taking into account any discount.
-            </summary>
-            <remarks></remarks>
-        </member>
-        <member name="P:Kinokarten.Schnittstelle.Interfaces.IPublicKinokarte.Sitz">
-            <summary>
-            Gets the Sitz that belongs to this ticket.
-            </summary>
-            <remarks></remarks>
-        </member>
-        <member name="P:Kinokarten.Schnittstelle.Interfaces.IPublicKinokarte.Vorstellung">
-            <summary>
-            Gets the vorstellung this ticket is for.
-            </summary>
-            <remarks></remarks>
-        </member>
         <member name="T:Kinokarten.Schnittstelle.PublicVorstellung">
             <summary>
             Decorator for the vorstellung object.
             This class is meant for giving vorstellung objects to the outside, while hiding members and methods on the vorstellung-object which should not be seen.
-            </summary>
-            <remarks></remarks>
-        </member>
-        <member name="M:Kinokarten.Schnittstelle.Interfaces.IPublicVorstellung.GetAnzahlFreierKinokarten">
-            <summary>
-            Gibt die Anzahl der noch verfügbaren Kinokarten zurück.
-            </summary>
-            <returns></returns>
-            <remarks></remarks>
-        </member>
-        <member name="M:Kinokarten.Schnittstelle.Interfaces.IPublicVorstellung.GetAnzahlNichtVerfügbarerKinokarten">
-            <summary>
-            Gibt die Anzahl der nicht verfügbaren Kinokarten zurück.
-            </summary>
-            <returns></returns>
-            <remarks></remarks>
-        </member>
-        <member name="M:Kinokarten.Schnittstelle.Interfaces.IPublicVorstellung.VerfügbareKinokarten">
-            <summary>
-            Gibt eine Liste der Kinokarten dieser Vorstellung zurück, die weder gekauft noch reserviert wurden.
-            </summary>
-            <returns></returns>
-            <remarks></remarks>
-        </member>
-        <member name="M:Kinokarten.Schnittstelle.Interfaces.IPublicVorstellung.ReservierteKinokarten">
-            <summary>
-            Gibt eine Liste der Kinokarten dieser Vorstellung zurück, welche reserviert wurden.
-            </summary>
-            <returns></returns>
-            <remarks></remarks>
-        </member>
-        <member name="M:Kinokarten.Schnittstelle.Interfaces.IPublicVorstellung.VerkaufteKinokarten">
-            <summary>
-            Gibt eine Liste der Kinokarten dieser Vorstellung zurück, welche verkauft wurden.
-            </summary>
-            <returns></returns>
-            <remarks></remarks>
-        </member>
-        <member name="M:Kinokarten.Schnittstelle.Interfaces.IPublicVorstellung.GetKinokarte(System.Int32)">
-            <summary>
-            Gibt eine Kinokarte an einem bestimmten Index zurück.
-            </summary>
-            <param name="index">Der Index der gewünschten Kinokarte.</param>
-            <returns></returns>
-            <remarks></remarks>
-        </member>
-        <member name="M:Kinokarten.Schnittstelle.Interfaces.IPublicVorstellung.GetKinokarte(Kino.Schnittstelle.ISitzIdentifikator)">
-            <summary>
-            Gibt eine Kinokarte für einen bestimmten Sitz zurück.
-            </summary>
-            <param name="sitzIdentifikator"> Der Identifikator des gewünschten Sitzplatzes.</param>
-            <returns></returns>
-            <remarks></remarks>
-        </member>
-        <member name="P:Kinokarten.Schnittstelle.Interfaces.IPublicVorstellung.StartZeit">
-            <summary>
-            Gibt die Startzeit der Vorstellung zurück.
-            </summary>
-            <value>Die Startzeit der Vorstellung.</value>
-            <remarks></remarks>
-        </member>
-        <member name="P:Kinokarten.Schnittstelle.Interfaces.IPublicVorstellung.Spieldauer">
-            <summary>
-            Gibt die Spieldauer der Vorstellung zurück.
-            </summary>
-            <value>Die Spieldauer des Films dieser Vorstellung.</value>
-            <remarks></remarks>
-        </member>
-        <member name="P:Kinokarten.Schnittstelle.Interfaces.IPublicVorstellung.Altersfreigabe">
-            <summary>
-            Gibt die Altersfreigabe des Films dieser Vorstellung zurück.
-            </summary>
-            <remarks></remarks>
-        </member>
-        <member name="P:Kinokarten.Schnittstelle.Interfaces.IPublicVorstellung.Name">
-            <summary>
-            Gibt den Namen des Films zurück, welcher in dieser Vorstellung gezeigt wird.
             </summary>
             <remarks></remarks>
         </member>

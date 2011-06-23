@@ -21,11 +21,11 @@ namespace Kinokarten.Schnittstelle
 
         #region Implementation of IABesucherReserviertKinokarteOnlineInformationen
 
-        public List<IPublicKinokarte> GetVerfügbareKinokartenFürVorstellung(IPublicVorstellung vorstellung)
+        public List<PublicKinokarte> GetVerfügbareKinokartenFürVorstellung(PublicVorstellung vorstellung)
         {
             Vorstellung wantedVorstellung = _vorstellungen.GetElementWithId(vorstellung.GetIdentifier());
 
-            var publicKinokarten = new List<IPublicKinokarte>();
+            var publicKinokarten = new List<PublicKinokarte>();
 
             foreach (Kinokarte kinokarte in wantedVorstellung.GetVerfügbareKinokarten())
             {
@@ -36,7 +36,7 @@ namespace Kinokarten.Schnittstelle
         }
 
 
-        public bool PrüfeAltersfreigabeFürVorstellung(IPublicVorstellung vorstellung, DateTime geburtsdatum)
+        public bool PrüfeAltersfreigabeFürVorstellung(PublicVorstellung vorstellung, DateTime geburtsdatum)
         {
             Vorstellung wantedVorstellung = _vorstellungen.GetElementWithId(vorstellung.GetIdentifier());
             TimeSpan temp = DateTime.Now.Date.Subtract(geburtsdatum.Date);
@@ -44,7 +44,7 @@ namespace Kinokarten.Schnittstelle
             return (temp.TotalDays >= temp2.TotalDays);
         }
 
-        public bool PrüfeVerfügbarkeitVonSitzplatzFürVorstellung(IPublicVorstellung vorstellung, ISitz sitz)
+        public bool PrüfeVerfügbarkeitVonSitzplatzFürVorstellung(PublicVorstellung vorstellung, ISitz sitz)
         {
             Vorstellung wantedVorstellung = _vorstellungen.GetElementWithId(vorstellung.GetIdentifier());
             Kinokarte kinokarte = wantedVorstellung.GetKinokarte(sitz);
@@ -58,7 +58,7 @@ namespace Kinokarten.Schnittstelle
         }
 
 
-        public bool PrüfeAltersfreigabeFürVorstellung(IPublicVorstellung vorstellung, IKunde kunde)
+        public bool PrüfeAltersfreigabeFürVorstellung(PublicVorstellung vorstellung, IKunde kunde)
         {
             Vorstellung wantedVorstellung = _vorstellungen.GetElementWithId(vorstellung.GetIdentifier());
 
@@ -66,7 +66,7 @@ namespace Kinokarten.Schnittstelle
         }
 
 
-        public float GetPreisFürKinokarte(IPublicVorstellung vorstellung, ISitz sitz, bool rabatt)
+        public float GetPreisFürKinokarte(PublicVorstellung vorstellung, ISitz sitz, bool rabatt)
         {
             Vorstellung wantedVorstellung = _vorstellungen.GetElementWithId(vorstellung.GetIdentifier());
             Kinokarte kinokarte = wantedVorstellung.GetKinokarte(sitz);
@@ -80,7 +80,7 @@ namespace Kinokarten.Schnittstelle
         /// </summary>
         /// <returns> Das Filmprogramm für diese Woche. </returns>
         /// <remarks></remarks>
-        public IPublicFilmprogramm GetWöchentlichesFilmprogramm()
+        public PublicFilmprogramm GetWöchentlichesFilmprogramm()
         {
             return new PublicFilmprogramm(_filmprogramme.GetElements().Find(delegate(Filmprogramm m)
                                                                                 {
